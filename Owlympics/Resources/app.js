@@ -123,7 +123,7 @@ Titanium.UI.setBackgroundColor('#000');
 		width : 45,
 		height : 45,
 		backgroundColor : 'white',
-		keyboardType : Titanium.UI.KEYBOARD_NUMBERS_PUNCTUATION,
+		keyboardType : Titanium.UI.KEYBOARD_NUMBER_PAD,
 	});
 	whenView.add(lowtxt);
 
@@ -138,7 +138,7 @@ Titanium.UI.setBackgroundColor('#000');
 		width : 45,
 		height : 45,
 		backgroundColor : 'white',
-		keyboardType : Titanium.UI.KEYBOARD_NUMBERS_PUNCTUATION,
+		keyboardType : Titanium.UI.KEYBOARD_NUMBER_PAD,
 	});
 
 	whenView.add(medtxt);
@@ -154,7 +154,7 @@ Titanium.UI.setBackgroundColor('#000');
 		width : 45,
 		height : 45,
 		backgroundColor : 'white',
-		keyboardType : Titanium.UI.KEYBOARD_NUMBERS_PUNCTUATION,
+		keyboardType : Titanium.UI.KEYBOARD_NUMBER_PAD,
 	});
 	whenView.add(hightxt);
 
@@ -179,7 +179,7 @@ Titanium.UI.setBackgroundColor('#000');
 		width : 45,
 		height : 45,
 		backgroundColor : 'white',
-		keyboardType : Titanium.UI.KEYBOARD_NUMBERS_PUNCTUATION,
+		keyboardType : Titanium.UI.KEYBOARD_NUMBER_PAD,
 		text : '0',
 	});
 	whenView.add(socialtxt);
@@ -192,10 +192,10 @@ Titanium.UI.setBackgroundColor('#000');
 		width : '80%',
 		height : '50%',
 	});
-	
+
 	whenView.add(pickdate);
 
-		var activitybtn1 = Ti.UI.createButton({
+	var activitybtn1 = Ti.UI.createButton({
 		title : 'Run',
 		color : 'white',
 		font : {
@@ -285,8 +285,9 @@ Titanium.UI.setBackgroundColor('#000');
 		width : 70,
 		height : 70,
 		backgroundImage : './images/blackcircle.png',
-		backgroundSelectedImage : './images/redcircle.png',
+		backgroundSelectedImage : './images/graycircle.png',
 	});
+	whatView.add(activitybtn6);
 
 	var othertxt = Ti.UI.createTextField({
 		borderStyle : Ti.UI.INPUT_BORDERSTYLE_ROUNDED,
@@ -399,9 +400,8 @@ Titanium.UI.setBackgroundColor('#000');
 	whatView.add(rstar3);
 	whatView.add(rstar4);
 	whatView.add(rstar5);
-	
-	
-		var email = Ti.UI.createTextField({
+
+	var email = Ti.UI.createTextField({
 		height : '40dp',
 		width : '150dp',
 		top : '10%',
@@ -431,11 +431,11 @@ Titanium.UI.setBackgroundColor('#000');
 		width : 70,
 		height : 70,
 		title : 'Submit',
-		backgroundImage : './images/bluecircle.png',
+		backgroundImage : './images/redcircle.png',
 		backgroundSelectedImage : './images/graycircle.png',
 
 	});
-	
+
 	whenView.add(submit);
 	//profilewin
 
@@ -528,323 +528,6 @@ Titanium.UI.setBackgroundColor('#000');
 	});
 	track.add(progress);
 	profileView.add(track);
-	
-	
-	
-	
-	socialtxt.addEventListener('focus', function(e) {
-		if (Titanium.Platform.name == 'android') {
-			// Android stuff
-			Ti.UI.Android.hideSoftKeyboard();
-		}
-	});
-	var social = socialtxt.value;
-	socialtxt.addEventListener('change', function(e) {
-		social = socialtxt.value;
-	});
-	whenView.addEventListener('onload', function(e) {
-		socialtxt.value = social;
-	});
-
-	var day, mon, year;
-	var date1 = new Date();
-	day = date1.getDate();
-	mon = date1.getMonth() + 1;
-	// convention : jan = 01
-	year = date1.getFullYear();
-
-
-	pickdate.addEventListener('change', function(e) {
-		day = e.value.getDate();
-		mon = e.value.getMonth() + 1;
-		// convention : jan = 01
-		year = e.value.getFullYear();
-	});
-
-	var useractivity;
-
-
-	activitybtn1.addEventListener('click', function(e) {
-		useractivity = "Running";
-		scrollable.scrollToView(whenView);
-	});
-
-	activitybtn2.addEventListener('click', function(e) {
-		useractivity = "Walking";
-		scrollable.scrollToView(whenView);
-	});
-
-	activitybtn3.addEventListener('click', function(e) {
-		useractivity = "Swimming";
-		scrollable.scrollToView(whenView);
-	});
-
-	activitybtn4.addEventListener('click', function(e) {
-		useractivity = "Cycling";
-		scrollable.scrollToView(whenView);
-	});
-
-	activitybtn5.addEventListener('click', function(e) {
-		useractivity = "Weights";
-		scrollable.scrollToView(whenView);
-	});
-
-	activitybtn6.addEventListener('click', function(e) {
-		if (othertxt.value == '') {
-			alert('Please type the exercise or click on the options above');
-		} else {
-			useractivity = othertxt.value;
-			othertxt.blur();
-			scrollable.scrollToView(whenView);
-		}
-	});
-
-	othertxt.addEventListener('focus', function(e) {
-		if (Titanium.Platform.name == 'android') {
-			// Android stuff
-			Ti.UI.Android.hideSoftKeyboard();
-		}
-	});
-
-	whatView.add(activitybtn6);
-
-	whatView.addEventListener('tap', function(e) {
-
-		if (Titanium.Platform.name == 'android') {
-			// Android stuff
-			Ti.UI.Android.hideSoftKeyboard();
-		}
-	});
-
-	whenView.addEventListener('tap', function(e) {
-
-		if (Titanium.Platform.name == 'android') {
-			// Android stuff
-			Ti.UI.Android.hideSoftKeyboard();
-		}
-	});
-
-	var exrate = 3, haprate = 3;
-
-
-	/*// var hapinessLabel = Ti.UI.createLabel({
-	 // text : 'How happy did you feel?',
-	 // color : 'white',
-	 // font : {
-	 // fontSize : 16,
-	 // },
-	 // top : '65%',
-	 // left : '10%',
-	 // });
-	 // timeView.add(hapinessLabel);
-	 // var hstar1 = Ti.UI.createButton({
-	 // top : '70%',
-	 // left : '10%',
-	 // color : 'white',
-	 // width : 30,
-	 // height : 30,
-	 // backgroundImage : './images/goldstar.png',
-	 // });
-	 // hstar1.addEventListener('click', function(e) {
-	 // hstar1.backgroundImage = './images/goldstar.png';
-	 // hstar2.backgroundImage = './images/graystar.png';
-	 // hstar3.backgroundImage = './images/graystar.png';
-	 // hstar4.backgroundImage = './images/graystar.png';
-	 // hstar5.backgroundImage = './images/graystar.png';
-	 // haprate = 1;
-	 // });
-	 // var hstar2 = Ti.UI.createButton({
-	 // top : '70%',
-	 // left : '25%',
-	 // color : 'white',
-	 // width : 30,
-	 // height : 30,
-	 // backgroundImage : './images/goldstar.png',
-	 // });
-	 // hstar2.addEventListener('click', function(e) {
-	 // hstar1.backgroundImage = './images/goldstar.png';
-	 // hstar2.backgroundImage = './images/goldstar.png';
-	 // hstar3.backgroundImage = './images/graystar.png';
-	 // hstar4.backgroundImage = './images/graystar.png';
-	 // hstar5.backgroundImage = './images/graystar.png';
-	 // haprate = 2;
-	 // });
-	 // var hstar3 = Ti.UI.createButton({
-	 // top : '70%',
-	 // left : '40%',
-	 // color : 'white',
-	 // width : 30,
-	 // height : 30,
-	 // backgroundImage : './images/goldstar.png',
-	 // });
-	 // hstar3.addEventListener('click', function(e) {
-	 // hstar1.backgroundImage = './images/goldstar.png';
-	 // hstar2.backgroundImage = './images/goldstar.png';
-	 // hstar3.backgroundImage = './images/goldstar.png';
-	 // hstar4.backgroundImage = './images/graystar.png';
-	 // hstar5.backgroundImage = './images/graystar.png';
-	 // haprate = 3;
-	 // });
-	 // var hstar4 = Ti.UI.createButton({
-	 // top : '70%',
-	 // left : '55%',
-	 // color : 'white',
-	 // width : 30,
-	 // height : 30,
-	 // backgroundImage : './images/graystar.png',
-	 // });
-	 // hstar4.addEventListener('click', function(e) {
-	 // hstar1.backgroundImage = './images/goldstar.png';
-	 // hstar2.backgroundImage = './images/goldstar.png';
-	 // hstar3.backgroundImage = './images/goldstar.png';
-	 // hstar4.backgroundImage = './images/goldstar.png';
-	 // hstar5.backgroundImage = './images/graystar.png';
-	 // haprate = 4;
-	 // });
-	 // var hstar5 = Ti.UI.createButton({
-	 // top : '70%',
-	 // left : '70%',
-	 // color : 'white',
-	 // width : 30,
-	 // height : 30,
-	 // backgroundImage : './images/graystar.png',
-	 // });
-	 // hstar5.addEventListener('click', function(e) {
-	 // hstar1.backgroundImage = './images/goldstar.png';
-	 // hstar2.backgroundImage = './images/goldstar.png';
-	 // hstar3.backgroundImage = './images/goldstar.png';
-	 // hstar4.backgroundImage = './images/goldstar.png';
-	 // hstar5.backgroundImage = './images/goldstar.png';
-	 // haprate = 5;
-	 // });
-	 // timeView.add(hstar1);
-	 // timeView.add(hstar2);
-	 // timeView.add(hstar3);
-	 // timeView.add(hstar4);
-	 // timeView.add(hstar5);*/
-	/* Set up fields for submission */
-
-
-
-	var submitReq = Titanium.Network.createHTTPClient();
-
-	submitReq.onload = function() {
-		if (this.responseText == 'Activity submission succeeded') {
-			alert("Congratulations! Your hardwork earned you " + Math.round(100 * (lowtxt.value / 45 + medtxt.value / 30 + hightxt.value / 20) + 10 * social.toNumber()) + " points!");
-			profileUpdate();
-			scrollable.scrollToView(profileView);
-
-		} else {
-			alert(this.responseText);
-		}
-	};
-
-	submit.addEventListener('click', function(e) {
-
-		if (lowtxt.value == '')
-			lowtxt.value = '0';
-		if (medtxt.value == '')
-			medtxt.value = '0';
-		if (hightxt.value == '')
-			hightxt.value = '0';
-		var alert1 = Titanium.UI.createAlertDialog({
-			title : 'Submit Data',
-			message : ("Submit the following information? " + "\n" + "Date : " + mon + "-" + day + "-" + year + "\n" + "Activity : " + useractivity + " \nLow Intensity : " + lowtxt.value + " \nMed Intensity : " + medtxt.value + " \nHigh Intensity : " + hightxt.value + "\nNumber of Participants : " + socialtxt.value + "\nExercise rating : " + exrate ),
-			buttonNames : ['Yes', 'No'],
-			cancel : 1
-		});
-
-		if (useractivity != '' && (lowtxt.value + medtxt.value + hightxt.value) > 0) {
-
-			submitReq.open("POST", "http://owlympics.ecg.rice.edu:81/mobile/submit");
-			var params = {
-				day : day.toString(),
-				mon : mon.toString(),
-				year : year.toString(),
-				activity : useractivity,
-				social : social,
-				lowintensity : lowtxt.value,
-				moderateintensity : medtxt.value,
-				highintensity : hightxt.value,
-				note : "",
-				rate : '1',
-				hour : date1.getHours().toString(),
-				min : date1.getMinutes().toString(),
-				sec : date1.getSeconds().toString(),
-				happy : haprate.toString(),
-				activeness : exrate.toString(),
-				uuid : Titanium.Platform.id
-			};
-			alert1.show();
-
-		} else {
-			alert("Please fill all fields. Time cannot be zero.");
-		}
-		alert1.addEventListener('click', function(e) {
-			Titanium.API.info('e = ' + JSON.stringify(e));
-			//Clicked cancel, first check is for iphone, second for android
-			if (e.cancel === e.index || e.cancel === true) {
-				return;
-			}
-
-			//now you can use parameter e to switch/case
-
-			switch (e.index) {
-				case 0:
-					Titanium.API.info('Clicked button 0 (YES)');
-					submitReq.send(params);
-					break;
-
-				//This will never be reached, if you specified cancel for index 1
-				case 1:
-					Titanium.API.info('Clicked button 1 (NO)');
-					break;
-
-				default:
-					break;
-			}
-		});
-	});
-
-
-	var profileReq = Titanium.Network.createHTTPClient();
-
-	profileReq.onload = function() {
-		alert(this.responseText);
-		//Parse JSON file
-		var profileJSON = JSON.parse(this.responseText);
-		//Use values to generate progress bar and labels for current level and recent activities
-		userPoints = profileJSON[0].points;
-		progress.width = 180 * userPoints / 400;
-		userLevel = 'Current Level: ';
-		userLevel = userLevel + profileJSON[0].level;
-		var activity1string = '';
-		activity1string = activity1string + profileJSON[0].acts[0].name + ' for ' + profileJSON[0].acts[0].newpoints + ' points on ' + profileJSON[0].acts[0].month + '/' + profileJSON[0].acts[0].day + '/' + profileJSON[0].acts[0].year;
-		var activity2string = '';
-		activity2string = activity2string + profileJSON[0].acts[1].name + ' for ' + profileJSON[0].acts[1].newpoints + ' points on ' + profileJSON[0].acts[1].month + '/' + profileJSON[0].acts[1].day + '/' + profileJSON[0].acts[1].year;
-		activity1.setText(activity1string);
-		activity2.setText(activity2string);
-		var activity1string = '';
-		activity1string = activity1string + profileJSON[0].acts[2].name + ' for ' + profileJSON[0].acts[2].newpoints + ' points on ' + profileJSON[0].acts[2].month + '/' + profileJSON[0].acts[2].day + '/' + profileJSON[0].acts[2].year;
-		var activity2string = '';
-		activity2string = activity2string + profileJSON[0].acts[3].name + ' for ' + profileJSON[0].acts[3].newpoints + ' points on ' + profileJSON[0].acts[3].month + '/' + profileJSON[0].acts[3].day + '/' + profileJSON[0].acts[3].year;
-		activity3.setText(activity1string);
-		activity4.setText(activity2string);
-		levelLabel.setText(userLevel);
-
-	};
-
-	function profileUpdate() {
-		profileReq.open("POST", "http://owlympics.ecg.rice.edu:81/mobile/profile");
-		var params = {
-			uuid : Titanium.Platform.id,
-		};
-		profileReq.send(params);
-	}
-
-	if (Ti.App.Properties.hasProperty('loggedBefore')) {
-		profileUpdate();
-	};
 
 	/* Set up profile view */
 
@@ -873,11 +556,6 @@ Titanium.UI.setBackgroundColor('#000');
 		left : '20%',
 		title : 'Refresh',
 	});
-
-	refresh.addEventListener('click', function(e) {
-		profileUpdate();
-	});
-
 	profileView.add(refresh);
 
 	var deauth = Ti.UI.createButton({
@@ -885,29 +563,6 @@ Titanium.UI.setBackgroundColor('#000');
 		left : '45%',
 		title : 'Deauthorize',
 	});
-
-	var deauthReq = Titanium.Network.createHTTPClient();
-
-	deauthReq.onload = function() {
-		if (this.responseText == 'Deauthorization succeeded') {
-			alert("Phone successfully deauthorized.");
-			Ti.App.Properties.removeProperty('loggedBefore');
-			win2.open();
-			homeWin.close();
-		} else {
-			alert(this.responseText);
-		}
-	};
-
-	deauth.addEventListener('click', function(e) {
-		deauthReq.open("POST", "http://owlympics.ecg.rice.edu:81/mobile/detach");
-		var params = {
-			uuid : Titanium.Platform.id
-		};
-		deauthReq.send(params);
-	});
-
-	profileView.add(deauth);
 
 	/* Set up labels */
 
@@ -955,6 +610,298 @@ Titanium.UI.setBackgroundColor('#000');
 
 	win2.add(register);
 
+	//
+	var day, mon, year;
+
+	var useractivity;
+	var date1;
+
+	var exrate, haprate;
+	function initialise() {
+		socialtxt.value = '0';
+		lowtxt.value = '0';
+		medtxt.value = '0';
+		hightxt.value = '0';
+		othertxt.value = '';
+		date1 = new Date();
+		day = date1.getDate();
+		mon = date1.getMonth() + 1;
+		// convention : jan = 01
+		year = date1.getFullYear();
+
+		useractivity = '';
+
+		exrate = 3, haprate = 3;
+		rstar1.backgroundImage = './images/goldstar.png';
+		rstar2.backgroundImage = './images/goldstar.png';
+		rstar3.backgroundImage = './images/goldstar.png';
+		rstar4.backgroundImage = './images/graystar.png';
+		rstar5.backgroundImage = './images/graystar.png';
+
+	}
+
+	initialise();
+
+	socialtxt.addEventListener('focus', function(e) {
+		if (Titanium.Platform.name == 'android') {
+			// Android stuff
+			Ti.UI.Android.hideSoftKeyboard();
+		}
+	});
+	var social = socialtxt.value;
+	socialtxt.addEventListener('change', function(e) {
+		social = socialtxt.value;
+	});
+	whenView.addEventListener('onload', function(e) {
+		socialtxt.value = social;
+	});
+
+	pickdate.addEventListener('change', function(e) {
+		day = e.value.getDate();
+		mon = e.value.getMonth() + 1;
+		// convention : jan = 01
+		year = e.value.getFullYear();
+	});
+
+	activitybtn1.addEventListener('click', function(e) {
+		useractivity = "Running";
+		scrollable.scrollToView(whenView);
+	});
+
+	activitybtn2.addEventListener('click', function(e) {
+		useractivity = "Walking";
+		scrollable.scrollToView(whenView);
+	});
+
+	activitybtn3.addEventListener('click', function(e) {
+		useractivity = "Swimming";
+		scrollable.scrollToView(whenView);
+	});
+
+	activitybtn4.addEventListener('click', function(e) {
+		useractivity = "Cycling";
+		scrollable.scrollToView(whenView);
+	});
+
+	activitybtn5.addEventListener('click', function(e) {
+		useractivity = "Weights";
+		scrollable.scrollToView(whenView);
+	});
+
+	activitybtn6.addEventListener('click', function(e) {
+		if (othertxt.value == '') {
+			alert('Please type the exercise or click on the options above');
+		} else {
+			useractivity = othertxt.value;
+			othertxt.blur();
+			scrollable.scrollToView(whenView);
+		}
+	});
+
+	othertxt.addEventListener('return', function(e) {
+		if (Titanium.Platform.name == 'android') {
+			// Android stuff
+			Ti.UI.Android.hideSoftKeyboard();
+		}
+		othertxt.blur();
+	});
+
+	lowtxt.addEventListener('return', function(e) {
+		if (Titanium.Platform.name == 'android') {
+			// Android stuff
+			Ti.UI.Android.hideSoftKeyboard();
+		} else
+			lowtxt.blur();
+	});
+
+	medtxt.addEventListener('return', function(e) {
+		if (Titanium.Platform.name == 'android') {
+			// Android stuff
+			Ti.UI.Android.hideSoftKeyboard();
+		} else
+			medtxt.blur();
+	});
+
+	hightxt.addEventListener('return', function(e) {
+		if (Titanium.Platform.name == 'android') {
+			// Android stuff
+			Ti.UI.Android.hideSoftKeyboard();
+		} else
+			hightxt.blur();
+	});
+	socialtxt.addEventListener('return', function(e) {
+		if (Titanium.Platform.name == 'android') {
+			// Android stuff
+			Ti.UI.Android.hideSoftKeyboard();
+		} else
+			socialtxt.blur();
+	});
+	othertxt.addEventListener('singletap', function(e) {
+		othertxt.value = '';
+	});
+
+	lowtxt.addEventListener('singletap', function(e) {
+		lowtxt.value = '';
+	});
+	medtxt.addEventListener('singletap', function(e) {
+		medtxt.value = '';
+	});
+	hightxt.addEventListener('singletap', function(e) {
+		hightxt.value = '';
+	});
+	socialtxt.addEventListener('singletap', function(e) {
+		socialtxt.value = '';
+	});
+
+	/* Set up fields for submission */
+
+	var submitReq = Titanium.Network.createHTTPClient();
+
+	submitReq.onload = function() {
+		if (this.responseText == 'Activity submission succeeded') {
+			alert("Congratulations! Your hardwork earned you " + Math.floor(100 * (lowtxt.value / 45 + medtxt.value / 30 + hightxt.value / 20) + 10 * (social > 0)) + " points!");
+			profileUpdate();
+			scrollable.scrollToView(profileView);
+			initialise();
+
+		} else {
+			alert(this.responseText);
+		}
+
+	};
+
+	submit.addEventListener('click', function(e) {
+		if (Titanium.Network.networkType === Titanium.Network.NETWORK_NONE)
+			alert('Could not submit, Please check internet connection.');
+		else {
+			if (lowtxt.value == '')
+				lowtxt.value = '0';
+			if (medtxt.value == '')
+				medtxt.value = '0';
+			if (hightxt.value == '')
+				hightxt.value = '0';
+			var alert1 = Titanium.UI.createAlertDialog({
+				title : 'Submit Data',
+				message : ("Submit the following information? " + "\n" + "Date : " + mon + "-" + day + "-" + year + "\n" + "Activity : " + useractivity + " \nLow Intensity : " + lowtxt.value + " \nMed Intensity : " + medtxt.value + " \nHigh Intensity : " + hightxt.value + "\nNumber of Participants : " + socialtxt.value + "\nExercise rating : " + exrate ),
+				buttonNames : ['Yes', 'No'],
+				cancel : 1
+			});
+
+			if (useractivity != '' && (lowtxt.value + medtxt.value + hightxt.value) > 0) {
+
+				submitReq.open("POST", "http://owlympics.ecg.rice.edu:81/mobile/submit");
+				var params = {
+					day : day.toString(),
+					mon : mon.toString(),
+					year : year.toString(),
+					activity : useractivity,
+					social : social,
+					lowintensity : lowtxt.value,
+					moderateintensity : medtxt.value,
+					highintensity : hightxt.value,
+					note : "",
+					rate : '1',
+					hour : date1.getHours().toString(),
+					min : date1.getMinutes().toString(),
+					sec : date1.getSeconds().toString(),
+					happy : haprate.toString(),
+					activeness : exrate.toString(),
+					uuid : Titanium.Platform.id
+				};
+				alert1.show();
+
+			} else {
+				alert("Please fill all fields. Time cannot be zero.");
+			}
+			alert1.addEventListener('click', function(e) {
+				Titanium.API.info('e = ' + JSON.stringify(e));
+				//Clicked cancel, first check is for iphone, second for android
+				if (e.cancel === e.index || e.cancel === true) {
+					return;
+				}
+
+				//now you can use parameter e to switch/case
+
+				switch (e.index) {
+					case 0:
+						Titanium.API.info('Clicked button 0 (YES)');
+						submitReq.send(params);
+						break;
+
+					//This will never be reached, if you specified cancel for index 1
+					case 1:
+						Titanium.API.info('Clicked button 1 (NO)');
+						break;
+
+					default:
+						break;
+				}
+			});
+		}
+	});
+
+	var profileReq = Titanium.Network.createHTTPClient();
+
+	profileReq.onload = function() {
+		//Parse JSON file
+		var profileJSON = JSON.parse(this.responseText);
+		//Use values to generate progress bar and labels for current level and recent activities
+		userPoints = profileJSON[0].points;
+		progress.width = 180 * userPoints / 400;
+		userLevel = 'Current Level: ';
+		userLevel = userLevel + profileJSON[0].level;
+		var activity1string = '';
+		activity1string = activity1string + profileJSON[0].acts[0].name + ' for ' + profileJSON[0].acts[0].newpoints + ' points on ' + profileJSON[0].acts[0].month + '/' + profileJSON[0].acts[0].day + '/' + profileJSON[0].acts[0].year;
+		var activity2string = '';
+		activity2string = activity2string + profileJSON[0].acts[1].name + ' for ' + profileJSON[0].acts[1].newpoints + ' points on ' + profileJSON[0].acts[1].month + '/' + profileJSON[0].acts[1].day + '/' + profileJSON[0].acts[1].year;
+		activity1.setText(activity1string);
+		activity2.setText(activity2string);
+		var activity1string = '';
+		activity1string = activity1string + profileJSON[0].acts[2].name + ' for ' + profileJSON[0].acts[2].newpoints + ' points on ' + profileJSON[0].acts[2].month + '/' + profileJSON[0].acts[2].day + '/' + profileJSON[0].acts[2].year;
+		var activity2string = '';
+		activity2string = activity2string + profileJSON[0].acts[3].name + ' for ' + profileJSON[0].acts[3].newpoints + ' points on ' + profileJSON[0].acts[3].month + '/' + profileJSON[0].acts[3].day + '/' + profileJSON[0].acts[3].year;
+		activity3.setText(activity1string);
+		activity4.setText(activity2string);
+		levelLabel.setText(userLevel);
+
+	};
+
+	function profileUpdate() {
+		profileReq.open("POST", "http://owlympics.ecg.rice.edu:81/mobile/profile");
+		var params = {
+			uuid : Titanium.Platform.id,
+		};
+		profileReq.send(params);
+	}
+
+
+	refresh.addEventListener('click', function(e) {
+		profileUpdate();
+	});
+
+	var deauthReq = Titanium.Network.createHTTPClient();
+
+	deauthReq.onload = function() {
+		if (this.responseText == 'Deauthorization succeeded') {
+			alert("Phone successfully deauthorized.");
+			Ti.App.Properties.removeProperty('loggedBefore');
+			win2.open();
+			homeWin.close();
+		} else {
+			alert(this.responseText);
+		}
+	};
+
+	deauth.addEventListener('click', function(e) {
+		deauthReq.open("POST", "http://owlympics.ecg.rice.edu:81/mobile/detach");
+		var params = {
+			uuid : Titanium.Platform.id
+		};
+		deauthReq.send(params);
+	});
+
+	profileView.add(deauth);
+
 	var registerReq = Titanium.Network.createHTTPClient();
 
 	registerReq.onload = function() {
@@ -964,6 +911,7 @@ Titanium.UI.setBackgroundColor('#000');
 			homeWin.open();
 			scrollable.scrollToView(whatView);
 			win2.close();
+			profileUpdate();
 			if (Titanium.Platform.name == 'android') {
 				// Android stuff
 				Ti.UI.Android.hideSoftKeyboard();
@@ -992,6 +940,7 @@ Titanium.UI.setBackgroundColor('#000');
 	if (Ti.App.Properties.hasProperty('loggedBefore')) {
 		homeWin.open();
 		scrollable.scrollToView(whatView);
+		profileUpdate();
 
 		if (Titanium.Platform.name == 'android') {
 			// Android stuff
