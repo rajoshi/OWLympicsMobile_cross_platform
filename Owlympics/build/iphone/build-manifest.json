@@ -1,0 +1,23 @@
+{
+	"target": "simulator",
+	"deployType": "development",
+	"deviceFamily": "universal",
+	"iosSdkPath": "/Library/Application Support/Titanium/mobilesdk/osx/3.2.1.GA/iphone",
+	"tiCoreHash": "77157e1ffaec640cf559356a147b6a4c",
+	"modulesHash": "7fb655db1d51a26b74a2778ab4a02a6b",
+	"modulesNativeHash": "d41d8cd98f00b204e9800998ecf8427e",
+	"gitHash": "991027b",
+	"name": "Owlympics",
+	"id": "com.owlympics.ecg.rice.edu",
+	"analytics": true,
+	"publisher": "Rajoshi Biswas",
+	"url": "http://www.rice.edu",
+	"version": "1.0",
+	"description": "Version 1.2 for OWLympics Mobile application.",
+	"copyright": "2014 by Rajoshi Biswas",
+	"guid": "502db958-dc63-4c33-87c2-88a82032acde",
+	"skipJSMinification": true,
+	"forceCopy": false,
+	"forceCopyAll": false,
+	"encryptJS": false
+}
