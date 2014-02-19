@@ -71,6 +71,8 @@ Titanium.UI.setBackgroundColor('#000');
 	var scrollable = Titanium.UI.createScrollableView({
 		views : [profileView, whatView, whenView],
 		showPagingControl : true,
+		showVerticalScrollIndicator : true,
+		showHorizontalScrollIndicator : false
 	});
 	homeWin.add(scrollable);
 
@@ -528,6 +530,17 @@ Titanium.UI.setBackgroundColor('#000');
 	});
 	track.add(progress);
 	profileView.add(track);
+	var pointLabel = Ti.UI.createLabel({
+		color : 'white',
+		font : {
+			fontSize : 16
+		},
+		text : 'Points Earned:',
+		top : '18%',
+		left : '50%',
+		width : Ti.UI.SIZE,
+		height : Ti.UI.SIZE
+	});
 
 	/* Set up profile view */
 
@@ -536,6 +549,7 @@ Titanium.UI.setBackgroundColor('#000');
 	profileView.add(activity3);
 	profileView.add(activity4);
 	profileView.add(levelLabel);
+	profileView.add(pointLabel);
 
 	var recentLabel = Ti.UI.createLabel({
 		color : 'white',
@@ -843,6 +857,7 @@ Titanium.UI.setBackgroundColor('#000');
 	var profileReq = Titanium.Network.createHTTPClient();
 
 	profileReq.onload = function() {
+		// alert(this.responseText);
 		//Parse JSON file
 		var profileJSON = JSON.parse(this.responseText);
 		//Use values to generate progress bar and labels for current level and recent activities
@@ -863,6 +878,8 @@ Titanium.UI.setBackgroundColor('#000');
 		activity3.setText(activity1string);
 		activity4.setText(activity2string);
 		levelLabel.setText(userLevel);
+		point = 'Points Earned : ' + userPoints;
+		pointLabel.setText(point);
 
 	};
 
@@ -874,6 +891,9 @@ Titanium.UI.setBackgroundColor('#000');
 		profileReq.send(params);
 	}
 
+	if (Ti.App.Properties.hasProperty('loggedBefore')) {
+		profileUpdate();
+	};
 
 	refresh.addEventListener('click', function(e) {
 		profileUpdate();
@@ -940,7 +960,6 @@ Titanium.UI.setBackgroundColor('#000');
 	if (Ti.App.Properties.hasProperty('loggedBefore')) {
 		homeWin.open();
 		scrollable.scrollToView(whatView);
-		profileUpdate();
 
 		if (Titanium.Platform.name == 'android') {
 			// Android stuff
