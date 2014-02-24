@@ -44,21 +44,36 @@ Titanium.UI.setBackgroundColor('#000');
 		top : 0,
 		left : 0,
 	});
-	var whenView = Ti.UI.createView({
-		// backgroundImage: './backgroundblue.jpeg',
-		height : "100%",
-		width : "100%",
-		top : 0,
-		left : 0,
-	});
+	var height1 = Ti.Platform.displayCaps.platformHeight, width1 = Ti.Platform.displayCaps.platformWidth;
+
+	if (Ti.Platform.osname === 'android' && (width > 899 || height > 999)) {
+		height1 = height1 / 2;
+		width1 = width1 / 2;
+	}
 
 	var whatView = Ti.UI.createView({
-		// backgroundImage: './backgroundblue.jpeg',
-		height : "100%",
-		width : "100%",
-		top : 0,
-		left : 0,
+	// backgroundImage: './backgroundblue.jpeg',
+	height : height1 * 2.5,
+	width : width1,
+	top : 0,
+	left : 0,
 	});
+	var vertiscroll = Ti.UI.createScrollView({
+		contentWidth : 'auto',
+		contentHeight : height1*2.5,
+		showVerticalScrollIndicator : true,
+		showHorizontalScrollIndicator : false,
+		height : '100%',
+		width : '100%'
+	});
+	vertiscroll.add(whatView);
+	// var whenView = Ti.UI.createView({
+	// // backgroundImage: './backgroundblue.jpeg',
+	// height : "100%",
+	// width : "100%",
+	// top : 0,
+	// left : 0,
+	// });
 
 	// var timeView = Ti.UI.createView({
 	// backgroundColor : '#000000',
@@ -69,242 +84,12 @@ Titanium.UI.setBackgroundColor('#000');
 	// });
 
 	var scrollable = Titanium.UI.createScrollableView({
-		views : [profileView, whatView, whenView],
+		views : [profileView, vertiscroll],
 		showPagingControl : true,
-		showVerticalScrollIndicator : true,
-		showHorizontalScrollIndicator : false
 	});
 	homeWin.add(scrollable);
 
 	/*buttons*/
-
-	var lowLabel = Ti.UI.createLabel({
-		text : 'LOW',
-		color : 'white',
-		font : {
-			fontSize : 16,
-		},
-		top : '10%',
-		left : '22%',
-	});
-
-	whenView.add(lowLabel);
-
-	var medLabel = Ti.UI.createLabel({
-		text : 'MED',
-		color : 'white',
-		font : {
-			fontSize : 16,
-		},
-		top : '10%',
-		left : '47%',
-	});
-
-	whenView.add(medLabel);
-
-	var highLabel = Ti.UI.createLabel({
-		text : 'HIGH',
-		color : 'white',
-		font : {
-			fontSize : 16,
-		},
-		top : '10%',
-		left : '72%',
-	});
-
-	whenView.add(highLabel);
-
-	var lowtxt = Ti.UI.createTextField({
-		borderStyle : Ti.UI.INPUT_BORDERSTYLE_ROUNDED,
-		color : 'black',
-		font : {
-			fontSize : 16,
-		},
-		top : '15%',
-		left : '20%',
-		width : 45,
-		height : 45,
-		backgroundColor : 'white',
-		keyboardType : Titanium.UI.KEYBOARD_NUMBER_PAD,
-	});
-	whenView.add(lowtxt);
-
-	var medtxt = Ti.UI.createTextField({
-		borderStyle : Ti.UI.INPUT_BORDERSTYLE_ROUNDED,
-		color : 'black',
-		font : {
-			fontSize : 16,
-		},
-		top : '15%',
-		left : '45%',
-		width : 45,
-		height : 45,
-		backgroundColor : 'white',
-		keyboardType : Titanium.UI.KEYBOARD_NUMBER_PAD,
-	});
-
-	whenView.add(medtxt);
-
-	var hightxt = Ti.UI.createTextField({
-		borderStyle : Ti.UI.INPUT_BORDERSTYLE_ROUNDED,
-		color : 'black',
-		font : {
-			fontSize : 16,
-		},
-		top : '15%',
-		left : '70%',
-		width : 45,
-		height : 45,
-		backgroundColor : 'white',
-		keyboardType : Titanium.UI.KEYBOARD_NUMBER_PAD,
-	});
-	whenView.add(hightxt);
-
-	var socialLabel = Ti.UI.createLabel({
-		text : 'Number of participants',
-		color : 'white',
-		font : {
-			fontSize : 16,
-		},
-		top : '30%',
-		left : '15%',
-	});
-	whenView.add(socialLabel);
-	var socialtxt = Ti.UI.createTextField({
-		borderStyle : Ti.UI.INPUT_BORDERSTYLE_ROUNDED,
-		color : 'black',
-		font : {
-			fontSize : 16,
-		},
-		top : '30%',
-		left : '70%',
-		width : 45,
-		height : 45,
-		backgroundColor : 'white',
-		keyboardType : Titanium.UI.KEYBOARD_NUMBER_PAD,
-		text : '0',
-	});
-	whenView.add(socialtxt);
-	var pickdate = Ti.UI.createPicker({
-		type : Ti.UI.PICKER_TYPE_DATE,
-		maxDate : new Date,
-		minDate : new Date(2013, 01, 01),
-		top : '45%',
-		left : '10%',
-		width : '80%',
-		height : '50%',
-	});
-
-	whenView.add(pickdate);
-
-	var activitybtn1 = Ti.UI.createButton({
-		title : 'Run',
-		color : 'white',
-		font : {
-			fontSize : 16,
-		},
-		top : '30%',
-		left : '15%',
-		width : 70,
-		height : 70,
-		backgroundImage : './images/blackcircle.png',
-		backgroundSelectedImage : './images/graycircle.png',
-	});
-
-	whatView.add(activitybtn1);
-	var activitybtn2 = Ti.UI.createButton({
-		title : 'Walk',
-		color : 'white',
-		font : {
-			fontSize : 16,
-		},
-		top : '30%',
-		left : '41%',
-		width : 70,
-		height : 70,
-		backgroundImage : './images/blackcircle.png',
-		backgroundSelectedImage : './images/graycircle.png',
-	});
-
-	whatView.add(activitybtn2);
-
-	var activitybtn3 = Ti.UI.createButton({
-		title : 'Swim',
-		color : 'white',
-		font : {
-			fontSize : 16,
-		},
-		top : '30%',
-		left : '67%',
-		width : 70,
-		height : 70,
-		backgroundImage : './images/blackcircle.png',
-		backgroundSelectedImage : './images/graycircle.png',
-	});
-
-	whatView.add(activitybtn3);
-
-	var activitybtn4 = Ti.UI.createButton({
-		title : 'Cycle',
-		color : 'white',
-		font : {
-			fontSize : 16,
-		},
-		top : '45%',
-		left : '25%',
-		width : 70,
-		height : 70,
-		backgroundImage : './images/blackcircle.png',
-		backgroundSelectedImage : './images/graycircle.png',
-	});
-
-	whatView.add(activitybtn4);
-
-	var activitybtn5 = Ti.UI.createButton({
-		title : 'Weights',
-		color : 'white',
-		font : {
-			fontSize : 16,
-		},
-		top : '45%',
-		left : '55%',
-		width : 70,
-		height : 70,
-		backgroundImage : './images/blackcircle.png',
-		backgroundSelectedImage : './images/graycircle.png',
-	});
-
-	whatView.add(activitybtn5);
-
-	var activitybtn6 = Ti.UI.createButton({
-		title : 'Enter',
-		color : 'white',
-		font : {
-			fontSize : 16,
-		},
-		top : '65%',
-		left : '67%',
-		width : 70,
-		height : 70,
-		backgroundImage : './images/blackcircle.png',
-		backgroundSelectedImage : './images/graycircle.png',
-	});
-	whatView.add(activitybtn6);
-
-	var othertxt = Ti.UI.createTextField({
-		borderStyle : Ti.UI.INPUT_BORDERSTYLE_ROUNDED,
-		color : 'black',
-		font : {
-			fontSize : 16,
-		},
-		top : '68%',
-		left : '15%',
-		width : 160,
-		height : 50,
-		backgroundColor : 'white',
-	});
-
-	whatView.add(othertxt);
 	var ratingLabel = Ti.UI.createLabel({
 		text : 'How active did you feel?',
 		color : 'white',
@@ -316,12 +101,14 @@ Titanium.UI.setBackgroundColor('#000');
 
 	});
 	whatView.add(ratingLabel);
+
+	var exrate, haprate;
 	var rstar1 = Ti.UI.createButton({
-		top : '15%',
-		left : '10%',
+		top : '12%',
+		left : '3%',
 		color : 'white',
-		width : 30,
-		height : 30,
+		width : 55,
+		height : 55,
 		backgroundImage : './images/goldstar.png',
 	});
 
@@ -334,11 +121,11 @@ Titanium.UI.setBackgroundColor('#000');
 		exrate = 1;
 	});
 	var rstar2 = Ti.UI.createButton({
-		top : '15%',
-		left : '25%',
+		top : '12%',
+		left : '22%',
 		color : 'white',
-		width : 30,
-		height : 30,
+		width : 55,
+		height : 55,
 		backgroundImage : './images/goldstar.png',
 	});
 	rstar2.addEventListener('click', function(e) {
@@ -350,11 +137,11 @@ Titanium.UI.setBackgroundColor('#000');
 		exrate = 2;
 	});
 	var rstar3 = Ti.UI.createButton({
-		top : '15%',
-		left : '40%',
+		top : '12%',
+		left : '41%',
 		color : 'white',
-		width : 30,
-		height : 30,
+		width : 55,
+		height : 55,
 		backgroundImage : './images/goldstar.png',
 	});
 	rstar3.addEventListener('click', function(e) {
@@ -366,11 +153,11 @@ Titanium.UI.setBackgroundColor('#000');
 		exrate = 3;
 	});
 	var rstar4 = Ti.UI.createButton({
-		top : '15%',
-		left : '55%',
+		top : '12%',
+		left : '60%',
 		color : 'white',
-		width : 30,
-		height : 30,
+		width : 55,
+		height : 55,
 		backgroundImage : './images/graystar.png',
 	});
 	rstar4.addEventListener('click', function(e) {
@@ -382,11 +169,11 @@ Titanium.UI.setBackgroundColor('#000');
 		exrate = 4;
 	});
 	var rstar5 = Ti.UI.createButton({
-		top : '15%',
-		left : '70%',
+		top : '12%',
+		left : '79%',
 		color : 'white',
-		width : 30,
-		height : 30,
+		width : 55,
+		height : 55,
 		backgroundImage : './images/graystar.png',
 	});
 	rstar5.addEventListener('click', function(e) {
@@ -402,6 +189,460 @@ Titanium.UI.setBackgroundColor('#000');
 	whatView.add(rstar3);
 	whatView.add(rstar4);
 	whatView.add(rstar5);
+
+	var selectlabel = Ti.UI.createLabel({
+		text : 'Which exercise did you do?',
+		color : 'white',
+		font : {
+			fontSize : 16,
+		},
+		top : '18%',
+		left : '10%',
+
+	});
+	whatView.add(selectlabel);
+
+	var activitybtn1 = Ti.UI.createButton({
+		title : 'Run',
+		color : 'white',
+		font : {
+			fontSize : 16,
+		},
+		top : '20%',
+		left : '10%',
+		width : 70,
+		height : 70,
+		backgroundImage : './images/blackcircle.png',
+		backgroundSelectedImage : './images/graycircle.png',
+	});
+
+	whatView.add(activitybtn1);
+	var activitybtn2 = Ti.UI.createButton({
+		title : 'Walk',
+		color : 'white',
+		font : {
+			fontSize : 16,
+		},
+		top : '20%',
+		left : '36%',
+		width : 70,
+		height : 70,
+		backgroundImage : './images/blackcircle.png',
+		backgroundSelectedImage : './images/graycircle.png',
+	});
+
+	whatView.add(activitybtn2);
+
+	var activitybtn3 = Ti.UI.createButton({
+		title : 'Swim',
+		color : 'white',
+		font : {
+			fontSize : 16,
+		},
+		top : '20%',
+		left : '62%',
+		width : 70,
+		height : 70,
+		backgroundImage : './images/blackcircle.png',
+		backgroundSelectedImage : './images/graycircle.png',
+	});
+
+	whatView.add(activitybtn3);
+
+	var activitybtn4 = Ti.UI.createButton({
+		title : 'Cycle',
+		color : 'white',
+		font : {
+			fontSize : 16,
+		},
+		top : '26%',
+		left : '20%',
+		width : 70,
+		height : 70,
+		backgroundImage : './images/blackcircle.png',
+		backgroundSelectedImage : './images/graycircle.png',
+	});
+
+	whatView.add(activitybtn4);
+
+	var activitybtn5 = Ti.UI.createButton({
+		title : 'Weights',
+		color : 'white',
+		font : {
+			fontSize : 16,
+		},
+		top : '26%',
+		left : '52%',
+		width : 70,
+		height : 70,
+		backgroundImage : './images/blackcircle.png',
+		backgroundSelectedImage : './images/graycircle.png',
+	});
+
+	whatView.add(activitybtn5);
+
+	var activitybtn6 = Ti.UI.createButton({
+		title : 'Enter',
+		color : 'white',
+		font : {
+			fontSize : 16,
+		},
+		top : '32%',
+		left : '67%',
+		width : 70,
+		height : 70,
+		backgroundImage : './images/blackcircle.png',
+		backgroundSelectedImage : './images/graycircle.png',
+	});
+	whatView.add(activitybtn6);
+
+	var othertxt = Ti.UI.createTextField({
+		borderStyle : Ti.UI.INPUT_BORDERSTYLE_ROUNDED,
+		color : 'black',
+		font : {
+			fontSize : 16,
+		},
+		top : '33%',
+		left : '15%',
+		width : 160,
+		height : 50,
+		backgroundColor : 'white',
+	});
+
+	whatView.add(othertxt);
+
+	var lowLabel = Ti.UI.createLabel({
+		text : 'LOW',
+		color : 'white',
+		font : {
+			fontSize : 16,
+		},
+		top : '39%',
+		left : '20%',
+	});
+
+	whatView.add(lowLabel);
+
+	var medLabel = Ti.UI.createLabel({
+		text : 'MED',
+		color : 'white',
+		font : {
+			fontSize : 16,
+		},
+		top : '39%',
+		left : '45%',
+	});
+
+	whatView.add(medLabel);
+
+	var highLabel = Ti.UI.createLabel({
+		text : 'HIGH',
+		color : 'white',
+		font : {
+			fontSize : 16,
+		},
+		top : '39%',
+		left : '70%',
+	});
+
+	whatView.add(highLabel);
+	var lowtxt = Ti.UI.createTextField({
+		borderStyle : Ti.UI.INPUT_BORDERSTYLE_ROUNDED,
+		color : 'black',
+		font : {
+			fontSize : 16,
+		},
+		top : '41%',
+		left : '20%',
+		width : 45,
+		height : 45,
+		backgroundColor : 'white',
+		keyboardType : Titanium.UI.KEYBOARD_NUMBER_PAD,
+	});
+	whatView.add(lowtxt);
+
+	var medtxt = Ti.UI.createTextField({
+		borderStyle : Ti.UI.INPUT_BORDERSTYLE_ROUNDED,
+		color : 'black',
+		font : {
+			fontSize : 16,
+		},
+		top : '41%',
+		left : '45%',
+		width : 45,
+		height : 45,
+		backgroundColor : 'white',
+		keyboardType : Titanium.UI.KEYBOARD_NUMBER_PAD,
+	});
+
+	whatView.add(medtxt);
+
+	var hightxt = Ti.UI.createTextField({
+		borderStyle : Ti.UI.INPUT_BORDERSTYLE_ROUNDED,
+		color : 'black',
+		font : {
+			fontSize : 16,
+		},
+		top : '41%',
+		left : '70%',
+		width : 45,
+		height : 45,
+		backgroundColor : 'white',
+		keyboardType : Titanium.UI.KEYBOARD_NUMBER_PAD,
+	});
+	whatView.add(hightxt);
+
+	// var mycol = new Array();
+	// var i = 0;
+	// for ( i = 0; i < 50; i++) {
+	// var a = i * 5;
+	// mycol[i] = Titanium.UI.createPickerColumn({
+	// title : a.toString()
+	// });
+	// }
+	//
+	// var lowpick = Titanium.UI.createPicker({
+	// top : '35%',
+	// left : '15%',
+	// width : '50%',
+	// height : 60,
+	// useSpinner : true,
+	// visibleItems : 7,
+	// selectionIndicator : true,
+	// type : Titanium.UI.PICKER_TYPE_PLAIN,
+	// softKeyboardOnFocus : true,
+	//
+	// });
+	// var medpick = Titanium.UI.createPicker({
+	// top : '42%',
+	// left : '15%',
+	// width : '50%',
+	// height : 60,
+	// useSpinner : true,
+	// visibleItems : 7,
+	// selectionIndicator : true,
+	// type : Titanium.UI.PICKER_TYPE_PLAIN,
+	//
+	// });
+	//
+	// var highpick = Titanium.UI.createPicker({
+	// top : '50%',
+	// left : '15%',
+	// width : '50%',
+	// height : 60,
+	// useSpinner : true,
+	// visibleItems : 7,
+	// selectionIndicator : true,
+	// type : Titanium.UI.PICKER_TYPE_PLAIN,
+	//
+	// });
+	// lowpick.add(mycol);
+	// medpick.add(mycol);
+	// highpick.add(mycol);
+	//
+	// whatView.add(lowtxt);
+	// whatView.add(medtxt);
+	// whatView.add(hightxt);
+
+	var socialLabel = Ti.UI.createLabel({
+		text : 'Number of participants',
+		color : 'white',
+		font : {
+			fontSize : 16,
+		},
+		top : '47%',
+		left : '15%',
+	});
+	whatView.add(socialLabel);
+	var socialtxt = Ti.UI.createTextField({
+		borderStyle : Ti.UI.INPUT_BORDERSTYLE_ROUNDED,
+		color : 'black',
+		font : {
+			fontSize : 16,
+		},
+		top : '46%',
+		left : '70%',
+		width : 45,
+		height : 45,
+		backgroundColor : 'white',
+		keyboardType : Titanium.UI.KEYBOARD_NUMBER_PAD,
+		text : '0',
+	});
+	whatView.add(socialtxt);
+
+	var todaybtn = Ti.UI.createButton({
+		title : 'Today',
+		color : '#0B1440',
+		font : {
+			fontSize : 16,
+			fontFamily : 'Helvetica Neue'
+		},
+		top : '52%',
+		left : '35%',
+		width : 110,
+		height : 55,
+		backgroundImage : './images/grey.png',
+		backgroundSelectedImage : './images/white.png',
+	});
+
+	whatView.add(todaybtn);
+
+	var yestbtn = Ti.UI.createButton({
+		title : 'Yesterday',
+		color : '#0B1440',
+		top : '56%',
+		left : '35%',
+		width : 110,
+		height : 55,
+		backgroundImage : './images/grey.png',
+		backgroundSelectedImage : './images/white.png',
+	});
+
+	whatView.add(yestbtn);
+
+	var choosebtn = Ti.UI.createButton({
+		title : 'Choose',
+		color : '#0B1440',
+		font : {
+			fontSize : 16,
+			fontFamily : 'Helvetica Neue'
+		},
+		top : '60%',
+		left : '35%',
+		width : 110,
+		height : 55,
+		backgroundImage : './images/grey.png',
+		backgroundSelectedImage : './images/white.png',
+	});
+
+	whatView.add(choosebtn);
+	var date1 = new Date;
+
+	var pickdate = Ti.UI.createPicker({
+		type : Ti.UI.PICKER_TYPE_DATE,
+		maxDate : date1,
+		minDate : new Date(date1 - 1000 * 60 * 60 * 24 * 7),
+		top : '65%',
+		left : '10%',
+		width : '80%',
+		height : '50%',
+	});
+
+	whatView.add(pickdate);
+	var ratingLabel = Ti.UI.createLabel({
+		text : 'How happy did you feel?',
+		color : 'white',
+		font : {
+			fontSize : 16,
+		},
+		top : '83%',
+		left : '10%',
+
+	});
+	whatView.add(ratingLabel);
+	var hstar1 = Ti.UI.createButton({
+		top : '85%',
+		left : '3%',
+		color : 'white',
+		width : 55,
+		height : 55,
+		backgroundImage : './images/goldstar.png',
+	});
+
+	hstar1.addEventListener('click', function(e) {
+		hstar1.backgroundImage = './images/goldstar.png';
+		hstar2.backgroundImage = './images/graystar.png';
+		hstar3.backgroundImage = './images/graystar.png';
+		hstar4.backgroundImage = './images/graystar.png';
+		hstar5.backgroundImage = './images/graystar.png';
+		haprate = 1;
+	});
+	var hstar2 = Ti.UI.createButton({
+		top : '85%',
+		left : '22%',
+		color : 'white',
+		width : 55,
+		height : 55,
+		backgroundImage : './images/goldstar.png',
+	});
+	hstar2.addEventListener('click', function(e) {
+		hstar1.backgroundImage = './images/goldstar.png';
+		hstar2.backgroundImage = './images/goldstar.png';
+		hstar3.backgroundImage = './images/graystar.png';
+		hstar4.backgroundImage = './images/graystar.png';
+		hstar5.backgroundImage = './images/graystar.png';
+		haprate = 2;
+	});
+	var hstar3 = Ti.UI.createButton({
+		top : '85%',
+		left : '41%',
+		color : 'white',
+		width : 55,
+		height : 55,
+		backgroundImage : './images/goldstar.png',
+	});
+	hstar3.addEventListener('click', function(e) {
+		hstar1.backgroundImage = './images/goldstar.png';
+		hstar2.backgroundImage = './images/goldstar.png';
+		hstar3.backgroundImage = './images/goldstar.png';
+		hstar4.backgroundImage = './images/graystar.png';
+		hstar5.backgroundImage = './images/graystar.png';
+		haprate = 3;
+	});
+	var hstar4 = Ti.UI.createButton({
+		top : '85%',
+		left : '60%',
+		color : 'white',
+		width : 55,
+		height : 55,
+		backgroundImage : './images/graystar.png',
+	});
+	hstar4.addEventListener('click', function(e) {
+		hstar1.backgroundImage = './images/goldstar.png';
+		hstar2.backgroundImage = './images/goldstar.png';
+		hstar3.backgroundImage = './images/goldstar.png';
+		hstar4.backgroundImage = './images/goldstar.png';
+		hstar5.backgroundImage = './images/graystar.png';
+		haprate = 4;
+	});
+	var hstar5 = Ti.UI.createButton({
+		top : '85%',
+		left : '79%',
+		color : 'white',
+		width : 55,
+		height : 55,
+		backgroundImage : './images/graystar.png',
+	});
+	hstar5.addEventListener('click', function(e) {
+		hstar1.backgroundImage = './images/goldstar.png';
+		hstar2.backgroundImage = './images/goldstar.png';
+		hstar3.backgroundImage = './images/goldstar.png';
+		hstar4.backgroundImage = './images/goldstar.png';
+		hstar5.backgroundImage = './images/goldstar.png';
+		haprate = 5;
+	});
+	whatView.add(hstar1);
+	whatView.add(hstar2);
+	whatView.add(hstar3);
+	whatView.add(hstar4);
+	whatView.add(hstar5);
+
+	var submit = Ti.UI.createButton({
+		top : '92%',
+		left : '70%',
+		color : 'white',
+		font : {
+			fontSize : 16,
+		},
+		width : 70,
+		height : 70,
+		title : 'Submit',
+		backgroundImage : './images/redcircle.png',
+		backgroundSelectedImage : './images/graycircle.png',
+
+	});
+
+	whatView.add(submit);
 
 	var email = Ti.UI.createTextField({
 		height : '40dp',
@@ -423,22 +664,6 @@ Titanium.UI.setBackgroundColor('#000');
 		passwordMask : 'True'
 	});
 
-	var submit = Ti.UI.createButton({
-		top : '85%',
-		left : '70%',
-		color : 'white',
-		font : {
-			fontSize : 16,
-		},
-		width : 70,
-		height : 70,
-		title : 'Submit',
-		backgroundImage : './images/redcircle.png',
-		backgroundSelectedImage : './images/graycircle.png',
-
-	});
-
-	whenView.add(submit);
 	//profilewin
 
 	//Get information for profile
@@ -568,7 +793,10 @@ Titanium.UI.setBackgroundColor('#000');
 	var refresh = Ti.UI.createButton({
 		top : '70%',
 		left : '20%',
+		color : 'Blue',
+		width : 100,
 		title : 'Refresh',
+		backgroundImage : './images/grey.png',
 	});
 	profileView.add(refresh);
 
@@ -576,6 +804,7 @@ Titanium.UI.setBackgroundColor('#000');
 		top : '70%',
 		left : '45%',
 		title : 'Deauthorize',
+		backgroundImage : './images/grey.png',
 	});
 
 	/* Set up labels */
@@ -627,10 +856,12 @@ Titanium.UI.setBackgroundColor('#000');
 	//
 	var day, mon, year;
 
-	var useractivity;
-	var date1;
+	// var lowtxt, medtxt, hightxt;
 
-	var exrate, haprate;
+	var useractivity;
+
+	var dayindex;
+
 	function initialise() {
 		socialtxt.value = '0';
 		lowtxt.value = '0';
@@ -652,9 +883,27 @@ Titanium.UI.setBackgroundColor('#000');
 		rstar4.backgroundImage = './images/graystar.png';
 		rstar5.backgroundImage = './images/graystar.png';
 
+		hstar1.backgroundImage = './images/goldstar.png';
+		hstar2.backgroundImage = './images/goldstar.png';
+		hstar3.backgroundImage = './images/goldstar.png';
+		hstar4.backgroundImage = './images/graystar.png';
+		hstar5.backgroundImage = './images/graystar.png';
 	}
 
 	initialise();
+	//
+	// lowpick.addEventListener('change', function(e) {
+	// lowpicked = parseInt(e.row.title);
+	// });
+	//
+	// medpick.addEventListener('change', function(e) {
+	// medpicked = parseInt(e.row.title);
+	// });
+	//
+	// highpick.addEventListener('change', function(e) {
+	// highpicked = parseInt(e.row.title);
+	// ;
+	// });
 
 	socialtxt.addEventListener('focus', function(e) {
 		if (Titanium.Platform.name == 'android') {
@@ -666,10 +915,9 @@ Titanium.UI.setBackgroundColor('#000');
 	socialtxt.addEventListener('change', function(e) {
 		social = socialtxt.value;
 	});
-	whenView.addEventListener('onload', function(e) {
+	whatView.addEventListener('onload', function(e) {
 		socialtxt.value = social;
 	});
-
 	pickdate.addEventListener('change', function(e) {
 		day = e.value.getDate();
 		mon = e.value.getMonth() + 1;
@@ -677,29 +925,79 @@ Titanium.UI.setBackgroundColor('#000');
 		year = e.value.getFullYear();
 	});
 
+	todaybtn.addEventListener('click', function(e) {
+		// todaybtn.backgroundImage = './images/red.jpg';
+		// yestbtn.backgroundImage = './images/CTS-green.png';
+		// choosebtn.backgroundImage = './images/CTS-green.png';
+		dayindex = 1;
+	});
+
+	yestbtn.addEventListener('click', function(e) {
+		// todaybtn.backgroundImage = './images/CTS-green.png';
+		// yestbtn.backgroundImage = './images/red.jpg';
+		// choosebtn.backgroundImage = './images/CTS-green.png';
+		dayindex = 0;
+	});
+	choosebtn.addEventListener('click', function(e) {
+		// todaybtn.backgroundImage = './images/CTS-green.png';
+		// yestbtn.backgroundImage = './images/CTS-green.png';
+		// choosebtn.backgroundImage = './images/red.jpg';
+
+	});
+
 	activitybtn1.addEventListener('click', function(e) {
 		useractivity = "Running";
-		scrollable.scrollToView(whenView);
+		activitybtn1.backgroundImage = './images/graycircle.png';
+		activitybtn2.backgroundImage = './images/blackcircle.png';
+		activitybtn3.backgroundImage = './images/blackcircle.png';
+		activitybtn4.backgroundImage = './images/blackcircle.png';
+		activitybtn5.backgroundImage = './images/blackcircle.png';
+		activitybtn6.backgroundImage = './images/blackcircle.png';
+
 	});
 
 	activitybtn2.addEventListener('click', function(e) {
 		useractivity = "Walking";
-		scrollable.scrollToView(whenView);
+		activitybtn1.backgroundImage = './images/blackcircle.png';
+		activitybtn2.backgroundImage = './images/graycircle.png';
+		activitybtn3.backgroundImage = './images/blackcircle.png';
+		activitybtn4.backgroundImage = './images/blackcircle.png';
+		activitybtn5.backgroundImage = './images/blackcircle.png';
+		activitybtn6.backgroundImage = './images/blackcircle.png';
+
 	});
 
 	activitybtn3.addEventListener('click', function(e) {
 		useractivity = "Swimming";
-		scrollable.scrollToView(whenView);
+		activitybtn1.backgroundImage = './images/blackcircle.png';
+		activitybtn2.backgroundImage = './images/blackcircle.png';
+		activitybtn3.backgroundImage = './images/graycircle.png';
+		activitybtn4.backgroundImage = './images/blackcircle.png';
+		activitybtn5.backgroundImage = './images/blackcircle.png';
+		activitybtn6.backgroundImage = './images/blackcircle.png';
+
 	});
 
 	activitybtn4.addEventListener('click', function(e) {
 		useractivity = "Cycling";
-		scrollable.scrollToView(whenView);
+		activitybtn1.backgroundImage = './images/blackcircle.png';
+		activitybtn2.backgroundImage = './images/blackcircle.png';
+		activitybtn3.backgroundImage = './images/blackcircle.png';
+		activitybtn4.backgroundImage = './images/graycircle.png';
+		activitybtn5.backgroundImage = './images/blackcircle.png';
+		activitybtn6.backgroundImage = './images/blackcircle.png';
+
 	});
 
 	activitybtn5.addEventListener('click', function(e) {
 		useractivity = "Weights";
-		scrollable.scrollToView(whenView);
+		activitybtn1.backgroundImage = './images/blackcircle.png';
+		activitybtn2.backgroundImage = './images/blackcircle.png';
+		activitybtn3.backgroundImage = './images/blackcircle.png';
+		activitybtn4.backgroundImage = './images/blackcircle.png';
+		activitybtn5.backgroundImage = './images/graycircle.png';
+		activitybtn6.backgroundImage = './images/blackcircle.png';
+
 	});
 
 	activitybtn6.addEventListener('click', function(e) {
@@ -708,16 +1006,14 @@ Titanium.UI.setBackgroundColor('#000');
 		} else {
 			useractivity = othertxt.value;
 			othertxt.blur();
-			scrollable.scrollToView(whenView);
-		}
-	});
+			activitybtn1.backgroundImage = './images/blackcircle.png';
+			activitybtn2.backgroundImage = './images/blackcircle.png';
+			activitybtn3.backgroundImage = './images/blackcircle.png';
+			activitybtn4.backgroundImage = './images/blackcircle.png';
+			activitybtn5.backgroundImage = './images/blackcircle.png';
+			activitybtn6.backgroundImage = './images/graycircle.png';
 
-	othertxt.addEventListener('return', function(e) {
-		if (Titanium.Platform.name == 'android') {
-			// Android stuff
-			Ti.UI.Android.hideSoftKeyboard();
 		}
-		othertxt.blur();
 	});
 
 	lowtxt.addEventListener('return', function(e) {
@@ -743,6 +1039,15 @@ Titanium.UI.setBackgroundColor('#000');
 		} else
 			hightxt.blur();
 	});
+
+	othertxt.addEventListener('return', function(e) {
+		if (Titanium.Platform.name == 'android') {
+			// Android stuff
+			Ti.UI.Android.hideSoftKeyboard();
+		}
+		othertxt.blur();
+	});
+
 	socialtxt.addEventListener('return', function(e) {
 		if (Titanium.Platform.name == 'android') {
 			// Android stuff
@@ -796,7 +1101,7 @@ Titanium.UI.setBackgroundColor('#000');
 				hightxt.value = '0';
 			var alert1 = Titanium.UI.createAlertDialog({
 				title : 'Submit Data',
-				message : ("Submit the following information? " + "\n" + "Date : " + mon + "-" + day + "-" + year + "\n" + "Activity : " + useractivity + " \nLow Intensity : " + lowtxt.value + " \nMed Intensity : " + medtxt.value + " \nHigh Intensity : " + hightxt.value + "\nNumber of Participants : " + socialtxt.value + "\nExercise rating : " + exrate ),
+				message : ("Submit the following information? " + "\n" + "Date : " + mon + "-" + day + "-" + year + "\n" + "Activity : " + useractivity + " \nLow Intensity : " + lowtxt.value + " \nMed Intensity : " + medtxt.value + " \nHigh Intensity : " + hightxt.value + "\nNumber of Participants : " + socialtxt.value + "\nExercise rating : " + exrate + "\nHapiness rating : " + haprate),
 				buttonNames : ['Yes', 'No'],
 				cancel : 1
 			});
@@ -929,7 +1234,7 @@ Titanium.UI.setBackgroundColor('#000');
 		if (this.responseText == 'Authentication succeeded') {
 			alert("Account successfully registered.");
 			homeWin.open();
-			scrollable.scrollToView(whatView);
+			scrollable.scrollToView(vertiscroll);
 			win2.close();
 			profileUpdate();
 			if (Titanium.Platform.name == 'android') {
@@ -957,9 +1262,9 @@ Titanium.UI.setBackgroundColor('#000');
 		}
 	});
 
-	if (Ti.App.Properties.hasProperty('loggedBefore')) {
+	if (1) {//Ti.App.Properties.hasProperty('loggedBefore')) {
 		homeWin.open();
-		scrollable.scrollToView(whatView);
+		scrollable.scrollToView(vertiscroll);
 
 		if (Titanium.Platform.name == 'android') {
 			// Android stuff
