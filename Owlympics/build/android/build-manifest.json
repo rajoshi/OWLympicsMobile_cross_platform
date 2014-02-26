@@ -2,7 +2,7 @@
 	"target": "device",
 	"deployType": "test",
 	"classname": "Owlympics",
-	"platformPath": "/Library/Application Support/Titanium/mobilesdk/osx/3.2.1.GA/android",
+	"platformPath": "C:\\Users\\Rajoshi\\AppData\\Roaming\\Titanium\\mobilesdk\\win32\\3.2.1.GA\\android",
 	"modulesHash": "7fb655db1d51a26b74a2778ab4a02a6b",
 	"modulesManifestHash": "198126922449188f4794134597c2f117",
 	"modulesNativeHash": "d41d8cd98f00b204e9800998ecf8427e",
@@ -29,5 +29,5 @@
 	"activitiesHash": "d41d8cd98f00b204e9800998ecf8427e",
 	"servicesHash": "d41d8cd98f00b204e9800998ecf8427e",
 	"jssFilesHash": "d41d8cd98f00b204e9800998ecf8427e",
-	"jarLibHash": "55b7646bd0c586e10a0721141c7bac66"
+	"jarLibHash": "8701c30b8dfe6b9c565c52e9ba035022"
 }
