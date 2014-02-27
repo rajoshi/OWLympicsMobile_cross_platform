@@ -215,6 +215,9 @@ scrollable.addEventListener('doubletap', function(){
 		height : 80,
 		backgroundImage : './images/thebutton.png',
 		backgroundSelectedImage : './images/thebuttonselect.png',
+<<<<<<< HEAD
+>>>>>>> 53f6a2b1d6309d757a57392ede5a07666f7a3596
+=======
 >>>>>>> 53f6a2b1d6309d757a57392ede5a07666f7a3596
 	});
 
@@ -237,6 +240,9 @@ scrollable.addEventListener('doubletap', function(){
 		height : 80,
 		backgroundImage : './images/thebutton.png',
 		backgroundSelectedImage : './images/thebuttonselect.png',
+<<<<<<< HEAD
+>>>>>>> 53f6a2b1d6309d757a57392ede5a07666f7a3596
+=======
 >>>>>>> 53f6a2b1d6309d757a57392ede5a07666f7a3596
 	});
 
@@ -260,6 +266,9 @@ scrollable.addEventListener('doubletap', function(){
 		height : 80,
 		backgroundImage : './images/thebutton.png',
 		backgroundSelectedImage : './images/thebuttonselect.png',
+<<<<<<< HEAD
+>>>>>>> 53f6a2b1d6309d757a57392ede5a07666f7a3596
+=======
 >>>>>>> 53f6a2b1d6309d757a57392ede5a07666f7a3596
 	});
 
@@ -283,6 +292,9 @@ scrollable.addEventListener('doubletap', function(){
 		height : 80,
 		backgroundImage : './images/thebutton.png',
 		backgroundSelectedImage : './images/thebuttonselect.png',
+<<<<<<< HEAD
+>>>>>>> 53f6a2b1d6309d757a57392ede5a07666f7a3596
+=======
 >>>>>>> 53f6a2b1d6309d757a57392ede5a07666f7a3596
 	});
 
@@ -306,6 +318,9 @@ scrollable.addEventListener('doubletap', function(){
 		height : 80,
 		backgroundImage : './images/thebutton.png',
 		backgroundSelectedImage : './images/thebuttonselect.png',
+<<<<<<< HEAD
+>>>>>>> 53f6a2b1d6309d757a57392ede5a07666f7a3596
+=======
 >>>>>>> 53f6a2b1d6309d757a57392ede5a07666f7a3596
 	});
 
@@ -329,6 +344,9 @@ scrollable.addEventListener('doubletap', function(){
 		height : 80,
 		backgroundImage : './images/thebutton.png',
 		backgroundSelectedImage : './images/thebuttonselect.png',
+<<<<<<< HEAD
+>>>>>>> 53f6a2b1d6309d757a57392ede5a07666f7a3596
+=======
 >>>>>>> 53f6a2b1d6309d757a57392ede5a07666f7a3596
 	});
 	whatView.add(activitybtn6);
@@ -477,8 +495,13 @@ scrollable.addEventListener('doubletap', function(){
 		width : 110,
 		height : 55,
 <<<<<<< HEAD
+<<<<<<< HEAD
 		backgroundImage : './images/greenrect.png',
 		backgroundSelectedImage : './images/grayrect.png',
+=======
+		backgroundImage : './images/thesquarebutton.png',
+		backgroundSelectedImage : './images/thesquarebuttonselect.png',
+>>>>>>> 53f6a2b1d6309d757a57392ede5a07666f7a3596
 =======
 		backgroundImage : './images/thesquarebutton.png',
 		backgroundSelectedImage : './images/thesquarebuttonselect.png',
@@ -1082,6 +1105,9 @@ scrollable.addEventListener('doubletap', function(){
 =======
 		backgroundImage : './images/red.png',
 		backgroundSelectedImage : './images/thebuttonselect.png',
+<<<<<<< HEAD
+>>>>>>> 53f6a2b1d6309d757a57392ede5a07666f7a3596
+=======
 >>>>>>> 53f6a2b1d6309d757a57392ede5a07666f7a3596
 
 	});
@@ -1178,8 +1204,13 @@ scrollable.addEventListener('doubletap', function(){
 		width : 100,
 		title : 'Refresh',
 <<<<<<< HEAD
+<<<<<<< HEAD
 		backgroundImage : './images/greenrect.png',
 		backgroundImageSelected : './images/grayrect.png',
+=======
+		backgroundImage : './images/thesquarebutton.png',
+		backgroundImageSelected : './images/thesquarebuttonselect.png',
+>>>>>>> 53f6a2b1d6309d757a57392ede5a07666f7a3596
 =======
 		backgroundImage : './images/thesquarebutton.png',
 		backgroundImageSelected : './images/thesquarebuttonselect.png',
@@ -1191,17 +1222,23 @@ scrollable.addEventListener('doubletap', function(){
 		top : '70%',
 		left : '48%',
 <<<<<<< HEAD
+<<<<<<< HEAD
 		color : 'white',
 		width : 110,
 		title : 'Log out',
 		backgroundImage : './images/greenrect.png',
 		backgroundImageSelected : './images/grayrect.png',
 =======
+=======
+>>>>>>> 53f6a2b1d6309d757a57392ede5a07666f7a3596
 		color : 'Black',
 		width : 110,
 		title : 'Log out',
 		backgroundImage : './images/thesquarebutton.png',
 		backgroundImageSelected : './images/thesquarebuttonselect.png',
+<<<<<<< HEAD
+>>>>>>> 53f6a2b1d6309d757a57392ede5a07666f7a3596
+=======
 >>>>>>> 53f6a2b1d6309d757a57392ede5a07666f7a3596
 	});
 
@@ -1293,8 +1330,13 @@ scrollable.addEventListener('doubletap', function(){
 
 	todaybtn.addEventListener('click', function(e) {
 <<<<<<< HEAD
+<<<<<<< HEAD
 		todaybtn.backgroundImage = './images/grayrect.png';
 		yestbtn.backgroundImage = './images/greenrect.png';
+=======
+		todaybtn.backgroundImage = './images/thesquarebuttonselect.png';
+		yestbtn.backgroundImage = './images/thesquarebutton.png';
+>>>>>>> 53f6a2b1d6309d757a57392ede5a07666f7a3596
 =======
 		todaybtn.backgroundImage = './images/thesquarebuttonselect.png';
 		yestbtn.backgroundImage = './images/thesquarebutton.png';
@@ -1307,8 +1349,13 @@ scrollable.addEventListener('doubletap', function(){
 
 	yestbtn.addEventListener('click', function(e) {
 <<<<<<< HEAD
+<<<<<<< HEAD
 		yestbtn.backgroundImage = './images/grayrect.png';
 		todaybtn.backgroundImage = './images/greenrect.png';
+=======
+		yestbtn.backgroundImage = './images/thesquarebuttonselect.png';
+		todaybtn.backgroundImage = './images/thesquarebutton.png';
+>>>>>>> 53f6a2b1d6309d757a57392ede5a07666f7a3596
 =======
 		yestbtn.backgroundImage = './images/thesquarebuttonselect.png';
 		todaybtn.backgroundImage = './images/thesquarebutton.png';
@@ -1324,6 +1371,7 @@ scrollable.addEventListener('doubletap', function(){
 	activitybtn1.addEventListener('click', function(e) {
 		useractivity = "Running";
 <<<<<<< HEAD
+<<<<<<< HEAD
 		activitybtn1.backgroundImage = './images/gray.png';
 		activitybtn2.backgroundImage = './images/green.png';
 		activitybtn3.backgroundImage = './images/green.png';
@@ -1331,18 +1379,24 @@ scrollable.addEventListener('doubletap', function(){
 		activitybtn5.backgroundImage = './images/green.png';
 		activitybtn6.backgroundImage = './images/green.png';
 =======
+=======
+>>>>>>> 53f6a2b1d6309d757a57392ede5a07666f7a3596
 		activitybtn1.backgroundImage = './images/thebuttonselect.png';
 		activitybtn2.backgroundImage = './images/thebutton.png';
 		activitybtn3.backgroundImage = './images/thebutton.png';
 		activitybtn4.backgroundImage = './images/thebutton.png';
 		activitybtn5.backgroundImage = './images/thebutton.png';
 		activitybtn6.backgroundImage = './images/thebutton.png';
+<<<<<<< HEAD
+>>>>>>> 53f6a2b1d6309d757a57392ede5a07666f7a3596
+=======
 >>>>>>> 53f6a2b1d6309d757a57392ede5a07666f7a3596
 
 	});
 
 	activitybtn2.addEventListener('click', function(e) {
 		useractivity = "Walking";
+<<<<<<< HEAD
 <<<<<<< HEAD
 		activitybtn1.backgroundImage = './images/green.png';
 		activitybtn2.backgroundImage = './images/gray.png';
@@ -1351,18 +1405,24 @@ scrollable.addEventListener('doubletap', function(){
 		activitybtn5.backgroundImage = './images/green.png';
 		activitybtn6.backgroundImage = './images/green.png';
 =======
+=======
+>>>>>>> 53f6a2b1d6309d757a57392ede5a07666f7a3596
 		activitybtn1.backgroundImage = './images/thebutton.png';
 		activitybtn2.backgroundImage = './images/thebuttonselect.png';
 		activitybtn3.backgroundImage = './images/thebutton.png';
 		activitybtn4.backgroundImage = './images/thebutton.png';
 		activitybtn5.backgroundImage = './images/thebutton.png';
 		activitybtn6.backgroundImage = './images/thebutton.png';
+<<<<<<< HEAD
+>>>>>>> 53f6a2b1d6309d757a57392ede5a07666f7a3596
+=======
 >>>>>>> 53f6a2b1d6309d757a57392ede5a07666f7a3596
 
 	});
 
 	activitybtn3.addEventListener('click', function(e) {
 		useractivity = "Swimming";
+<<<<<<< HEAD
 <<<<<<< HEAD
 		activitybtn1.backgroundImage = './images/green.png';
 		activitybtn2.backgroundImage = './images/green.png';
@@ -1371,18 +1431,24 @@ scrollable.addEventListener('doubletap', function(){
 		activitybtn5.backgroundImage = './images/green.png';
 		activitybtn6.backgroundImage = './images/green.png';
 =======
+=======
+>>>>>>> 53f6a2b1d6309d757a57392ede5a07666f7a3596
 		activitybtn1.backgroundImage = './images/thebutton.png';
 		activitybtn2.backgroundImage = './images/thebutton.png';
 		activitybtn3.backgroundImage = './images/thebuttonselect.png';
 		activitybtn4.backgroundImage = './images/thebutton.png';
 		activitybtn5.backgroundImage = './images/thebutton.png';
 		activitybtn6.backgroundImage = './images/thebutton.png';
+<<<<<<< HEAD
+>>>>>>> 53f6a2b1d6309d757a57392ede5a07666f7a3596
+=======
 >>>>>>> 53f6a2b1d6309d757a57392ede5a07666f7a3596
 
 	});
 
 	activitybtn4.addEventListener('click', function(e) {
 		useractivity = "Cycling";
+<<<<<<< HEAD
 <<<<<<< HEAD
 		activitybtn1.backgroundImage = './images/green.png';
 		activitybtn2.backgroundImage = './images/green.png';
@@ -1391,18 +1457,24 @@ scrollable.addEventListener('doubletap', function(){
 		activitybtn5.backgroundImage = './images/green.png';
 		activitybtn6.backgroundImage = './images/green.png';
 =======
+=======
+>>>>>>> 53f6a2b1d6309d757a57392ede5a07666f7a3596
 		activitybtn1.backgroundImage = './images/thebutton.png';
 		activitybtn2.backgroundImage = './images/thebutton.png';
 		activitybtn3.backgroundImage = './images/thebutton.png';
 		activitybtn4.backgroundImage = './images/thebuttonselect.png';
 		activitybtn5.backgroundImage = './images/thebutton.png';
 		activitybtn6.backgroundImage = './images/thebutton.png';
+<<<<<<< HEAD
+>>>>>>> 53f6a2b1d6309d757a57392ede5a07666f7a3596
+=======
 >>>>>>> 53f6a2b1d6309d757a57392ede5a07666f7a3596
 
 	});
 
 	activitybtn5.addEventListener('click', function(e) {
 		useractivity = "Weights";
+<<<<<<< HEAD
 <<<<<<< HEAD
 		activitybtn1.backgroundImage = './images/green.png';
 		activitybtn2.backgroundImage = './images/green.png';
@@ -1411,12 +1483,17 @@ scrollable.addEventListener('doubletap', function(){
 		activitybtn5.backgroundImage = './images/gray.png';
 		activitybtn6.backgroundImage = './images/green.png';
 =======
+=======
+>>>>>>> 53f6a2b1d6309d757a57392ede5a07666f7a3596
 		activitybtn1.backgroundImage = './images/thebutton.png';
 		activitybtn2.backgroundImage = './images/thebutton.png';
 		activitybtn3.backgroundImage = './images/thebutton.png';
 		activitybtn4.backgroundImage = './images/thebutton.png';
 		activitybtn5.backgroundImage = './images/thebuttonselect.png';
 		activitybtn6.backgroundImage = './images/thebutton.png';
+<<<<<<< HEAD
+>>>>>>> 53f6a2b1d6309d757a57392ede5a07666f7a3596
+=======
 >>>>>>> 53f6a2b1d6309d757a57392ede5a07666f7a3596
 
 	});
@@ -1428,6 +1505,7 @@ scrollable.addEventListener('doubletap', function(){
 			useractivity = othertxt.value;
 			othertxt.blur();
 <<<<<<< HEAD
+<<<<<<< HEAD
 			activitybtn1.backgroundImage = './images/green.png';
 			activitybtn2.backgroundImage = './images/green.png';
 			activitybtn3.backgroundImage = './images/green.png';
@@ -1435,12 +1513,17 @@ scrollable.addEventListener('doubletap', function(){
 			activitybtn5.backgroundImage = './images/green.png';
 			activitybtn6.backgroundImage = './images/gray.png';
 =======
+=======
+>>>>>>> 53f6a2b1d6309d757a57392ede5a07666f7a3596
 			activitybtn1.backgroundImage = './images/thebutton.png';
 			activitybtn2.backgroundImage = './images/thebutton.png';
 			activitybtn3.backgroundImage = './images/thebutton.png';
 			activitybtn4.backgroundImage = './images/thebutton.png';
 			activitybtn5.backgroundImage = './images/thebutton.png';
 			activitybtn6.backgroundImage = './images/thebuttonselect.png';
+<<<<<<< HEAD
+>>>>>>> 53f6a2b1d6309d757a57392ede5a07666f7a3596
+=======
 >>>>>>> 53f6a2b1d6309d757a57392ede5a07666f7a3596
 
 		}
