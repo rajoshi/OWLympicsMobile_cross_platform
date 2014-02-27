@@ -439,7 +439,6 @@ Titanium.UI.setBackgroundColor('#000');
 		width : 110,
 		height : 55,
 		backgroundImage : './images/greenrect.png',
-		backgroundSelectedImage : './images/white.png',
 	});
 
 	whatView.add(yestbtn);
@@ -1103,7 +1102,7 @@ Titanium.UI.setBackgroundColor('#000');
 			fontSize : 16
 		},
 		text : 'Recent Activities:',
-		top : '25%',
+		top : '10%',
 		left : '10%',
 		width : Ti.UI.SIZE,
 		height : Ti.UI.SIZE
@@ -1383,21 +1382,28 @@ Titanium.UI.setBackgroundColor('#000');
 
 	var submitReq = Titanium.Network.createHTTPClient();
 
-	submitReq.onload = function() {
-		alert(this.responseText);
-		if (this.responseText == 'Activity submission succeeded') {
-			alert("Congratulations! Your hardwork earned you " + Math.floor(100 * (lowtxt.value / 45 + medtxt.value / 30 + hightxt.value / 20) + 10 * (social > 0)) + " points!");
-			profileUpdate();
-			scrollable.scrollToView(profileView);
-			initialise();
-
-		} else {
-			alert(this.responseText);
-		}
-
-	};
-
 	submit.addEventListener('click', function(e) {
+		submitReq = Titanium.Network.createHTTPClient();
+		submitReq.open("POST", "http://owlympics.ecg.rice.edu:81/mobile/submit");
+		submitinfo();
+
+		submitReq.onload = function() {
+			alert(this.responseText);
+			if (this.responseText == 'Activity submission succeeded') {
+				alert("Congratulations! Your hardwork earned you " + Math.floor(100 * (lowtxt.value / 45 + medtxt.value / 30 + hightxt.value / 20) + 10 * (social > 0)) + " points!");
+				profileUpdate();
+				scrollable.scrollToView(profileView);
+				initialise();
+
+			} else {
+				alert(this.responseText);
+			}
+
+		};
+	});
+
+	function submitinfo() {
+
 		if (Titanium.Network.networkType === Titanium.Network.NETWORK_NONE)
 			alert('Could not submit, Please check internet connection.');
 		else {
@@ -1416,7 +1422,6 @@ Titanium.UI.setBackgroundColor('#000');
 
 			if (useractivity != '' && (lowtxt.value + medtxt.value + hightxt.value) > 0) {
 
-				submitReq.open("POST", "http://owlympics.ecg.rice.edu:81/mobile/submit");
 				var params = {
 					day : day.toString(),
 					mon : mon.toString(),
@@ -1465,12 +1470,26 @@ Titanium.UI.setBackgroundColor('#000');
 				}
 			});
 		}
-	});
+	}
 
 	var profileReq = Titanium.Network.createHTTPClient();
 
 	profileReq.onload = function() {
 		alert(this.responseText);
+		for (var d in profileView.children) {
+			if (profileView.children.hasOwnProperty(d)) {
+				profileView.remove(profileView.children[d]);
+			}
+		}
+		profileView.add(refresh);
+		profileView.add(deauth);
+		profileView.add(refresh);
+		track.add(progress);
+		profileView.add(track);
+		profileView.add(levelLabel);
+		profileView.add(pointLabel);
+		profileView.add(recentLabel);
+
 		//Parse JSON file
 		var profileJSON = JSON.parse(this.responseText);
 		//Use values to generate progress bar and labels for current level and recent activities
@@ -1478,6 +1497,7 @@ Titanium.UI.setBackgroundColor('#000');
 		progress.width = 180 * userPoints / 400;
 		userLevel = 'Current Level: ';
 		userLevel = userLevel + profileJSON[0].level;
+
 		for ( i = 0; i < profileJSON[0].acts.length; i++) {
 
 			var activity1 = Ti.UI.createLabel({
