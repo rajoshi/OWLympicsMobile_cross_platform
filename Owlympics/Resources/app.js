@@ -100,10 +100,10 @@ Titanium.UI.setBackgroundColor('#000');
 
 	rstar1.addEventListener('click', function(e) {
 		rstar1.backgroundImage = './images/goldstar.png';
-		rstar2.backgroundImage = './images/graystar.png';
-		rstar3.backgroundImage = './images/graystar.png';
-		rstar4.backgroundImage = './images/graystar.png';
-		rstar5.backgroundImage = './images/graystar.png';
+		rstar2.backgroundImage = './images/dullstar.png';
+		rstar3.backgroundImage = './images/dullstar.png';
+		rstar4.backgroundImage = './images/dullstar.png';
+		rstar5.backgroundImage = './images/dullstar.png';
 		exrate = 1;
 	});
 	var rstar2 = Ti.UI.createButton({
@@ -117,9 +117,9 @@ Titanium.UI.setBackgroundColor('#000');
 	rstar2.addEventListener('click', function(e) {
 		rstar1.backgroundImage = './images/goldstar.png';
 		rstar2.backgroundImage = './images/goldstar.png';
-		rstar3.backgroundImage = './images/graystar.png';
-		rstar4.backgroundImage = './images/graystar.png';
-		rstar5.backgroundImage = './images/graystar.png';
+		rstar3.backgroundImage = './images/dullstar.png';
+		rstar4.backgroundImage = './images/dullstar.png';
+		rstar5.backgroundImage = './images/dullstar.png';
 		exrate = 2;
 	});
 	var rstar3 = Ti.UI.createButton({
@@ -134,8 +134,8 @@ Titanium.UI.setBackgroundColor('#000');
 		rstar1.backgroundImage = './images/goldstar.png';
 		rstar2.backgroundImage = './images/goldstar.png';
 		rstar3.backgroundImage = './images/goldstar.png';
-		rstar4.backgroundImage = './images/graystar.png';
-		rstar5.backgroundImage = './images/graystar.png';
+		rstar4.backgroundImage = './images/dullstar.png';
+		rstar5.backgroundImage = './images/dullstar.png';
 		exrate = 3;
 	});
 	var rstar4 = Ti.UI.createButton({
@@ -144,14 +144,14 @@ Titanium.UI.setBackgroundColor('#000');
 		color : 'white',
 		width : 55,
 		height : 55,
-		backgroundImage : './images/graystar.png',
+		backgroundImage : './images/dullstar.png',
 	});
 	rstar4.addEventListener('click', function(e) {
 		rstar1.backgroundImage = './images/goldstar.png';
 		rstar2.backgroundImage = './images/goldstar.png';
 		rstar3.backgroundImage = './images/goldstar.png';
 		rstar4.backgroundImage = './images/goldstar.png';
-		rstar5.backgroundImage = './images/graystar.png';
+		rstar5.backgroundImage = './images/dullstar.png';
 		exrate = 4;
 	});
 	var rstar5 = Ti.UI.createButton({
@@ -160,7 +160,7 @@ Titanium.UI.setBackgroundColor('#000');
 		color : 'white',
 		width : 55,
 		height : 55,
-		backgroundImage : './images/graystar.png',
+		backgroundImage : './images/dullstar.png',
 	});
 	rstar5.addEventListener('click', function(e) {
 		rstar1.backgroundImage = './images/goldstar.png';
@@ -196,10 +196,10 @@ Titanium.UI.setBackgroundColor('#000');
 		},
 		top : '15%',
 		left : '10%',
-		width : 80,
-		height : 80,
-		backgroundImage : './images/black.png',
-		backgroundSelectedImage : './images/brown.png',
+		width : 75,
+		height : 75,
+		backgroundImage : './images/green.png',
+		backgroundSelectedImage : './images/gray.png',
 	});
 
 	whatView.add(activitybtn1);
@@ -211,10 +211,10 @@ Titanium.UI.setBackgroundColor('#000');
 		},
 		top : '15%',
 		left : '36%',
-		width : 80,
-		height : 80,
-		backgroundImage : './images/black.png',
-		backgroundSelectedImage : './images/brown.png',
+		width : 75,
+		height : 75,
+		backgroundImage : './images/green.png',
+		backgroundSelectedImage : './images/gray.png',
 	});
 
 	whatView.add(activitybtn2);
@@ -227,10 +227,10 @@ Titanium.UI.setBackgroundColor('#000');
 		},
 		top : '15%',
 		left : '62%',
-		width : 80,
-		height : 80,
-		backgroundImage : './images/black.png',
-		backgroundSelectedImage : './images/brown.png',
+		width : 75,
+		height : 75,
+		backgroundImage : './images/green.png',
+		backgroundSelectedImage : './images/gray.png',
 	});
 
 	whatView.add(activitybtn3);
@@ -243,10 +243,10 @@ Titanium.UI.setBackgroundColor('#000');
 		},
 		top : '21%',
 		left : '20%',
-		width : 80,
-		height : 80,
-		backgroundImage : './images/black.png',
-		backgroundSelectedImage : './images/brown.png',
+		width : 75,
+		height : 75,
+		backgroundImage : './images/green.png',
+		backgroundSelectedImage : './images/gray.png',
 	});
 
 	whatView.add(activitybtn4);
@@ -259,10 +259,10 @@ Titanium.UI.setBackgroundColor('#000');
 		},
 		top : '21%',
 		left : '52%',
-		width : 80,
-		height : 80,
-		backgroundImage : './images/black.png',
-		backgroundSelectedImage : './images/brown.png',
+		width : 75,
+		height : 75,
+		backgroundImage : './images/green.png',
+		backgroundSelectedImage : './images/gray.png',
 	});
 
 	whatView.add(activitybtn5);
@@ -275,10 +275,10 @@ Titanium.UI.setBackgroundColor('#000');
 		},
 		top : '27%',
 		left : '67%',
-		width : 80,
-		height : 80,
-		backgroundImage : './images/black.png',
-		backgroundSelectedImage : './images/brown.png',
+		width : 75,
+		height : 75,
+		backgroundImage : './images/green.png',
+		backgroundSelectedImage : './images/gray.png',
 	});
 	whatView.add(activitybtn6);
 
@@ -302,7 +302,7 @@ Titanium.UI.setBackgroundColor('#000');
 		font : {
 			fontSize : 16,
 		},
-		top : '33.5%',
+		top : '34%',
 		left : '15%',
 	});
 	whatView.add(timelabel);
@@ -313,7 +313,7 @@ Titanium.UI.setBackgroundColor('#000');
 		font : {
 			fontSize : 16,
 		},
-		top : '36%',
+		top : '37%',
 		left : '20%',
 	});
 
@@ -325,7 +325,7 @@ Titanium.UI.setBackgroundColor('#000');
 		font : {
 			fontSize : 16,
 		},
-		top : '36%',
+		top : '37%',
 		left : '45%',
 	});
 
@@ -337,7 +337,7 @@ Titanium.UI.setBackgroundColor('#000');
 		font : {
 			fontSize : 16,
 		},
-		top : '36%',
+		top : '37%',
 		left : '70%',
 	});
 
@@ -351,7 +351,7 @@ Titanium.UI.setBackgroundColor('#000');
 		top : '39%',
 		left : '15%',
 		width : 75,
-		height : 65,
+		height : 60,
 		backgroundColor : 'white',
 		keyboardType : Titanium.UI.KEYBOARD_NUMBER_PAD,
 	});
@@ -366,7 +366,7 @@ Titanium.UI.setBackgroundColor('#000');
 		top : '39%',
 		left : '42%',
 		width : 75,
-		height : 65,
+		height : 60,
 		backgroundColor : 'white',
 		keyboardType : Titanium.UI.KEYBOARD_NUMBER_PAD,
 	});
@@ -382,7 +382,7 @@ Titanium.UI.setBackgroundColor('#000');
 		top : '39%',
 		left : '67%',
 		width : 75,
-		height : 65,
+		height : 60,
 		backgroundColor : 'white',
 		keyboardType : Titanium.UI.KEYBOARD_NUMBER_PAD,
 	});
@@ -407,7 +407,7 @@ Titanium.UI.setBackgroundColor('#000');
 		top : '45%',
 		left : '70%',
 		width : 75,
-		height : 65,
+		height : 60,
 		backgroundColor : 'white',
 		keyboardType : Titanium.UI.KEYBOARD_NUMBER_PAD,
 		text : '0',
@@ -416,25 +416,25 @@ Titanium.UI.setBackgroundColor('#000');
 
 	var todaybtn = Ti.UI.createButton({
 		title : 'Today',
-		color : '#0B1440',
+		color : 'white',
 		font : {
 			fontSize : 16,
 			fontFamily : 'Helvetica Neue'
 		},
-		top : '49%',
+		top : '50%',
 		left : '35%',
 		width : 110,
 		height : 55,
 		backgroundImage : './images/greenrect.png',
-		backgroundSelectedImage : './images/brownrect.png',
+		backgroundSelectedImage : './images/grayrect.png',
 	});
 
 	whatView.add(todaybtn);
 
 	var yestbtn = Ti.UI.createButton({
 		title : 'Yesterday',
-		color : '#0B1440',
-		top : '53%',
+		color : 'white',
+		top : '54%',
 		left : '35%',
 		width : 110,
 		height : 55,
@@ -508,7 +508,7 @@ Titanium.UI.setBackgroundColor('#000');
 		width : '322dp',
 		height : '22dp',
 		layout : 'horizontal',
-		left : '-1dp'
+		//left : '-1dp'
 	});
 
 	toolBarDays.sunday = Ti.UI.createLabel({
@@ -771,7 +771,7 @@ Titanium.UI.setBackgroundColor('#000');
 					year = a;
 				} else if (e.source.text < dayOfMonth) {
 					e.source.backgroundColor = '#333333';
-					day = c;
+					day = e.source.text;
 					mon = b + 1;
 					year = a;
 				}
@@ -918,13 +918,13 @@ Titanium.UI.setBackgroundColor('#000');
 		font : {
 			fontSize : 16,
 		},
-		top : '80%',
+		top : '82%',
 		left : '10%',
 
 	});
 	whatView.add(ratingLabel);
 	var hstar1 = Ti.UI.createButton({
-		top : '83%',
+		top : '85%',
 		left : '3%',
 		color : 'white',
 		width : 55,
@@ -934,14 +934,14 @@ Titanium.UI.setBackgroundColor('#000');
 
 	hstar1.addEventListener('click', function(e) {
 		hstar1.backgroundImage = './images/goldstar.png';
-		hstar2.backgroundImage = './images/graystar.png';
-		hstar3.backgroundImage = './images/graystar.png';
-		hstar4.backgroundImage = './images/graystar.png';
-		hstar5.backgroundImage = './images/graystar.png';
+		hstar2.backgroundImage = './images/dullstar.png';
+		hstar3.backgroundImage = './images/dullstar.png';
+		hstar4.backgroundImage = './images/dullstar.png';
+		hstar5.backgroundImage = './images/dullstar.png';
 		haprate = 1;
 	});
 	var hstar2 = Ti.UI.createButton({
-		top : '83%',
+		top : '85%',
 		left : '22%',
 		color : 'white',
 		width : 55,
@@ -951,13 +951,13 @@ Titanium.UI.setBackgroundColor('#000');
 	hstar2.addEventListener('click', function(e) {
 		hstar1.backgroundImage = './images/goldstar.png';
 		hstar2.backgroundImage = './images/goldstar.png';
-		hstar3.backgroundImage = './images/graystar.png';
-		hstar4.backgroundImage = './images/graystar.png';
-		hstar5.backgroundImage = './images/graystar.png';
+		hstar3.backgroundImage = './images/dullstar.png';
+		hstar4.backgroundImage = './images/dullstar.png';
+		hstar5.backgroundImage = './images/dullstar.png';
 		haprate = 2;
 	});
 	var hstar3 = Ti.UI.createButton({
-		top : '83%',
+		top : '85%',
 		left : '41%',
 		color : 'white',
 		width : 55,
@@ -968,33 +968,33 @@ Titanium.UI.setBackgroundColor('#000');
 		hstar1.backgroundImage = './images/goldstar.png';
 		hstar2.backgroundImage = './images/goldstar.png';
 		hstar3.backgroundImage = './images/goldstar.png';
-		hstar4.backgroundImage = './images/graystar.png';
-		hstar5.backgroundImage = './images/graystar.png';
+		hstar4.backgroundImage = './images/dullstar.png';
+		hstar5.backgroundImage = './images/dullstar.png';
 		haprate = 3;
 	});
 	var hstar4 = Ti.UI.createButton({
-		top : '83%',
+		top : '85%',
 		left : '60%',
 		color : 'white',
 		width : 55,
 		height : 55,
-		backgroundImage : './images/graystar.png',
+		backgroundImage : './images/dullstar.png',
 	});
 	hstar4.addEventListener('click', function(e) {
 		hstar1.backgroundImage = './images/goldstar.png';
 		hstar2.backgroundImage = './images/goldstar.png';
 		hstar3.backgroundImage = './images/goldstar.png';
 		hstar4.backgroundImage = './images/goldstar.png';
-		hstar5.backgroundImage = './images/graystar.png';
+		hstar5.backgroundImage = './images/dullstar.png';
 		haprate = 4;
 	});
 	var hstar5 = Ti.UI.createButton({
-		top : '83%',
+		top : '85%',
 		left : '79%',
 		color : 'white',
 		width : 55,
 		height : 55,
-		backgroundImage : './images/graystar.png',
+		backgroundImage : './images/dullstar.png',
 	});
 	hstar5.addEventListener('click', function(e) {
 		hstar1.backgroundImage = './images/goldstar.png';
@@ -1011,7 +1011,7 @@ Titanium.UI.setBackgroundColor('#000');
 	whatView.add(hstar5);
 
 	var submit = Ti.UI.createButton({
-		top : '90%',
+		top : '91%',
 		left : '70%',
 		color : 'white',
 		font : {
@@ -1020,8 +1020,8 @@ Titanium.UI.setBackgroundColor('#000');
 		width : 80,
 		height : 80,
 		title : 'Submit',
-		backgroundImage : './images/red.png',
-		backgroundSelectedImage : './images/brown.png',
+		backgroundImage : './images/green.png',
+		backgroundSelectedImage : './images/gray.png',
 
 	});
 
@@ -1113,22 +1113,22 @@ Titanium.UI.setBackgroundColor('#000');
 	var refresh = Ti.UI.createButton({
 		top : '70%',
 		left : '15%',
-		color : 'Black',
+		color : 'white',
 		width : 100,
 		title : 'Refresh',
 		backgroundImage : './images/greenrect.png',
-		backgroundImageSelected : './images/brownrect.png',
+		backgroundImageSelected : './images/grayrect.png',
 	});
 	profileView.add(refresh);
 
 	var deauth = Ti.UI.createButton({
 		top : '70%',
 		left : '48%',
-		color : 'Black',
-		width : 160,
-		title : 'Deauthorize',
+		color : 'white',
+		width : 110,
+		title : 'Log out',
 		backgroundImage : './images/greenrect.png',
-		backgroundImageSelected : './images/brownrect.png',
+		backgroundImageSelected : './images/grayrect.png',
 	});
 
 	/* Set up labels */
@@ -1205,34 +1205,20 @@ Titanium.UI.setBackgroundColor('#000');
 		rstar1.backgroundImage = './images/goldstar.png';
 		rstar2.backgroundImage = './images/goldstar.png';
 		rstar3.backgroundImage = './images/goldstar.png';
-		rstar4.backgroundImage = './images/graystar.png';
-		rstar5.backgroundImage = './images/graystar.png';
+		rstar4.backgroundImage = './images/dullstar.png';
+		rstar5.backgroundImage = './images/dullstar.png';
 
 		hstar1.backgroundImage = './images/goldstar.png';
 		hstar2.backgroundImage = './images/goldstar.png';
 		hstar3.backgroundImage = './images/goldstar.png';
-		hstar4.backgroundImage = './images/graystar.png';
-		hstar5.backgroundImage = './images/graystar.png';
+		hstar4.backgroundImage = './images/dullstar.png';
+		hstar5.backgroundImage = './images/dullstar.png';
 	}
 
 	initialise();
 
-	socialtxt.addEventListener('focus', function(e) {
-		if (Titanium.Platform.name == 'android') {
-			// Android stuff
-			Ti.UI.Android.hideSoftKeyboard();
-		}
-	});
-	var social = socialtxt.value;
-	socialtxt.addEventListener('change', function(e) {
-		social = socialtxt.value;
-	});
-	whatView.addEventListener('onload', function(e) {
-		socialtxt.value = social;
-	});
-
 	todaybtn.addEventListener('click', function(e) {
-		todaybtn.backgroundImage = './images/brownrect.png';
+		todaybtn.backgroundImage = './images/grayrect.png';
 		yestbtn.backgroundImage = './images/greenrect.png';
 		day = mydate.getDate();
 		mon = mydate.getMonth() + 1;
@@ -1241,7 +1227,7 @@ Titanium.UI.setBackgroundColor('#000');
 	});
 
 	yestbtn.addEventListener('click', function(e) {
-		yestbtn.backgroundImage = './images/brownrect.png';
+		yestbtn.backgroundImage = './images/grayrect.png';
 		todaybtn.backgroundImage = './images/greenrect.png';
 		var prevDate = new Date();
 		prevDate.setDate(mydate.getDate() - 1);
@@ -1253,56 +1239,56 @@ Titanium.UI.setBackgroundColor('#000');
 
 	activitybtn1.addEventListener('click', function(e) {
 		useractivity = "Running";
-		activitybtn1.backgroundImage = './images/brown.png';
-		activitybtn2.backgroundImage = './images/black.png';
-		activitybtn3.backgroundImage = './images/black.png';
-		activitybtn4.backgroundImage = './images/black.png';
-		activitybtn5.backgroundImage = './images/black.png';
-		activitybtn6.backgroundImage = './images/black.png';
+		activitybtn1.backgroundImage = './images/gray.png';
+		activitybtn2.backgroundImage = './images/green.png';
+		activitybtn3.backgroundImage = './images/green.png';
+		activitybtn4.backgroundImage = './images/green.png';
+		activitybtn5.backgroundImage = './images/green.png';
+		activitybtn6.backgroundImage = './images/green.png';
 
 	});
 
 	activitybtn2.addEventListener('click', function(e) {
 		useractivity = "Walking";
-		activitybtn1.backgroundImage = './images/black.png';
-		activitybtn2.backgroundImage = './images/brown.png';
-		activitybtn3.backgroundImage = './images/black.png';
-		activitybtn4.backgroundImage = './images/black.png';
-		activitybtn5.backgroundImage = './images/black.png';
-		activitybtn6.backgroundImage = './images/black.png';
+		activitybtn1.backgroundImage = './images/green.png';
+		activitybtn2.backgroundImage = './images/gray.png';
+		activitybtn3.backgroundImage = './images/green.png';
+		activitybtn4.backgroundImage = './images/green.png';
+		activitybtn5.backgroundImage = './images/green.png';
+		activitybtn6.backgroundImage = './images/green.png';
 
 	});
 
 	activitybtn3.addEventListener('click', function(e) {
 		useractivity = "Swimming";
-		activitybtn1.backgroundImage = './images/black.png';
-		activitybtn2.backgroundImage = './images/black.png';
-		activitybtn3.backgroundImage = './images/brown.png';
-		activitybtn4.backgroundImage = './images/black.png';
-		activitybtn5.backgroundImage = './images/black.png';
-		activitybtn6.backgroundImage = './images/black.png';
+		activitybtn1.backgroundImage = './images/green.png';
+		activitybtn2.backgroundImage = './images/green.png';
+		activitybtn3.backgroundImage = './images/gray.png';
+		activitybtn4.backgroundImage = './images/green.png';
+		activitybtn5.backgroundImage = './images/green.png';
+		activitybtn6.backgroundImage = './images/green.png';
 
 	});
 
 	activitybtn4.addEventListener('click', function(e) {
 		useractivity = "Cycling";
-		activitybtn1.backgroundImage = './images/black.png';
-		activitybtn2.backgroundImage = './images/black.png';
-		activitybtn3.backgroundImage = './images/black.png';
-		activitybtn4.backgroundImage = './images/brown.png';
-		activitybtn5.backgroundImage = './images/black.png';
-		activitybtn6.backgroundImage = './images/black.png';
+		activitybtn1.backgroundImage = './images/green.png';
+		activitybtn2.backgroundImage = './images/green.png';
+		activitybtn3.backgroundImage = './images/green.png';
+		activitybtn4.backgroundImage = './images/gray.png';
+		activitybtn5.backgroundImage = './images/green.png';
+		activitybtn6.backgroundImage = './images/green.png';
 
 	});
 
 	activitybtn5.addEventListener('click', function(e) {
 		useractivity = "Weights";
-		activitybtn1.backgroundImage = './images/black.png';
-		activitybtn2.backgroundImage = './images/black.png';
-		activitybtn3.backgroundImage = './images/black.png';
-		activitybtn4.backgroundImage = './images/black.png';
-		activitybtn5.backgroundImage = './images/brown.png';
-		activitybtn6.backgroundImage = './images/black.png';
+		activitybtn1.backgroundImage = './images/green.png';
+		activitybtn2.backgroundImage = './images/green.png';
+		activitybtn3.backgroundImage = './images/green.png';
+		activitybtn4.backgroundImage = './images/green.png';
+		activitybtn5.backgroundImage = './images/gray.png';
+		activitybtn6.backgroundImage = './images/green.png';
 
 	});
 
@@ -1312,12 +1298,12 @@ Titanium.UI.setBackgroundColor('#000');
 		} else {
 			useractivity = othertxt.value;
 			othertxt.blur();
-			activitybtn1.backgroundImage = './images/black.png';
-			activitybtn2.backgroundImage = './images/black.png';
-			activitybtn3.backgroundImage = './images/black.png';
-			activitybtn4.backgroundImage = './images/black.png';
-			activitybtn5.backgroundImage = './images/black.png';
-			activitybtn6.backgroundImage = './images/brown.png';
+			activitybtn1.backgroundImage = './images/green.png';
+			activitybtn2.backgroundImage = './images/green.png';
+			activitybtn3.backgroundImage = './images/green.png';
+			activitybtn4.backgroundImage = './images/green.png';
+			activitybtn5.backgroundImage = './images/green.png';
+			activitybtn6.backgroundImage = './images/gray.png';
 
 		}
 	});
@@ -1390,7 +1376,7 @@ Titanium.UI.setBackgroundColor('#000');
 		submitReq.onload = function() {
 			alert(this.responseText);
 			if (this.responseText == 'Activity submission succeeded') {
-				alert("Congratulations! Your hardwork earned you " + Math.floor(100 * (lowtxt.value / 45 + medtxt.value / 30 + hightxt.value / 20) + 10 * (social > 0)) + " points!");
+				alert("Congratulations! Your hardwork earned you " + Math.floor(100 * (lowtxt.value / 45 + medtxt.value / 30 + hightxt.value / 20) + 10 * (socialtxt.value > 0)) + " points!");
 				profileUpdate();
 				scrollable.scrollToView(profileView);
 				initialise();
@@ -1427,7 +1413,7 @@ Titanium.UI.setBackgroundColor('#000');
 					mon : mon.toString(),
 					year : year.toString(),
 					activity : useractivity,
-					social : social,
+					social : socialtxt.value,
 					lowintensity : lowtxt.value,
 					moderateintensity : medtxt.value,
 					highintensity : hightxt.value,
@@ -1534,7 +1520,7 @@ Titanium.UI.setBackgroundColor('#000');
 	}
 
 	if (Ti.App.Properties.hasProperty('loggedBefore')) {
-		profileUpdate();
+		//profileUpdate();
 	};
 
 	refresh.addEventListener('click', function(e) {
@@ -1573,7 +1559,7 @@ Titanium.UI.setBackgroundColor('#000');
 			homeWin.open();
 			scrollable.scrollToView(vertiscroll);
 			win2.close();
-			profileUpdate();
+			//profileUpdate();
 			if (Titanium.Platform.name == 'android') {
 				// Android stuff
 				Ti.UI.Android.hideSoftKeyboard();
@@ -1610,6 +1596,20 @@ Titanium.UI.setBackgroundColor('#000');
 	} else {
 		win2.open();
 	}
+
+	scrollable.addEventListener('doubletap', function() {
+		if (Titanium.Platform.name == 'android') {
+			// Android stuff
+			Ti.UI.Android.hideSoftKeyboard();
+		} else {
+			othertxt.blur();
+			lowtxt.blur();
+			medtxt.blur();
+			hightxt.blur();
+			socialtxt.blur();
+		}
+
+	});
 
 })();
 

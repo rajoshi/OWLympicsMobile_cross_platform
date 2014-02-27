@@ -1,7 +1,8 @@
 {
-	"target": "simulator",
-	"deployType": "development",
+	"target": "device",
+	"deployType": "test",
 	"deviceFamily": "universal",
+	"developerName": "Ashutosh Sabharwal (A6D94N2CV3)",
 	"iosSdkPath": "/Library/Application Support/Titanium/mobilesdk/osx/3.2.1.GA/iphone",
 	"tiCoreHash": "77157e1ffaec640cf559356a147b6a4c",
 	"modulesHash": "7fb655db1d51a26b74a2778ab4a02a6b",
@@ -16,8 +17,8 @@
 	"description": "Version 1.2 for OWLympics Mobile application.",
 	"copyright": "2014 by Rajoshi Biswas",
 	"guid": "502db958-dc63-4c33-87c2-88a82032acde",
-	"skipJSMinification": true,
+	"skipJSMinification": false,
 	"forceCopy": false,
 	"forceCopyAll": false,
-	"encryptJS": false
+	"encryptJS": true
 }

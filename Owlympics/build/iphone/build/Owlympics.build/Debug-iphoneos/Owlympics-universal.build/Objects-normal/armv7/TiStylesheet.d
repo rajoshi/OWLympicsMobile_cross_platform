@@ -1,0 +1,6 @@
+dependencies: \
+  /Users/cmc/Documents/Titanium_Rajoshi/Owlympics/build/iphone/Classes/TiStylesheet.m \
+  /Users/cmc/Documents/Titanium_Rajoshi/Owlympics/build/iphone/Classes/TiStylesheet.h \
+  /Users/cmc/Documents/Titanium_Rajoshi/Owlympics/build/iphone/Classes/TiBase.h \
+  /Users/cmc/Documents/Titanium_Rajoshi/Owlympics/build/iphone/Classes/TiThreading.h \
+  /Users/cmc/Documents/Titanium_Rajoshi/Owlympics/build/iphone/Classes/TiPublicAPI.h
