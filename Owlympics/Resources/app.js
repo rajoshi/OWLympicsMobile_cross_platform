@@ -29,7 +29,7 @@ Titanium.UI.setBackgroundColor('#000');
 	/* windows and views */
 	var homeWin = Titanium.UI.createWindow({
 		title : 'OWLympics',
-		backgroundImage : './images/thisbackground.jpg',
+		backgroundImage : './images/thebluebackground.jpg',
 		orientationModes : [Titanium.UI.PORTRAIT],
 	});
 
@@ -75,6 +75,15 @@ Titanium.UI.setBackgroundColor('#000');
 	});
 	homeWin.add(scrollable);
 
+scrollable.addEventListener('doubletap', function(){
+			if (Titanium.Platform.name == 'android') {
+			// Android stuff
+			Ti.UI.Android.hideSoftKeyboard();
+		} else
+			TextField.blur();
+	
+});
+
 	/*buttons*/
 	var ratingLabel = Ti.UI.createLabel({
 		text : 'How active did you feel?',
@@ -100,10 +109,10 @@ Titanium.UI.setBackgroundColor('#000');
 
 	rstar1.addEventListener('click', function(e) {
 		rstar1.backgroundImage = './images/goldstar.png';
-		rstar2.backgroundImage = './images/graystar.png';
-		rstar3.backgroundImage = './images/graystar.png';
-		rstar4.backgroundImage = './images/graystar.png';
-		rstar5.backgroundImage = './images/graystar.png';
+		rstar2.backgroundImage = './images/dullstar.png';
+		rstar3.backgroundImage = './images/dullstar.png';
+		rstar4.backgroundImage = './images/dullstar.png';
+		rstar5.backgroundImage = './images/dullstar.png';
 		exrate = 1;
 	});
 	var rstar2 = Ti.UI.createButton({
@@ -117,9 +126,9 @@ Titanium.UI.setBackgroundColor('#000');
 	rstar2.addEventListener('click', function(e) {
 		rstar1.backgroundImage = './images/goldstar.png';
 		rstar2.backgroundImage = './images/goldstar.png';
-		rstar3.backgroundImage = './images/graystar.png';
-		rstar4.backgroundImage = './images/graystar.png';
-		rstar5.backgroundImage = './images/graystar.png';
+		rstar3.backgroundImage = './images/dullstar.png';
+		rstar4.backgroundImage = './images/dullstar.png';
+		rstar5.backgroundImage = './images/dullstar.png';
 		exrate = 2;
 	});
 	var rstar3 = Ti.UI.createButton({
@@ -134,8 +143,8 @@ Titanium.UI.setBackgroundColor('#000');
 		rstar1.backgroundImage = './images/goldstar.png';
 		rstar2.backgroundImage = './images/goldstar.png';
 		rstar3.backgroundImage = './images/goldstar.png';
-		rstar4.backgroundImage = './images/graystar.png';
-		rstar5.backgroundImage = './images/graystar.png';
+		rstar4.backgroundImage = './images/dullstar.png';
+		rstar5.backgroundImage = './images/dullstar.png';
 		exrate = 3;
 	});
 	var rstar4 = Ti.UI.createButton({
@@ -144,14 +153,14 @@ Titanium.UI.setBackgroundColor('#000');
 		color : 'white',
 		width : 55,
 		height : 55,
-		backgroundImage : './images/graystar.png',
+		backgroundImage : './images/dullstar.png',
 	});
 	rstar4.addEventListener('click', function(e) {
 		rstar1.backgroundImage = './images/goldstar.png';
 		rstar2.backgroundImage = './images/goldstar.png';
 		rstar3.backgroundImage = './images/goldstar.png';
 		rstar4.backgroundImage = './images/goldstar.png';
-		rstar5.backgroundImage = './images/graystar.png';
+		rstar5.backgroundImage = './images/dullstar.png';
 		exrate = 4;
 	});
 	var rstar5 = Ti.UI.createButton({
@@ -160,7 +169,7 @@ Titanium.UI.setBackgroundColor('#000');
 		color : 'white',
 		width : 55,
 		height : 55,
-		backgroundImage : './images/graystar.png',
+		backgroundImage : './images/dullstar.png',
 	});
 	rstar5.addEventListener('click', function(e) {
 		rstar1.backgroundImage = './images/goldstar.png';
@@ -198,8 +207,8 @@ Titanium.UI.setBackgroundColor('#000');
 		left : '10%',
 		width : 80,
 		height : 80,
-		backgroundImage : './images/black.png',
-		backgroundSelectedImage : './images/brown.png',
+		backgroundImage : './images/thebutton.png',
+		backgroundSelectedImage : './images/thebuttonselect.png',
 	});
 
 	whatView.add(activitybtn1);
@@ -213,8 +222,8 @@ Titanium.UI.setBackgroundColor('#000');
 		left : '36%',
 		width : 80,
 		height : 80,
-		backgroundImage : './images/black.png',
-		backgroundSelectedImage : './images/brown.png',
+		backgroundImage : './images/thebutton.png',
+		backgroundSelectedImage : './images/thebuttonselect.png',
 	});
 
 	whatView.add(activitybtn2);
@@ -229,8 +238,8 @@ Titanium.UI.setBackgroundColor('#000');
 		left : '62%',
 		width : 80,
 		height : 80,
-		backgroundImage : './images/black.png',
-		backgroundSelectedImage : './images/brown.png',
+		backgroundImage : './images/thebutton.png',
+		backgroundSelectedImage : './images/thebuttonselect.png',
 	});
 
 	whatView.add(activitybtn3);
@@ -245,8 +254,8 @@ Titanium.UI.setBackgroundColor('#000');
 		left : '20%',
 		width : 80,
 		height : 80,
-		backgroundImage : './images/black.png',
-		backgroundSelectedImage : './images/brown.png',
+		backgroundImage : './images/thebutton.png',
+		backgroundSelectedImage : './images/thebuttonselect.png',
 	});
 
 	whatView.add(activitybtn4);
@@ -261,8 +270,8 @@ Titanium.UI.setBackgroundColor('#000');
 		left : '52%',
 		width : 80,
 		height : 80,
-		backgroundImage : './images/black.png',
-		backgroundSelectedImage : './images/brown.png',
+		backgroundImage : './images/thebutton.png',
+		backgroundSelectedImage : './images/thebuttonselect.png',
 	});
 
 	whatView.add(activitybtn5);
@@ -277,8 +286,8 @@ Titanium.UI.setBackgroundColor('#000');
 		left : '67%',
 		width : 80,
 		height : 80,
-		backgroundImage : './images/black.png',
-		backgroundSelectedImage : './images/brown.png',
+		backgroundImage : './images/thebutton.png',
+		backgroundSelectedImage : './images/thebuttonselect.png',
 	});
 	whatView.add(activitybtn6);
 
@@ -425,8 +434,8 @@ Titanium.UI.setBackgroundColor('#000');
 		left : '35%',
 		width : 110,
 		height : 55,
-		backgroundImage : './images/greenrect.png',
-		backgroundSelectedImage : './images/brownrect.png',
+		backgroundImage : './images/thesquarebutton.png',
+		backgroundSelectedImage : './images/thesquarebuttonselect.png',
 	});
 
 	whatView.add(todaybtn);
@@ -438,7 +447,7 @@ Titanium.UI.setBackgroundColor('#000');
 		left : '35%',
 		width : 110,
 		height : 55,
-		backgroundImage : './images/greenrect.png',
+		backgroundImage : './images/thesquarebutton.png',
 	});
 
 	whatView.add(yestbtn);
@@ -748,8 +757,8 @@ Titanium.UI.setBackgroundColor('#000');
 		// this is the new "clicker" function, although it doesn't have a name anymore, it just is.
 		mainView.addEventListener('click', function(e) {
 
-			yestbtn.backgroundImage = './images/greenrect.png';
-			todaybtn.backgroundImage = './images/greenrect.png';
+			yestbtn.backgroundImage = './images/thesquarebutton.png';
+			todaybtn.backgroundImage = './images/thesquarebutton.png';
 			if (e.source.current == 'yes') {
 
 				// RESET last day selected
@@ -771,7 +780,7 @@ Titanium.UI.setBackgroundColor('#000');
 					year = a;
 				} else if (e.source.text < dayOfMonth) {
 					e.source.backgroundColor = '#333333';
-					day = c;
+					day = e.source.text;
 					mon = b + 1;
 					year = a;
 				}
@@ -934,10 +943,10 @@ Titanium.UI.setBackgroundColor('#000');
 
 	hstar1.addEventListener('click', function(e) {
 		hstar1.backgroundImage = './images/goldstar.png';
-		hstar2.backgroundImage = './images/graystar.png';
-		hstar3.backgroundImage = './images/graystar.png';
-		hstar4.backgroundImage = './images/graystar.png';
-		hstar5.backgroundImage = './images/graystar.png';
+		hstar2.backgroundImage = './images/dullstar.png';
+		hstar3.backgroundImage = './images/dullstar.png';
+		hstar4.backgroundImage = './images/dullstar.png';
+		hstar5.backgroundImage = './images/dullstar.png';
 		haprate = 1;
 	});
 	var hstar2 = Ti.UI.createButton({
@@ -951,9 +960,9 @@ Titanium.UI.setBackgroundColor('#000');
 	hstar2.addEventListener('click', function(e) {
 		hstar1.backgroundImage = './images/goldstar.png';
 		hstar2.backgroundImage = './images/goldstar.png';
-		hstar3.backgroundImage = './images/graystar.png';
-		hstar4.backgroundImage = './images/graystar.png';
-		hstar5.backgroundImage = './images/graystar.png';
+		hstar3.backgroundImage = './images/dullstar.png';
+		hstar4.backgroundImage = './images/dullstar.png';
+		hstar5.backgroundImage = './images/dullstar.png';
 		haprate = 2;
 	});
 	var hstar3 = Ti.UI.createButton({
@@ -968,8 +977,8 @@ Titanium.UI.setBackgroundColor('#000');
 		hstar1.backgroundImage = './images/goldstar.png';
 		hstar2.backgroundImage = './images/goldstar.png';
 		hstar3.backgroundImage = './images/goldstar.png';
-		hstar4.backgroundImage = './images/graystar.png';
-		hstar5.backgroundImage = './images/graystar.png';
+		hstar4.backgroundImage = './images/dullstar.png';
+		hstar5.backgroundImage = './images/dullstar.png';
 		haprate = 3;
 	});
 	var hstar4 = Ti.UI.createButton({
@@ -978,14 +987,14 @@ Titanium.UI.setBackgroundColor('#000');
 		color : 'white',
 		width : 55,
 		height : 55,
-		backgroundImage : './images/graystar.png',
+		backgroundImage : './images/dullstar.png',
 	});
 	hstar4.addEventListener('click', function(e) {
 		hstar1.backgroundImage = './images/goldstar.png';
 		hstar2.backgroundImage = './images/goldstar.png';
 		hstar3.backgroundImage = './images/goldstar.png';
 		hstar4.backgroundImage = './images/goldstar.png';
-		hstar5.backgroundImage = './images/graystar.png';
+		hstar5.backgroundImage = './images/dullstar.png';
 		haprate = 4;
 	});
 	var hstar5 = Ti.UI.createButton({
@@ -994,7 +1003,7 @@ Titanium.UI.setBackgroundColor('#000');
 		color : 'white',
 		width : 55,
 		height : 55,
-		backgroundImage : './images/graystar.png',
+		backgroundImage : './images/dullstar.png',
 	});
 	hstar5.addEventListener('click', function(e) {
 		hstar1.backgroundImage = './images/goldstar.png';
@@ -1021,7 +1030,7 @@ Titanium.UI.setBackgroundColor('#000');
 		height : 80,
 		title : 'Submit',
 		backgroundImage : './images/red.png',
-		backgroundSelectedImage : './images/brown.png',
+		backgroundSelectedImage : './images/thebuttonselect.png',
 
 	});
 
@@ -1116,8 +1125,8 @@ Titanium.UI.setBackgroundColor('#000');
 		color : 'Black',
 		width : 100,
 		title : 'Refresh',
-		backgroundImage : './images/greenrect.png',
-		backgroundImageSelected : './images/brownrect.png',
+		backgroundImage : './images/thesquarebutton.png',
+		backgroundImageSelected : './images/thesquarebuttonselect.png',
 	});
 	profileView.add(refresh);
 
@@ -1125,10 +1134,10 @@ Titanium.UI.setBackgroundColor('#000');
 		top : '70%',
 		left : '48%',
 		color : 'Black',
-		width : 160,
-		title : 'Deauthorize',
-		backgroundImage : './images/greenrect.png',
-		backgroundImageSelected : './images/brownrect.png',
+		width : 110,
+		title : 'Log out',
+		backgroundImage : './images/thesquarebutton.png',
+		backgroundImageSelected : './images/thesquarebuttonselect.png',
 	});
 
 	/* Set up labels */
@@ -1205,14 +1214,14 @@ Titanium.UI.setBackgroundColor('#000');
 		rstar1.backgroundImage = './images/goldstar.png';
 		rstar2.backgroundImage = './images/goldstar.png';
 		rstar3.backgroundImage = './images/goldstar.png';
-		rstar4.backgroundImage = './images/graystar.png';
-		rstar5.backgroundImage = './images/graystar.png';
+		rstar4.backgroundImage = './images/dullstar.png';
+		rstar5.backgroundImage = './images/dullstar.png';
 
 		hstar1.backgroundImage = './images/goldstar.png';
 		hstar2.backgroundImage = './images/goldstar.png';
 		hstar3.backgroundImage = './images/goldstar.png';
-		hstar4.backgroundImage = './images/graystar.png';
-		hstar5.backgroundImage = './images/graystar.png';
+		hstar4.backgroundImage = './images/dullstar.png';
+		hstar5.backgroundImage = './images/dullstar.png';
 	}
 
 	initialise();
@@ -1232,8 +1241,8 @@ Titanium.UI.setBackgroundColor('#000');
 	});
 
 	todaybtn.addEventListener('click', function(e) {
-		todaybtn.backgroundImage = './images/brownrect.png';
-		yestbtn.backgroundImage = './images/greenrect.png';
+		todaybtn.backgroundImage = './images/thesquarebuttonselect.png';
+		yestbtn.backgroundImage = './images/thesquarebutton.png';
 		day = mydate.getDate();
 		mon = mydate.getMonth() + 1;
 		// convention : jan = 01
@@ -1241,8 +1250,8 @@ Titanium.UI.setBackgroundColor('#000');
 	});
 
 	yestbtn.addEventListener('click', function(e) {
-		yestbtn.backgroundImage = './images/brownrect.png';
-		todaybtn.backgroundImage = './images/greenrect.png';
+		yestbtn.backgroundImage = './images/thesquarebuttonselect.png';
+		todaybtn.backgroundImage = './images/thesquarebutton.png';
 		var prevDate = new Date();
 		prevDate.setDate(mydate.getDate() - 1);
 		day = prevDate.getDate();
@@ -1253,56 +1262,56 @@ Titanium.UI.setBackgroundColor('#000');
 
 	activitybtn1.addEventListener('click', function(e) {
 		useractivity = "Running";
-		activitybtn1.backgroundImage = './images/brown.png';
-		activitybtn2.backgroundImage = './images/black.png';
-		activitybtn3.backgroundImage = './images/black.png';
-		activitybtn4.backgroundImage = './images/black.png';
-		activitybtn5.backgroundImage = './images/black.png';
-		activitybtn6.backgroundImage = './images/black.png';
+		activitybtn1.backgroundImage = './images/thebuttonselect.png';
+		activitybtn2.backgroundImage = './images/thebutton.png';
+		activitybtn3.backgroundImage = './images/thebutton.png';
+		activitybtn4.backgroundImage = './images/thebutton.png';
+		activitybtn5.backgroundImage = './images/thebutton.png';
+		activitybtn6.backgroundImage = './images/thebutton.png';
 
 	});
 
 	activitybtn2.addEventListener('click', function(e) {
 		useractivity = "Walking";
-		activitybtn1.backgroundImage = './images/black.png';
-		activitybtn2.backgroundImage = './images/brown.png';
-		activitybtn3.backgroundImage = './images/black.png';
-		activitybtn4.backgroundImage = './images/black.png';
-		activitybtn5.backgroundImage = './images/black.png';
-		activitybtn6.backgroundImage = './images/black.png';
+		activitybtn1.backgroundImage = './images/thebutton.png';
+		activitybtn2.backgroundImage = './images/thebuttonselect.png';
+		activitybtn3.backgroundImage = './images/thebutton.png';
+		activitybtn4.backgroundImage = './images/thebutton.png';
+		activitybtn5.backgroundImage = './images/thebutton.png';
+		activitybtn6.backgroundImage = './images/thebutton.png';
 
 	});
 
 	activitybtn3.addEventListener('click', function(e) {
 		useractivity = "Swimming";
-		activitybtn1.backgroundImage = './images/black.png';
-		activitybtn2.backgroundImage = './images/black.png';
-		activitybtn3.backgroundImage = './images/brown.png';
-		activitybtn4.backgroundImage = './images/black.png';
-		activitybtn5.backgroundImage = './images/black.png';
-		activitybtn6.backgroundImage = './images/black.png';
+		activitybtn1.backgroundImage = './images/thebutton.png';
+		activitybtn2.backgroundImage = './images/thebutton.png';
+		activitybtn3.backgroundImage = './images/thebuttonselect.png';
+		activitybtn4.backgroundImage = './images/thebutton.png';
+		activitybtn5.backgroundImage = './images/thebutton.png';
+		activitybtn6.backgroundImage = './images/thebutton.png';
 
 	});
 
 	activitybtn4.addEventListener('click', function(e) {
 		useractivity = "Cycling";
-		activitybtn1.backgroundImage = './images/black.png';
-		activitybtn2.backgroundImage = './images/black.png';
-		activitybtn3.backgroundImage = './images/black.png';
-		activitybtn4.backgroundImage = './images/brown.png';
-		activitybtn5.backgroundImage = './images/black.png';
-		activitybtn6.backgroundImage = './images/black.png';
+		activitybtn1.backgroundImage = './images/thebutton.png';
+		activitybtn2.backgroundImage = './images/thebutton.png';
+		activitybtn3.backgroundImage = './images/thebutton.png';
+		activitybtn4.backgroundImage = './images/thebuttonselect.png';
+		activitybtn5.backgroundImage = './images/thebutton.png';
+		activitybtn6.backgroundImage = './images/thebutton.png';
 
 	});
 
 	activitybtn5.addEventListener('click', function(e) {
 		useractivity = "Weights";
-		activitybtn1.backgroundImage = './images/black.png';
-		activitybtn2.backgroundImage = './images/black.png';
-		activitybtn3.backgroundImage = './images/black.png';
-		activitybtn4.backgroundImage = './images/black.png';
-		activitybtn5.backgroundImage = './images/brown.png';
-		activitybtn6.backgroundImage = './images/black.png';
+		activitybtn1.backgroundImage = './images/thebutton.png';
+		activitybtn2.backgroundImage = './images/thebutton.png';
+		activitybtn3.backgroundImage = './images/thebutton.png';
+		activitybtn4.backgroundImage = './images/thebutton.png';
+		activitybtn5.backgroundImage = './images/thebuttonselect.png';
+		activitybtn6.backgroundImage = './images/thebutton.png';
 
 	});
 
@@ -1312,12 +1321,12 @@ Titanium.UI.setBackgroundColor('#000');
 		} else {
 			useractivity = othertxt.value;
 			othertxt.blur();
-			activitybtn1.backgroundImage = './images/black.png';
-			activitybtn2.backgroundImage = './images/black.png';
-			activitybtn3.backgroundImage = './images/black.png';
-			activitybtn4.backgroundImage = './images/black.png';
-			activitybtn5.backgroundImage = './images/black.png';
-			activitybtn6.backgroundImage = './images/brown.png';
+			activitybtn1.backgroundImage = './images/thebutton.png';
+			activitybtn2.backgroundImage = './images/thebutton.png';
+			activitybtn3.backgroundImage = './images/thebutton.png';
+			activitybtn4.backgroundImage = './images/thebutton.png';
+			activitybtn5.backgroundImage = './images/thebutton.png';
+			activitybtn6.backgroundImage = './images/thebuttonselect.png';
 
 		}
 	});
