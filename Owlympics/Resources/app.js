@@ -29,7 +29,7 @@ Titanium.UI.setBackgroundColor('#000');
 	/* windows and views */
 	var homeWin = Titanium.UI.createWindow({
 		title : 'OWLympics',
-		backgroundImage : './images/thisbackground.jpg',
+		backgroundImage : './images/thebluebackground.jpg',
 		orientationModes : [Titanium.UI.PORTRAIT],
 	});
 
@@ -74,6 +74,15 @@ Titanium.UI.setBackgroundColor('#000');
 		showPagingControl : true,
 	});
 	homeWin.add(scrollable);
+
+scrollable.addEventListener('doubletap', function(){
+			if (Titanium.Platform.name == 'android') {
+			// Android stuff
+			Ti.UI.Android.hideSoftKeyboard();
+		} else
+			TextField.blur();
+	
+});
 
 	/*buttons*/
 	var ratingLabel = Ti.UI.createLabel({
@@ -196,10 +205,17 @@ Titanium.UI.setBackgroundColor('#000');
 		},
 		top : '15%',
 		left : '10%',
+<<<<<<< HEAD
 		width : 75,
 		height : 75,
 		backgroundImage : './images/green.png',
 		backgroundSelectedImage : './images/gray.png',
+=======
+		width : 80,
+		height : 80,
+		backgroundImage : './images/thebutton.png',
+		backgroundSelectedImage : './images/thebuttonselect.png',
+>>>>>>> 53f6a2b1d6309d757a57392ede5a07666f7a3596
 	});
 
 	whatView.add(activitybtn1);
@@ -211,10 +227,17 @@ Titanium.UI.setBackgroundColor('#000');
 		},
 		top : '15%',
 		left : '36%',
+<<<<<<< HEAD
 		width : 75,
 		height : 75,
 		backgroundImage : './images/green.png',
 		backgroundSelectedImage : './images/gray.png',
+=======
+		width : 80,
+		height : 80,
+		backgroundImage : './images/thebutton.png',
+		backgroundSelectedImage : './images/thebuttonselect.png',
+>>>>>>> 53f6a2b1d6309d757a57392ede5a07666f7a3596
 	});
 
 	whatView.add(activitybtn2);
@@ -227,10 +250,17 @@ Titanium.UI.setBackgroundColor('#000');
 		},
 		top : '15%',
 		left : '62%',
+<<<<<<< HEAD
 		width : 75,
 		height : 75,
 		backgroundImage : './images/green.png',
 		backgroundSelectedImage : './images/gray.png',
+=======
+		width : 80,
+		height : 80,
+		backgroundImage : './images/thebutton.png',
+		backgroundSelectedImage : './images/thebuttonselect.png',
+>>>>>>> 53f6a2b1d6309d757a57392ede5a07666f7a3596
 	});
 
 	whatView.add(activitybtn3);
@@ -243,10 +273,17 @@ Titanium.UI.setBackgroundColor('#000');
 		},
 		top : '21%',
 		left : '20%',
+<<<<<<< HEAD
 		width : 75,
 		height : 75,
 		backgroundImage : './images/green.png',
 		backgroundSelectedImage : './images/gray.png',
+=======
+		width : 80,
+		height : 80,
+		backgroundImage : './images/thebutton.png',
+		backgroundSelectedImage : './images/thebuttonselect.png',
+>>>>>>> 53f6a2b1d6309d757a57392ede5a07666f7a3596
 	});
 
 	whatView.add(activitybtn4);
@@ -259,10 +296,17 @@ Titanium.UI.setBackgroundColor('#000');
 		},
 		top : '21%',
 		left : '52%',
+<<<<<<< HEAD
 		width : 75,
 		height : 75,
 		backgroundImage : './images/green.png',
 		backgroundSelectedImage : './images/gray.png',
+=======
+		width : 80,
+		height : 80,
+		backgroundImage : './images/thebutton.png',
+		backgroundSelectedImage : './images/thebuttonselect.png',
+>>>>>>> 53f6a2b1d6309d757a57392ede5a07666f7a3596
 	});
 
 	whatView.add(activitybtn5);
@@ -275,10 +319,17 @@ Titanium.UI.setBackgroundColor('#000');
 		},
 		top : '27%',
 		left : '67%',
+<<<<<<< HEAD
 		width : 75,
 		height : 75,
 		backgroundImage : './images/green.png',
 		backgroundSelectedImage : './images/gray.png',
+=======
+		width : 80,
+		height : 80,
+		backgroundImage : './images/thebutton.png',
+		backgroundSelectedImage : './images/thebuttonselect.png',
+>>>>>>> 53f6a2b1d6309d757a57392ede5a07666f7a3596
 	});
 	whatView.add(activitybtn6);
 
@@ -425,8 +476,13 @@ Titanium.UI.setBackgroundColor('#000');
 		left : '35%',
 		width : 110,
 		height : 55,
+<<<<<<< HEAD
 		backgroundImage : './images/greenrect.png',
 		backgroundSelectedImage : './images/grayrect.png',
+=======
+		backgroundImage : './images/thesquarebutton.png',
+		backgroundSelectedImage : './images/thesquarebuttonselect.png',
+>>>>>>> 53f6a2b1d6309d757a57392ede5a07666f7a3596
 	});
 
 	whatView.add(todaybtn);
@@ -438,7 +494,7 @@ Titanium.UI.setBackgroundColor('#000');
 		left : '35%',
 		width : 110,
 		height : 55,
-		backgroundImage : './images/greenrect.png',
+		backgroundImage : './images/thesquarebutton.png',
 	});
 
 	whatView.add(yestbtn);
@@ -748,8 +804,8 @@ Titanium.UI.setBackgroundColor('#000');
 		// this is the new "clicker" function, although it doesn't have a name anymore, it just is.
 		mainView.addEventListener('click', function(e) {
 
-			yestbtn.backgroundImage = './images/greenrect.png';
-			todaybtn.backgroundImage = './images/greenrect.png';
+			yestbtn.backgroundImage = './images/thesquarebutton.png';
+			todaybtn.backgroundImage = './images/thesquarebutton.png';
 			if (e.source.current == 'yes') {
 
 				// RESET last day selected
@@ -1020,8 +1076,13 @@ Titanium.UI.setBackgroundColor('#000');
 		width : 80,
 		height : 80,
 		title : 'Submit',
+<<<<<<< HEAD
 		backgroundImage : './images/green.png',
 		backgroundSelectedImage : './images/gray.png',
+=======
+		backgroundImage : './images/red.png',
+		backgroundSelectedImage : './images/thebuttonselect.png',
+>>>>>>> 53f6a2b1d6309d757a57392ede5a07666f7a3596
 
 	});
 
@@ -1116,19 +1177,32 @@ Titanium.UI.setBackgroundColor('#000');
 		color : 'white',
 		width : 100,
 		title : 'Refresh',
+<<<<<<< HEAD
 		backgroundImage : './images/greenrect.png',
 		backgroundImageSelected : './images/grayrect.png',
+=======
+		backgroundImage : './images/thesquarebutton.png',
+		backgroundImageSelected : './images/thesquarebuttonselect.png',
+>>>>>>> 53f6a2b1d6309d757a57392ede5a07666f7a3596
 	});
 	profileView.add(refresh);
 
 	var deauth = Ti.UI.createButton({
 		top : '70%',
 		left : '48%',
+<<<<<<< HEAD
 		color : 'white',
 		width : 110,
 		title : 'Log out',
 		backgroundImage : './images/greenrect.png',
 		backgroundImageSelected : './images/grayrect.png',
+=======
+		color : 'Black',
+		width : 110,
+		title : 'Log out',
+		backgroundImage : './images/thesquarebutton.png',
+		backgroundImageSelected : './images/thesquarebuttonselect.png',
+>>>>>>> 53f6a2b1d6309d757a57392ede5a07666f7a3596
 	});
 
 	/* Set up labels */
@@ -1218,8 +1292,13 @@ Titanium.UI.setBackgroundColor('#000');
 	initialise();
 
 	todaybtn.addEventListener('click', function(e) {
+<<<<<<< HEAD
 		todaybtn.backgroundImage = './images/grayrect.png';
 		yestbtn.backgroundImage = './images/greenrect.png';
+=======
+		todaybtn.backgroundImage = './images/thesquarebuttonselect.png';
+		yestbtn.backgroundImage = './images/thesquarebutton.png';
+>>>>>>> 53f6a2b1d6309d757a57392ede5a07666f7a3596
 		day = mydate.getDate();
 		mon = mydate.getMonth() + 1;
 		// convention : jan = 01
@@ -1227,8 +1306,13 @@ Titanium.UI.setBackgroundColor('#000');
 	});
 
 	yestbtn.addEventListener('click', function(e) {
+<<<<<<< HEAD
 		yestbtn.backgroundImage = './images/grayrect.png';
 		todaybtn.backgroundImage = './images/greenrect.png';
+=======
+		yestbtn.backgroundImage = './images/thesquarebuttonselect.png';
+		todaybtn.backgroundImage = './images/thesquarebutton.png';
+>>>>>>> 53f6a2b1d6309d757a57392ede5a07666f7a3596
 		var prevDate = new Date();
 		prevDate.setDate(mydate.getDate() - 1);
 		day = prevDate.getDate();
@@ -1239,56 +1323,101 @@ Titanium.UI.setBackgroundColor('#000');
 
 	activitybtn1.addEventListener('click', function(e) {
 		useractivity = "Running";
+<<<<<<< HEAD
 		activitybtn1.backgroundImage = './images/gray.png';
 		activitybtn2.backgroundImage = './images/green.png';
 		activitybtn3.backgroundImage = './images/green.png';
 		activitybtn4.backgroundImage = './images/green.png';
 		activitybtn5.backgroundImage = './images/green.png';
 		activitybtn6.backgroundImage = './images/green.png';
+=======
+		activitybtn1.backgroundImage = './images/thebuttonselect.png';
+		activitybtn2.backgroundImage = './images/thebutton.png';
+		activitybtn3.backgroundImage = './images/thebutton.png';
+		activitybtn4.backgroundImage = './images/thebutton.png';
+		activitybtn5.backgroundImage = './images/thebutton.png';
+		activitybtn6.backgroundImage = './images/thebutton.png';
+>>>>>>> 53f6a2b1d6309d757a57392ede5a07666f7a3596
 
 	});
 
 	activitybtn2.addEventListener('click', function(e) {
 		useractivity = "Walking";
+<<<<<<< HEAD
 		activitybtn1.backgroundImage = './images/green.png';
 		activitybtn2.backgroundImage = './images/gray.png';
 		activitybtn3.backgroundImage = './images/green.png';
 		activitybtn4.backgroundImage = './images/green.png';
 		activitybtn5.backgroundImage = './images/green.png';
 		activitybtn6.backgroundImage = './images/green.png';
+=======
+		activitybtn1.backgroundImage = './images/thebutton.png';
+		activitybtn2.backgroundImage = './images/thebuttonselect.png';
+		activitybtn3.backgroundImage = './images/thebutton.png';
+		activitybtn4.backgroundImage = './images/thebutton.png';
+		activitybtn5.backgroundImage = './images/thebutton.png';
+		activitybtn6.backgroundImage = './images/thebutton.png';
+>>>>>>> 53f6a2b1d6309d757a57392ede5a07666f7a3596
 
 	});
 
 	activitybtn3.addEventListener('click', function(e) {
 		useractivity = "Swimming";
+<<<<<<< HEAD
 		activitybtn1.backgroundImage = './images/green.png';
 		activitybtn2.backgroundImage = './images/green.png';
 		activitybtn3.backgroundImage = './images/gray.png';
 		activitybtn4.backgroundImage = './images/green.png';
 		activitybtn5.backgroundImage = './images/green.png';
 		activitybtn6.backgroundImage = './images/green.png';
+=======
+		activitybtn1.backgroundImage = './images/thebutton.png';
+		activitybtn2.backgroundImage = './images/thebutton.png';
+		activitybtn3.backgroundImage = './images/thebuttonselect.png';
+		activitybtn4.backgroundImage = './images/thebutton.png';
+		activitybtn5.backgroundImage = './images/thebutton.png';
+		activitybtn6.backgroundImage = './images/thebutton.png';
+>>>>>>> 53f6a2b1d6309d757a57392ede5a07666f7a3596
 
 	});
 
 	activitybtn4.addEventListener('click', function(e) {
 		useractivity = "Cycling";
+<<<<<<< HEAD
 		activitybtn1.backgroundImage = './images/green.png';
 		activitybtn2.backgroundImage = './images/green.png';
 		activitybtn3.backgroundImage = './images/green.png';
 		activitybtn4.backgroundImage = './images/gray.png';
 		activitybtn5.backgroundImage = './images/green.png';
 		activitybtn6.backgroundImage = './images/green.png';
+=======
+		activitybtn1.backgroundImage = './images/thebutton.png';
+		activitybtn2.backgroundImage = './images/thebutton.png';
+		activitybtn3.backgroundImage = './images/thebutton.png';
+		activitybtn4.backgroundImage = './images/thebuttonselect.png';
+		activitybtn5.backgroundImage = './images/thebutton.png';
+		activitybtn6.backgroundImage = './images/thebutton.png';
+>>>>>>> 53f6a2b1d6309d757a57392ede5a07666f7a3596
 
 	});
 
 	activitybtn5.addEventListener('click', function(e) {
 		useractivity = "Weights";
+<<<<<<< HEAD
 		activitybtn1.backgroundImage = './images/green.png';
 		activitybtn2.backgroundImage = './images/green.png';
 		activitybtn3.backgroundImage = './images/green.png';
 		activitybtn4.backgroundImage = './images/green.png';
 		activitybtn5.backgroundImage = './images/gray.png';
 		activitybtn6.backgroundImage = './images/green.png';
+=======
+		activitybtn1.backgroundImage = './images/thebutton.png';
+		activitybtn2.backgroundImage = './images/thebutton.png';
+		activitybtn3.backgroundImage = './images/thebutton.png';
+		activitybtn4.backgroundImage = './images/thebutton.png';
+		activitybtn5.backgroundImage = './images/thebuttonselect.png';
+		activitybtn6.backgroundImage = './images/thebutton.png';
+>>>>>>> 53f6a2b1d6309d757a57392ede5a07666f7a3596
 
 	});
 
@@ -1298,12 +1427,21 @@ Titanium.UI.setBackgroundColor('#000');
 		} else {
 			useractivity = othertxt.value;
 			othertxt.blur();
+<<<<<<< HEAD
 			activitybtn1.backgroundImage = './images/green.png';
 			activitybtn2.backgroundImage = './images/green.png';
 			activitybtn3.backgroundImage = './images/green.png';
 			activitybtn4.backgroundImage = './images/green.png';
 			activitybtn5.backgroundImage = './images/green.png';
 			activitybtn6.backgroundImage = './images/gray.png';
+=======
+			activitybtn1.backgroundImage = './images/thebutton.png';
+			activitybtn2.backgroundImage = './images/thebutton.png';
+			activitybtn3.backgroundImage = './images/thebutton.png';
+			activitybtn4.backgroundImage = './images/thebutton.png';
+			activitybtn5.backgroundImage = './images/thebutton.png';
+			activitybtn6.backgroundImage = './images/thebuttonselect.png';
+>>>>>>> 53f6a2b1d6309d757a57392ede5a07666f7a3596
 
 		}
 	});
