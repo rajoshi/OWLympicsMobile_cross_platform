@@ -30,6 +30,20 @@
 			nil
 		]];
 		
+		[modules addObject:[NSDictionary
+			dictionaryWithObjectsAndKeys:@"map",
+			@"name",
+			@"ti.map",
+			@"moduleid",
+			@"2.0.0",
+			@"version",
+			@"fee93b77-8eb3-418c-8f04-013664c4af83",
+			@"guid",
+			@"",
+			@"licensekey",
+			nil
+		]];
+		
 
 	return modules;
 }

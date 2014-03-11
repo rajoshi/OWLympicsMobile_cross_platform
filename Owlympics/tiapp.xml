@@ -16,6 +16,7 @@
 	<icon>myimage.png</icon>
 	<fullscreen>true</fullscreen>
 	<navbar-hidden>true</navbar-hidden>
+	<statusbar-style>opaque</statusbar-style>
 	<analytics>true</analytics>
 	<guid>502db958-dc63-4c33-87c2-88a82032acde</guid>
 	<property name="ti.ui.defaultunit" type="string">dp</property>
@@ -41,6 +42,19 @@
 				<false/>
 				<key>UIStatusBarStyle</key>
 				<string>UIStatusBarStyleDefault</string>
+				<key>UIRequiredDeviceCapabilities</key>
+				<array>
+    <string>wifi</string>
+   <string>accelerometer</string>
+   <string>location-services</string>
+    <string>gps</string>
+  </array>
+  <key>UIBackgroundModes</key>
+  <array>
+    <string>audio</string>
+    <string>location</string>
+  </array>
+
 			</dict>
 		</plist>
 	</ios>
@@ -70,7 +84,8 @@
 		<theme>default</theme>
 	</mobileweb>
 	<modules>
-		<module platform="commonjs">ti.cloud</module>
+		<module platform="commonjs">ti.cloud</module>	
+        <module platform="iphone" version="2.0.0">ti.map</module>
 	</modules>
 	<deployment-targets>
 		<target device="iphone">true</target>

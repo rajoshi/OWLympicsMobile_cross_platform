@@ -1,0 +1,1061 @@
+TOwlympics-universal
+v6
+r1
+cCheck dependencies
+cProcessInfoPlistFile /Users/cmc/Documents/Titanium_Rajoshi/Owlympics/build/iphone/build/Debug-iphonesimulator/Owlympics.app/Info.plist /Users/cmc/Documents/Titanium_Rajoshi/Owlympics/build/iphone/Info.plist
+cPhaseScriptExecution Pre-Compile /Users/cmc/Documents/Titanium_Rajoshi/Owlympics/build/iphone/build/Owlympics.build/Debug-iphonesimulator/Owlympics-universal.build/Script-DABB369F12E8CB280026A6EA.sh
+cProcessPCH /var/folders/yb/x0jff5b578350610knqvylzw0000gp/C/com.apple.DeveloperTools/5.0.2-5A3005/Xcode/SharedPrecompiledHeaders/Owlympics_Prefix-cfwkkejgcfdmapfdnndeiyhapafl/Owlympics_Prefix.pch.pch Owlympics_Prefix.pch normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+cProcessPCH /var/folders/yb/x0jff5b578350610knqvylzw0000gp/C/com.apple.DeveloperTools/5.0.2-5A3005/Xcode/SharedPrecompiledHeaders/Owlympics_Prefix-fgviumhilqjpaofybzjaiuqfrsht/Owlympics_Prefix.pch.pch Owlympics_Prefix.pch normal i386 c com.apple.compilers.llvm.clang.1_0.compiler
+cProcessPCH++ /var/folders/yb/x0jff5b578350610knqvylzw0000gp/C/com.apple.DeveloperTools/5.0.2-5A3005/Xcode/SharedPrecompiledHeaders/Owlympics_Prefix-eqeaclicogvnbzcsxagpklwyflhq/Owlympics_Prefix.pch.pch Owlympics_Prefix.pch normal i386 objective-c++ com.apple.compilers.llvm.clang.1_0.compiler
+cProcessPCH++ /var/folders/yb/x0jff5b578350610knqvylzw0000gp/C/com.apple.DeveloperTools/5.0.2-5A3005/Xcode/SharedPrecompiledHeaders/Owlympics_Prefix-boligutyazotgufrlatgillrrnjd/Owlympics_Prefix.pch.pch Owlympics_Prefix.pch normal i386 c++ com.apple.compilers.llvm.clang.1_0.compiler
+cCompileC build/Owlympics.build/Debug-iphonesimulator/Owlympics-universal.build/Objects-normal/i386/TiUIiOSToolbar.o /Users/cmc/Documents/Titanium_Rajoshi/Owlympics/build/iphone/Classes/TiUIiOSToolbar.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+cCompileC build/Owlympics.build/Debug-iphonesimulator/Owlympics-universal.build/Objects-normal/i386/TiUIiOSToolbarProxy.o /Users/cmc/Documents/Titanium_Rajoshi/Owlympics/build/iphone/Classes/TiUIiOSToolbarProxy.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+cCompileC build/Owlympics.build/Debug-iphonesimulator/Owlympics-universal.build/Objects-normal/i386/TiUITableViewAction.o /Users/cmc/Documents/Titanium_Rajoshi/Owlympics/build/iphone/Classes/TiUITableViewAction.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+cCompileC build/Owlympics.build/Debug-iphonesimulator/Owlympics-universal.build/Objects-normal/i386/TiFile.o /Users/cmc/Documents/Titanium_Rajoshi/Owlympics/build/iphone/Classes/TiFile.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+cCompileC build/Owlympics.build/Debug-iphonesimulator/Owlympics-universal.build/Objects-normal/i386/main.o /Users/cmc/Documents/Titanium_Rajoshi/Owlympics/build/iphone/main.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+
+N/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/SDKSettings.plist
+c0000000052EFA9FC00000000000003B5
+t1391438332
+s949
+
+N/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/System/Library/CoreServices/SystemVersion.plist
+c0000000052EFAA0400000000000001A0
+t1391438340
+s416
+
+N/Users/cmc/Documents/Titanium_Rajoshi/Owlympics/build/iphone/Classes/TiFile.m
+c00000000531F89C400000000000009D3
+t1394575812
+s2515
+
+N/Users/cmc/Documents/Titanium_Rajoshi/Owlympics/build/iphone/Classes/TiUITableViewAction.m
+c00000000531F89C500000000000004FC
+t1394575813
+s1276
+
+N/Users/cmc/Documents/Titanium_Rajoshi/Owlympics/build/iphone/Classes/TiUIiOSToolbar.m
+c00000000531F89C500000000000013FE
+t1394575813
+s5118
+
+N/Users/cmc/Documents/Titanium_Rajoshi/Owlympics/build/iphone/Classes/TiUIiOSToolbarProxy.m
+c00000000531F89C5000000000000086B
+t1394575813
+s2155
+
+N/Users/cmc/Documents/Titanium_Rajoshi/Owlympics/build/iphone/Info.plist
+c00000000531F89C4000000000000088C
+t1394575812
+s2188
+
+N/Users/cmc/Documents/Titanium_Rajoshi/Owlympics/build/iphone/Owlympics_Prefix.pch
+c00000000531F89C5000000000000016E
+t1394575813
+s366
+
+N/Users/cmc/Documents/Titanium_Rajoshi/Owlympics/build/iphone/build/Debug-iphonesimulator/Owlympics.app/Info.plist
+t2
+s0
+
+N/Users/cmc/Documents/Titanium_Rajoshi/Owlympics/build/iphone/build/Debug-iphonesimulator/Owlympics.app/PkgInfo
+t2
+s0
+
+N/Users/cmc/Documents/Titanium_Rajoshi/Owlympics/build/iphone/build/Owlympics.build/Debug-iphonesimulator/Owlympics-universal.build/Objects-normal/i386/TiFile.o
+t2
+s0
+
+N/Users/cmc/Documents/Titanium_Rajoshi/Owlympics/build/iphone/build/Owlympics.build/Debug-iphonesimulator/Owlympics-universal.build/Objects-normal/i386/TiUITableViewAction.o
+t2
+s0
+
+N/Users/cmc/Documents/Titanium_Rajoshi/Owlympics/build/iphone/build/Owlympics.build/Debug-iphonesimulator/Owlympics-universal.build/Objects-normal/i386/TiUIiOSToolbar.o
+t2
+s0
+
+N/Users/cmc/Documents/Titanium_Rajoshi/Owlympics/build/iphone/build/Owlympics.build/Debug-iphonesimulator/Owlympics-universal.build/Objects-normal/i386/TiUIiOSToolbarProxy.o
+t2
+s0
+
+N/Users/cmc/Documents/Titanium_Rajoshi/Owlympics/build/iphone/build/Owlympics.build/Debug-iphonesimulator/Owlympics-universal.build/Objects-normal/i386/main.o
+t2
+s0
+
+N/Users/cmc/Documents/Titanium_Rajoshi/Owlympics/build/iphone/build/Owlympics.build/Debug-iphonesimulator/Owlympics-universal.build/Script-DABB369F12E8CB280026A6EA.sh
+c00000000531F89C60000000000000119
+t1394575814
+s281
+
+N/Users/cmc/Documents/Titanium_Rajoshi/Owlympics/build/iphone/main.m
+c00000000531F89C5000000000000061C
+t1394575813
+s1564
+
+N/var/folders/yb/x0jff5b578350610knqvylzw0000gp/C/com.apple.DeveloperTools/5.0.2-5A3005/Xcode/SharedPrecompiledHeaders/Owlympics_Prefix-boligutyazotgufrlatgillrrnjd/Owlympics_Prefix.pch.pch
+t1395695288
+s133608
+
+N/var/folders/yb/x0jff5b578350610knqvylzw0000gp/C/com.apple.DeveloperTools/5.0.2-5A3005/Xcode/SharedPrecompiledHeaders/Owlympics_Prefix-cfwkkejgcfdmapfdnndeiyhapafl/Owlympics_Prefix.pch.pch
+t1395695289
+s5352792
+
+N/var/folders/yb/x0jff5b578350610knqvylzw0000gp/C/com.apple.DeveloperTools/5.0.2-5A3005/Xcode/SharedPrecompiledHeaders/Owlympics_Prefix-eqeaclicogvnbzcsxagpklwyflhq/Owlympics_Prefix.pch.pch
+t1395695289
+s6266424
+
+N/var/folders/yb/x0jff5b578350610knqvylzw0000gp/C/com.apple.DeveloperTools/5.0.2-5A3005/Xcode/SharedPrecompiledHeaders/Owlympics_Prefix-fgviumhilqjpaofybzjaiuqfrsht/Owlympics_Prefix.pch.pch
+t1395695288
+s129732
+
+CCheck dependencies
+r0
+lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection18"Check dependencies18"Check dependencies2ea92246c1cfb841^971ba846c1cfb841^---0#1#1#--18"Check dependencies36"5EB066E8-CE85-493F-95F4-5898AAA1BB75-
+
+CCompileC build/Owlympics.build/Debug-iphonesimulator/Owlympics-universal.build/Objects-normal/i386/AFItemView.o /Users/cmc/Documents/Titanium_Rajoshi/Owlympics/build/iphone/Classes/AFOpenFlow/AFItemView.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+r0
+
+CCompileC build/Owlympics.build/Debug-iphonesimulator/Owlympics-universal.build/Objects-normal/i386/AFOpenFlowView.o /Users/cmc/Documents/Titanium_Rajoshi/Owlympics/build/iphone/Classes/AFOpenFlow/AFOpenFlowView.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+r0
+
+CCompileC build/Owlympics.build/Debug-iphonesimulator/Owlympics-universal.build/Objects-normal/i386/AFUIImageReflection.o /Users/cmc/Documents/Titanium_Rajoshi/Owlympics/build/iphone/Classes/AFOpenFlow/AFUIImageReflection.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+r0
+
+CCompileC build/Owlympics.build/Debug-iphonesimulator/Owlympics-universal.build/Objects-normal/i386/APIModule.o /Users/cmc/Documents/Titanium_Rajoshi/Owlympics/build/iphone/Classes/APIModule.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+r0
+
+CCompileC build/Owlympics.build/Debug-iphonesimulator/Owlympics-universal.build/Objects-normal/i386/AQRecorder.o /Users/cmc/Documents/Titanium_Rajoshi/Owlympics/build/iphone/Classes/AQRecorder.mm normal i386 objective-c++ com.apple.compilers.llvm.clang.1_0.compiler
+r0
+
+CCompileC build/Owlympics.build/Debug-iphonesimulator/Owlympics-universal.build/Objects-normal/i386/ASIAuthenticationDialog.o /Users/cmc/Documents/Titanium_Rajoshi/Owlympics/build/iphone/Classes/ASI/ASIAuthenticationDialog.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+r0
+
+CCompileC build/Owlympics.build/Debug-iphonesimulator/Owlympics-universal.build/Objects-normal/i386/ASIDataCompressor.o /Users/cmc/Documents/Titanium_Rajoshi/Owlympics/build/iphone/Classes/ASI/ASIDataCompressor.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+r0
+
+CCompileC build/Owlympics.build/Debug-iphonesimulator/Owlympics-universal.build/Objects-normal/i386/ASIDataDecompressor.o /Users/cmc/Documents/Titanium_Rajoshi/Owlympics/build/iphone/Classes/ASI/ASIDataDecompressor.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+r0
+
+CCompileC build/Owlympics.build/Debug-iphonesimulator/Owlympics-universal.build/Objects-normal/i386/ASIDownloadCache.o /Users/cmc/Documents/Titanium_Rajoshi/Owlympics/build/iphone/Classes/ASI/ASIDownloadCache.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+r0
+
+CCompileC build/Owlympics.build/Debug-iphonesimulator/Owlympics-universal.build/Objects-normal/i386/ASIFormDataRequest.o /Users/cmc/Documents/Titanium_Rajoshi/Owlympics/build/iphone/Classes/ASI/ASIFormDataRequest.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+r0
+
+CCompileC build/Owlympics.build/Debug-iphonesimulator/Owlympics-universal.build/Objects-normal/i386/ASIHTTPRequest.o /Users/cmc/Documents/Titanium_Rajoshi/Owlympics/build/iphone/Classes/ASI/ASIHTTPRequest.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+r0
+
+CCompileC build/Owlympics.build/Debug-iphonesimulator/Owlympics-universal.build/Objects-normal/i386/ASIInputStream.o /Users/cmc/Documents/Titanium_Rajoshi/Owlympics/build/iphone/Classes/ASI/ASIInputStream.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+r0
+
+CCompileC build/Owlympics.build/Debug-iphonesimulator/Owlympics-universal.build/Objects-normal/i386/ASINetworkQueue.o /Users/cmc/Documents/Titanium_Rajoshi/Owlympics/build/iphone/Classes/ASI/ASINetworkQueue.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+r0
+
+CCompileC build/Owlympics.build/Debug-iphonesimulator/Owlympics-universal.build/Objects-normal/i386/AccelerometerModule.o /Users/cmc/Documents/Titanium_Rajoshi/Owlympics/build/iphone/Classes/AccelerometerModule.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+r0
+
+CCompileC build/Owlympics.build/Debug-iphonesimulator/Owlympics-universal.build/Objects-normal/i386/AnalyticsModule.o /Users/cmc/Documents/Titanium_Rajoshi/Owlympics/build/iphone/Classes/AnalyticsModule.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+r0
+
+CCompileC build/Owlympics.build/Debug-iphonesimulator/Owlympics-universal.build/Objects-normal/i386/AppModule.o /Users/cmc/Documents/Titanium_Rajoshi/Owlympics/build/iphone/Classes/AppModule.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+r0
+
+CCompileC build/Owlympics.build/Debug-iphonesimulator/Owlympics-universal.build/Objects-normal/i386/ApplicationDefaults.o /Users/cmc/Documents/Titanium_Rajoshi/Owlympics/build/iphone/Classes/ApplicationDefaults.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+r0
+
+CCompileC build/Owlympics.build/Debug-iphonesimulator/Owlympics-universal.build/Objects-normal/i386/ApplicationMods.o /Users/cmc/Documents/Titanium_Rajoshi/Owlympics/build/iphone/Classes/ApplicationMods.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+r0
+
+CCompileC build/Owlympics.build/Debug-iphonesimulator/Owlympics-universal.build/Objects-normal/i386/ApplicationRouting.o /Users/cmc/Documents/Titanium_Rajoshi/Owlympics/build/iphone/Classes/ApplicationRouting.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+r0
+
+CCompileC build/Owlympics.build/Debug-iphonesimulator/Owlympics-universal.build/Objects-normal/i386/AsyncSocket.o /Users/cmc/Documents/Titanium_Rajoshi/Owlympics/build/iphone/Classes/AsyncSocket.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+r0
+
+CCompileC build/Owlympics.build/Debug-iphonesimulator/Owlympics-universal.build/Objects-normal/i386/AsyncUdpSocket.o /Users/cmc/Documents/Titanium_Rajoshi/Owlympics/build/iphone/Classes/AsyncUdpSocket.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+r0
+
+CCompileC build/Owlympics.build/Debug-iphonesimulator/Owlympics-universal.build/Objects-normal/i386/AudioStreamer.o /Users/cmc/Documents/Titanium_Rajoshi/Owlympics/build/iphone/Classes/AudioStreamer/AudioStreamer.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+r0
+
+CCompileC build/Owlympics.build/Debug-iphonesimulator/Owlympics-universal.build/Objects-normal/i386/AudioStreamerCUR.o /Users/cmc/Documents/Titanium_Rajoshi/Owlympics/build/iphone/Classes/AudioStreamer/AudioStreamerCUR.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+r0
+
+CCompileC build/Owlympics.build/Debug-iphonesimulator/Owlympics-universal.build/Objects-normal/i386/Base64Transcoder.o /Users/cmc/Documents/Titanium_Rajoshi/Owlympics/build/iphone/Classes/Base64Transcoder.c normal i386 c com.apple.compilers.llvm.clang.1_0.compiler
+r0
+
+CCompileC build/Owlympics.build/Debug-iphonesimulator/Owlympics-universal.build/Objects-normal/i386/Bridge.o /Users/cmc/Documents/Titanium_Rajoshi/Owlympics/build/iphone/Classes/Bridge.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+r0
+
+CCompileC build/Owlympics.build/Debug-iphonesimulator/Owlympics-universal.build/Objects-normal/i386/CADebugMacros.o /Users/cmc/Documents/Titanium_Rajoshi/Owlympics/build/iphone/Classes/CADebugMacros.cpp normal i386 c++ com.apple.compilers.llvm.clang.1_0.compiler
+r0
+
+CCompileC build/Owlympics.build/Debug-iphonesimulator/Owlympics-universal.build/Objects-normal/i386/CAStreamBasicDescription.o /Users/cmc/Documents/Titanium_Rajoshi/Owlympics/build/iphone/Classes/CAStreamBasicDescription.cpp normal i386 c++ com.apple.compilers.llvm.clang.1_0.compiler
+r0
+
+CCompileC build/Owlympics.build/Debug-iphonesimulator/Owlympics-universal.build/Objects-normal/i386/CAXException.o /Users/cmc/Documents/Titanium_Rajoshi/Owlympics/build/iphone/Classes/CAXException.cpp normal i386 c++ com.apple.compilers.llvm.clang.1_0.compiler
+r0
+
+CCompileC build/Owlympics.build/Debug-iphonesimulator/Owlympics-universal.build/Objects-normal/i386/CalendarModule.o /Users/cmc/Documents/Titanium_Rajoshi/Owlympics/build/iphone/Classes/CalendarModule.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+r0
+
+CCompileC build/Owlympics.build/Debug-iphonesimulator/Owlympics-universal.build/Objects-normal/i386/CodecModule.o /Users/cmc/Documents/Titanium_Rajoshi/Owlympics/build/iphone/Classes/CodecModule.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+r0
+
+CCompileC build/Owlympics.build/Debug-iphonesimulator/Owlympics-universal.build/Objects-normal/i386/ContactsModule.o /Users/cmc/Documents/Titanium_Rajoshi/Owlympics/build/iphone/Classes/ContactsModule.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+r0
+
+CCompileC build/Owlympics.build/Debug-iphonesimulator/Owlympics-universal.build/Objects-normal/i386/DatabaseModule.o /Users/cmc/Documents/Titanium_Rajoshi/Owlympics/build/iphone/Classes/DatabaseModule.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+r0
+
+CCompileC build/Owlympics.build/Debug-iphonesimulator/Owlympics-universal.build/Objects-normal/i386/FilesystemModule.o /Users/cmc/Documents/Titanium_Rajoshi/Owlympics/build/iphone/Classes/FilesystemModule.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+r0
+
+CCompileC build/Owlympics.build/Debug-iphonesimulator/Owlympics-universal.build/Objects-normal/i386/GDataXMLNode.o /Users/cmc/Documents/Titanium_Rajoshi/Owlympics/build/iphone/Classes/GDataXMLNode.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+r0
+
+CCompileC build/Owlympics.build/Debug-iphonesimulator/Owlympics-universal.build/Objects-normal/i386/GeolocationModule.o /Users/cmc/Documents/Titanium_Rajoshi/Owlympics/build/iphone/Classes/GeolocationModule.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+r0
+
+CCompileC build/Owlympics.build/Debug-iphonesimulator/Owlympics-universal.build/Objects-normal/i386/GestureModule.o /Users/cmc/Documents/Titanium_Rajoshi/Owlympics/build/iphone/Classes/GestureModule.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+r0
+
+CCompileC build/Owlympics.build/Debug-iphonesimulator/Owlympics-universal.build/Objects-normal/i386/ImageLoader.o /Users/cmc/Documents/Titanium_Rajoshi/Owlympics/build/iphone/Classes/ImageLoader.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+r0
+
+CCompileC build/Owlympics.build/Debug-iphonesimulator/Owlympics-universal.build/Objects-normal/i386/KrollBridge.o /Users/cmc/Documents/Titanium_Rajoshi/Owlympics/build/iphone/Classes/KrollBridge.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+r0
+
+CCompileC build/Owlympics.build/Debug-iphonesimulator/Owlympics-universal.build/Objects-normal/i386/KrollCallback.o /Users/cmc/Documents/Titanium_Rajoshi/Owlympics/build/iphone/Classes/KrollCallback.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+r0
+
+CCompileC build/Owlympics.build/Debug-iphonesimulator/Owlympics-universal.build/Objects-normal/i386/KrollContext.o /Users/cmc/Documents/Titanium_Rajoshi/Owlympics/build/iphone/Classes/KrollContext.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+r0
+
+CCompileC build/Owlympics.build/Debug-iphonesimulator/Owlympics-universal.build/Objects-normal/i386/KrollCoverage.o /Users/cmc/Documents/Titanium_Rajoshi/Owlympics/build/iphone/Classes/KrollCoverage.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+r0
+
+CCompileC build/Owlympics.build/Debug-iphonesimulator/Owlympics-universal.build/Objects-normal/i386/KrollMethod.o /Users/cmc/Documents/Titanium_Rajoshi/Owlympics/build/iphone/Classes/KrollMethod.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+r0
+
+CCompileC build/Owlympics.build/Debug-iphonesimulator/Owlympics-universal.build/Objects-normal/i386/KrollMethodDelegate.o /Users/cmc/Documents/Titanium_Rajoshi/Owlympics/build/iphone/Classes/KrollMethodDelegate.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+r0
+
+CCompileC build/Owlympics.build/Debug-iphonesimulator/Owlympics-universal.build/Objects-normal/i386/KrollObject.o /Users/cmc/Documents/Titanium_Rajoshi/Owlympics/build/iphone/Classes/KrollObject.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+r0
+
+CCompileC build/Owlympics.build/Debug-iphonesimulator/Owlympics-universal.build/Objects-normal/i386/KrollPropertyDelegate.o /Users/cmc/Documents/Titanium_Rajoshi/Owlympics/build/iphone/Classes/KrollPropertyDelegate.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+r0
+
+CCompileC build/Owlympics.build/Debug-iphonesimulator/Owlympics-universal.build/Objects-normal/i386/KrollTimer.o /Users/cmc/Documents/Titanium_Rajoshi/Owlympics/build/iphone/Classes/KrollTimer.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+r0
+
+CCompileC build/Owlympics.build/Debug-iphonesimulator/Owlympics-universal.build/Objects-normal/i386/LauncherButton.o /Users/cmc/Documents/Titanium_Rajoshi/Owlympics/build/iphone/Classes/LauncherButton.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+r0
+
+CCompileC build/Owlympics.build/Debug-iphonesimulator/Owlympics-universal.build/Objects-normal/i386/LauncherItem.o /Users/cmc/Documents/Titanium_Rajoshi/Owlympics/build/iphone/Classes/LauncherItem.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+r0
+
+CCompileC build/Owlympics.build/Debug-iphonesimulator/Owlympics-universal.build/Objects-normal/i386/LauncherView.o /Users/cmc/Documents/Titanium_Rajoshi/Owlympics/build/iphone/Classes/LauncherView.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+r0
+
+CCompileC build/Owlympics.build/Debug-iphonesimulator/Owlympics-universal.build/Objects-normal/i386/LayoutConstraint.o /Users/cmc/Documents/Titanium_Rajoshi/Owlympics/build/iphone/Classes/LayoutConstraint.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+r0
+
+CCompileC build/Owlympics.build/Debug-iphonesimulator/Owlympics-universal.build/Objects-normal/i386/ListenerEntry.o /Users/cmc/Documents/Titanium_Rajoshi/Owlympics/build/iphone/Classes/ListenerEntry.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+r0
+
+CCompileC build/Owlympics.build/Debug-iphonesimulator/Owlympics-universal.build/Objects-normal/i386/LocaleModule.o /Users/cmc/Documents/Titanium_Rajoshi/Owlympics/build/iphone/Classes/LocaleModule.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+r0
+
+CCompileC build/Owlympics.build/Debug-iphonesimulator/Owlympics-universal.build/Objects-normal/i386/MGSplitCornersView.o /Users/cmc/Documents/Titanium_Rajoshi/Owlympics/build/iphone/Classes/MGSplitView/MGSplitCornersView.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+r0
+
+CCompileC build/Owlympics.build/Debug-iphonesimulator/Owlympics-universal.build/Objects-normal/i386/MGSplitDividerView.o /Users/cmc/Documents/Titanium_Rajoshi/Owlympics/build/iphone/Classes/MGSplitView/MGSplitDividerView.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+r0
+
+CCompileC build/Owlympics.build/Debug-iphonesimulator/Owlympics-universal.build/Objects-normal/i386/MGSplitView.o /Users/cmc/Documents/Titanium_Rajoshi/Owlympics/build/iphone/Classes/MGSplitView/MGSplitView.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+r0
+
+CCompileC build/Owlympics.build/Debug-iphonesimulator/Owlympics-universal.build/Objects-normal/i386/MGSplitViewController.o /Users/cmc/Documents/Titanium_Rajoshi/Owlympics/build/iphone/Classes/MGSplitView/MGSplitViewController.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+r0
+
+CCompileC build/Owlympics.build/Debug-iphonesimulator/Owlympics-universal.build/Objects-normal/i386/MediaModule.o /Users/cmc/Documents/Titanium_Rajoshi/Owlympics/build/iphone/Classes/MediaModule.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+r0
+
+CCompileC build/Owlympics.build/Debug-iphonesimulator/Owlympics-universal.build/Objects-normal/i386/Mimetypes.o /Users/cmc/Documents/Titanium_Rajoshi/Owlympics/build/iphone/Classes/Mimetypes.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+r0
+
+CCompileC build/Owlympics.build/Debug-iphonesimulator/Owlympics-universal.build/Objects-normal/i386/NSData+Additions.o /Users/cmc/Documents/Titanium_Rajoshi/Owlympics/build/iphone/Classes/NSData+Additions.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+r0
+
+CCompileC build/Owlympics.build/Debug-iphonesimulator/Owlympics-universal.build/Objects-normal/i386/NetworkModule.o /Users/cmc/Documents/Titanium_Rajoshi/Owlympics/build/iphone/Classes/NetworkModule.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+r0
+
+CCompileC build/Owlympics.build/Debug-iphonesimulator/Owlympics-universal.build/Objects-normal/i386/OperationQueue.o /Users/cmc/Documents/Titanium_Rajoshi/Owlympics/build/iphone/Classes/OperationQueue.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+r0
+
+CCompileC build/Owlympics.build/Debug-iphonesimulator/Owlympics-universal.build/Objects-normal/i386/PLSqliteDatabase.o /Users/cmc/Documents/Titanium_Rajoshi/Owlympics/build/iphone/Classes/PlausibleDatabase/PLSqliteDatabase.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+r0
+
+CCompileC build/Owlympics.build/Debug-iphonesimulator/Owlympics-universal.build/Objects-normal/i386/PLSqlitePreparedStatement.o /Users/cmc/Documents/Titanium_Rajoshi/Owlympics/build/iphone/Classes/PlausibleDatabase/PLSqlitePreparedStatement.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+r0
+
+CCompileC build/Owlympics.build/Debug-iphonesimulator/Owlympics-universal.build/Objects-normal/i386/PLSqliteResultSet.o /Users/cmc/Documents/Titanium_Rajoshi/Owlympics/build/iphone/Classes/PlausibleDatabase/PLSqliteResultSet.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+r0
+
+CCompileC build/Owlympics.build/Debug-iphonesimulator/Owlympics-universal.build/Objects-normal/i386/PlatformModule.o /Users/cmc/Documents/Titanium_Rajoshi/Owlympics/build/iphone/Classes/PlatformModule.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+r0
+
+CCompileC build/Owlympics.build/Debug-iphonesimulator/Owlympics-universal.build/Objects-normal/i386/PlausibleDatabase.o /Users/cmc/Documents/Titanium_Rajoshi/Owlympics/build/iphone/Classes/PlausibleDatabase/PlausibleDatabase.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+r0
+
+CCompileC build/Owlympics.build/Debug-iphonesimulator/Owlympics-universal.build/Objects-normal/i386/Reachability.o /Users/cmc/Documents/Titanium_Rajoshi/Owlympics/build/iphone/Classes/ASI/Reachability.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+r0
+
+CCompileC build/Owlympics.build/Debug-iphonesimulator/Owlympics-universal.build/Objects-normal/i386/SBJSON.o /Users/cmc/Documents/Titanium_Rajoshi/Owlympics/build/iphone/Classes/SBJSON.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+r0
+
+CCompileC build/Owlympics.build/Debug-iphonesimulator/Owlympics-universal.build/Objects-normal/i386/SCListener.o /Users/cmc/Documents/Titanium_Rajoshi/Owlympics/build/iphone/Classes/SCListener.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+r0
+
+CCompileC build/Owlympics.build/Debug-iphonesimulator/Owlympics-universal.build/Objects-normal/i386/StreamModule.o /Users/cmc/Documents/Titanium_Rajoshi/Owlympics/build/iphone/Classes/StreamModule.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+r0
+
+CCompileC build/Owlympics.build/Debug-iphonesimulator/Owlympics-universal.build/Objects-normal/i386/TIDOMCharacterDataProxy.o /Users/cmc/Documents/Titanium_Rajoshi/Owlympics/build/iphone/Classes/TIDOMCharacterDataProxy.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+r0
+
+CCompileC build/Owlympics.build/Debug-iphonesimulator/Owlympics-universal.build/Objects-normal/i386/TIDOMDOMImplementationProxy.o /Users/cmc/Documents/Titanium_Rajoshi/Owlympics/build/iphone/Classes/TIDOMDOMImplementationProxy.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+r0
+
+CCompileC build/Owlympics.build/Debug-iphonesimulator/Owlympics-universal.build/Objects-normal/i386/TIDOMDocumentTypeProxy.o /Users/cmc/Documents/Titanium_Rajoshi/Owlympics/build/iphone/Classes/TIDOMDocumentTypeProxy.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+r0
+
+CCompileC build/Owlympics.build/Debug-iphonesimulator/Owlympics-universal.build/Objects-normal/i386/Ti2DMatrix.o /Users/cmc/Documents/Titanium_Rajoshi/Owlympics/build/iphone/Classes/Ti2DMatrix.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+r0
+
+CCompileC build/Owlympics.build/Debug-iphonesimulator/Owlympics-universal.build/Objects-normal/i386/Ti3DMatrix.o /Users/cmc/Documents/Titanium_Rajoshi/Owlympics/build/iphone/Classes/Ti3DMatrix.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+r0
+
+CCompileC build/Owlympics.build/Debug-iphonesimulator/Owlympics-universal.build/Objects-normal/i386/TiAction.o /Users/cmc/Documents/Titanium_Rajoshi/Owlympics/build/iphone/Classes/TiAction.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+r0
+
+CCompileC build/Owlympics.build/Debug-iphonesimulator/Owlympics-universal.build/Objects-normal/i386/TiAnchorAttachBehavior.o /Users/cmc/Documents/Titanium_Rajoshi/Owlympics/build/iphone/Classes/TiAnchorAttachBehavior.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+r0
+
+CCompileC build/Owlympics.build/Debug-iphonesimulator/Owlympics-universal.build/Objects-normal/i386/TiAnimation.o /Users/cmc/Documents/Titanium_Rajoshi/Owlympics/build/iphone/Classes/TiAnimation.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+r0
+
+CCompileC build/Owlympics.build/Debug-iphonesimulator/Owlympics-universal.build/Objects-normal/i386/TiAnimatorProxy.o /Users/cmc/Documents/Titanium_Rajoshi/Owlympics/build/iphone/Classes/TiAnimatorProxy.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+r0
+
+CCompileC build/Owlympics.build/Debug-iphonesimulator/Owlympics-universal.build/Objects-normal/i386/TiApp.o /Users/cmc/Documents/Titanium_Rajoshi/Owlympics/build/iphone/Classes/TiApp.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+r0
+
+CCompileC build/Owlympics.build/Debug-iphonesimulator/Owlympics-universal.build/Objects-normal/i386/TiAppPropertiesProxy.o /Users/cmc/Documents/Titanium_Rajoshi/Owlympics/build/iphone/Classes/TiAppPropertiesProxy.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+r0
+
+CCompileC build/Owlympics.build/Debug-iphonesimulator/Owlympics-universal.build/Objects-normal/i386/TiAppiOSBackgroundServiceProxy.o /Users/cmc/Documents/Titanium_Rajoshi/Owlympics/build/iphone/Classes/TiAppiOSBackgroundServiceProxy.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+r0
+
+CCompileC build/Owlympics.build/Debug-iphonesimulator/Owlympics-universal.build/Objects-normal/i386/TiAppiOSLocalNotificationProxy.o /Users/cmc/Documents/Titanium_Rajoshi/Owlympics/build/iphone/Classes/TiAppiOSLocalNotificationProxy.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+r0
+
+CCompileC build/Owlympics.build/Debug-iphonesimulator/Owlympics-universal.build/Objects-normal/i386/TiAppiOSProxy.o /Users/cmc/Documents/Titanium_Rajoshi/Owlympics/build/iphone/Classes/TiAppiOSProxy.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+r0
+
+CCompileC build/Owlympics.build/Debug-iphonesimulator/Owlympics-universal.build/Objects-normal/i386/TiBase.o /Users/cmc/Documents/Titanium_Rajoshi/Owlympics/build/iphone/Classes/TiBase.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+r0
+
+CCompileC build/Owlympics.build/Debug-iphonesimulator/Owlympics-universal.build/Objects-normal/i386/TiBindingEvent.o /Users/cmc/Documents/Titanium_Rajoshi/Owlympics/build/iphone/Classes/TiBindingEvent.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+r0
+
+CCompileC build/Owlympics.build/Debug-iphonesimulator/Owlympics-universal.build/Objects-normal/i386/TiBindingRunLoop.o /Users/cmc/Documents/Titanium_Rajoshi/Owlympics/build/iphone/Classes/TiBindingRunLoop.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+r0
+
+CCompileC build/Owlympics.build/Debug-iphonesimulator/Owlympics-universal.build/Objects-normal/i386/TiBindingTiValue.o /Users/cmc/Documents/Titanium_Rajoshi/Owlympics/build/iphone/Classes/TiBindingTiValue.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+r0
+
+CCompileC build/Owlympics.build/Debug-iphonesimulator/Owlympics-universal.build/Objects-normal/i386/TiBlob.o /Users/cmc/Documents/Titanium_Rajoshi/Owlympics/build/iphone/Classes/TiBlob.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+r0
+
+CCompileC build/Owlympics.build/Debug-iphonesimulator/Owlympics-universal.build/Objects-normal/i386/TiBuffer.o /Users/cmc/Documents/Titanium_Rajoshi/Owlympics/build/iphone/Classes/TiBuffer.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+r0
+
+CCompileC build/Owlympics.build/Debug-iphonesimulator/Owlympics-universal.build/Objects-normal/i386/TiButtonUtil.o /Users/cmc/Documents/Titanium_Rajoshi/Owlympics/build/iphone/Classes/TiButtonUtil.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+r0
+
+CCompileC build/Owlympics.build/Debug-iphonesimulator/Owlympics-universal.build/Objects-normal/i386/TiCalendarAlert.o /Users/cmc/Documents/Titanium_Rajoshi/Owlympics/build/iphone/Classes/TiCalendarAlert.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+r0
+
+CCompileC build/Owlympics.build/Debug-iphonesimulator/Owlympics-universal.build/Objects-normal/i386/TiCalendarCalendar.o /Users/cmc/Documents/Titanium_Rajoshi/Owlympics/build/iphone/Classes/TiCalendarCalendar.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+r0
+
+CCompileC build/Owlympics.build/Debug-iphonesimulator/Owlympics-universal.build/Objects-normal/i386/TiCalendarEvent.o /Users/cmc/Documents/Titanium_Rajoshi/Owlympics/build/iphone/Classes/TiCalendarEvent.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+r0
+
+CCompileC build/Owlympics.build/Debug-iphonesimulator/Owlympics-universal.build/Objects-normal/i386/TiCalendarRecurrenceRule.o /Users/cmc/Documents/Titanium_Rajoshi/Owlympics/build/iphone/Classes/TiCalendarRecurrenceRule.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+r0
+
+CCompileC build/Owlympics.build/Debug-iphonesimulator/Owlympics-universal.build/Objects-normal/i386/TiCalendarReminder.o /Users/cmc/Documents/Titanium_Rajoshi/Owlympics/build/iphone/Classes/TiCalendarReminder.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+r0
+
+CCompileC build/Owlympics.build/Debug-iphonesimulator/Owlympics-universal.build/Objects-normal/i386/TiCollisionBehavior.o /Users/cmc/Documents/Titanium_Rajoshi/Owlympics/build/iphone/Classes/TiCollisionBehavior.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+r0
+
+CCompileC build/Owlympics.build/Debug-iphonesimulator/Owlympics-universal.build/Objects-normal/i386/TiColor.o /Users/cmc/Documents/Titanium_Rajoshi/Owlympics/build/iphone/Classes/TiColor.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+r0
+
+CCompileC build/Owlympics.build/Debug-iphonesimulator/Owlympics-universal.build/Objects-normal/i386/TiComplexValue.o /Users/cmc/Documents/Titanium_Rajoshi/Owlympics/build/iphone/Classes/TiComplexValue.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+r0
+
+CCompileC build/Owlympics.build/Debug-iphonesimulator/Owlympics-universal.build/Objects-normal/i386/TiConsole.o /Users/cmc/Documents/Titanium_Rajoshi/Owlympics/build/iphone/Classes/TiConsole.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+r0
+
+CCompileC build/Owlympics.build/Debug-iphonesimulator/Owlympics-universal.build/Objects-normal/i386/TiContactsGroup.o /Users/cmc/Documents/Titanium_Rajoshi/Owlympics/build/iphone/Classes/TiContactsGroup.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+r0
+
+CCompileC build/Owlympics.build/Debug-iphonesimulator/Owlympics-universal.build/Objects-normal/i386/TiContactsPerson.o /Users/cmc/Documents/Titanium_Rajoshi/Owlympics/build/iphone/Classes/TiContactsPerson.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+r0
+
+CCompileC build/Owlympics.build/Debug-iphonesimulator/Owlympics-universal.build/Objects-normal/i386/TiDOMAttrProxy.o /Users/cmc/Documents/Titanium_Rajoshi/Owlympics/build/iphone/Classes/TiDOMAttrProxy.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+r0
+
+CCompileC build/Owlympics.build/Debug-iphonesimulator/Owlympics-universal.build/Objects-normal/i386/TiDOMCDATANodeProxy.o /Users/cmc/Documents/Titanium_Rajoshi/Owlympics/build/iphone/Classes/TiDOMCDATANodeProxy.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+r0
+
+CCompileC build/Owlympics.build/Debug-iphonesimulator/Owlympics-universal.build/Objects-normal/i386/TiDOMCommentProxy.o /Users/cmc/Documents/Titanium_Rajoshi/Owlympics/build/iphone/Classes/TiDOMCommentProxy.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+r0
+
+CCompileC build/Owlympics.build/Debug-iphonesimulator/Owlympics-universal.build/Objects-normal/i386/TiDOMDocFragProxy.o /Users/cmc/Documents/Titanium_Rajoshi/Owlympics/build/iphone/Classes/TiDOMDocFragProxy.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+r0
+
+CCompileC build/Owlympics.build/Debug-iphonesimulator/Owlympics-universal.build/Objects-normal/i386/TiDOMDocumentProxy.o /Users/cmc/Documents/Titanium_Rajoshi/Owlympics/build/iphone/Classes/TiDOMDocumentProxy.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+r0
+
+CCompileC build/Owlympics.build/Debug-iphonesimulator/Owlympics-universal.build/Objects-normal/i386/TiDOMElementProxy.o /Users/cmc/Documents/Titanium_Rajoshi/Owlympics/build/iphone/Classes/TiDOMElementProxy.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+r0
+
+CCompileC build/Owlympics.build/Debug-iphonesimulator/Owlympics-universal.build/Objects-normal/i386/TiDOMEntityProxy.o /Users/cmc/Documents/Titanium_Rajoshi/Owlympics/build/iphone/Classes/TiDOMEntityProxy.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+r0
+
+CCompileC build/Owlympics.build/Debug-iphonesimulator/Owlympics-universal.build/Objects-normal/i386/TiDOMEntityRefProxy.o /Users/cmc/Documents/Titanium_Rajoshi/Owlympics/build/iphone/Classes/TiDOMEntityRefProxy.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+r0
+
+CCompileC build/Owlympics.build/Debug-iphonesimulator/Owlympics-universal.build/Objects-normal/i386/TiDOMNamedNodeMapProxy.o /Users/cmc/Documents/Titanium_Rajoshi/Owlympics/build/iphone/Classes/TiDOMNamedNodeMapProxy.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+r0
+
+CCompileC build/Owlympics.build/Debug-iphonesimulator/Owlympics-universal.build/Objects-normal/i386/TiDOMNodeListProxy.o /Users/cmc/Documents/Titanium_Rajoshi/Owlympics/build/iphone/Classes/TiDOMNodeListProxy.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+r0
+
+CCompileC build/Owlympics.build/Debug-iphonesimulator/Owlympics-universal.build/Objects-normal/i386/TiDOMNodeProxy.o /Users/cmc/Documents/Titanium_Rajoshi/Owlympics/build/iphone/Classes/TiDOMNodeProxy.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+r0
+
+CCompileC build/Owlympics.build/Debug-iphonesimulator/Owlympics-universal.build/Objects-normal/i386/TiDOMNotationProxy.o /Users/cmc/Documents/Titanium_Rajoshi/Owlympics/build/iphone/Classes/TiDOMNotationProxy.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+r0
+
+CCompileC build/Owlympics.build/Debug-iphonesimulator/Owlympics-universal.build/Objects-normal/i386/TiDOMPIProxy.o /Users/cmc/Documents/Titanium_Rajoshi/Owlympics/build/iphone/Classes/TiDOMPIProxy.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+r0
+
+CCompileC build/Owlympics.build/Debug-iphonesimulator/Owlympics-universal.build/Objects-normal/i386/TiDOMTextNodeProxy.o /Users/cmc/Documents/Titanium_Rajoshi/Owlympics/build/iphone/Classes/TiDOMTextNodeProxy.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+r0
+
+CCompileC build/Owlympics.build/Debug-iphonesimulator/Owlympics-universal.build/Objects-normal/i386/TiDOMValidator.o /Users/cmc/Documents/Titanium_Rajoshi/Owlympics/build/iphone/Classes/TiDOMValidator.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+r0
+
+CCompileC build/Owlympics.build/Debug-iphonesimulator/Owlympics-universal.build/Objects-normal/i386/TiDataStream.o /Users/cmc/Documents/Titanium_Rajoshi/Owlympics/build/iphone/Classes/TiDataStream.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+r0
+
+CCompileC build/Owlympics.build/Debug-iphonesimulator/Owlympics-universal.build/Objects-normal/i386/TiDatabaseProxy.o /Users/cmc/Documents/Titanium_Rajoshi/Owlympics/build/iphone/Classes/TiDatabaseProxy.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+r0
+
+CCompileC build/Owlympics.build/Debug-iphonesimulator/Owlympics-universal.build/Objects-normal/i386/TiDatabaseResultSetProxy.o /Users/cmc/Documents/Titanium_Rajoshi/Owlympics/build/iphone/Classes/TiDatabaseResultSetProxy.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+r0
+
+CCompileC build/Owlympics.build/Debug-iphonesimulator/Owlympics-universal.build/Objects-normal/i386/TiDimension.o /Users/cmc/Documents/Titanium_Rajoshi/Owlympics/build/iphone/Classes/TiDimension.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+r0
+
+CCompileC build/Owlympics.build/Debug-iphonesimulator/Owlympics-universal.build/Objects-normal/i386/TiDynamicItemBehavior.o /Users/cmc/Documents/Titanium_Rajoshi/Owlympics/build/iphone/Classes/TiDynamicItemBehavior.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+r0
+
+CCompileC build/Owlympics.build/Debug-iphonesimulator/Owlympics-universal.build/Objects-normal/i386/TiErrorController.o /Users/cmc/Documents/Titanium_Rajoshi/Owlympics/build/iphone/Classes/TiErrorController.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+r0
+
+CCompileC build/Owlympics.build/Debug-iphonesimulator/Owlympics-universal.build/Objects-normal/i386/TiExceptionHandler.o /Users/cmc/Documents/Titanium_Rajoshi/Owlympics/build/iphone/Classes/TiExceptionHandler.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+r0
+
+CCompileC build/Owlympics.build/Debug-iphonesimulator/Owlympics-universal.build/Objects-normal/i386/TiFile.o /Users/cmc/Documents/Titanium_Rajoshi/Owlympics/build/iphone/Classes/TiFile.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+s416268614.698557
+e416268614.753710
+r0
+xCompileC
+xbuild/Owlympics.build/Debug-iphonesimulator/Owlympics-universal.build/Objects-normal/i386/TiFile.o
+x/Users/cmc/Documents/Titanium_Rajoshi/Owlympics/build/iphone/Classes/TiFile.m
+xnormal
+xi386
+xobjective-c
+xcom.apple.compilers.llvm.clang.1_0.compiler
+ofatal error: file '/Users/cmc/Documents/Titanium_Rajoshi/Owlympics/build/iphone/Classes/ThirdpartyNS.h' has been modified since the precompiled header '/var/folders/yb/x0jff5b578350610knqvylzw0000gp/C/com.apple.DeveloperTools/5.0.2-5A3005/Xcode/SharedPrecompiledHeaders/Owlympics_Prefix-cfwkkejgcfdmapfdnndeiyhapafl/Owlympics_Prefix.pch.pch' was built
+o1 error generated.
+lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection85"Compile /Users/cmc/Documents/Titanium_Rajoshi/Owlympics/build/iphone/Classes/TiFile.m192"CompileC build/Owlympics.build/Debug-iphonesimulator/Owlympics-universal.build/Objects-normal/i386/TiFile.o Classes/TiFile.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compilerd672b346c1cfb841^b726c146c1cfb841^-371"fatal error: file '/Users/cmc/Documents/Titanium_Rajoshi/Owlympics/build/iphone/Classes/ThirdpartyNS.h' has been modified since the precompiled header '/var/folders/yb/x0jff5b578350610knqvylzw0000gp/C/com.apple.DeveloperTools/5.0.2-5A3005/Xcode/SharedPrecompiledHeaders/Owlympics_Prefix-cfwkkejgcfdmapfdnndeiyhapafl/Owlympics_Prefix.pch.pch' was built1 error generated.1(36%IDEClangDiagnosticActivityLogMessage2@338"File '/Users/cmc/Documents/Titanium_Rajoshi/Owlympics/build/iphone/Classes/ThirdpartyNS.h' has been modified since the precompiled header '/var/folders/yb/x0jff5b578350610knqvylzw0000gp/C/com.apple.DeveloperTools/5.0.2-5A3005/Xcode/SharedPrecompiledHeaders/Owlympics_Prefix-cfwkkejgcfdmapfdnndeiyhapafl/Owlympics_Prefix.pch.pch' was built-416268614#18446744073709551615#0#-2#27"com.apple.dt.IDE.diagnostic-20"Apple LLVM 5.0 Error--0#0#1#-19%DVTDocumentLocation3@84"file:///Users/cmc/Documents/Titanium_Rajoshi/Owlympics/build/iphone/Classes/TiFile.m0000000000000000^4073"CompileC build/Owlympics.build/Debug-iphonesimulator/Owlympics-universal.build/Objects-normal/i386/TiFile.o Classes/TiFile.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler    cd /Users/cmc/Documents/Titanium_Rajoshi/Owlympics/build/iphone    setenv LANG en_US.US-ASCII    setenv PATH "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/Library/Java/JavaVirtualMachines/1.6.0_65-b14-462.jdk/Contents/Home/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/texbin"    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -x objective-c -arch i386 -fmessage-length=0 -fdiagnostics-show-note-include-stack -fmacro-backtrace-limit=0 -std=c99 -Wno-trigraphs -fpascal-strings -O0 -Wno-missing-field-initializers -Wno-missing-prototypes -Wno-return-type -Wno-implicit-atomic-properties -Wno-receiver-is-weak -Wno-arc-repeated-use-of-weak -Wno-missing-braces -Wno-parentheses -Wswitch -Wunused-function -Wno-unused-label -Wno-unused-parameter -Wno-unused-variable -Wno-unused-value -Wno-empty-body -Wno-uninitialized -Wno-unknown-pragmas -Wno-shadow -Wno-four-char-constants -Wno-conversion -Wno-constant-conversion -Wno-int-conversion -Wno-bool-conversion -Wno-enum-conversion -Wno-shorten-64-to-32 -Wpointer-sign -Wno-newline-eof -Wno-selector -Wno-strict-selector-match -Wno-undeclared-selector -Wno-deprecated-implementations -DDEPLOYTYPE=development -D__LOG__ID__=502db958-dc63-4c33-87c2-88a82032acde -DDEBUG=1 -DTI_VERSION=3.2.1.GA -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk -fexceptions -fasm-blocks -fstrict-aliasing -Wprotocol -Wdeprecated-declarations -g -fvisibility=hidden -Wno-sign-conversion -fobjc-abi-version=2 -fobjc-legacy-dispatch -mios-simulator-version-min=6.0 -iquote /Users/cmc/Documents/Titanium_Rajoshi/Owlympics/build/iphone/build/Owlympics.build/Debug-iphonesimulator/Owlympics-universal.build/Owlympics-generated-files.hmap -I/Users/cmc/Documents/Titanium_Rajoshi/Owlympics/build/iphone/build/Owlympics.build/Debug-iphonesimulator/Owlympics-universal.build/Owlympics-own-target-headers.hmap -I/Users/cmc/Documents/Titanium_Rajoshi/Owlympics/build/iphone/build/Owlympics.build/Debug-iphonesimulator/Owlympics-universal.build/Owlympics-all-target-headers.hmap -iquote /Users/cmc/Documents/Titanium_Rajoshi/Owlympics/build/iphone/build/Owlympics.build/Debug-iphonesimulator/Owlympics-universal.build/Owlympics-project-headers.hmap -I/Users/cmc/Documents/Titanium_Rajoshi/Owlympics/build/iphone/build/Debug-iphonesimulator/include -I/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/usr/include/libxml2 -Iheaders -I/Users/cmc/Documents/Titanium_Rajoshi/Owlympics/build/iphone/build/Owlympics.build/Debug-iphonesimulator/Owlympics-universal.build/DerivedSources/i386 -I/Users/cmc/Documents/Titanium_Rajoshi/Owlympics/build/iphone/build/Owlympics.build/Debug-iphonesimulator/Owlympics-universal.build/DerivedSources -F/Users/cmc/Documents/Titanium_Rajoshi/Owlympics/build/iphone/build/Debug-iphonesimulator -DIPAD -DTI_POST_1_2 -DDEBUG -include /var/folders/yb/x0jff5b578350610knqvylzw0000gp/C/com.apple.DeveloperTools/5.0.2-5A3005/Xcode/SharedPrecompiledHeaders/Owlympics_Prefix-cfwkkejgcfdmapfdnndeiyhapafl/Owlympics_Prefix.pch -MMD -MT dependencies -MF /Users/cmc/Documents/Titanium_Rajoshi/Owlympics/build/iphone/build/Owlympics.build/Debug-iphonesimulator/Owlympics-universal.build/Objects-normal/i386/TiFile.d --serialize-diagnostics /Users/cmc/Documents/Titanium_Rajoshi/Owlympics/build/iphone/build/Owlympics.build/Debug-iphonesimulator/Owlympics-universal.build/Objects-normal/i386/TiFile.dia -c /Users/cmc/Documents/Titanium_Rajoshi/Owlympics/build/iphone/Classes/TiFile.m -o /Users/cmc/Documents/Titanium_Rajoshi/Owlympics/build/iphone/build/Owlympics.build/Debug-iphonesimulator/Owlympics-universal.build/Objects-normal/i386/TiFile.o36"58C0106B-B78F-4A14-9F2A-617B4DD602A2-
+bE311A09F-2EE7-4ED5-8588-8638C61F5356
+
+CCompileC build/Owlympics.build/Debug-iphonesimulator/Owlympics-universal.build/Objects-normal/i386/TiFilesystemBlobProxy.o /Users/cmc/Documents/Titanium_Rajoshi/Owlympics/build/iphone/Classes/TiFilesystemBlobProxy.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+r0
+
+CCompileC build/Owlympics.build/Debug-iphonesimulator/Owlympics-universal.build/Objects-normal/i386/TiFilesystemFileProxy.o /Users/cmc/Documents/Titanium_Rajoshi/Owlympics/build/iphone/Classes/TiFilesystemFileProxy.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+r0
+
+CCompileC build/Owlympics.build/Debug-iphonesimulator/Owlympics-universal.build/Objects-normal/i386/TiFilesystemFileStreamProxy.o /Users/cmc/Documents/Titanium_Rajoshi/Owlympics/build/iphone/Classes/TiFilesystemFileStreamProxy.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+r0
+
+CCompileC build/Owlympics.build/Debug-iphonesimulator/Owlympics-universal.build/Objects-normal/i386/TiGradient.o /Users/cmc/Documents/Titanium_Rajoshi/Owlympics/build/iphone/Classes/TiGradient.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+r0
+
+CCompileC build/Owlympics.build/Debug-iphonesimulator/Owlympics-universal.build/Objects-normal/i386/TiGravityBehavior.o /Users/cmc/Documents/Titanium_Rajoshi/Owlympics/build/iphone/Classes/TiGravityBehavior.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+r0
+
+CCompileC build/Owlympics.build/Debug-iphonesimulator/Owlympics-universal.build/Objects-normal/i386/TiHost.o /Users/cmc/Documents/Titanium_Rajoshi/Owlympics/build/iphone/Classes/TiHost.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+r0
+
+CCompileC build/Owlympics.build/Debug-iphonesimulator/Owlympics-universal.build/Objects-normal/i386/TiLayoutQueue.o /Users/cmc/Documents/Titanium_Rajoshi/Owlympics/build/iphone/Classes/TiLayoutQueue.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+r0
+
+CCompileC build/Owlympics.build/Debug-iphonesimulator/Owlympics-universal.build/Objects-normal/i386/TiLocale.o /Users/cmc/Documents/Titanium_Rajoshi/Owlympics/build/iphone/Classes/TiLocale.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+r0
+
+CCompileC build/Owlympics.build/Debug-iphonesimulator/Owlympics-universal.build/Objects-normal/i386/TiMediaAudioPlayerProxy.o /Users/cmc/Documents/Titanium_Rajoshi/Owlympics/build/iphone/Classes/TiMediaAudioPlayerProxy.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+r0
+
+CCompileC build/Owlympics.build/Debug-iphonesimulator/Owlympics-universal.build/Objects-normal/i386/TiMediaAudioRecorderProxy.o /Users/cmc/Documents/Titanium_Rajoshi/Owlympics/build/iphone/Classes/TiMediaAudioRecorderProxy.mm normal i386 objective-c++ com.apple.compilers.llvm.clang.1_0.compiler
+r0
+
+CCompileC build/Owlympics.build/Debug-iphonesimulator/Owlympics-universal.build/Objects-normal/i386/TiMediaAudioSession.o /Users/cmc/Documents/Titanium_Rajoshi/Owlympics/build/iphone/Classes/TiMediaAudioSession.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+r0
+
+CCompileC build/Owlympics.build/Debug-iphonesimulator/Owlympics-universal.build/Objects-normal/i386/TiMediaItem.o /Users/cmc/Documents/Titanium_Rajoshi/Owlympics/build/iphone/Classes/TiMediaItem.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+r0
+
+CCompileC build/Owlympics.build/Debug-iphonesimulator/Owlympics-universal.build/Objects-normal/i386/TiMediaMusicPlayer.o /Users/cmc/Documents/Titanium_Rajoshi/Owlympics/build/iphone/Classes/TiMediaMusicPlayer.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+r0
+
+CCompileC build/Owlympics.build/Debug-iphonesimulator/Owlympics-universal.build/Objects-normal/i386/TiMediaSoundProxy.o /Users/cmc/Documents/Titanium_Rajoshi/Owlympics/build/iphone/Classes/TiMediaSoundProxy.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+r0
+
+CCompileC build/Owlympics.build/Debug-iphonesimulator/Owlympics-universal.build/Objects-normal/i386/TiMediaVideoPlayer.o /Users/cmc/Documents/Titanium_Rajoshi/Owlympics/build/iphone/Classes/TiMediaVideoPlayer.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+r0
+
+CCompileC build/Owlympics.build/Debug-iphonesimulator/Owlympics-universal.build/Objects-normal/i386/TiMediaVideoPlayerProxy.o /Users/cmc/Documents/Titanium_Rajoshi/Owlympics/build/iphone/Classes/TiMediaVideoPlayerProxy.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+r0
+
+CCompileC build/Owlympics.build/Debug-iphonesimulator/Owlympics-universal.build/Objects-normal/i386/TiModule.o /Users/cmc/Documents/Titanium_Rajoshi/Owlympics/build/iphone/Classes/TiModule.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+r0
+
+CCompileC build/Owlympics.build/Debug-iphonesimulator/Owlympics-universal.build/Objects-normal/i386/TiNetworkBonjourBrowserProxy.o /Users/cmc/Documents/Titanium_Rajoshi/Owlympics/build/iphone/Classes/TiNetworkBonjourBrowserProxy.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+r0
+
+CCompileC build/Owlympics.build/Debug-iphonesimulator/Owlympics-universal.build/Objects-normal/i386/TiNetworkBonjourServiceProxy.o /Users/cmc/Documents/Titanium_Rajoshi/Owlympics/build/iphone/Classes/TiNetworkBonjourServiceProxy.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+r0
+
+CCompileC build/Owlympics.build/Debug-iphonesimulator/Owlympics-universal.build/Objects-normal/i386/TiNetworkHTTPClientProxy.o /Users/cmc/Documents/Titanium_Rajoshi/Owlympics/build/iphone/Classes/TiNetworkHTTPClientProxy.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+r0
+
+CCompileC build/Owlympics.build/Debug-iphonesimulator/Owlympics-universal.build/Objects-normal/i386/TiNetworkHTTPClientResultProxy.o /Users/cmc/Documents/Titanium_Rajoshi/Owlympics/build/iphone/Classes/TiNetworkHTTPClientResultProxy.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+r0
+
+CCompileC build/Owlympics.build/Debug-iphonesimulator/Owlympics-universal.build/Objects-normal/i386/TiNetworkSocketProxy.o /Users/cmc/Documents/Titanium_Rajoshi/Owlympics/build/iphone/Classes/TiNetworkSocketProxy.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+r0
+
+CCompileC build/Owlympics.build/Debug-iphonesimulator/Owlympics-universal.build/Objects-normal/i386/TiNetworkSocketTCPProxy.o /Users/cmc/Documents/Titanium_Rajoshi/Owlympics/build/iphone/Classes/TiNetworkSocketTCPProxy.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+r0
+
+CCompileC build/Owlympics.build/Debug-iphonesimulator/Owlympics-universal.build/Objects-normal/i386/TiNetworkTCPSocketProxy.o /Users/cmc/Documents/Titanium_Rajoshi/Owlympics/build/iphone/Classes/TiNetworkTCPSocketProxy.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+r0
+
+CCompileC build/Owlympics.build/Debug-iphonesimulator/Owlympics-universal.build/Objects-normal/i386/TiPlatformDisplayCaps.o /Users/cmc/Documents/Titanium_Rajoshi/Owlympics/build/iphone/Classes/TiPlatformDisplayCaps.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+r0
+
+CCompileC build/Owlympics.build/Debug-iphonesimulator/Owlympics-universal.build/Objects-normal/i386/TiPoint.o /Users/cmc/Documents/Titanium_Rajoshi/Owlympics/build/iphone/Classes/TiPoint.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+r0
+
+CCompileC build/Owlympics.build/Debug-iphonesimulator/Owlympics-universal.build/Objects-normal/i386/TiProxy.o /Users/cmc/Documents/Titanium_Rajoshi/Owlympics/build/iphone/Classes/TiProxy.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+r0
+
+CCompileC build/Owlympics.build/Debug-iphonesimulator/Owlympics-universal.build/Objects-normal/i386/TiPublicAPI.o /Users/cmc/Documents/Titanium_Rajoshi/Owlympics/build/iphone/Classes/TiPublicAPI.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+r0
+
+CCompileC build/Owlympics.build/Debug-iphonesimulator/Owlympics-universal.build/Objects-normal/i386/TiPushBehavior.o /Users/cmc/Documents/Titanium_Rajoshi/Owlympics/build/iphone/Classes/TiPushBehavior.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+r0
+
+CCompileC build/Owlympics.build/Debug-iphonesimulator/Owlympics-universal.build/Objects-normal/i386/TiRect.o /Users/cmc/Documents/Titanium_Rajoshi/Owlympics/build/iphone/Classes/TiRect.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+r0
+
+CCompileC build/Owlympics.build/Debug-iphonesimulator/Owlympics-universal.build/Objects-normal/i386/TiRootViewController.o /Users/cmc/Documents/Titanium_Rajoshi/Owlympics/build/iphone/Classes/TiRootViewController.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+r0
+
+CCompileC build/Owlympics.build/Debug-iphonesimulator/Owlympics-universal.build/Objects-normal/i386/TiSelectedCellbackgroundView.o /Users/cmc/Documents/Titanium_Rajoshi/Owlympics/build/iphone/Classes/TiSelectedCellbackgroundView.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+r0
+
+CCompileC build/Owlympics.build/Debug-iphonesimulator/Owlympics-universal.build/Objects-normal/i386/TiSnapBehavior.o /Users/cmc/Documents/Titanium_Rajoshi/Owlympics/build/iphone/Classes/TiSnapBehavior.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+r0
+
+CCompileC build/Owlympics.build/Debug-iphonesimulator/Owlympics-universal.build/Objects-normal/i386/TiStreamProxy.o /Users/cmc/Documents/Titanium_Rajoshi/Owlympics/build/iphone/Classes/TiStreamProxy.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+r0
+
+CCompileC build/Owlympics.build/Debug-iphonesimulator/Owlympics-universal.build/Objects-normal/i386/TiStylesheet.o /Users/cmc/Documents/Titanium_Rajoshi/Owlympics/build/iphone/Classes/TiStylesheet.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+r0
+
+CCompileC build/Owlympics.build/Debug-iphonesimulator/Owlympics-universal.build/Objects-normal/i386/TiThreading.o /Users/cmc/Documents/Titanium_Rajoshi/Owlympics/build/iphone/Classes/TiThreading.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+r0
+
+CCompileC build/Owlympics.build/Debug-iphonesimulator/Owlympics-universal.build/Objects-normal/i386/TiUIActivityIndicator.o /Users/cmc/Documents/Titanium_Rajoshi/Owlympics/build/iphone/Classes/TiUIActivityIndicator.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+r0
+
+CCompileC build/Owlympics.build/Debug-iphonesimulator/Owlympics-universal.build/Objects-normal/i386/TiUIActivityIndicatorProxy.o /Users/cmc/Documents/Titanium_Rajoshi/Owlympics/build/iphone/Classes/TiUIActivityIndicatorProxy.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+r0
+
+CCompileC build/Owlympics.build/Debug-iphonesimulator/Owlympics-universal.build/Objects-normal/i386/TiUIAlertDialogProxy.o /Users/cmc/Documents/Titanium_Rajoshi/Owlympics/build/iphone/Classes/TiUIAlertDialogProxy.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+r0
+
+CCompileC build/Owlympics.build/Debug-iphonesimulator/Owlympics-universal.build/Objects-normal/i386/TiUIButton.o /Users/cmc/Documents/Titanium_Rajoshi/Owlympics/build/iphone/Classes/TiUIButton.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+r0
+
+CCompileC build/Owlympics.build/Debug-iphonesimulator/Owlympics-universal.build/Objects-normal/i386/TiUIButtonBar.o /Users/cmc/Documents/Titanium_Rajoshi/Owlympics/build/iphone/Classes/TiUIButtonBar.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+r0
+
+CCompileC build/Owlympics.build/Debug-iphonesimulator/Owlympics-universal.build/Objects-normal/i386/TiUIButtonBarProxy.o /Users/cmc/Documents/Titanium_Rajoshi/Owlympics/build/iphone/Classes/TiUIButtonBarProxy.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+r0
+
+CCompileC build/Owlympics.build/Debug-iphonesimulator/Owlympics-universal.build/Objects-normal/i386/TiUIButtonProxy.o /Users/cmc/Documents/Titanium_Rajoshi/Owlympics/build/iphone/Classes/TiUIButtonProxy.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+r0
+
+CCompileC build/Owlympics.build/Debug-iphonesimulator/Owlympics-universal.build/Objects-normal/i386/TiUICanvasView.o /Users/cmc/Documents/Titanium_Rajoshi/Owlympics/build/iphone/Classes/TiUICanvasView.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+r0
+
+CCompileC build/Owlympics.build/Debug-iphonesimulator/Owlympics-universal.build/Objects-normal/i386/TiUICanvasViewProxy.o /Users/cmc/Documents/Titanium_Rajoshi/Owlympics/build/iphone/Classes/TiUICanvasViewProxy.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+r0
+
+CCompileC build/Owlympics.build/Debug-iphonesimulator/Owlympics-universal.build/Objects-normal/i386/TiUIClipboardProxy.o /Users/cmc/Documents/Titanium_Rajoshi/Owlympics/build/iphone/Classes/TiUIClipboardProxy.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+r0
+
+CCompileC build/Owlympics.build/Debug-iphonesimulator/Owlympics-universal.build/Objects-normal/i386/TiUIDashboardItem.o /Users/cmc/Documents/Titanium_Rajoshi/Owlympics/build/iphone/Classes/TiUIDashboardItem.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+r0
+
+CCompileC build/Owlympics.build/Debug-iphonesimulator/Owlympics-universal.build/Objects-normal/i386/TiUIDashboardItemProxy.o /Users/cmc/Documents/Titanium_Rajoshi/Owlympics/build/iphone/Classes/TiUIDashboardItemProxy.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+r0
+
+CCompileC build/Owlympics.build/Debug-iphonesimulator/Owlympics-universal.build/Objects-normal/i386/TiUIDashboardView.o /Users/cmc/Documents/Titanium_Rajoshi/Owlympics/build/iphone/Classes/TiUIDashboardView.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+r0
+
+CCompileC build/Owlympics.build/Debug-iphonesimulator/Owlympics-universal.build/Objects-normal/i386/TiUIDashboardViewProxy.o /Users/cmc/Documents/Titanium_Rajoshi/Owlympics/build/iphone/Classes/TiUIDashboardViewProxy.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+r0
+
+CCompileC build/Owlympics.build/Debug-iphonesimulator/Owlympics-universal.build/Objects-normal/i386/TiUIEmailDialogProxy.o /Users/cmc/Documents/Titanium_Rajoshi/Owlympics/build/iphone/Classes/TiUIEmailDialogProxy.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+r0
+
+CCompileC build/Owlympics.build/Debug-iphonesimulator/Owlympics-universal.build/Objects-normal/i386/TiUIImageView.o /Users/cmc/Documents/Titanium_Rajoshi/Owlympics/build/iphone/Classes/TiUIImageView.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+r0
+
+CCompileC build/Owlympics.build/Debug-iphonesimulator/Owlympics-universal.build/Objects-normal/i386/TiUIImageViewProxy.o /Users/cmc/Documents/Titanium_Rajoshi/Owlympics/build/iphone/Classes/TiUIImageViewProxy.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+r0
+
+CCompileC build/Owlympics.build/Debug-iphonesimulator/Owlympics-universal.build/Objects-normal/i386/TiUILabel.o /Users/cmc/Documents/Titanium_Rajoshi/Owlympics/build/iphone/Classes/TiUILabel.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+r0
+
+CCompileC build/Owlympics.build/Debug-iphonesimulator/Owlympics-universal.build/Objects-normal/i386/TiUILabelProxy.o /Users/cmc/Documents/Titanium_Rajoshi/Owlympics/build/iphone/Classes/TiUILabelProxy.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+r0
+
+CCompileC build/Owlympics.build/Debug-iphonesimulator/Owlympics-universal.build/Objects-normal/i386/TiUIListItem.o /Users/cmc/Documents/Titanium_Rajoshi/Owlympics/build/iphone/Classes/TiUIListItem.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+r0
+
+CCompileC build/Owlympics.build/Debug-iphonesimulator/Owlympics-universal.build/Objects-normal/i386/TiUIListItemProxy.o /Users/cmc/Documents/Titanium_Rajoshi/Owlympics/build/iphone/Classes/TiUIListItemProxy.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+r0
+
+CCompileC build/Owlympics.build/Debug-iphonesimulator/Owlympics-universal.build/Objects-normal/i386/TiUIListSectionProxy.o /Users/cmc/Documents/Titanium_Rajoshi/Owlympics/build/iphone/Classes/TiUIListSectionProxy.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+r0
+
+CCompileC build/Owlympics.build/Debug-iphonesimulator/Owlympics-universal.build/Objects-normal/i386/TiUIListView.o /Users/cmc/Documents/Titanium_Rajoshi/Owlympics/build/iphone/Classes/TiUIListView.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+r0
+
+CCompileC build/Owlympics.build/Debug-iphonesimulator/Owlympics-universal.build/Objects-normal/i386/TiUIListViewProxy.o /Users/cmc/Documents/Titanium_Rajoshi/Owlympics/build/iphone/Classes/TiUIListViewProxy.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+r0
+
+CCompileC build/Owlympics.build/Debug-iphonesimulator/Owlympics-universal.build/Objects-normal/i386/TiUIMaskedImage.o /Users/cmc/Documents/Titanium_Rajoshi/Owlympics/build/iphone/Classes/TiUIMaskedImage.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+r0
+
+CCompileC build/Owlympics.build/Debug-iphonesimulator/Owlympics-universal.build/Objects-normal/i386/TiUIMaskedImageProxy.o /Users/cmc/Documents/Titanium_Rajoshi/Owlympics/build/iphone/Classes/TiUIMaskedImageProxy.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+r0
+
+CCompileC build/Owlympics.build/Debug-iphonesimulator/Owlympics-universal.build/Objects-normal/i386/TiUINavBarButton.o /Users/cmc/Documents/Titanium_Rajoshi/Owlympics/build/iphone/Classes/TiUINavBarButton.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+r0
+
+CCompileC build/Owlympics.build/Debug-iphonesimulator/Owlympics-universal.build/Objects-normal/i386/TiUIOptionDialogProxy.o /Users/cmc/Documents/Titanium_Rajoshi/Owlympics/build/iphone/Classes/TiUIOptionDialogProxy.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+r0
+
+CCompileC build/Owlympics.build/Debug-iphonesimulator/Owlympics-universal.build/Objects-normal/i386/TiUIPicker.o /Users/cmc/Documents/Titanium_Rajoshi/Owlympics/build/iphone/Classes/TiUIPicker.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+r0
+
+CCompileC build/Owlympics.build/Debug-iphonesimulator/Owlympics-universal.build/Objects-normal/i386/TiUIPickerColumnProxy.o /Users/cmc/Documents/Titanium_Rajoshi/Owlympics/build/iphone/Classes/TiUIPickerColumnProxy.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+r0
+
+CCompileC build/Owlympics.build/Debug-iphonesimulator/Owlympics-universal.build/Objects-normal/i386/TiUIPickerProxy.o /Users/cmc/Documents/Titanium_Rajoshi/Owlympics/build/iphone/Classes/TiUIPickerProxy.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+r0
+
+CCompileC build/Owlympics.build/Debug-iphonesimulator/Owlympics-universal.build/Objects-normal/i386/TiUIPickerRowProxy.o /Users/cmc/Documents/Titanium_Rajoshi/Owlympics/build/iphone/Classes/TiUIPickerRowProxy.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+r0
+
+CCompileC build/Owlympics.build/Debug-iphonesimulator/Owlympics-universal.build/Objects-normal/i386/TiUIProgressBar.o /Users/cmc/Documents/Titanium_Rajoshi/Owlympics/build/iphone/Classes/TiUIProgressBar.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+r0
+
+CCompileC build/Owlympics.build/Debug-iphonesimulator/Owlympics-universal.build/Objects-normal/i386/TiUIProgressBarProxy.o /Users/cmc/Documents/Titanium_Rajoshi/Owlympics/build/iphone/Classes/TiUIProgressBarProxy.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+r0
+
+CCompileC build/Owlympics.build/Debug-iphonesimulator/Owlympics-universal.build/Objects-normal/i386/TiUIRefreshControlProxy.o /Users/cmc/Documents/Titanium_Rajoshi/Owlympics/build/iphone/Classes/TiUIRefreshControlProxy.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+r0
+
+CCompileC build/Owlympics.build/Debug-iphonesimulator/Owlympics-universal.build/Objects-normal/i386/TiUIScrollView.o /Users/cmc/Documents/Titanium_Rajoshi/Owlympics/build/iphone/Classes/TiUIScrollView.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+r0
+
+CCompileC build/Owlympics.build/Debug-iphonesimulator/Owlympics-universal.build/Objects-normal/i386/TiUIScrollViewProxy.o /Users/cmc/Documents/Titanium_Rajoshi/Owlympics/build/iphone/Classes/TiUIScrollViewProxy.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+r0
+
+CCompileC build/Owlympics.build/Debug-iphonesimulator/Owlympics-universal.build/Objects-normal/i386/TiUIScrollableView.o /Users/cmc/Documents/Titanium_Rajoshi/Owlympics/build/iphone/Classes/TiUIScrollableView.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+r0
+
+CCompileC build/Owlympics.build/Debug-iphonesimulator/Owlympics-universal.build/Objects-normal/i386/TiUIScrollableViewProxy.o /Users/cmc/Documents/Titanium_Rajoshi/Owlympics/build/iphone/Classes/TiUIScrollableViewProxy.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+r0
+
+CCompileC build/Owlympics.build/Debug-iphonesimulator/Owlympics-universal.build/Objects-normal/i386/TiUISearchBar.o /Users/cmc/Documents/Titanium_Rajoshi/Owlympics/build/iphone/Classes/TiUISearchBar.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+r0
+
+CCompileC build/Owlympics.build/Debug-iphonesimulator/Owlympics-universal.build/Objects-normal/i386/TiUISearchBarProxy.o /Users/cmc/Documents/Titanium_Rajoshi/Owlympics/build/iphone/Classes/TiUISearchBarProxy.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+r0
+
+CCompileC build/Owlympics.build/Debug-iphonesimulator/Owlympics-universal.build/Objects-normal/i386/TiUISlider.o /Users/cmc/Documents/Titanium_Rajoshi/Owlympics/build/iphone/Classes/TiUISlider.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+r0
+
+CCompileC build/Owlympics.build/Debug-iphonesimulator/Owlympics-universal.build/Objects-normal/i386/TiUISliderProxy.o /Users/cmc/Documents/Titanium_Rajoshi/Owlympics/build/iphone/Classes/TiUISliderProxy.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+r0
+
+CCompileC build/Owlympics.build/Debug-iphonesimulator/Owlympics-universal.build/Objects-normal/i386/TiUISwitch.o /Users/cmc/Documents/Titanium_Rajoshi/Owlympics/build/iphone/Classes/TiUISwitch.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+r0
+
+CCompileC build/Owlympics.build/Debug-iphonesimulator/Owlympics-universal.build/Objects-normal/i386/TiUISwitchProxy.o /Users/cmc/Documents/Titanium_Rajoshi/Owlympics/build/iphone/Classes/TiUISwitchProxy.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+r0
+
+CCompileC build/Owlympics.build/Debug-iphonesimulator/Owlympics-universal.build/Objects-normal/i386/TiUITabGroup.o /Users/cmc/Documents/Titanium_Rajoshi/Owlympics/build/iphone/Classes/TiUITabGroup.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+r0
+
+CCompileC build/Owlympics.build/Debug-iphonesimulator/Owlympics-universal.build/Objects-normal/i386/TiUITabGroupProxy.o /Users/cmc/Documents/Titanium_Rajoshi/Owlympics/build/iphone/Classes/TiUITabGroupProxy.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+r0
+
+CCompileC build/Owlympics.build/Debug-iphonesimulator/Owlympics-universal.build/Objects-normal/i386/TiUITabProxy.o /Users/cmc/Documents/Titanium_Rajoshi/Owlympics/build/iphone/Classes/TiUITabProxy.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+r0
+
+CCompileC build/Owlympics.build/Debug-iphonesimulator/Owlympics-universal.build/Objects-normal/i386/TiUITableView.o /Users/cmc/Documents/Titanium_Rajoshi/Owlympics/build/iphone/Classes/TiUITableView.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+r0
+
+CCompileC build/Owlympics.build/Debug-iphonesimulator/Owlympics-universal.build/Objects-normal/i386/TiUITableViewAction.o /Users/cmc/Documents/Titanium_Rajoshi/Owlympics/build/iphone/Classes/TiUITableViewAction.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+s416268614.698007
+e416268614.753712
+r0
+xCompileC
+xbuild/Owlympics.build/Debug-iphonesimulator/Owlympics-universal.build/Objects-normal/i386/TiUITableViewAction.o
+x/Users/cmc/Documents/Titanium_Rajoshi/Owlympics/build/iphone/Classes/TiUITableViewAction.m
+xnormal
+xi386
+xobjective-c
+xcom.apple.compilers.llvm.clang.1_0.compiler
+ofatal error: file '/Users/cmc/Documents/Titanium_Rajoshi/Owlympics/build/iphone/Classes/ThirdpartyNS.h' has been modified since the precompiled header '/var/folders/yb/x0jff5b578350610knqvylzw0000gp/C/com.apple.DeveloperTools/5.0.2-5A3005/Xcode/SharedPrecompiledHeaders/Owlympics_Prefix-cfwkkejgcfdmapfdnndeiyhapafl/Owlympics_Prefix.pch.pch' was built
+o1 error generated.
+lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection98"Compile /Users/cmc/Documents/Titanium_Rajoshi/Owlympics/build/iphone/Classes/TiUITableViewAction.m218"CompileC build/Owlympics.build/Debug-iphonesimulator/Owlympics-universal.build/Objects-normal/i386/TiUITableViewAction.o Classes/TiUITableViewAction.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler31cfb246c1cfb841^4529c146c1cfb841^-371"fatal error: file '/Users/cmc/Documents/Titanium_Rajoshi/Owlympics/build/iphone/Classes/ThirdpartyNS.h' has been modified since the precompiled header '/var/folders/yb/x0jff5b578350610knqvylzw0000gp/C/com.apple.DeveloperTools/5.0.2-5A3005/Xcode/SharedPrecompiledHeaders/Owlympics_Prefix-cfwkkejgcfdmapfdnndeiyhapafl/Owlympics_Prefix.pch.pch' was built1 error generated.1(36%IDEClangDiagnosticActivityLogMessage2@338"File '/Users/cmc/Documents/Titanium_Rajoshi/Owlympics/build/iphone/Classes/ThirdpartyNS.h' has been modified since the precompiled header '/var/folders/yb/x0jff5b578350610knqvylzw0000gp/C/com.apple.DeveloperTools/5.0.2-5A3005/Xcode/SharedPrecompiledHeaders/Owlympics_Prefix-cfwkkejgcfdmapfdnndeiyhapafl/Owlympics_Prefix.pch.pch' was built-416268614#18446744073709551615#0#-2#27"com.apple.dt.IDE.diagnostic-20"Apple LLVM 5.0 Error--0#0#1#-19%DVTDocumentLocation3@97"file:///Users/cmc/Documents/Titanium_Rajoshi/Owlympics/build/iphone/Classes/TiUITableViewAction.m0000000000000000^4151"CompileC build/Owlympics.build/Debug-iphonesimulator/Owlympics-universal.build/Objects-normal/i386/TiUITableViewAction.o Classes/TiUITableViewAction.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler    cd /Users/cmc/Documents/Titanium_Rajoshi/Owlympics/build/iphone    setenv LANG en_US.US-ASCII    setenv PATH "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/Library/Java/JavaVirtualMachines/1.6.0_65-b14-462.jdk/Contents/Home/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/texbin"    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -x objective-c -arch i386 -fmessage-length=0 -fdiagnostics-show-note-include-stack -fmacro-backtrace-limit=0 -std=c99 -Wno-trigraphs -fpascal-strings -O0 -Wno-missing-field-initializers -Wno-missing-prototypes -Wno-return-type -Wno-implicit-atomic-properties -Wno-receiver-is-weak -Wno-arc-repeated-use-of-weak -Wno-missing-braces -Wno-parentheses -Wswitch -Wunused-function -Wno-unused-label -Wno-unused-parameter -Wno-unused-variable -Wno-unused-value -Wno-empty-body -Wno-uninitialized -Wno-unknown-pragmas -Wno-shadow -Wno-four-char-constants -Wno-conversion -Wno-constant-conversion -Wno-int-conversion -Wno-bool-conversion -Wno-enum-conversion -Wno-shorten-64-to-32 -Wpointer-sign -Wno-newline-eof -Wno-selector -Wno-strict-selector-match -Wno-undeclared-selector -Wno-deprecated-implementations -DDEPLOYTYPE=development -D__LOG__ID__=502db958-dc63-4c33-87c2-88a82032acde -DDEBUG=1 -DTI_VERSION=3.2.1.GA -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk -fexceptions -fasm-blocks -fstrict-aliasing -Wprotocol -Wdeprecated-declarations -g -fvisibility=hidden -Wno-sign-conversion -fobjc-abi-version=2 -fobjc-legacy-dispatch -mios-simulator-version-min=6.0 -iquote /Users/cmc/Documents/Titanium_Rajoshi/Owlympics/build/iphone/build/Owlympics.build/Debug-iphonesimulator/Owlympics-universal.build/Owlympics-generated-files.hmap -I/Users/cmc/Documents/Titanium_Rajoshi/Owlympics/build/iphone/build/Owlympics.build/Debug-iphonesimulator/Owlympics-universal.build/Owlympics-own-target-headers.hmap -I/Users/cmc/Documents/Titanium_Rajoshi/Owlympics/build/iphone/build/Owlympics.build/Debug-iphonesimulator/Owlympics-universal.build/Owlympics-all-target-headers.hmap -iquote /Users/cmc/Documents/Titanium_Rajoshi/Owlympics/build/iphone/build/Owlympics.build/Debug-iphonesimulator/Owlympics-universal.build/Owlympics-project-headers.hmap -I/Users/cmc/Documents/Titanium_Rajoshi/Owlympics/build/iphone/build/Debug-iphonesimulator/include -I/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/usr/include/libxml2 -Iheaders -I/Users/cmc/Documents/Titanium_Rajoshi/Owlympics/build/iphone/build/Owlympics.build/Debug-iphonesimulator/Owlympics-universal.build/DerivedSources/i386 -I/Users/cmc/Documents/Titanium_Rajoshi/Owlympics/build/iphone/build/Owlympics.build/Debug-iphonesimulator/Owlympics-universal.build/DerivedSources -F/Users/cmc/Documents/Titanium_Rajoshi/Owlympics/build/iphone/build/Debug-iphonesimulator -DIPAD -DTI_POST_1_2 -DDEBUG -include /var/folders/yb/x0jff5b578350610knqvylzw0000gp/C/com.apple.DeveloperTools/5.0.2-5A3005/Xcode/SharedPrecompiledHeaders/Owlympics_Prefix-cfwkkejgcfdmapfdnndeiyhapafl/Owlympics_Prefix.pch -MMD -MT dependencies -MF /Users/cmc/Documents/Titanium_Rajoshi/Owlympics/build/iphone/build/Owlympics.build/Debug-iphonesimulator/Owlympics-universal.build/Objects-normal/i386/TiUITableViewAction.d --serialize-diagnostics /Users/cmc/Documents/Titanium_Rajoshi/Owlympics/build/iphone/build/Owlympics.build/Debug-iphonesimulator/Owlympics-universal.build/Objects-normal/i386/TiUITableViewAction.dia -c /Users/cmc/Documents/Titanium_Rajoshi/Owlympics/build/iphone/Classes/TiUITableViewAction.m -o /Users/cmc/Documents/Titanium_Rajoshi/Owlympics/build/iphone/build/Owlympics.build/Debug-iphonesimulator/Owlympics-universal.build/Objects-normal/i386/TiUITableViewAction.o36"6DAEAC7D-F69E-467B-AB8D-2470CE09FD52-
+bE311A09F-2EE7-4ED5-8588-8638C61F5356
+
+CCompileC build/Owlympics.build/Debug-iphonesimulator/Owlympics-universal.build/Objects-normal/i386/TiUITableViewProxy.o /Users/cmc/Documents/Titanium_Rajoshi/Owlympics/build/iphone/Classes/TiUITableViewProxy.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+r0
+
+CCompileC build/Owlympics.build/Debug-iphonesimulator/Owlympics-universal.build/Objects-normal/i386/TiUITableViewRowProxy.o /Users/cmc/Documents/Titanium_Rajoshi/Owlympics/build/iphone/Classes/TiUITableViewRowProxy.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+r0
+
+CCompileC build/Owlympics.build/Debug-iphonesimulator/Owlympics-universal.build/Objects-normal/i386/TiUITableViewSectionProxy.o /Users/cmc/Documents/Titanium_Rajoshi/Owlympics/build/iphone/Classes/TiUITableViewSectionProxy.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+r0
+
+CCompileC build/Owlympics.build/Debug-iphonesimulator/Owlympics-universal.build/Objects-normal/i386/TiUITextArea.o /Users/cmc/Documents/Titanium_Rajoshi/Owlympics/build/iphone/Classes/TiUITextArea.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+r0
+
+CCompileC build/Owlympics.build/Debug-iphonesimulator/Owlympics-universal.build/Objects-normal/i386/TiUITextAreaProxy.o /Users/cmc/Documents/Titanium_Rajoshi/Owlympics/build/iphone/Classes/TiUITextAreaProxy.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+r0
+
+CCompileC build/Owlympics.build/Debug-iphonesimulator/Owlympics-universal.build/Objects-normal/i386/TiUITextField.o /Users/cmc/Documents/Titanium_Rajoshi/Owlympics/build/iphone/Classes/TiUITextField.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+r0
+
+CCompileC build/Owlympics.build/Debug-iphonesimulator/Owlympics-universal.build/Objects-normal/i386/TiUITextFieldProxy.o /Users/cmc/Documents/Titanium_Rajoshi/Owlympics/build/iphone/Classes/TiUITextFieldProxy.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+r0
+
+CCompileC build/Owlympics.build/Debug-iphonesimulator/Owlympics-universal.build/Objects-normal/i386/TiUITextWidget.o /Users/cmc/Documents/Titanium_Rajoshi/Owlympics/build/iphone/Classes/TiUITextWidget.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+r0
+
+CCompileC build/Owlympics.build/Debug-iphonesimulator/Owlympics-universal.build/Objects-normal/i386/TiUITextWidgetProxy.o /Users/cmc/Documents/Titanium_Rajoshi/Owlympics/build/iphone/Classes/TiUITextWidgetProxy.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+r0
+
+CCompileC build/Owlympics.build/Debug-iphonesimulator/Owlympics-universal.build/Objects-normal/i386/TiUIView.o /Users/cmc/Documents/Titanium_Rajoshi/Owlympics/build/iphone/Classes/TiUIView.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+r0
+
+CCompileC build/Owlympics.build/Debug-iphonesimulator/Owlympics-universal.build/Objects-normal/i386/TiUIViewProxy.o /Users/cmc/Documents/Titanium_Rajoshi/Owlympics/build/iphone/Classes/TiUIViewProxy.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+r0
+
+CCompileC build/Owlympics.build/Debug-iphonesimulator/Owlympics-universal.build/Objects-normal/i386/TiUIWebView.o /Users/cmc/Documents/Titanium_Rajoshi/Owlympics/build/iphone/Classes/TiUIWebView.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+r0
+
+CCompileC build/Owlympics.build/Debug-iphonesimulator/Owlympics-universal.build/Objects-normal/i386/TiUIWebViewProxy.o /Users/cmc/Documents/Titanium_Rajoshi/Owlympics/build/iphone/Classes/TiUIWebViewProxy.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+r0
+
+CCompileC build/Owlympics.build/Debug-iphonesimulator/Owlympics-universal.build/Objects-normal/i386/TiUIWindow.o /Users/cmc/Documents/Titanium_Rajoshi/Owlympics/build/iphone/Classes/TiUIWindow.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+r0
+
+CCompileC build/Owlympics.build/Debug-iphonesimulator/Owlympics-universal.build/Objects-normal/i386/TiUIWindowProxy.o /Users/cmc/Documents/Titanium_Rajoshi/Owlympics/build/iphone/Classes/TiUIWindowProxy.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+r0
+
+CCompileC build/Owlympics.build/Debug-iphonesimulator/Owlympics-universal.build/Objects-normal/i386/TiUIiOSAdView.o /Users/cmc/Documents/Titanium_Rajoshi/Owlympics/build/iphone/Classes/TiUIiOSAdView.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+r0
+
+CCompileC build/Owlympics.build/Debug-iphonesimulator/Owlympics-universal.build/Objects-normal/i386/TiUIiOSAdViewProxy.o /Users/cmc/Documents/Titanium_Rajoshi/Owlympics/build/iphone/Classes/TiUIiOSAdViewProxy.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+r0
+
+CCompileC build/Owlympics.build/Debug-iphonesimulator/Owlympics-universal.build/Objects-normal/i386/TiUIiOSAttributedStringProxy.o /Users/cmc/Documents/Titanium_Rajoshi/Owlympics/build/iphone/Classes/TiUIiOSAttributedStringProxy.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+r0
+
+CCompileC build/Owlympics.build/Debug-iphonesimulator/Owlympics-universal.build/Objects-normal/i386/TiUIiOSCoverFlowView.o /Users/cmc/Documents/Titanium_Rajoshi/Owlympics/build/iphone/Classes/TiUIiOSCoverFlowView.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+r0
+
+CCompileC build/Owlympics.build/Debug-iphonesimulator/Owlympics-universal.build/Objects-normal/i386/TiUIiOSCoverFlowViewProxy.o /Users/cmc/Documents/Titanium_Rajoshi/Owlympics/build/iphone/Classes/TiUIiOSCoverFlowViewProxy.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+r0
+
+CCompileC build/Owlympics.build/Debug-iphonesimulator/Owlympics-universal.build/Objects-normal/i386/TiUIiOSDocumentViewerProxy.o /Users/cmc/Documents/Titanium_Rajoshi/Owlympics/build/iphone/Classes/TiUIiOSDocumentViewerProxy.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+r0
+
+CCompileC build/Owlympics.build/Debug-iphonesimulator/Owlympics-universal.build/Objects-normal/i386/TiUIiOSNavWindow.o /Users/cmc/Documents/Titanium_Rajoshi/Owlympics/build/iphone/Classes/TiUIiOSNavWindow.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+r0
+
+CCompileC build/Owlympics.build/Debug-iphonesimulator/Owlympics-universal.build/Objects-normal/i386/TiUIiOSNavWindowProxy.o /Users/cmc/Documents/Titanium_Rajoshi/Owlympics/build/iphone/Classes/TiUIiOSNavWindowProxy.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+r0
+
+CCompileC build/Owlympics.build/Debug-iphonesimulator/Owlympics-universal.build/Objects-normal/i386/TiUIiOSProxy.o /Users/cmc/Documents/Titanium_Rajoshi/Owlympics/build/iphone/Classes/TiUIiOSProxy.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+r0
+
+CCompileC build/Owlympics.build/Debug-iphonesimulator/Owlympics-universal.build/Objects-normal/i386/TiUIiOSTabbedBarProxy.o /Users/cmc/Documents/Titanium_Rajoshi/Owlympics/build/iphone/Classes/TiUIiOSTabbedBarProxy.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+r0
+
+CCompileC build/Owlympics.build/Debug-iphonesimulator/Owlympics-universal.build/Objects-normal/i386/TiUIiOSToolbar.o /Users/cmc/Documents/Titanium_Rajoshi/Owlympics/build/iphone/Classes/TiUIiOSToolbar.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+s416268614.696246
+e416268614.753686
+r0
+xCompileC
+xbuild/Owlympics.build/Debug-iphonesimulator/Owlympics-universal.build/Objects-normal/i386/TiUIiOSToolbar.o
+x/Users/cmc/Documents/Titanium_Rajoshi/Owlympics/build/iphone/Classes/TiUIiOSToolbar.m
+xnormal
+xi386
+xobjective-c
+xcom.apple.compilers.llvm.clang.1_0.compiler
+ofatal error: file '/Users/cmc/Documents/Titanium_Rajoshi/Owlympics/build/iphone/Classes/ThirdpartyNS.h' has been modified since the precompiled header '/var/folders/yb/x0jff5b578350610knqvylzw0000gp/C/com.apple.DeveloperTools/5.0.2-5A3005/Xcode/SharedPrecompiledHeaders/Owlympics_Prefix-cfwkkejgcfdmapfdnndeiyhapafl/Owlympics_Prefix.pch.pch' was built
+o1 error generated.
+lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection93"Compile /Users/cmc/Documents/Titanium_Rajoshi/Owlympics/build/iphone/Classes/TiUIiOSToolbar.m208"CompileC build/Owlympics.build/Debug-iphonesimulator/Owlympics-universal.build/Objects-normal/i386/TiUIiOSToolbar.o Classes/TiUIiOSToolbar.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler8060b246c1cfb841^26fec046c1cfb841^-371"fatal error: file '/Users/cmc/Documents/Titanium_Rajoshi/Owlympics/build/iphone/Classes/ThirdpartyNS.h' has been modified since the precompiled header '/var/folders/yb/x0jff5b578350610knqvylzw0000gp/C/com.apple.DeveloperTools/5.0.2-5A3005/Xcode/SharedPrecompiledHeaders/Owlympics_Prefix-cfwkkejgcfdmapfdnndeiyhapafl/Owlympics_Prefix.pch.pch' was built1 error generated.1(36%IDEClangDiagnosticActivityLogMessage2@338"File '/Users/cmc/Documents/Titanium_Rajoshi/Owlympics/build/iphone/Classes/ThirdpartyNS.h' has been modified since the precompiled header '/var/folders/yb/x0jff5b578350610knqvylzw0000gp/C/com.apple.DeveloperTools/5.0.2-5A3005/Xcode/SharedPrecompiledHeaders/Owlympics_Prefix-cfwkkejgcfdmapfdnndeiyhapafl/Owlympics_Prefix.pch.pch' was built-416268614#18446744073709551615#0#-2#27"com.apple.dt.IDE.diagnostic-20"Apple LLVM 5.0 Error--0#0#1#-19%DVTDocumentLocation3@92"file:///Users/cmc/Documents/Titanium_Rajoshi/Owlympics/build/iphone/Classes/TiUIiOSToolbar.m0000000000000000^4121"CompileC build/Owlympics.build/Debug-iphonesimulator/Owlympics-universal.build/Objects-normal/i386/TiUIiOSToolbar.o Classes/TiUIiOSToolbar.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler    cd /Users/cmc/Documents/Titanium_Rajoshi/Owlympics/build/iphone    setenv LANG en_US.US-ASCII    setenv PATH "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/Library/Java/JavaVirtualMachines/1.6.0_65-b14-462.jdk/Contents/Home/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/texbin"    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -x objective-c -arch i386 -fmessage-length=0 -fdiagnostics-show-note-include-stack -fmacro-backtrace-limit=0 -std=c99 -Wno-trigraphs -fpascal-strings -O0 -Wno-missing-field-initializers -Wno-missing-prototypes -Wno-return-type -Wno-implicit-atomic-properties -Wno-receiver-is-weak -Wno-arc-repeated-use-of-weak -Wno-missing-braces -Wno-parentheses -Wswitch -Wunused-function -Wno-unused-label -Wno-unused-parameter -Wno-unused-variable -Wno-unused-value -Wno-empty-body -Wno-uninitialized -Wno-unknown-pragmas -Wno-shadow -Wno-four-char-constants -Wno-conversion -Wno-constant-conversion -Wno-int-conversion -Wno-bool-conversion -Wno-enum-conversion -Wno-shorten-64-to-32 -Wpointer-sign -Wno-newline-eof -Wno-selector -Wno-strict-selector-match -Wno-undeclared-selector -Wno-deprecated-implementations -DDEPLOYTYPE=development -D__LOG__ID__=502db958-dc63-4c33-87c2-88a82032acde -DDEBUG=1 -DTI_VERSION=3.2.1.GA -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk -fexceptions -fasm-blocks -fstrict-aliasing -Wprotocol -Wdeprecated-declarations -g -fvisibility=hidden -Wno-sign-conversion -fobjc-abi-version=2 -fobjc-legacy-dispatch -mios-simulator-version-min=6.0 -iquote /Users/cmc/Documents/Titanium_Rajoshi/Owlympics/build/iphone/build/Owlympics.build/Debug-iphonesimulator/Owlympics-universal.build/Owlympics-generated-files.hmap -I/Users/cmc/Documents/Titanium_Rajoshi/Owlympics/build/iphone/build/Owlympics.build/Debug-iphonesimulator/Owlympics-universal.build/Owlympics-own-target-headers.hmap -I/Users/cmc/Documents/Titanium_Rajoshi/Owlympics/build/iphone/build/Owlympics.build/Debug-iphonesimulator/Owlympics-universal.build/Owlympics-all-target-headers.hmap -iquote /Users/cmc/Documents/Titanium_Rajoshi/Owlympics/build/iphone/build/Owlympics.build/Debug-iphonesimulator/Owlympics-universal.build/Owlympics-project-headers.hmap -I/Users/cmc/Documents/Titanium_Rajoshi/Owlympics/build/iphone/build/Debug-iphonesimulator/include -I/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/usr/include/libxml2 -Iheaders -I/Users/cmc/Documents/Titanium_Rajoshi/Owlympics/build/iphone/build/Owlympics.build/Debug-iphonesimulator/Owlympics-universal.build/DerivedSources/i386 -I/Users/cmc/Documents/Titanium_Rajoshi/Owlympics/build/iphone/build/Owlympics.build/Debug-iphonesimulator/Owlympics-universal.build/DerivedSources -F/Users/cmc/Documents/Titanium_Rajoshi/Owlympics/build/iphone/build/Debug-iphonesimulator -DIPAD -DTI_POST_1_2 -DDEBUG -include /var/folders/yb/x0jff5b578350610knqvylzw0000gp/C/com.apple.DeveloperTools/5.0.2-5A3005/Xcode/SharedPrecompiledHeaders/Owlympics_Prefix-cfwkkejgcfdmapfdnndeiyhapafl/Owlympics_Prefix.pch -MMD -MT dependencies -MF /Users/cmc/Documents/Titanium_Rajoshi/Owlympics/build/iphone/build/Owlympics.build/Debug-iphonesimulator/Owlympics-universal.build/Objects-normal/i386/TiUIiOSToolbar.d --serialize-diagnostics /Users/cmc/Documents/Titanium_Rajoshi/Owlympics/build/iphone/build/Owlympics.build/Debug-iphonesimulator/Owlympics-universal.build/Objects-normal/i386/TiUIiOSToolbar.dia -c /Users/cmc/Documents/Titanium_Rajoshi/Owlympics/build/iphone/Classes/TiUIiOSToolbar.m -o /Users/cmc/Documents/Titanium_Rajoshi/Owlympics/build/iphone/build/Owlympics.build/Debug-iphonesimulator/Owlympics-universal.build/Objects-normal/i386/TiUIiOSToolbar.o36"062D4B0C-3043-4015-8D3D-28F8CDD83634-
+bE311A09F-2EE7-4ED5-8588-8638C61F5356
+
+CCompileC build/Owlympics.build/Debug-iphonesimulator/Owlympics-universal.build/Objects-normal/i386/TiUIiOSToolbarProxy.o /Users/cmc/Documents/Titanium_Rajoshi/Owlympics/build/iphone/Classes/TiUIiOSToolbarProxy.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+s416268614.697271
+e416268614.753692
+r0
+xCompileC
+xbuild/Owlympics.build/Debug-iphonesimulator/Owlympics-universal.build/Objects-normal/i386/TiUIiOSToolbarProxy.o
+x/Users/cmc/Documents/Titanium_Rajoshi/Owlympics/build/iphone/Classes/TiUIiOSToolbarProxy.m
+xnormal
+xi386
+xobjective-c
+xcom.apple.compilers.llvm.clang.1_0.compiler
+ofatal error: file '/Users/cmc/Documents/Titanium_Rajoshi/Owlympics/build/iphone/Classes/ThirdpartyNS.h' has been modified since the precompiled header '/var/folders/yb/x0jff5b578350610knqvylzw0000gp/C/com.apple.DeveloperTools/5.0.2-5A3005/Xcode/SharedPrecompiledHeaders/Owlympics_Prefix-cfwkkejgcfdmapfdnndeiyhapafl/Owlympics_Prefix.pch.pch' was built
+o1 error generated.
+lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection98"Compile /Users/cmc/Documents/Titanium_Rajoshi/Owlympics/build/iphone/Classes/TiUIiOSToolbarProxy.m218"CompileC build/Owlympics.build/Debug-iphonesimulator/Owlympics-universal.build/Objects-normal/i386/TiUIiOSToolbarProxy.o Classes/TiUIiOSToolbarProxy.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler88a0b246c1cfb841^77f7c046c1cfb841^-371"fatal error: file '/Users/cmc/Documents/Titanium_Rajoshi/Owlympics/build/iphone/Classes/ThirdpartyNS.h' has been modified since the precompiled header '/var/folders/yb/x0jff5b578350610knqvylzw0000gp/C/com.apple.DeveloperTools/5.0.2-5A3005/Xcode/SharedPrecompiledHeaders/Owlympics_Prefix-cfwkkejgcfdmapfdnndeiyhapafl/Owlympics_Prefix.pch.pch' was built1 error generated.1(36%IDEClangDiagnosticActivityLogMessage2@338"File '/Users/cmc/Documents/Titanium_Rajoshi/Owlympics/build/iphone/Classes/ThirdpartyNS.h' has been modified since the precompiled header '/var/folders/yb/x0jff5b578350610knqvylzw0000gp/C/com.apple.DeveloperTools/5.0.2-5A3005/Xcode/SharedPrecompiledHeaders/Owlympics_Prefix-cfwkkejgcfdmapfdnndeiyhapafl/Owlympics_Prefix.pch.pch' was built-416268614#18446744073709551615#0#-2#27"com.apple.dt.IDE.diagnostic-20"Apple LLVM 5.0 Error--0#0#1#-19%DVTDocumentLocation3@97"file:///Users/cmc/Documents/Titanium_Rajoshi/Owlympics/build/iphone/Classes/TiUIiOSToolbarProxy.m0000000000000000^4151"CompileC build/Owlympics.build/Debug-iphonesimulator/Owlympics-universal.build/Objects-normal/i386/TiUIiOSToolbarProxy.o Classes/TiUIiOSToolbarProxy.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler    cd /Users/cmc/Documents/Titanium_Rajoshi/Owlympics/build/iphone    setenv LANG en_US.US-ASCII    setenv PATH "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/Library/Java/JavaVirtualMachines/1.6.0_65-b14-462.jdk/Contents/Home/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/texbin"    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -x objective-c -arch i386 -fmessage-length=0 -fdiagnostics-show-note-include-stack -fmacro-backtrace-limit=0 -std=c99 -Wno-trigraphs -fpascal-strings -O0 -Wno-missing-field-initializers -Wno-missing-prototypes -Wno-return-type -Wno-implicit-atomic-properties -Wno-receiver-is-weak -Wno-arc-repeated-use-of-weak -Wno-missing-braces -Wno-parentheses -Wswitch -Wunused-function -Wno-unused-label -Wno-unused-parameter -Wno-unused-variable -Wno-unused-value -Wno-empty-body -Wno-uninitialized -Wno-unknown-pragmas -Wno-shadow -Wno-four-char-constants -Wno-conversion -Wno-constant-conversion -Wno-int-conversion -Wno-bool-conversion -Wno-enum-conversion -Wno-shorten-64-to-32 -Wpointer-sign -Wno-newline-eof -Wno-selector -Wno-strict-selector-match -Wno-undeclared-selector -Wno-deprecated-implementations -DDEPLOYTYPE=development -D__LOG__ID__=502db958-dc63-4c33-87c2-88a82032acde -DDEBUG=1 -DTI_VERSION=3.2.1.GA -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk -fexceptions -fasm-blocks -fstrict-aliasing -Wprotocol -Wdeprecated-declarations -g -fvisibility=hidden -Wno-sign-conversion -fobjc-abi-version=2 -fobjc-legacy-dispatch -mios-simulator-version-min=6.0 -iquote /Users/cmc/Documents/Titanium_Rajoshi/Owlympics/build/iphone/build/Owlympics.build/Debug-iphonesimulator/Owlympics-universal.build/Owlympics-generated-files.hmap -I/Users/cmc/Documents/Titanium_Rajoshi/Owlympics/build/iphone/build/Owlympics.build/Debug-iphonesimulator/Owlympics-universal.build/Owlympics-own-target-headers.hmap -I/Users/cmc/Documents/Titanium_Rajoshi/Owlympics/build/iphone/build/Owlympics.build/Debug-iphonesimulator/Owlympics-universal.build/Owlympics-all-target-headers.hmap -iquote /Users/cmc/Documents/Titanium_Rajoshi/Owlympics/build/iphone/build/Owlympics.build/Debug-iphonesimulator/Owlympics-universal.build/Owlympics-project-headers.hmap -I/Users/cmc/Documents/Titanium_Rajoshi/Owlympics/build/iphone/build/Debug-iphonesimulator/include -I/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/usr/include/libxml2 -Iheaders -I/Users/cmc/Documents/Titanium_Rajoshi/Owlympics/build/iphone/build/Owlympics.build/Debug-iphonesimulator/Owlympics-universal.build/DerivedSources/i386 -I/Users/cmc/Documents/Titanium_Rajoshi/Owlympics/build/iphone/build/Owlympics.build/Debug-iphonesimulator/Owlympics-universal.build/DerivedSources -F/Users/cmc/Documents/Titanium_Rajoshi/Owlympics/build/iphone/build/Debug-iphonesimulator -DIPAD -DTI_POST_1_2 -DDEBUG -include /var/folders/yb/x0jff5b578350610knqvylzw0000gp/C/com.apple.DeveloperTools/5.0.2-5A3005/Xcode/SharedPrecompiledHeaders/Owlympics_Prefix-cfwkkejgcfdmapfdnndeiyhapafl/Owlympics_Prefix.pch -MMD -MT dependencies -MF /Users/cmc/Documents/Titanium_Rajoshi/Owlympics/build/iphone/build/Owlympics.build/Debug-iphonesimulator/Owlympics-universal.build/Objects-normal/i386/TiUIiOSToolbarProxy.d --serialize-diagnostics /Users/cmc/Documents/Titanium_Rajoshi/Owlympics/build/iphone/build/Owlympics.build/Debug-iphonesimulator/Owlympics-universal.build/Objects-normal/i386/TiUIiOSToolbarProxy.dia -c /Users/cmc/Documents/Titanium_Rajoshi/Owlympics/build/iphone/Classes/TiUIiOSToolbarProxy.m -o /Users/cmc/Documents/Titanium_Rajoshi/Owlympics/build/iphone/build/Owlympics.build/Debug-iphonesimulator/Owlympics-universal.build/Objects-normal/i386/TiUIiOSToolbarProxy.o36"C7E87253-A181-49BF-BF22-62D0DA831966-
+bE311A09F-2EE7-4ED5-8588-8638C61F5356
+
+CCompileC build/Owlympics.build/Debug-iphonesimulator/Owlympics-universal.build/Objects-normal/i386/TiUIiOSTransitionAnimationProxy.o /Users/cmc/Documents/Titanium_Rajoshi/Owlympics/build/iphone/Classes/TiUIiOSTransitionAnimationProxy.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+r0
+
+CCompileC build/Owlympics.build/Debug-iphonesimulator/Owlympics-universal.build/Objects-normal/i386/TiUIiPadPopover.o /Users/cmc/Documents/Titanium_Rajoshi/Owlympics/build/iphone/Classes/TiUIiPadPopover.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+r0
+
+CCompileC build/Owlympics.build/Debug-iphonesimulator/Owlympics-universal.build/Objects-normal/i386/TiUIiPadPopoverProxy.o /Users/cmc/Documents/Titanium_Rajoshi/Owlympics/build/iphone/Classes/TiUIiPadPopoverProxy.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+r0
+
+CCompileC build/Owlympics.build/Debug-iphonesimulator/Owlympics-universal.build/Objects-normal/i386/TiUIiPadProxy.o /Users/cmc/Documents/Titanium_Rajoshi/Owlympics/build/iphone/Classes/TiUIiPadProxy.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+r0
+
+CCompileC build/Owlympics.build/Debug-iphonesimulator/Owlympics-universal.build/Objects-normal/i386/TiUIiPadSplitWindow.o /Users/cmc/Documents/Titanium_Rajoshi/Owlympics/build/iphone/Classes/TiUIiPadSplitWindow.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+r0
+
+CCompileC build/Owlympics.build/Debug-iphonesimulator/Owlympics-universal.build/Objects-normal/i386/TiUIiPadSplitWindowButtonProxy.o /Users/cmc/Documents/Titanium_Rajoshi/Owlympics/build/iphone/Classes/TiUIiPadSplitWindowButtonProxy.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+r0
+
+CCompileC build/Owlympics.build/Debug-iphonesimulator/Owlympics-universal.build/Objects-normal/i386/TiUIiPadSplitWindowProxy.o /Users/cmc/Documents/Titanium_Rajoshi/Owlympics/build/iphone/Classes/TiUIiPadSplitWindowProxy.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+r0
+
+CCompileC build/Owlympics.build/Debug-iphonesimulator/Owlympics-universal.build/Objects-normal/i386/TiUIiPhoneActivityIndicatorStyleProxy.o /Users/cmc/Documents/Titanium_Rajoshi/Owlympics/build/iphone/Classes/TiUIiPhoneActivityIndicatorStyleProxy.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+r0
+
+CCompileC build/Owlympics.build/Debug-iphonesimulator/Owlympics-universal.build/Objects-normal/i386/TiUIiPhoneAlertDialogStyleProxy.o /Users/cmc/Documents/Titanium_Rajoshi/Owlympics/build/iphone/Classes/TiUIiPhoneAlertDialogStyleProxy.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+r0
+
+CCompileC build/Owlympics.build/Debug-iphonesimulator/Owlympics-universal.build/Objects-normal/i386/TiUIiPhoneAnimationStyleProxy.o /Users/cmc/Documents/Titanium_Rajoshi/Owlympics/build/iphone/Classes/TiUIiPhoneAnimationStyleProxy.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+r0
+
+CCompileC build/Owlympics.build/Debug-iphonesimulator/Owlympics-universal.build/Objects-normal/i386/TiUIiPhoneProgressBarStyleProxy.o /Users/cmc/Documents/Titanium_Rajoshi/Owlympics/build/iphone/Classes/TiUIiPhoneProgressBarStyleProxy.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+r0
+
+CCompileC build/Owlympics.build/Debug-iphonesimulator/Owlympics-universal.build/Objects-normal/i386/TiUIiPhoneProxy.o /Users/cmc/Documents/Titanium_Rajoshi/Owlympics/build/iphone/Classes/TiUIiPhoneProxy.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+r0
+
+CCompileC build/Owlympics.build/Debug-iphonesimulator/Owlympics-universal.build/Objects-normal/i386/TiUIiPhoneRowAnimationStyleProxy.o /Users/cmc/Documents/Titanium_Rajoshi/Owlympics/build/iphone/Classes/TiUIiPhoneRowAnimationStyleProxy.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+r0
+
+CCompileC build/Owlympics.build/Debug-iphonesimulator/Owlympics-universal.build/Objects-normal/i386/TiUIiPhoneScrollIndicatorStyleProxy.o /Users/cmc/Documents/Titanium_Rajoshi/Owlympics/build/iphone/Classes/TiUIiPhoneScrollIndicatorStyleProxy.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+r0
+
+CCompileC build/Owlympics.build/Debug-iphonesimulator/Owlympics-universal.build/Objects-normal/i386/TiUIiPhoneStatusBarProxy.o /Users/cmc/Documents/Titanium_Rajoshi/Owlympics/build/iphone/Classes/TiUIiPhoneStatusBarProxy.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+r0
+
+CCompileC build/Owlympics.build/Debug-iphonesimulator/Owlympics-universal.build/Objects-normal/i386/TiUIiPhoneSystemButtonProxy.o /Users/cmc/Documents/Titanium_Rajoshi/Owlympics/build/iphone/Classes/TiUIiPhoneSystemButtonProxy.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+r0
+
+CCompileC build/Owlympics.build/Debug-iphonesimulator/Owlympics-universal.build/Objects-normal/i386/TiUIiPhoneSystemButtonStyleProxy.o /Users/cmc/Documents/Titanium_Rajoshi/Owlympics/build/iphone/Classes/TiUIiPhoneSystemButtonStyleProxy.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+r0
+
+CCompileC build/Owlympics.build/Debug-iphonesimulator/Owlympics-universal.build/Objects-normal/i386/TiUIiPhoneSystemIconProxy.o /Users/cmc/Documents/Titanium_Rajoshi/Owlympics/build/iphone/Classes/TiUIiPhoneSystemIconProxy.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+r0
+
+CCompileC build/Owlympics.build/Debug-iphonesimulator/Owlympics-universal.build/Objects-normal/i386/TiUIiPhoneTableViewCellSelectionStyleProxy.o /Users/cmc/Documents/Titanium_Rajoshi/Owlympics/build/iphone/Classes/TiUIiPhoneTableViewCellSelectionStyleProxy.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+r0
+
+CCompileC build/Owlympics.build/Debug-iphonesimulator/Owlympics-universal.build/Objects-normal/i386/TiUIiPhoneTableViewScrollPositionProxy.o /Users/cmc/Documents/Titanium_Rajoshi/Owlympics/build/iphone/Classes/TiUIiPhoneTableViewScrollPositionProxy.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+r0
+
+CCompileC build/Owlympics.build/Debug-iphonesimulator/Owlympics-universal.build/Objects-normal/i386/TiUIiPhoneTableViewSeparatorStyleProxy.o /Users/cmc/Documents/Titanium_Rajoshi/Owlympics/build/iphone/Classes/TiUIiPhoneTableViewSeparatorStyleProxy.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+r0
+
+CCompileC build/Owlympics.build/Debug-iphonesimulator/Owlympics-universal.build/Objects-normal/i386/TiUIiPhoneTableViewStyleProxy.o /Users/cmc/Documents/Titanium_Rajoshi/Owlympics/build/iphone/Classes/TiUIiPhoneTableViewStyleProxy.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+r0
+
+CCompileC build/Owlympics.build/Debug-iphonesimulator/Owlympics-universal.build/Objects-normal/i386/TiUtils.o /Users/cmc/Documents/Titanium_Rajoshi/Owlympics/build/iphone/Classes/TiUtils.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+r0
+
+CCompileC build/Owlympics.build/Debug-iphonesimulator/Owlympics-universal.build/Objects-normal/i386/TiViewAttachBehavior.o /Users/cmc/Documents/Titanium_Rajoshi/Owlympics/build/iphone/Classes/TiViewAttachBehavior.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+r0
+
+CCompileC build/Owlympics.build/Debug-iphonesimulator/Owlympics-universal.build/Objects-normal/i386/TiViewController.o /Users/cmc/Documents/Titanium_Rajoshi/Owlympics/build/iphone/Classes/TiViewController.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+r0
+
+CCompileC build/Owlympics.build/Debug-iphonesimulator/Owlympics-universal.build/Objects-normal/i386/TiViewProxy.o /Users/cmc/Documents/Titanium_Rajoshi/Owlympics/build/iphone/Classes/TiViewProxy.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+r0
+
+CCompileC build/Owlympics.build/Debug-iphonesimulator/Owlympics-universal.build/Objects-normal/i386/TiViewTemplate.o /Users/cmc/Documents/Titanium_Rajoshi/Owlympics/build/iphone/Classes/TiViewTemplate.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+r0
+
+CCompileC build/Owlympics.build/Debug-iphonesimulator/Owlympics-universal.build/Objects-normal/i386/TiWindowProxy.o /Users/cmc/Documents/Titanium_Rajoshi/Owlympics/build/iphone/Classes/TiWindowProxy.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+r0
+
+CCompileC build/Owlympics.build/Debug-iphonesimulator/Owlympics-universal.build/Objects-normal/i386/TopTiModule.o /Users/cmc/Documents/Titanium_Rajoshi/Owlympics/build/iphone/Classes/TopTiModule.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+r0
+
+CCompileC build/Owlympics.build/Debug-iphonesimulator/Owlympics-universal.build/Objects-normal/i386/UIImage+Alpha.o /Users/cmc/Documents/Titanium_Rajoshi/Owlympics/build/iphone/Classes/UIImage+Alpha.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+r0
+
+CCompileC build/Owlympics.build/Debug-iphonesimulator/Owlympics-universal.build/Objects-normal/i386/UIImage+Resize.o /Users/cmc/Documents/Titanium_Rajoshi/Owlympics/build/iphone/Classes/UIImage+Resize.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+r0
+
+CCompileC build/Owlympics.build/Debug-iphonesimulator/Owlympics-universal.build/Objects-normal/i386/UIImage+RoundedCorner.o /Users/cmc/Documents/Titanium_Rajoshi/Owlympics/build/iphone/Classes/UIImage+RoundedCorner.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+r0
+
+CCompileC build/Owlympics.build/Debug-iphonesimulator/Owlympics-universal.build/Objects-normal/i386/UIImageExtras.o /Users/cmc/Documents/Titanium_Rajoshi/Owlympics/build/iphone/Classes/AFOpenFlow/UIImageExtras.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+r0
+
+CCompileC build/Owlympics.build/Debug-iphonesimulator/Owlympics-universal.build/Objects-normal/i386/UIModule.o /Users/cmc/Documents/Titanium_Rajoshi/Owlympics/build/iphone/Classes/UIModule.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+r0
+
+CCompileC build/Owlympics.build/Debug-iphonesimulator/Owlympics-universal.build/Objects-normal/i386/UtilsModule.o /Users/cmc/Documents/Titanium_Rajoshi/Owlympics/build/iphone/Classes/UtilsModule.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+r0
+
+CCompileC build/Owlympics.build/Debug-iphonesimulator/Owlympics-universal.build/Objects-normal/i386/WebFont.o /Users/cmc/Documents/Titanium_Rajoshi/Owlympics/build/iphone/Classes/WebFont.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+r0
+
+CCompileC build/Owlympics.build/Debug-iphonesimulator/Owlympics-universal.build/Objects-normal/i386/Webcolor.o /Users/cmc/Documents/Titanium_Rajoshi/Owlympics/build/iphone/Classes/Webcolor.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+r0
+
+CCompileC build/Owlympics.build/Debug-iphonesimulator/Owlympics-universal.build/Objects-normal/i386/XHRBridge.o /Users/cmc/Documents/Titanium_Rajoshi/Owlympics/build/iphone/Classes/XHRBridge.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+r0
+
+CCompileC build/Owlympics.build/Debug-iphonesimulator/Owlympics-universal.build/Objects-normal/i386/XMLModule.o /Users/cmc/Documents/Titanium_Rajoshi/Owlympics/build/iphone/Classes/XMLModule.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+r0
+
+CCompileC build/Owlympics.build/Debug-iphonesimulator/Owlympics-universal.build/Objects-normal/i386/YahooModule.o /Users/cmc/Documents/Titanium_Rajoshi/Owlympics/build/iphone/Classes/YahooModule.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+r0
+
+CCompileC build/Owlympics.build/Debug-iphonesimulator/Owlympics-universal.build/Objects-normal/i386/main.o /Users/cmc/Documents/Titanium_Rajoshi/Owlympics/build/iphone/main.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+s416268614.809176
+e416268614.825640
+r0
+xCompileC
+xbuild/Owlympics.build/Debug-iphonesimulator/Owlympics-universal.build/Objects-normal/i386/main.o
+x/Users/cmc/Documents/Titanium_Rajoshi/Owlympics/build/iphone/main.m
+xnormal
+xi386
+xobjective-c
+xcom.apple.compilers.llvm.clang.1_0.compiler
+ofatal error: file '/Users/cmc/Documents/Titanium_Rajoshi/Owlympics/build/iphone/Classes/ThirdpartyNS.h' has been modified since the precompiled header '/var/folders/yb/x0jff5b578350610knqvylzw0000gp/C/com.apple.DeveloperTools/5.0.2-5A3005/Xcode/SharedPrecompiledHeaders/Owlympics_Prefix-cfwkkejgcfdmapfdnndeiyhapafl/Owlympics_Prefix.pch.pch' was built
+o1 error generated.
+lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection75"Compile /Users/cmc/Documents/Titanium_Rajoshi/Owlympics/build/iphone/main.m180"CompileC build/Owlympics.build/Debug-iphonesimulator/Owlympics-universal.build/Objects-normal/i386/main.o main.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler0b5fcf46c1cfb841^e25cd346c1cfb841^-371"fatal error: file '/Users/cmc/Documents/Titanium_Rajoshi/Owlympics/build/iphone/Classes/ThirdpartyNS.h' has been modified since the precompiled header '/var/folders/yb/x0jff5b578350610knqvylzw0000gp/C/com.apple.DeveloperTools/5.0.2-5A3005/Xcode/SharedPrecompiledHeaders/Owlympics_Prefix-cfwkkejgcfdmapfdnndeiyhapafl/Owlympics_Prefix.pch.pch' was built1 error generated.1(36%IDEClangDiagnosticActivityLogMessage2@338"File '/Users/cmc/Documents/Titanium_Rajoshi/Owlympics/build/iphone/Classes/ThirdpartyNS.h' has been modified since the precompiled header '/var/folders/yb/x0jff5b578350610knqvylzw0000gp/C/com.apple.DeveloperTools/5.0.2-5A3005/Xcode/SharedPrecompiledHeaders/Owlympics_Prefix-cfwkkejgcfdmapfdnndeiyhapafl/Owlympics_Prefix.pch.pch' was built-416268614#18446744073709551615#0#-2#27"com.apple.dt.IDE.diagnostic-20"Apple LLVM 5.0 Error--0#0#1#-19%DVTDocumentLocation3@74"file:///Users/cmc/Documents/Titanium_Rajoshi/Owlympics/build/iphone/main.m0000000000000000^4045"CompileC build/Owlympics.build/Debug-iphonesimulator/Owlympics-universal.build/Objects-normal/i386/main.o main.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler    cd /Users/cmc/Documents/Titanium_Rajoshi/Owlympics/build/iphone    setenv LANG en_US.US-ASCII    setenv PATH "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/Library/Java/JavaVirtualMachines/1.6.0_65-b14-462.jdk/Contents/Home/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/texbin"    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -x objective-c -arch i386 -fmessage-length=0 -fdiagnostics-show-note-include-stack -fmacro-backtrace-limit=0 -std=c99 -Wno-trigraphs -fpascal-strings -O0 -Wno-missing-field-initializers -Wno-missing-prototypes -Wno-return-type -Wno-implicit-atomic-properties -Wno-receiver-is-weak -Wno-arc-repeated-use-of-weak -Wno-missing-braces -Wno-parentheses -Wswitch -Wunused-function -Wno-unused-label -Wno-unused-parameter -Wno-unused-variable -Wno-unused-value -Wno-empty-body -Wno-uninitialized -Wno-unknown-pragmas -Wno-shadow -Wno-four-char-constants -Wno-conversion -Wno-constant-conversion -Wno-int-conversion -Wno-bool-conversion -Wno-enum-conversion -Wno-shorten-64-to-32 -Wpointer-sign -Wno-newline-eof -Wno-selector -Wno-strict-selector-match -Wno-undeclared-selector -Wno-deprecated-implementations -DDEPLOYTYPE=development -D__LOG__ID__=502db958-dc63-4c33-87c2-88a82032acde -DDEBUG=1 -DTI_VERSION=3.2.1.GA -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk -fexceptions -fasm-blocks -fstrict-aliasing -Wprotocol -Wdeprecated-declarations -g -fvisibility=hidden -Wno-sign-conversion -fobjc-abi-version=2 -fobjc-legacy-dispatch -mios-simulator-version-min=6.0 -iquote /Users/cmc/Documents/Titanium_Rajoshi/Owlympics/build/iphone/build/Owlympics.build/Debug-iphonesimulator/Owlympics-universal.build/Owlympics-generated-files.hmap -I/Users/cmc/Documents/Titanium_Rajoshi/Owlympics/build/iphone/build/Owlympics.build/Debug-iphonesimulator/Owlympics-universal.build/Owlympics-own-target-headers.hmap -I/Users/cmc/Documents/Titanium_Rajoshi/Owlympics/build/iphone/build/Owlympics.build/Debug-iphonesimulator/Owlympics-universal.build/Owlympics-all-target-headers.hmap -iquote /Users/cmc/Documents/Titanium_Rajoshi/Owlympics/build/iphone/build/Owlympics.build/Debug-iphonesimulator/Owlympics-universal.build/Owlympics-project-headers.hmap -I/Users/cmc/Documents/Titanium_Rajoshi/Owlympics/build/iphone/build/Debug-iphonesimulator/include -I/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/usr/include/libxml2 -Iheaders -I/Users/cmc/Documents/Titanium_Rajoshi/Owlympics/build/iphone/build/Owlympics.build/Debug-iphonesimulator/Owlympics-universal.build/DerivedSources/i386 -I/Users/cmc/Documents/Titanium_Rajoshi/Owlympics/build/iphone/build/Owlympics.build/Debug-iphonesimulator/Owlympics-universal.build/DerivedSources -F/Users/cmc/Documents/Titanium_Rajoshi/Owlympics/build/iphone/build/Debug-iphonesimulator -DIPAD -DTI_POST_1_2 -DDEBUG -include /var/folders/yb/x0jff5b578350610knqvylzw0000gp/C/com.apple.DeveloperTools/5.0.2-5A3005/Xcode/SharedPrecompiledHeaders/Owlympics_Prefix-cfwkkejgcfdmapfdnndeiyhapafl/Owlympics_Prefix.pch -MMD -MT dependencies -MF /Users/cmc/Documents/Titanium_Rajoshi/Owlympics/build/iphone/build/Owlympics.build/Debug-iphonesimulator/Owlympics-universal.build/Objects-normal/i386/main.d --serialize-diagnostics /Users/cmc/Documents/Titanium_Rajoshi/Owlympics/build/iphone/build/Owlympics.build/Debug-iphonesimulator/Owlympics-universal.build/Objects-normal/i386/main.dia -c /Users/cmc/Documents/Titanium_Rajoshi/Owlympics/build/iphone/main.m -o /Users/cmc/Documents/Titanium_Rajoshi/Owlympics/build/iphone/build/Owlympics.build/Debug-iphonesimulator/Owlympics-universal.build/Objects-normal/i386/main.o36"BB2070D0-161A-4831-8FCA-A1DDD627ADCE-
+bE311A09F-2EE7-4ED5-8588-8638C61F5356
+
+CGenerateDSYMFile /Users/cmc/Documents/Titanium_Rajoshi/Owlympics/build/iphone/build/Debug-iphonesimulator/Owlympics.app.dSYM /Users/cmc/Documents/Titanium_Rajoshi/Owlympics/build/iphone/build/Debug-iphonesimulator/Owlympics.app/Owlympics
+r0
+
+CLd /Users/cmc/Documents/Titanium_Rajoshi/Owlympics/build/iphone/build/Debug-iphonesimulator/Owlympics.app/Owlympics normal i386
+r0
+
+CPhaseScriptExecution Post-Compile /Users/cmc/Documents/Titanium_Rajoshi/Owlympics/build/iphone/build/Owlympics.build/Debug-iphonesimulator/Owlympics-universal.build/Script-DABB37B812E8CB280026A6EA.sh
+r0
+
+CPhaseScriptExecution Pre-Compile /Users/cmc/Documents/Titanium_Rajoshi/Owlympics/build/iphone/build/Owlympics.build/Debug-iphonesimulator/Owlympics-universal.build/Script-DABB369F12E8CB280026A6EA.sh
+s416268614.666616
+e416268614.691781
+r1
+xPhaseScriptExecution
+xPre-Compile
+x/Users/cmc/Documents/Titanium_Rajoshi/Owlympics/build/iphone/build/Owlympics.build/Debug-iphonesimulator/Owlympics-universal.build/Script-DABB369F12E8CB280026A6EA.sh
+oskipping pre-compile phase
+lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection37"Run custom shell script 'Pre-Compile'137"PhaseScriptExecution Pre-Compile build/Owlympics.build/Debug-iphonesimulator/Owlympics-universal.build/Script-DABB369F12E8CB280026A6EA.sh4b92ab46c1cfb841^ebfdb246c1cfb841^-27"skipping pre-compile phase1(21%IDEActivityLogMessage2@27"skipping pre-compile phase-416268614#0#27#-0#-----0#0#1#--23434"PhaseScriptExecution Pre-Compile build/Owlympics.build/Debug-iphonesimulator/Owlympics-universal.build/Script-DABB369F12E8CB280026A6EA.sh    cd /Users/cmc/Documents/Titanium_Rajoshi/Owlympics/build/iphone    setenv ACTION build    setenv AD_HOC_CODE_SIGNING_ALLOWED NO    setenv ALTERNATE_GROUP staff    setenv ALTERNATE_MODE u+w,go-w,a+rX    setenv ALTERNATE_OWNER cmc    setenv ALWAYS_SEARCH_USER_PATHS NO    setenv ALWAYS_USE_SEPARATE_HEADERMAPS YES    setenv APPLE_INTERNAL_DEVELOPER_DIR /AppleInternal/Developer    setenv APPLE_INTERNAL_DIR /AppleInternal    setenv APPLE_INTERNAL_DOCUMENTATION_DIR /AppleInternal/Documentation    setenv APPLE_INTERNAL_LIBRARY_DIR /AppleInternal/Library    setenv APPLE_INTERNAL_TOOLS /AppleInternal/Developer/Tools    setenv APPLY_RULES_IN_COPY_FILES NO    setenv ARCHS i386    setenv ARCHS_STANDARD i386    setenv ARCHS_STANDARD_32_64_BIT i386    setenv ARCHS_STANDARD_32_BIT i386    setenv ARCHS_STANDARD_64_BIT x86_64    setenv ARCHS_STANDARD_INCLUDING_64_BIT "i386 x86_64"    setenv AVAILABLE_PLATFORMS "iphonesimulator macosx iphoneos"    setenv BUILD_COMPONENTS "headers build"    setenv BUILD_DIR /Users/cmc/Documents/Titanium_Rajoshi/Owlympics/build/iphone/build    setenv BUILD_ROOT /Users/cmc/Documents/Titanium_Rajoshi/Owlympics/build/iphone/build    setenv BUILD_STYLE     setenv BUILD_VARIANTS normal    setenv BUILT_PRODUCTS_DIR /Users/cmc/Documents/Titanium_Rajoshi/Owlympics/build/iphone/build/Debug-iphonesimulator    setenv CACHE_ROOT /var/folders/yb/x0jff5b578350610knqvylzw0000gp/C/com.apple.DeveloperTools/5.0.2-5A3005/Xcode    setenv CCHROOT /var/folders/yb/x0jff5b578350610knqvylzw0000gp/C/com.apple.DeveloperTools/5.0.2-5A3005/Xcode    setenv CHMOD /bin/chmod    setenv CHOWN /usr/sbin/chown    setenv CLANG_CXX_LIBRARY libstdc++    setenv CLASS_FILE_DIR /Users/cmc/Documents/Titanium_Rajoshi/Owlympics/build/iphone/build/Owlympics.build/Debug-iphonesimulator/Owlympics-universal.build/JavaClasses    setenv CLEAN_PRECOMPS YES    setenv CLONE_HEADERS NO    setenv CODESIGNING_FOLDER_PATH /Users/cmc/Documents/Titanium_Rajoshi/Owlympics/build/iphone/build/Debug-iphonesimulator/Owlympics.app    setenv CODE_SIGNING_ALLOWED NO    setenv CODE_SIGN_CONTEXT_CLASS XCiPhoneSimulatorCodeSignContext    setenv CODE_SIGN_IDENTITY "iPhone Developer"    setenv COLOR_DIAGNOSTICS NO    setenv COMBINE_HIDPI_IMAGES NO    setenv COMMAND_MODE legacy    setenv COMPOSITE_SDK_DIRS /var/folders/yb/x0jff5b578350610knqvylzw0000gp/C/com.apple.DeveloperTools/5.0.2-5A3005/Xcode/CompositeSDKs    setenv COMPRESS_PNG_FILES YES    setenv CONFIGURATION Debug    setenv CONFIGURATION_BUILD_DIR /Users/cmc/Documents/Titanium_Rajoshi/Owlympics/build/iphone/build/Debug-iphonesimulator    setenv CONFIGURATION_TEMP_DIR /Users/cmc/Documents/Titanium_Rajoshi/Owlympics/build/iphone/build/Owlympics.build/Debug-iphonesimulator    setenv CONTENTS_FOLDER_PATH Owlympics.app    setenv COPYING_PRESERVES_HFS_DATA NO    setenv COPY_PHASE_STRIP NO    setenv COPY_RESOURCES_FROM_STATIC_FRAMEWORKS YES    setenv CP /bin/cp    setenv CREATE_INFOPLIST_SECTION_IN_BINARY NO    setenv CURRENT_ARCH i386    setenv CURRENT_VARIANT normal    setenv DEAD_CODE_STRIPPING NO    setenv DEBUGGING_SYMBOLS YES    setenv DEBUG_INFORMATION_FORMAT dwarf-with-dsym    setenv DEFAULT_COMPILER com.apple.compilers.llvm.clang.1_0    setenv DEFAULT_KEXT_INSTALL_PATH /System/Library/Extensions    setenv DEPLOYMENT_LOCATION NO    setenv DEPLOYMENT_POSTPROCESSING NO    setenv DERIVED_FILES_DIR /Users/cmc/Documents/Titanium_Rajoshi/Owlympics/build/iphone/build/Owlympics.build/Debug-iphonesimulator/Owlympics-universal.build/DerivedSources    setenv DERIVED_FILE_DIR /Users/cmc/Documents/Titanium_Rajoshi/Owlympics/build/iphone/build/Owlympics.build/Debug-iphonesimulator/Owlympics-universal.build/DerivedSources    setenv DERIVED_SOURCES_DIR /Users/cmc/Documents/Titanium_Rajoshi/Owlympics/build/iphone/build/Owlympics.build/Debug-iphonesimulator/Owlympics-universal.build/DerivedSources    setenv DEVELOPER_APPLICATIONS_DIR /Applications/Xcode.app/Contents/Developer/Applications    setenv DEVELOPER_BIN_DIR /Applications/Xcode.app/Contents/Developer/usr/bin    setenv DEVELOPER_DIR /Applications/Xcode.app/Contents/Developer    setenv DEVELOPER_FRAMEWORKS_DIR /Applications/Xcode.app/Contents/Developer/Library/Frameworks    setenv DEVELOPER_FRAMEWORKS_DIR_QUOTED /Applications/Xcode.app/Contents/Developer/Library/Frameworks    setenv DEVELOPER_LIBRARY_DIR /Applications/Xcode.app/Contents/Developer/Library    setenv DEVELOPER_SDK_DIR /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs    setenv DEVELOPER_TOOLS_DIR /Applications/Xcode.app/Contents/Developer/Tools    setenv DEVELOPER_USR_DIR /Applications/Xcode.app/Contents/Developer/usr    setenv DEVELOPMENT_LANGUAGE English    setenv DOCUMENTATION_FOLDER_PATH Owlympics.app/English.lproj/Documentation    setenv DO_HEADER_SCANNING_IN_JAM NO    setenv DSTROOT /tmp/Owlympics.dst    setenv DT_TOOLCHAIN_DIR /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain    setenv DWARF_DSYM_FILE_NAME Owlympics.app.dSYM    setenv DWARF_DSYM_FILE_SHOULD_ACCOMPANY_PRODUCT NO    setenv DWARF_DSYM_FOLDER_PATH /Users/cmc/Documents/Titanium_Rajoshi/Owlympics/build/iphone/build/Debug-iphonesimulator    setenv EFFECTIVE_PLATFORM_NAME -iphonesimulator    setenv ENABLE_HEADER_DEPENDENCIES YES    setenv EXCLUDED_INSTALLSRC_SUBDIRECTORY_PATTERNS ".DS_Store .svn .git .hg CVS"    setenv EXCLUDED_RECURSIVE_SEARCH_PATH_SUBDIRECTORIES "*.nib *.lproj *.framework *.gch (*) .DS_Store CVS .svn .git .hg *.xcodeproj *.xcode *.pbproj *.pbxproj"    setenv EXECUTABLES_FOLDER_PATH Owlympics.app/Executables    setenv EXECUTABLE_FOLDER_PATH Owlympics.app    setenv EXECUTABLE_NAME Owlympics    setenv EXECUTABLE_PATH Owlympics.app/Owlympics    setenv FILE_LIST /Users/cmc/Documents/Titanium_Rajoshi/Owlympics/build/iphone/build/Owlympics.build/Debug-iphonesimulator/Owlympics-universal.build/Objects/LinkFileList    setenv FIXED_FILES_DIR /Users/cmc/Documents/Titanium_Rajoshi/Owlympics/build/iphone/build/Owlympics.build/Debug-iphonesimulator/Owlympics-universal.build/FixedFiles    setenv FRAMEWORKS_FOLDER_PATH Owlympics.app/Frameworks    setenv FRAMEWORK_FLAG_PREFIX -framework    setenv FRAMEWORK_SEARCH_PATHS "/Users/cmc/Documents/Titanium_Rajoshi/Owlympics/build/iphone/build/Debug-iphonesimulator "    setenv FRAMEWORK_VERSION A    setenv FULL_PRODUCT_NAME Owlympics.app    setenv GCC3_VERSION 3.3    setenv GCC_C_LANGUAGE_STANDARD c99    setenv GCC_DYNAMIC_NO_PIC NO    setenv GCC_INLINES_ARE_PRIVATE_EXTERN YES    setenv GCC_OBJC_LEGACY_DISPATCH YES    setenv GCC_OPTIMIZATION_LEVEL 0    setenv GCC_PFE_FILE_C_DIALECTS "c objective-c c++ objective-c++"    setenv GCC_PRECOMPILE_PREFIX_HEADER YES    setenv GCC_PREFIX_HEADER Owlympics_Prefix.pch    setenv GCC_PREPROCESSOR_DEFINITIONS "DEPLOYTYPE=development __LOG__ID__=502db958-dc63-4c33-87c2-88a82032acde DEBUG=1 TI_VERSION=3.2.1.GA"    setenv GCC_SYMBOLS_PRIVATE_EXTERN YES    setenv GCC_THUMB_SUPPORT NO    setenv GCC_TREAT_WARNINGS_AS_ERRORS NO    setenv GCC_VERSION com.apple.compilers.llvm.clang.1_0    setenv GCC_VERSION_IDENTIFIER com_apple_compilers_llvm_clang_1_0    setenv GCC_WARN_ABOUT_RETURN_TYPE NO    setenv GCC_WARN_MISSING_PARENTHESES NO    setenv GCC_WARN_SHADOW NO    setenv GCC_WARN_STRICT_SELECTOR_MATCH NO    setenv GCC_WARN_UNUSED_FUNCTION YES    setenv GCC_WARN_UNUSED_PARAMETER NO    setenv GCC_WARN_UNUSED_VALUE NO    setenv GCC_WARN_UNUSED_VARIABLE NO    setenv GENERATE_MASTER_OBJECT_FILE NO    setenv GENERATE_PKGINFO_FILE YES    setenv GENERATE_PROFILING_CODE NO    setenv GID 20    setenv GROUP staff    setenv HEADERMAP_INCLUDES_FLAT_ENTRIES_FOR_TARGET_BEING_BUILT YES    setenv HEADERMAP_INCLUDES_FRAMEWORK_ENTRIES_FOR_ALL_PRODUCT_TYPES YES    setenv HEADERMAP_INCLUDES_NONPUBLIC_NONPRIVATE_HEADERS YES    setenv HEADERMAP_INCLUDES_PROJECT_HEADERS YES    setenv HEADER_SEARCH_PATHS "/Users/cmc/Documents/Titanium_Rajoshi/Owlympics/build/iphone/build/Debug-iphonesimulator/include /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/usr/include/libxml2 headers"    setenv ICONV /usr/bin/iconv    setenv INFOPLIST_EXPAND_BUILD_SETTINGS YES    setenv INFOPLIST_FILE Info.plist    setenv INFOPLIST_OUTPUT_FORMAT binary    setenv INFOPLIST_PATH Owlympics.app/Info.plist    setenv INFOPLIST_PREPROCESS NO    setenv INFOSTRINGS_PATH Owlympics.app/English.lproj/InfoPlist.strings    setenv INSTALL_DIR /tmp/Owlympics.dst/Applications    setenv INSTALL_GROUP staff    setenv INSTALL_MODE_FLAG u+w,go-w,a+rX    setenv INSTALL_OWNER cmc    setenv INSTALL_PATH /Applications    setenv INSTALL_ROOT /tmp/Owlympics.dst    setenv IPHONEOS_DEPLOYMENT_TARGET 6.0    setenv JAVAC_DEFAULT_FLAGS "-J-Xms64m -J-XX:NewSize=4M -J-Dfile.encoding=UTF8"    setenv JAVA_APP_STUB /System/Library/Frameworks/JavaVM.framework/Resources/MacOS/JavaApplicationStub    setenv JAVA_ARCHIVE_CLASSES YES    setenv JAVA_ARCHIVE_TYPE JAR    setenv JAVA_COMPILER /usr/bin/javac    setenv JAVA_FOLDER_PATH Owlympics.app/Java    setenv JAVA_FRAMEWORK_RESOURCES_DIRS Resources    setenv JAVA_JAR_FLAGS cv    setenv JAVA_SOURCE_SUBDIR .    setenv JAVA_USE_DEPENDENCIES YES    setenv JAVA_ZIP_FLAGS -urg    setenv JIKES_DEFAULT_FLAGS "+E +OLDCSO"    setenv KEEP_PRIVATE_EXTERNS NO    setenv LD_DEPENDENCY_INFO_FILE /Users/cmc/Documents/Titanium_Rajoshi/Owlympics/build/iphone/build/Owlympics.build/Debug-iphonesimulator/Owlympics-universal.build/Objects-normal/i386/Owlympics_dependency_info.dat    setenv LD_GENERATE_MAP_FILE NO    setenv LD_MAP_FILE_PATH /Users/cmc/Documents/Titanium_Rajoshi/Owlympics/build/iphone/build/Owlympics.build/Debug-iphonesimulator/Owlympics-universal.build/Owlympics-LinkMap-normal-i386.txt    setenv LD_NO_PIE NO    setenv LD_QUOTE_LINKER_ARGUMENTS_FOR_COMPILER_DRIVER YES    setenv LEGACY_DEVELOPER_DIR /Applications/Xcode.app/Contents/PlugIns/Xcode3Core.ideplugin/Contents/SharedSupport/Developer    setenv LEX lex    setenv LIBRARY_FLAG_NOSPACE YES    setenv LIBRARY_FLAG_PREFIX -l    setenv LIBRARY_KEXT_INSTALL_PATH /Library/Extensions    setenv LIBRARY_SEARCH_PATHS "/Users/cmc/Documents/Titanium_Rajoshi/Owlympics/build/iphone/build/Debug-iphonesimulator  \"/Users/cmc/Documents/Titanium_Rajoshi/Owlympics/build/iphone/lib\" \"/Users/cmc/Documents/Titanium_Rajoshi/Owlympics/modules/iphone/ti.map/2.0.0\""    setenv LINKER_DISPLAYS_MANGLED_NAMES NO    setenv LINK_FILE_LIST_normal_i386 /Users/cmc/Documents/Titanium_Rajoshi/Owlympics/build/iphone/build/Owlympics.build/Debug-iphonesimulator/Owlympics-universal.build/Objects-normal/i386/Owlympics.LinkFileList    setenv LINK_WITH_STANDARD_LIBRARIES YES    setenv LOCALIZED_RESOURCES_FOLDER_PATH Owlympics.app/English.lproj    setenv LOCAL_ADMIN_APPS_DIR /Applications/Utilities    setenv LOCAL_APPS_DIR /Applications    setenv LOCAL_DEVELOPER_DIR /Library/Developer    setenv LOCAL_LIBRARY_DIR /Library    setenv MACH_O_TYPE mh_execute    setenv MACOSX_DEPLOYMENT_TARGET 10.6    setenv MAC_OS_X_PRODUCT_BUILD_VERSION 13B42    setenv MAC_OS_X_VERSION_ACTUAL 1091    setenv MAC_OS_X_VERSION_MAJOR 1090    setenv MAC_OS_X_VERSION_MINOR 0901    setenv MODULE_CACHE_DIR /var/folders/yb/x0jff5b578350610knqvylzw0000gp/C/com.apple.DeveloperTools/5.0.2-5A3005/Xcode/ModuleCache    setenv NATIVE_ARCH i386    setenv NATIVE_ARCH_32_BIT i386    setenv NATIVE_ARCH_64_BIT x86_64    setenv NATIVE_ARCH_ACTUAL x86_64    setenv NO_COMMON YES    setenv OBJC_ABI_VERSION 2    setenv OBJECT_FILE_DIR /Users/cmc/Documents/Titanium_Rajoshi/Owlympics/build/iphone/build/Owlympics.build/Debug-iphonesimulator/Owlympics-universal.build/Objects    setenv OBJECT_FILE_DIR_normal /Users/cmc/Documents/Titanium_Rajoshi/Owlympics/build/iphone/build/Owlympics.build/Debug-iphonesimulator/Owlympics-universal.build/Objects-normal    setenv OBJROOT /Users/cmc/Documents/Titanium_Rajoshi/Owlympics/build/iphone/build    setenv ONLY_ACTIVE_ARCH NO    setenv OPTIMIZATION_LEVEL 0    setenv OS MACOS    setenv OSAC /usr/bin/osacompile    setenv OTHER_CFLAGS "-DIPAD -DTI_POST_1_2 -DDEBUG"    setenv OTHER_CPLUSPLUSFLAGS "-DIPAD -DTI_POST_1_2 -DDEBUG"    setenv OTHER_LDFLAGS "-ObjC  -weak_framework MapKit -weak_framework MapKit -weak_framework iAd"    setenv PACKAGE_TYPE com.apple.package-type.wrapper.application    setenv PASCAL_STRINGS YES    setenv PATH "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin:/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/libexec:/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/local/bin:/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/usr/bin:/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/usr/local/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/local/bin:/Applications/Xcode.app/Contents/Developer/Tools:/Library/Java/JavaVirtualMachines/1.6.0_65-b14-462.jdk/Contents/Home/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/texbin"    setenv PATH_PREFIXES_EXCLUDED_FROM_HEADER_DEPENDENCIES "/usr/include /usr/local/include /System/Library/Frameworks /System/Library/PrivateFrameworks /Applications/Xcode.app/Contents/Developer/Headers /Applications/Xcode.app/Contents/Developer/SDKs /Applications/Xcode.app/Contents/Developer/Platforms"    setenv PBDEVELOPMENTPLIST_PATH Owlympics.app/pbdevelopment.plist    setenv PFE_FILE_C_DIALECTS "c objective-c c++ objective-c++"    setenv PKGINFO_FILE_PATH /Users/cmc/Documents/Titanium_Rajoshi/Owlympics/build/iphone/build/Owlympics.build/Debug-iphonesimulator/Owlympics-universal.build/PkgInfo    setenv PKGINFO_PATH Owlympics.app/PkgInfo    setenv PLATFORM_DEVELOPER_APPLICATIONS_DIR /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/Applications    setenv PLATFORM_DEVELOPER_BIN_DIR /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin    setenv PLATFORM_DEVELOPER_LIBRARY_DIR /Applications/Xcode.app/Contents/PlugIns/Xcode3Core.ideplugin/Contents/SharedSupport/Developer/Library    setenv PLATFORM_DEVELOPER_SDK_DIR /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs    setenv PLATFORM_DEVELOPER_TOOLS_DIR /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/Tools    setenv PLATFORM_DEVELOPER_USR_DIR /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr    setenv PLATFORM_DIR /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform    setenv PLATFORM_NAME iphonesimulator    setenv PLATFORM_PREFERRED_ARCH i386    setenv PLATFORM_PRODUCT_BUILD_VERSION 11B508    setenv PLATFORM_VERSION_AVAILABILITY_H_FORMAT 70000    setenv PLIST_FILE_OUTPUT_FORMAT binary    setenv PLUGINS_FOLDER_PATH Owlympics.app/PlugIns    setenv PRECOMPS_INCLUDE_HEADERS_FROM_BUILT_PRODUCTS_DIR YES    setenv PRECOMP_DESTINATION_DIR /Users/cmc/Documents/Titanium_Rajoshi/Owlympics/build/iphone/build/Owlympics.build/Debug-iphonesimulator/Owlympics-universal.build/PrefixHeaders    setenv PRESERVE_DEAD_CODE_INITS_AND_TERMS NO    setenv PRIVATE_HEADERS_FOLDER_PATH Owlympics.app/PrivateHeaders    setenv PRODUCT_NAME Owlympics    setenv PRODUCT_SETTINGS_PATH /Users/cmc/Documents/Titanium_Rajoshi/Owlympics/build/iphone/Info.plist    setenv PRODUCT_TYPE com.apple.product-type.application    setenv PROFILING_CODE NO    setenv PROJECT Owlympics    setenv PROJECT_DERIVED_FILE_DIR /Users/cmc/Documents/Titanium_Rajoshi/Owlympics/build/iphone/build/Owlympics.build/DerivedSources    setenv PROJECT_DIR /Users/cmc/Documents/Titanium_Rajoshi/Owlympics/build/iphone    setenv PROJECT_FILE_PATH /Users/cmc/Documents/Titanium_Rajoshi/Owlympics/build/iphone/Owlympics.xcodeproj    setenv PROJECT_NAME Owlympics    setenv PROJECT_TEMP_DIR /Users/cmc/Documents/Titanium_Rajoshi/Owlympics/build/iphone/build/Owlympics.build    setenv PROJECT_TEMP_ROOT /Users/cmc/Documents/Titanium_Rajoshi/Owlympics/build/iphone/build    setenv PUBLIC_HEADERS_FOLDER_PATH Owlympics.app/Headers    setenv RECURSIVE_SEARCH_PATHS_FOLLOW_SYMLINKS YES    setenv REMOVE_CVS_FROM_RESOURCES YES    setenv REMOVE_GIT_FROM_RESOURCES YES    setenv REMOVE_HG_FROM_RESOURCES YES    setenv REMOVE_SVN_FROM_RESOURCES YES    setenv REZ_COLLECTOR_DIR /Users/cmc/Documents/Titanium_Rajoshi/Owlympics/build/iphone/build/Owlympics.build/Debug-iphonesimulator/Owlympics-universal.build/ResourceManagerResources    setenv REZ_OBJECTS_DIR /Users/cmc/Documents/Titanium_Rajoshi/Owlympics/build/iphone/build/Owlympics.build/Debug-iphonesimulator/Owlympics-universal.build/ResourceManagerResources/Objects    setenv REZ_SEARCH_PATHS "/Users/cmc/Documents/Titanium_Rajoshi/Owlympics/build/iphone/build/Debug-iphonesimulator "    setenv RUN_CLANG_STATIC_ANALYZER NO    setenv SCAN_ALL_SOURCE_FILES_FOR_INCLUDES NO    setenv SCRIPTS_FOLDER_PATH Owlympics.app/Scripts    setenv SCRIPT_INPUT_FILE_COUNT 0    setenv SCRIPT_OUTPUT_FILE_COUNT 0    setenv SDKROOT /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk    setenv SDK_DIR /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk    setenv SDK_NAME iphonesimulator7.0    setenv SDK_PRODUCT_BUILD_VERSION 11B508    setenv SED /usr/bin/sed    setenv SEPARATE_STRIP NO    setenv SEPARATE_SYMBOL_EDIT NO    setenv SET_DIR_MODE_OWNER_GROUP YES    setenv SET_FILE_MODE_OWNER_GROUP NO    setenv SHALLOW_BUNDLE YES    setenv SHARED_DERIVED_FILE_DIR /Users/cmc/Documents/Titanium_Rajoshi/Owlympics/build/iphone/build/Debug-iphonesimulator/DerivedSources    setenv SHARED_FRAMEWORKS_FOLDER_PATH Owlympics.app/SharedFrameworks    setenv SHARED_PRECOMPS_DIR /var/folders/yb/x0jff5b578350610knqvylzw0000gp/C/com.apple.DeveloperTools/5.0.2-5A3005/Xcode/SharedPrecompiledHeaders    setenv SHARED_SUPPORT_FOLDER_PATH Owlympics.app/SharedSupport    setenv SKIP_INSTALL NO    setenv SOURCE_ROOT /Users/cmc/Documents/Titanium_Rajoshi/Owlympics/build/iphone    setenv SRCROOT /Users/cmc/Documents/Titanium_Rajoshi/Owlympics/build/iphone    setenv STRINGS_FILE_OUTPUT_ENCODING binary    setenv STRIP_INSTALLED_PRODUCT YES    setenv STRIP_STYLE all    setenv SUPPORTED_DEVICE_FAMILIES "1 2"    setenv SUPPORTED_PLATFORMS "iphonesimulator iphoneos"    setenv SYMROOT /Users/cmc/Documents/Titanium_Rajoshi/Owlympics/build/iphone/build    setenv SYSTEM_ADMIN_APPS_DIR /Applications/Utilities    setenv SYSTEM_APPS_DIR /Applications    setenv SYSTEM_CORE_SERVICES_DIR /System/Library/CoreServices    setenv SYSTEM_DEMOS_DIR /Applications/Extras    setenv SYSTEM_DEVELOPER_APPS_DIR /Applications/Xcode.app/Contents/Developer/Applications    setenv SYSTEM_DEVELOPER_BIN_DIR /Applications/Xcode.app/Contents/Developer/usr/bin    setenv SYSTEM_DEVELOPER_DEMOS_DIR "/Applications/Xcode.app/Contents/Developer/Applications/Utilities/Built Examples"    setenv SYSTEM_DEVELOPER_DIR /Applications/Xcode.app/Contents/Developer    setenv SYSTEM_DEVELOPER_DOC_DIR "/Applications/Xcode.app/Contents/Developer/ADC Reference Library"    setenv SYSTEM_DEVELOPER_GRAPHICS_TOOLS_DIR "/Applications/Xcode.app/Contents/Developer/Applications/Graphics Tools"    setenv SYSTEM_DEVELOPER_JAVA_TOOLS_DIR "/Applications/Xcode.app/Contents/Developer/Applications/Java Tools"    setenv SYSTEM_DEVELOPER_PERFORMANCE_TOOLS_DIR "/Applications/Xcode.app/Contents/Developer/Applications/Performance Tools"    setenv SYSTEM_DEVELOPER_RELEASENOTES_DIR "/Applications/Xcode.app/Contents/Developer/ADC Reference Library/releasenotes"    setenv SYSTEM_DEVELOPER_TOOLS /Applications/Xcode.app/Contents/Developer/Tools    setenv SYSTEM_DEVELOPER_TOOLS_DOC_DIR "/Applications/Xcode.app/Contents/Developer/ADC Reference Library/documentation/DeveloperTools"    setenv SYSTEM_DEVELOPER_TOOLS_RELEASENOTES_DIR "/Applications/Xcode.app/Contents/Developer/ADC Reference Library/releasenotes/DeveloperTools"    setenv SYSTEM_DEVELOPER_USR_DIR /Applications/Xcode.app/Contents/Developer/usr    setenv SYSTEM_DEVELOPER_UTILITIES_DIR /Applications/Xcode.app/Contents/Developer/Applications/Utilities    setenv SYSTEM_DOCUMENTATION_DIR /Library/Documentation    setenv SYSTEM_KEXT_INSTALL_PATH /System/Library/Extensions    setenv SYSTEM_LIBRARY_DIR /System/Library    setenv TARGETED_DEVICE_FAMILY 1,2    setenv TARGETNAME Owlympics-universal    setenv TARGET_BUILD_DIR /Users/cmc/Documents/Titanium_Rajoshi/Owlympics/build/iphone/build/Debug-iphonesimulator    setenv TARGET_NAME Owlympics-universal    setenv TARGET_TEMP_DIR /Users/cmc/Documents/Titanium_Rajoshi/Owlympics/build/iphone/build/Owlympics.build/Debug-iphonesimulator/Owlympics-universal.build    setenv TEMP_DIR /Users/cmc/Documents/Titanium_Rajoshi/Owlympics/build/iphone/build/Owlympics.build/Debug-iphonesimulator/Owlympics-universal.build    setenv TEMP_FILES_DIR /Users/cmc/Documents/Titanium_Rajoshi/Owlympics/build/iphone/build/Owlympics.build/Debug-iphonesimulator/Owlympics-universal.build    setenv TEMP_FILE_DIR /Users/cmc/Documents/Titanium_Rajoshi/Owlympics/build/iphone/build/Owlympics.build/Debug-iphonesimulator/Owlympics-universal.build    setenv TEMP_ROOT /Users/cmc/Documents/Titanium_Rajoshi/Owlympics/build/iphone/build    setenv TI_APPID com.owlympics.ecg.rice.edu    setenv TI_MAP_OTHER_LDFLAGS " -weak_framework MapKit -weak_framework MapKit"    setenv TI_SDK_DIR "/Library/Application Support/Titanium/mobilesdk/osx/3.2.1.GA/iphone"    setenv TI_VERSION 3.2.1.GA    setenv TOOLCHAINS com.apple.dt.toolchain.XcodeDefault    setenv UID 502    setenv UNLOCALIZED_RESOURCES_FOLDER_PATH Owlympics.app    setenv UNSTRIPPED_PRODUCT NO    setenv USER cmc    setenv USER_APPS_DIR /Users/cmc/Applications    setenv USER_LIBRARY_DIR /Users/cmc/Library    setenv USE_DYNAMIC_NO_PIC YES    setenv USE_HEADERMAP YES    setenv USE_HEADER_SYMLINKS NO    setenv VALIDATE_PRODUCT NO    setenv VALID_ARCHS "armv7 armv7s i386"    setenv VERBOSE_PBXCP NO    setenv VERSIONPLIST_PATH Owlympics.app/version.plist    setenv VERSION_INFO_BUILDER cmc    setenv VERSION_INFO_FILE Owlympics_vers.c    setenv VERSION_INFO_STRING "\"@(#)PROGRAM:Owlympics  PROJECT:Owlympics-\""    setenv WRAPPER_EXTENSION app    setenv WRAPPER_NAME Owlympics.app    setenv WRAPPER_SUFFIX .app    setenv XCODE_APP_SUPPORT_DIR /Applications/Xcode.app/Contents/Developer/Library/Xcode    setenv XCODE_PRODUCT_BUILD_VERSION 5A3005    setenv XCODE_VERSION_ACTUAL 0502    setenv XCODE_VERSION_MAJOR 0500    setenv XCODE_VERSION_MINOR 0500    setenv XPCSERVICES_FOLDER_PATH Owlympics.app/XPCServices    setenv YACC yacc    setenv arch i386    setenv variant normal    /bin/sh -c /Users/cmc/Documents/Titanium_Rajoshi/Owlympics/build/iphone/build/Owlympics.build/Debug-iphonesimulator/Owlympics-universal.build/Script-DABB369F12E8CB280026A6EA.sh36"DC4F09FF-B7AC-4D5A-887A-E0737ADDA949-
+bE311A09F-2EE7-4ED5-8588-8638C61F5356
+
+CProcessInfoPlistFile /Users/cmc/Documents/Titanium_Rajoshi/Owlympics/build/iphone/build/Debug-iphonesimulator/Owlympics.app/Info.plist /Users/cmc/Documents/Titanium_Rajoshi/Owlympics/build/iphone/Info.plist
+s416268614.661198
+e416268614.664876
+r1
+xProcessInfoPlistFile
+x/Users/cmc/Documents/Titanium_Rajoshi/Owlympics/build/iphone/build/Debug-iphonesimulator/Owlympics.app/Info.plist
+x/Users/cmc/Documents/Titanium_Rajoshi/Owlympics/build/iphone/Info.plist
+lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection79"Process /Users/cmc/Documents/Titanium_Rajoshi/Owlympics/build/iphone/Info.plist84"ProcessInfoPlistFile build/Debug-iphonesimulator/Owlympics.app/Info.plist Info.plist4567a946c1cfb841^f033aa46c1cfb841^---0#0#1#-19%DVTDocumentLocation2@78"file:///Users/cmc/Documents/Titanium_Rajoshi/Owlympics/build/iphone/Info.plist0000000000000000^851"ProcessInfoPlistFile build/Debug-iphonesimulator/Owlympics.app/Info.plist Info.plist    cd /Users/cmc/Documents/Titanium_Rajoshi/Owlympics/build/iphone    setenv PATH "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/Library/Java/JavaVirtualMachines/1.6.0_65-b14-462.jdk/Contents/Home/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/texbin"    builtin-infoPlistUtility /Users/cmc/Documents/Titanium_Rajoshi/Owlympics/build/iphone/Info.plist -genpkginfo /Users/cmc/Documents/Titanium_Rajoshi/Owlympics/build/iphone/build/Debug-iphonesimulator/Owlympics.app/PkgInfo -expandbuildsettings -format binary -platform iphonesimulator -o /Users/cmc/Documents/Titanium_Rajoshi/Owlympics/build/iphone/build/Debug-iphonesimulator/Owlympics.app/Info.plist36"28863665-0C12-4006-AF7D-C3A9AE404926-
+bE311A09F-2EE7-4ED5-8588-8638C61F5356
+
+CProcessPCH /var/folders/yb/x0jff5b578350610knqvylzw0000gp/C/com.apple.DeveloperTools/5.0.2-5A3005/Xcode/SharedPrecompiledHeaders/Owlympics_Prefix-cfwkkejgcfdmapfdnndeiyhapafl/Owlympics_Prefix.pch.pch Owlympics_Prefix.pch normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+r0
+
+CProcessPCH /var/folders/yb/x0jff5b578350610knqvylzw0000gp/C/com.apple.DeveloperTools/5.0.2-5A3005/Xcode/SharedPrecompiledHeaders/Owlympics_Prefix-fgviumhilqjpaofybzjaiuqfrsht/Owlympics_Prefix.pch.pch Owlympics_Prefix.pch normal i386 c com.apple.compilers.llvm.clang.1_0.compiler
+r0
+
+CProcessPCH++ /var/folders/yb/x0jff5b578350610knqvylzw0000gp/C/com.apple.DeveloperTools/5.0.2-5A3005/Xcode/SharedPrecompiledHeaders/Owlympics_Prefix-boligutyazotgufrlatgillrrnjd/Owlympics_Prefix.pch.pch Owlympics_Prefix.pch normal i386 c++ com.apple.compilers.llvm.clang.1_0.compiler
+r0
+
+CProcessPCH++ /var/folders/yb/x0jff5b578350610knqvylzw0000gp/C/com.apple.DeveloperTools/5.0.2-5A3005/Xcode/SharedPrecompiledHeaders/Owlympics_Prefix-eqeaclicogvnbzcsxagpklwyflhq/Owlympics_Prefix.pch.pch Owlympics_Prefix.pch normal i386 objective-c++ com.apple.compilers.llvm.clang.1_0.compiler
+r0
+
+CTouch /Users/cmc/Documents/Titanium_Rajoshi/Owlympics/build/iphone/build/Debug-iphonesimulator/Owlympics.app
+r0
+
