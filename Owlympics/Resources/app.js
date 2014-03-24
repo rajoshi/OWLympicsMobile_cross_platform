@@ -126,6 +126,285 @@ var scrollable = Titanium.UI.createScrollableView({
 });
 homeWin.add(scrollable);
 
+// register a background service. this JS will run when the app is backgrounded
+var service = Ti.App.iOS.registerBackgroundService({
+	url : 'bg.js'
+});
+
+var coords = Ti.Filesystem.getFile(Ti.Filesystem.applicationDataDirectory, 'coords.txt');
+if (coords.exists() && coords.writeable) {
+	coords.deleteFile();
+	coords.createFile();
+}
+
+var enterfile = Ti.Filesystem.getFile(Ti.Filesystem.applicationDataDirectory, 'enterflag.txt');
+if (enterfile.exists() && enterfile.writeable) {
+	enterfile.deleteFile();
+	enterfile.createFile();
+}
+var stayfile = Ti.Filesystem.getFile(Ti.Filesystem.applicationDataDirectory, 'stayflag.txt');
+if (stayfile.exists() && stayfile.writeable) {
+	stayfile.deleteFile();
+	stayfile.createFile();
+}
+var stampfile = Ti.Filesystem.getFile(Ti.Filesystem.applicationDataDirectory, 'stamp.txt');
+if (stampfile.exists() && stampfile.writeable) {
+	stampfile.deleteFile();
+	stampfile.createFile();
+}
+//Initialization
+
+var currentlocation = new Array();
+currentlocation[0] = 0;
+currentlocation[1] = 0;
+var addlabel = Ti.UI.createLabel({
+	top : '15%',
+	left : '5%',
+	width : Ti.UI.SIZE,
+	height : Ti.UI.SIZE,
+	color : 'white',
+	text : 'Type the address without pin-code and press RETURN',
+	font : {
+		fontSize : 20
+	},
+});
+var address = Ti.UI.createTextField({
+	height : '160dp',
+	width : '300dp',
+	top : '30%',
+	left : '3%',
+	color : 'black',
+	borderStyle : Titanium.UI.INPUT_BORDERSTYLE_ROUNDED,
+});
+var addbutton = Ti.UI.createButton({
+	top : '70%',
+	left : '15%',
+	color : 'black',
+	font : {
+		fontSize : 20,
+	},
+	width : 100,
+	title : 'Current Location',
+	backgroundImage : './images/grayrect.png',
+	backgroundImageSelected : './images/greenrect.png',
+});
+view3.add(addbutton);
+addbutton.addEventListener('click', function(e) {
+	if (currentlocation[0] != 0) {
+		alert('Setting geofence of 200m around current location');
+		coords.write(currentlocation[0] + ',' + currentlocation[1] + ',', true);
+				for ( i = 0; i < coords.read().text.split(',').length; i++) {
+					points[i] = parseFloat(coords.read().text.split(',')[i]);
+				}
+				enterfile.write('0,', true);
+				stayfile.write('0,', true);
+				stampfile.write('0,', true);
+		Ti.Geolocation.forwardGeocoder(address.value, function(e) {
+			var add = MapModule.createAnnotation({
+				latitude : currentlocation[0],
+				longitude : currentlocation[1],
+				title : 'Current Location',
+				pincolor : MapModule.ANNOTATION_GREEN,
+			});
+			mapview.addAnnotation(add);
+		});
+	}
+});
+
+var points = new Array();
+address.addEventListener('return', function(e) {
+	if (address.value != '') {
+		alert('Setting geofence of 200m around ' + address.value);
+		var addreq = Titanium.Network.createHTTPClient();
+		if (Titanium.Network.networkType === Titanium.Network.NETWORK_NONE)
+			alert('Error. Please check internet connection.');
+		else {
+			url1 = 'http://maps.google.com/maps/api/geocode/json?address=' + address.value + '&sensor=true';
+			addreq.open("GET", url1);
+			addreq.send();
+			addreq.onload = function(e) {
+				var addJSON = JSON.parse(this.responseText);
+				alert('Scroll to the right to view your set location as a green pin');
+				coords.write(addJSON.results[0].geometry.location.lat + ',' + addJSON.results[0].geometry.location.lng + ',', true);
+				for ( i = 0; i < coords.read().text.split(',').length; i++) {
+					points[i] = parseFloat(coords.read().text.split(',')[i]);
+				}
+				enterfile.write('0,', true);
+				stayfile.write('0,', true);
+				stampfile.write('0,', true);
+				Ti.Geolocation.forwardGeocoder(address.value, function(e) {
+					var add = MapModule.createAnnotation({
+						latitude : addJSON.results[0].geometry.location.lat,
+						longitude : addJSON.results[0].geometry.location.lng,
+						title : address.value,
+						pincolor : MapModule.ANNOTATION_GREEN,
+					});
+					mapview.addAnnotation(add);
+				});
+			};
+
+		}
+	}
+});
+view3.add(address);
+view3.add(addlabel);
+//unit in meters
+var centerRadius = 80;
+
+// calculate distance between two locations, distance unit in meters
+function distance(lat1, lon1, lat2, lon2) {
+
+	var radlat1 = Math.PI * lat1 / 180;
+	var radlat2 = Math.PI * lat2 / 180;
+	var radlon1 = Math.PI * lon1 / 180;
+	var radlon2 = Math.PI * lon2 / 180;
+	var theta = lon1 - lon2;
+	var radtheta = Math.PI * theta / 180;
+	var dist = Math.sin(radlat1) * Math.sin(radlat2) + Math.cos(radlat1) * Math.cos(radlat2) * Math.cos(radtheta);
+	dist = Math.acos(dist);
+	dist = dist * 180 / Math.PI;
+	dist = dist * 60 * 1.1515;
+	dist = dist * 1.609344 * 1000;
+	return dist;
+};
+
+Ti.Geolocation.purpose = 'Smart Reminders';
+var hour, min;
+var enterflag = new Array();
+var stayflag = new Array();
+var stamp = new Array();
+var dist = new Array();
+
+if (Ti.Geolocation.locationServicesEnabled) {
+	Ti.Geolocation.accuracy = Ti.Geolocation.ACCURACY_HUNDRED_METERS;
+	Ti.Geolocation.distanceFilter = 5;
+	Ti.Geolocation.preferredProvider = Ti.Geolocation.PROVIDER_PROVIDER_NETWORK;
+	// Ti.setPauseLocationUpdateAutomatically(true);
+	Ti.Geolocation.addEventListener('location', function(e) {
+		if (e.error) {
+			// alert('Error: ' + e.error);
+		} else {
+			currentlocation[0] = e.coords.latitude;
+			currentlocation[1] = e.coords.longitude;
+			for ( i = 0; i < enterfile.read().length - 1; i++) {
+				// enterflag[i] = parseFloat(enterfile.read().text.split(',')[i]);
+				// stayflag[i] = parseFloat(stayfile.read().text.split(',')[i]);
+				// stamp[i] = parseFloat(stampfile.read().text.split(',')[i]);
+				dist[i] = distance(e.coords.latitude, e.coords.longitude, points[2 * i], points[2 * i + 1]);
+				if (dist[i] < centerRadius) {
+					// if (!enterflag[i]) {
+					// enterflag[i] = 1;
+					// stamp[i] = e.coords.timestamp;
+					// } else {
+					// if ((e.coords.timestamp - stamp[i]) > 1000) {
+					// stayflag[i] = 1;
+					// }
+					// }
+					// } else if (enterflag[i]) {
+					// var t1 = new Date;
+					// enterflag[i] = 0;
+					// if (stayflag[i]) {
+					// hour = Math.floor((e.coords.timestamp - stamp[i]) / 3600000);
+					// min = Math.floor((e.coords.timestamp - stamp[i]) / 60000) - hour * 60000;
+					// if (hour > 1)
+					// alert(t1.getHours() + ':' + t1.getMinutes() + '|Report your activities for ' + hour + 'hours and ' + min + ' mins' + '?');
+					// else
+					// alert(t1.getHours() + ':' + t1.getMinutes() + '|Report your activities for ' + min + ' mins' + '?');
+					// stayflag[i] = 0;
+					// }
+					alert('Report your activities?');
+				}
+				// alert('blah');
+				// var temp = Ti.createBuffer({
+				// length : enterflag.length,
+				// });
+				// alert('blah1');
+				// for ( i = 0; i < enterflag.length; i++)
+				// temp[i] = enterflag[i];
+				// alert('blah2');
+				// enterfile.write(temp.toBlob(), false);
+				// alert('blah3');
+				// var temp = Ti.createBuffer({
+				// length : stayflag.length,
+				// });
+				// for ( i = 0; i < enterflag.length; i++)
+				// temp[i] = stayflag[i];
+				// stayfile.write(temp.toBlob(), false);
+				// var temp = Ti.createBuffer({
+				// length : stamp.length,
+				// });
+				// for ( i = 0; i < enterflag.length; i++)
+				// temp[i] = stamp[i];
+				// stampfile.write(temp.toBlob(), false);
+				// alert(enterflag);
+			}
+
+			// alert(mydist5 + ', '+ enterflag5+ ', '+ stayflag5+ ' fg1');
+
+			// if (mydist5 < 30) {
+			// if (!enterflag5) {
+			// enterflag5 = 1;
+			// stamp5 = e.coords.timestamp;
+			// } else {
+			// if ((e.coords.timestamp - stamp5) > 6000) {
+			// stayflag5 = 1;
+			// }
+			// }
+			// } else if (enterflag5) {
+			// var t1 = new Date;
+			// enterflag5 = 0;
+			// if (stayflag5) {
+			// hour = Math.floor((e.coords.timestamp - stamp5) / 3600000);
+			// min = Math.floor((e.coords.timestamp - stamp5) / 60000) - hour * 60000;
+			// if (hour > 1)
+			// alert(t1.getHours() + ':' + t1.getMinutes() + '|Were you at Duncan Hall ' + hour + 'hours and ' + min + ' mins' + '? Do you want to log points?');
+			// else
+			// alert(t1.getHours() + ':' + t1.getMinutes() + '|Were you at Duncan Hall for ' + min + ' mins' + '? Do you want to log points?');
+			// stayflag5 = 0;
+			// }
+			// }
+
+			// alert(mydist5 + ', '+ enterflag5+ ', '+ stayflag5+ ' fg2');
+
+			var annot = MapModule.createAnnotation({
+				latitude : e.coords.latitude,
+				longitude : e.coords.longitude,
+				// title : e.coords.accuracy,
+				pincolor : MapModule.ANNOTATION_RED,
+			});
+			mapview.addAnnotation(annot);
+		}
+	});
+} else {
+	alert('Please enable location services');
+}
+
+var i;
+
+Ti.App.addEventListener('resume', function(e) {
+	var pointlat = new Array();
+	var pointlong = new Array();
+	var accur = new Array();
+	var leng;
+	Ti.App.addEventListener('Gvariables', function(event) {
+		pointlat = event.blahlat;
+		pointlong = event.blahlong;
+		leng = event.length;
+		accur = event.accuracy;
+		for ( i = 0; i <= leng; i++) {
+			var annot1 = MapModule.createAnnotation({
+				latitude : pointlat[i],
+				longitude : pointlong[i],
+				// title : accur[i].toString(),
+				animate : true,
+				pincolor : MapModule.ANNOTATION_RED,
+			});
+			mapview.addAnnotation(annot1);
+		}
+
+	});
+});
+
 /*buttons*/
 var ratingLabel = Ti.UI.createLabel({
 	text : 'How active did you feel?',
@@ -1498,8 +1777,12 @@ profileReq.onload = function() {
 	userPoints = profileJSON[0].points;
 	if (userPoints == 0)
 		progress.width = '5%';
-	else
-		progress.width = 180 * userPoints / 400;
+	else {
+		if (userPoints >= 400)
+			progress.width = 180;
+		else
+			progress.width = 180 * userPoints / 400;
+	}
 	userLevel = 'Current Level: ';
 	userLevel = userLevel + profileJSON[0].level;
 	for ( i = 0; i < activityflag; i++) {
@@ -1668,319 +1951,3 @@ scrollable.addEventListener('singletap', function() {
 	else
 		socialtxt.backgroundColor = 'white';
 });
-
-// register a background service. this JS will run when the app is backgrounded
-var service = Ti.App.iOS.registerBackgroundService({
-	url : 'bg.js'
-});
-
-var coords = Ti.Filesystem.getFile(Ti.Filesystem.applicationDataDirectory, 'coords.txt');
-if (coords.exists() && coords.writeable) {
-	var success = coords.deleteFile();
-	alert((success == true) ? 'success' : 'fail');
-	// outputs 'success'
-	coords.createFile();
-}
-
-var enterflag = Ti.Filesystem.getFile(Ti.Filesystem.applicationDataDirectory, 'enterflag.txt');
-if (enterflag.exists() && enterflag.writeable) {
-	var success = enterflag.deleteFile();
-	alert((success == true) ? 'success' : 'fail');
-	// outputs 'success'
-	enterflag.createFile();
-}
-var stayflag = Ti.Filesystem.getFile(Ti.Filesystem.applicationDataDirectory, 'stayflag.txt');
-if (stayflag.exists() && stayflag.writeable) {
-	var success = stayflag.deleteFile();
-	alert((success == true) ? 'success' : 'fail');
-	// outputs 'success'
-	stayflag.createFile();
-}
-var stamp = Ti.Filesystem.getFile(Ti.Filesystem.applicationDataDirectory, 'stamp.txt');
-if (stamp.exists() && stamp.writeable) {
-	var success = stamp.deleteFile();
-	alert((success == true) ? 'success' : 'fail');
-	// outputs 'success'
-	stamp.createFile();
-}
-//Initialization
-var addlabel = Ti.UI.createLabel({
-	top : '15%',
-	left : '5%',
-	width : Ti.UI.SIZE,
-	height : Ti.UI.SIZE,
-	color : 'white',
-	text : 'Type the address without pin-code and press RETURN',
-	font : {
-		fontSize : 20
-	},
-});
-var address = Ti.UI.createTextField({
-	height : '160dp',
-	width : '300dp',
-	top : '40%',
-	left : '3%',
-	color : 'black',
-	borderStyle : Titanium.UI.INPUT_BORDERSTYLE_ROUNDED,
-});
-var points;
-address.addEventListener('return', function(e) {
-	alert('Setting geofence of 200m around ' + address.value);
-	var addreq = Titanium.Network.createHTTPClient();
-	if (Titanium.Network.networkType === Titanium.Network.NETWORK_NONE)
-		alert('Error. Please check internet connection.');
-	else {
-		url1 = 'http://maps.google.com/maps/api/geocode/json?address=' + address.value + '&sensor=true';
-		addreq.open("GET", url1);
-		addreq.send();
-		addreq.onload = function(e) {
-			var addJSON = JSON.parse(this.responseText);
-			alert('Scroll to the right to view your set location as a green pin');
-			coords.write(addJSON.results[0].geometry.location.lat + ',' + addJSON.results[0].geometry.location.lng + ',', true);
-			var temp = coords.read();
- 
-            var tempstream = Ti.Stream.createStream({
-                source : temp,
-                mode : Ti.Stream.MODE_READ
-            });
-            points = Ti.createBuffer({
-                length : (temp.length)
-            });
-            tempstream.read(temp1);
-            
-            enterflag.write('0,', true);
-			stayflag.write('0,', true);
-			stamp.write('0,', true);
-			alert(coords.read().text);
-			Ti.Geolocation.forwardGeocoder(address.value, function(e) {
-				var add = MapModule.createAnnotation({
-					latitude : addJSON.results[0].geometry.location.lat,
-					longitude : addJSON.results[0].geometry.location.lng,
-					title : address.value,
-					pincolor : MapModule.ANNOTATION_GREEN,
-				});
-				mapview.addAnnotation(add);
-			});
-		};
-
-	}
-});
-view3.add(address);
-view3.add(addlabel);
-//unit in meters
-var centerRadius = 80;
-
-// calculate distance between two locations, distance unit in meters
-function distance(lat1, lon1, lat2, lon2) {
-
-	var radlat1 = Math.PI * lat1 / 180;
-	var radlat2 = Math.PI * lat2 / 180;
-	var radlon1 = Math.PI * lon1 / 180;
-	var radlon2 = Math.PI * lon2 / 180;
-	var theta = lon1 - lon2;
-	var radtheta = Math.PI * theta / 180;
-	var dist = Math.sin(radlat1) * Math.sin(radlat2) + Math.cos(radlat1) * Math.cos(radlat2) * Math.cos(radtheta);
-	dist = Math.acos(dist);
-	dist = dist * 180 / Math.PI;
-	dist = dist * 60 * 1.1515;
-	dist = dist * 1.609344 * 1000;
-	return dist;
-};
-
-Ti.Geolocation.purpose = 'Smart Reminders';
-var hour, min;
-var dist = new Array();
-
-if (Ti.Geolocation.locationServicesEnabled) {
-	Ti.Geolocation.purpose = 'Get Current Location';
-	Ti.Geolocation.accuracy = Ti.Geolocation.ACCURACY_HUNDRED_METERS;
-	Ti.Geolocation.distanceFilter = 10;
-	Ti.Geolocation.preferredProvider = Ti.Geolocation.PROVIDER_PROVIDER_NETWORK;
-	// Ti.setPauseLocationUpdateAutomatically(true);
-	Ti.Geolocation.addEventListener('location', function(e) {
-		if (e.error) {
-			alert('Error: ' + e.error);
-		} else {
-			
-			for (i = 0; i< 0.5*points.length; i++){
-				dist[i] = distance(e.coords.latitude, e.coords.longitude, points[2*i], points[2*i + 1]);
-				if (dist[i] < centerRadius) {
-			if (!enterflag1) {
-			enterflag1 = 1;
-			stamp1 = e.coords.timestamp;
-			} else {
-			if ((e.coords.timestamp - stamp1) > 1200000) {
-			stayflag1 = 1;
-			}
-			}
-			} else if (enterflag1) {
-			var t1 = new Date;
-			enterflag1 = 0;
-			if (stayflag1) {
-			hour = Math.floor((e.coords.timestamp - stamp1) / 3600000);
-			min = Math.floor((e.coords.timestamp - stamp1) / 60000) - hour * 60000;
-			if (hour > 1)
-			alert(t1.getHours() + ':' + t1.getMinutes() + '|Were you at the Gym for ' + hour + 'hours and ' + min + ' mins' + '? Do you want to log points?');
-			else
-			alert(t1.getHours() + ':' + t1.getMinutes() + '|Were you at the Gym for ' + min + ' mins' + '? Do you want to log points?');
-			stayflag1 = 0;
-			}
-			}
-			}
-			
-			
-
-			// if (mydist2 < centerRadius) {
-			// if (!enterflag2) {
-			// enterflag2 = 1;
-			// stamp2 = e.coords.timestamp;
-			// } else {
-			// if ((e.coords.timestamp - stamp2) > 1200000) {
-			// stayflag2 = 1;
-			// }
-			// }
-			// } else if (enterflag2) {
-			// var t1 = new Date;
-			// enterflag2 = 0;
-			// if (stayflag2) {
-			// hour = Math.floor((e.coords.timestamp - stamp2) / 3600000);
-			// min = Math.floor((e.coords.timestamp - stamp2) / 60000) - hour * 60000;
-			// if (hour > 1)
-			// alert(t1.getHours() + ':' + t1.getMinutes() + '|Were you exercising outdoors for ' + hour + 'hours and ' + min + ' mins' + '? Do you want to log points?');
-			// else
-			// alert(t1.getHours() + ':' + t1.getMinutes() + '|Were you exercising outdoors for ' + min + ' mins' + '? Do you want to log points?');
-			// stayflag2 = 0;
-			// }
-			// }
-			// if (mydist3 < centerRadius) {
-			// if (!enterflag3) {
-			// enterflag3 = 1;
-			// stamp3 = e.coords.timestamp;
-			// } else {
-			// if ((e.coords.timestamp - stamp3) > 1200000) {
-			// stayflag3 = 1;
-			// }
-			// }
-			// } else if (enterflag3) {
-			// var t1 = new Date;
-			// enterflag3 = 0;
-			// if (stayflag3) {
-			// hour = Math.floor((e.coords.timestamp - stamp3) / 3600000);
-			// min = Math.floor((e.coords.timestamp - stamp3) / 60000) - hour * 60000;
-			// if (hour > 1)
-			// alert(t1.getHours() + ':' + t1.getMinutes() + '|Were you exercising outdoors for ' + hour + 'hours and ' + min + ' mins' + '? Do you want to log points?');
-			// else
-			// alert(t1.getHours() + ':' + t1.getMinutes() + '|Were you exercising outdoors for ' + min + ' mins' + '? Do you want to log points?');
-			// stayflag3 = 0;
-			// }
-			// }
-			// if (mydist4 < centerRadius) {
-			// if (!enterflag4) {
-			// enterflag4 = 1;
-			// stamp4 = e.coords.timestamp;
-			// } else {
-			// if ((e.coords.timestamp - stamp4) > 1200000) {
-			// stayflag4 = 1;
-			// }
-			// }
-			// } else if (enterflag4) {
-			// var t1 = new Date;
-			// enterflag4 = 0;
-			// if (stayflag4) {
-			// hour = Math.floor((e.coords.timestamp - stamp4) / 3600000);
-			// min = Math.floor((e.coords.timestamp - stamp4) / 60000) - hour * 60000;
-			// if (hour > 1)
-			// alert(t1.getHours() + ':' + t1.getMinutes() + '|Were you exercising outdoors for ' + hour + 'hours and ' + min + ' mins' + '? Do you want to log points?');
-			// else
-			// alert(t1.getHours() + ':' + t1.getMinutes() + '|Were you exercising outdoors for ' + min + ' mins' + '? Do you want to log points?');
-			// stayflag4 = 0;
-			// }
-			// }
-
-			// alert(mydist5 + ', '+ enterflag5+ ', '+ stayflag5+ ' fg1');
-
-			// if (mydist5 < 30) {
-			// if (!enterflag5) {
-			// enterflag5 = 1;
-			// stamp5 = e.coords.timestamp;
-			// } else {
-			// if ((e.coords.timestamp - stamp5) > 6000) {
-			// stayflag5 = 1;
-			// }
-			// }
-			// } else if (enterflag5) {
-			// var t1 = new Date;
-			// enterflag5 = 0;
-			// if (stayflag5) {
-			// hour = Math.floor((e.coords.timestamp - stamp5) / 3600000);
-			// min = Math.floor((e.coords.timestamp - stamp5) / 60000) - hour * 60000;
-			// if (hour > 1)
-			// alert(t1.getHours() + ':' + t1.getMinutes() + '|Were you at Duncan Hall ' + hour + 'hours and ' + min + ' mins' + '? Do you want to log points?');
-			// else
-			// alert(t1.getHours() + ':' + t1.getMinutes() + '|Were you at Duncan Hall for ' + min + ' mins' + '? Do you want to log points?');
-			// stayflag5 = 0;
-			// }
-			// }
-
-			// alert(mydist5 + ', '+ enterflag5+ ', '+ stayflag5+ ' fg2');
-
-			var annot = MapModule.createAnnotation({
-				latitude : e.coords.latitude,
-				longitude : e.coords.longitude,
-				// title : e.coords.accuracy,
-				pincolor : MapModule.ANNOTATION_RED,
-			});
-			mapview.addAnnotation(annot);
-
-			// Ti.App.fireEvent('location_variables_appside', {
-			//
-			// enterflag1 : enterflag1,
-			// stayflag1 : stayflag1,
-			// stamp1 : stamp1,
-			// enterflag2 : enterflag2,
-			// stayflag2 : stayflag2,
-			// stamp2 : stamp2,
-			// enterflag3 : enterflag3,
-			// stayflag3 : stayflag3,
-			// stamp3 : stamp3,
-			// enterflag4 : enterflag4,
-			// stayflag4 : stayflag4,
-			// stamp4 : stamp4,
-			// enterflag5 : enterflag5,
-			// stayflag5 : stayflag5,
-			// stamp5 : stamp5,
-			//
-			// });
-
-		}
-	});
-} else {
-	alert('Please enable location services');
-}
-
-var i;
-
-Ti.App.addEventListener('resume', function(e) {
-	var pointlat = new Array();
-	var pointlong = new Array();
-	var accur = new Array();
-	var leng;
-	Ti.App.addEventListener('Gvariables', function(event) {
-		pointlat = event.blahlat;
-		pointlong = event.blahlong;
-		leng = event.length;
-		accur = event.accuracy;
-		for ( i = 0; i <= leng; i++) {
-			var annot1 = MapModule.createAnnotation({
-				latitude : pointlat[i],
-				longitude : pointlong[i],
-				// title : accur[i].toString(),
-				animate : true,
-				pincolor : MapModule.ANNOTATION_RED,
-			});
-			mapview.addAnnotation(annot1);
-		}
-
-	});
-});
-
