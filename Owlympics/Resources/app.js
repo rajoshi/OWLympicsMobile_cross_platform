@@ -1100,7 +1100,7 @@ prevMonth.addEventListener('click', function() {
 });
 
 var ratingLabel = Ti.UI.createLabel({
-	text : 'How happy did you feel?',
+	text : 'Mood after exercise, 1(low)-5(high)',
 	color : 'white',
 	font : {
 		fontSize : 20,
@@ -1298,7 +1298,7 @@ var recentLabel = Ti.UI.createLabel({
 profileView.add(recentLabel);
 
 var refresh = Ti.UI.createButton({
-	top : '70%',
+	top : '90%',
 	left : '15%',
 	color : 'black',
 	font : {
@@ -1312,8 +1312,8 @@ var refresh = Ti.UI.createButton({
 profileView.add(refresh);
 
 var deauth = Ti.UI.createButton({
-	top : '70%',
-	left : '50%',
+	top : '90%',
+	left : '53%',
 	color : 'black',
 	width : 100,
 	font : {
@@ -1454,8 +1454,8 @@ maploc.addEventListener('click', function(e) {
 otherloc.addEventListener('click', function(e) {
 	here.backgroundImage = 'images/grayrect.png';
 	maploc.backgroundImage = 'images/grayrect.png';
-					otherloc.value = '';
-	
+	otherloc.value = '';
+
 });
 otherloc.addEventListener('return', function(e) {
 	if (otherloc.value != '') {
@@ -1671,7 +1671,7 @@ function submitinfo() {
 			cancel : 1
 		});
 
-		if (useractivity != '' && (lowtxt.value + medtxt.value + hightxt.value) > 0) {
+		if (useractivity != '' && day != 0 && (lowtxt.value + medtxt.value + hightxt.value) > 0) {
 
 			var params = {
 				day : day.toString(),
@@ -1694,7 +1694,7 @@ function submitinfo() {
 			alert1.show();
 
 		} else {
-			alert("Please fill all fields. Time cannot be zero.");
+			alert("Please fill all fields; exercise, time, date ");
 		}
 		alert1.addEventListener('click', function(e) {
 			Titanium.API.info('e = ' + JSON.stringify(e));

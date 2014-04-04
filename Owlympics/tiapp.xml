@@ -13,7 +13,7 @@
 	<url>http://www.rice.edu</url>
 	<description>Version 1.2 for OWLympics Mobile application.</description>
 	<copyright>2014 by Rajoshi Biswas</copyright>
-	<icon>myimage.png</icon>
+	<icon>appicon.png</icon>
 	<fullscreen>true</fullscreen>
 	<navbar-hidden>true</navbar-hidden>
 	<statusbar-style>opaque</statusbar-style>
