@@ -29,6 +29,7 @@ dependencies: \
   /Users/cmc/Documents/Titanium_Rajoshi/Owlympics/build/iphone/Classes/TiPoint.h \
   /Users/cmc/Documents/Titanium_Rajoshi/Owlympics/build/iphone/Classes/ListenerEntry.h \
   /Users/cmc/Documents/Titanium_Rajoshi/Owlympics/build/iphone/Classes/LayoutConstraint.h \
+  /Users/cmc/Documents/Titanium_Rajoshi/Owlympics/build/iphone/Classes/TiUIiPhoneProxy.h \
   /Users/cmc/Documents/Titanium_Rajoshi/Owlympics/build/iphone/Classes/TiApp.h \
   /Users/cmc/Documents/Titanium_Rajoshi/Owlympics/build/iphone/Classes/TiHost.h \
   /Users/cmc/Documents/Titanium_Rajoshi/Owlympics/build/iphone/Classes/Bridge.h \

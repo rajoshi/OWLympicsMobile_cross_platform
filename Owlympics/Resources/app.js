@@ -35,6 +35,7 @@ var homeWin = Titanium.UI.createWindow({
 	statusBarStyle : Ti.UI.iPhone.StatusBar.LIGHT_CONTENT,
 });
 
+Ti.Geolocation.purpose = 'Smart Reminders';
 // homeWin.addEventListener('android:back', function() {
 // return false;
 // });
@@ -114,27 +115,44 @@ var more = Ti.UI.createButton({
 	backgroundImage : './images/more.png',
 	backgroundSelectedImage : './images/morecopy.png',
 });
+var more1 = Ti.UI.createButton({
+	top : '0%',
+	left : '75%',
+	text : '                   ',
+	width : 40,
+	height : 40,
+	width : Ti.UI.SIZE,
+	height : Ti.UI.SIZE,
+});
 var morelabel = Ti.UI.createLabel({
-	text: 'Options',
+	text : 'Options',
 	font : {
 		fontSize : 15,
 	},
 	top : '1%',
 	left : '75%',
-	color: 'gray',
+	color : 'gray',
 	width : Ti.UI.SIZE,
 	height : Ti.UI.SIZE,
 });
 whatView.add(more);
+whatView.add(more1);
 whatView.add(morelabel);
 more.addEventListener('click', function(e) {
 	view3.show();
 	scrollable.hide();
 });
+more1.addEventListener('click', function(e) {
+	more.backgroundImage = './images/morecopy.png';
+	view3.show();
+	scrollable.hide();
+	more.backgroundImage = './images/more.png';
+
+});
 homeWin.add(scrollable);
 var back = Ti.UI.createButton({
 	title : 'Back',
-	color: 'gray',
+	color : 'gray',
 	top : '5%',
 	left : '5%',
 	width : 80,
@@ -150,105 +168,162 @@ back.addEventListener('click', function(e) {
 });
 
 /*buttons*/
-var ratingLabel = Ti.UI.createLabel({
-	text : 'How active did you feel?',
+var exrate = 1, haprate = 1;
+// var ratingLabel = Ti.UI.createLabel({
+// text : 'How active did you feel?',
+// color : 'white',
+// font : {
+// fontSize : 20,
+// },
+// top : '5%',
+// textAlign : Ti.UI.TEXT_ALIGNMENT_CENTER,
+//
+// });
+// whatView.add(ratingLabel);
+//
+
+// var rstar1 = Ti.UI.createButton({
+// top : '7%',
+// left : '3%',
+// color : 'white',
+// width : 55,
+// height : 55,
+// backgroundImage : './images/goldstar.png',
+// });
+//
+// rstar1.addEventListener('click', function(e) {
+// rstar1.backgroundImage = './images/goldstar.png';
+// rstar2.backgroundImage = './images/dullstar.png';
+// rstar3.backgroundImage = './images/dullstar.png';
+// rstar4.backgroundImage = './images/dullstar.png';
+// rstar5.backgroundImage = './images/dullstar.png';
+// exrate = 1;
+// });
+// var rstar2 = Ti.UI.createButton({
+// top : '7%',
+// left : '22%',
+// color : 'white',
+// width : 55,
+// height : 55,
+// backgroundImage : './images/goldstar.png',
+// });
+// rstar2.addEventListener('click', function(e) {
+// rstar1.backgroundImage = './images/goldstar.png';
+// rstar2.backgroundImage = './images/goldstar.png';
+// rstar3.backgroundImage = './images/dullstar.png';
+// rstar4.backgroundImage = './images/dullstar.png';
+// rstar5.backgroundImage = './images/dullstar.png';
+// exrate = 2;
+// });
+// var rstar3 = Ti.UI.createButton({
+// top : '7%',
+// left : '41%',
+// color : 'white',
+// width : 55,
+// height : 55,
+// backgroundImage : './images/goldstar.png',
+// });
+// rstar3.addEventListener('click', function(e) {
+// rstar1.backgroundImage = './images/goldstar.png';
+// rstar2.backgroundImage = './images/goldstar.png';
+// rstar3.backgroundImage = './images/goldstar.png';
+// rstar4.backgroundImage = './images/dullstar.png';
+// rstar5.backgroundImage = './images/dullstar.png';
+// exrate = 3;
+// });
+// var rstar4 = Ti.UI.createButton({
+// top : '7%',
+// left : '60%',
+// color : 'white',
+// width : 55,
+// height : 55,
+// backgroundImage : './images/dullstar.png',
+// });
+// rstar4.addEventListener('click', function(e) {
+// rstar1.backgroundImage = './images/goldstar.png';
+// rstar2.backgroundImage = './images/goldstar.png';
+// rstar3.backgroundImage = './images/goldstar.png';
+// rstar4.backgroundImage = './images/goldstar.png';
+// rstar5.backgroundImage = './images/dullstar.png';
+// exrate = 4;
+// });
+// var rstar5 = Ti.UI.createButton({
+// top : '7%',
+// left : '79%',
+// color : 'white',
+// width : 55,
+// height : 55,
+// backgroundImage : './images/dullstar.png',
+// });
+// rstar5.addEventListener('click', function(e) {
+// rstar1.backgroundImage = './images/goldstar.png';
+// rstar2.backgroundImage = './images/goldstar.png';
+// rstar3.backgroundImage = './images/goldstar.png';
+// rstar4.backgroundImage = './images/goldstar.png';
+// rstar5.backgroundImage = './images/goldstar.png';
+// exrate = 5;
+// });
+// whatView.add(rstar1);
+// whatView.add(rstar2);
+// whatView.add(rstar3);
+// whatView.add(rstar4);
+// whatView.add(rstar5);
+
+var whereLabel = Ti.UI.createLabel({
+	text : 'Where did you exercise?',
 	color : 'white',
 	font : {
 		fontSize : 20,
 	},
-	top : '5%',
+	top : '3%',
 	textAlign : Ti.UI.TEXT_ALIGNMENT_CENTER,
 
 });
-whatView.add(ratingLabel);
+whatView.add(whereLabel);
 
-var exrate, haprate;
-var rstar1 = Ti.UI.createButton({
-	top : '7%',
-	left : '3%',
-	color : 'white',
-	width : 55,
-	height : 55,
-	backgroundImage : './images/goldstar.png',
+var here = Ti.UI.createButton({
+	top : '5%',
+	left : '15%',
+	color : 'black',
+	font : {
+		fontSize : 20,
+	},
+	width : 100,
+	title : 'Here',
+	backgroundImage : './images/grayrect.png',
+	backgroundImageSelected : './images/greenrect.png',
 });
+whatView.add(here);
 
-rstar1.addEventListener('click', function(e) {
-	rstar1.backgroundImage = './images/goldstar.png';
-	rstar2.backgroundImage = './images/dullstar.png';
-	rstar3.backgroundImage = './images/dullstar.png';
-	rstar4.backgroundImage = './images/dullstar.png';
-	rstar5.backgroundImage = './images/dullstar.png';
-	exrate = 1;
+var maploc = Ti.UI.createButton({
+	top : '5%',
+	left : '55%',
+	color : 'black',
+	font : {
+		fontSize : 20,
+	},
+	width : 100,
+	title : 'Map',
+	backgroundImage : './images/grayrect.png',
+	backgroundImageSelected : './images/greenrect.png',
 });
-var rstar2 = Ti.UI.createButton({
-	top : '7%',
-	left : '22%',
-	color : 'white',
-	width : 55,
-	height : 55,
-	backgroundImage : './images/goldstar.png',
+whatView.add(maploc);
+
+var otherloc = Ti.UI.createTextField({
+	color : 'black',
+	font : {
+		fontSize : 20,
+	},
+	top : '8.7%',
+	width : 250,
+	height : 65,
+	backgroundColor : 'white',
+	backgroundImage : 'none',
+	textAlign : 'center',
+	value : 'Type here...'
 });
-rstar2.addEventListener('click', function(e) {
-	rstar1.backgroundImage = './images/goldstar.png';
-	rstar2.backgroundImage = './images/goldstar.png';
-	rstar3.backgroundImage = './images/dullstar.png';
-	rstar4.backgroundImage = './images/dullstar.png';
-	rstar5.backgroundImage = './images/dullstar.png';
-	exrate = 2;
-});
-var rstar3 = Ti.UI.createButton({
-	top : '7%',
-	left : '41%',
-	color : 'white',
-	width : 55,
-	height : 55,
-	backgroundImage : './images/goldstar.png',
-});
-rstar3.addEventListener('click', function(e) {
-	rstar1.backgroundImage = './images/goldstar.png';
-	rstar2.backgroundImage = './images/goldstar.png';
-	rstar3.backgroundImage = './images/goldstar.png';
-	rstar4.backgroundImage = './images/dullstar.png';
-	rstar5.backgroundImage = './images/dullstar.png';
-	exrate = 3;
-});
-var rstar4 = Ti.UI.createButton({
-	top : '7%',
-	left : '60%',
-	color : 'white',
-	width : 55,
-	height : 55,
-	backgroundImage : './images/dullstar.png',
-});
-rstar4.addEventListener('click', function(e) {
-	rstar1.backgroundImage = './images/goldstar.png';
-	rstar2.backgroundImage = './images/goldstar.png';
-	rstar3.backgroundImage = './images/goldstar.png';
-	rstar4.backgroundImage = './images/goldstar.png';
-	rstar5.backgroundImage = './images/dullstar.png';
-	exrate = 4;
-});
-var rstar5 = Ti.UI.createButton({
-	top : '7%',
-	left : '79%',
-	color : 'white',
-	width : 55,
-	height : 55,
-	backgroundImage : './images/dullstar.png',
-});
-rstar5.addEventListener('click', function(e) {
-	rstar1.backgroundImage = './images/goldstar.png';
-	rstar2.backgroundImage = './images/goldstar.png';
-	rstar3.backgroundImage = './images/goldstar.png';
-	rstar4.backgroundImage = './images/goldstar.png';
-	rstar5.backgroundImage = './images/goldstar.png';
-	exrate = 5;
-});
-whatView.add(rstar1);
-whatView.add(rstar2);
-whatView.add(rstar3);
-whatView.add(rstar4);
-whatView.add(rstar5);
+whatView.add(otherloc);
+var workoutlat, workoutlong;
 
 var selectlabel = Ti.UI.createLabel({
 	text : 'Which exercise did you do?',
@@ -352,6 +427,7 @@ var othertxt = Ti.UI.createTextField({
 	backgroundColor : 'white',
 	backgroundImage : 'none',
 	textAlign : 'center',
+	value : 'Enter...',
 });
 
 whatView.add(othertxt);
@@ -490,6 +566,10 @@ var prevMonth = Ti.UI.createButton({
 	left : '25dp',
 	width : 40,
 	height : 40,
+	font : {
+		fontSize : 25,
+		fontWeight : 'bold'
+	},
 	title : '<'
 });
 
@@ -498,6 +578,10 @@ var nextMonth = Ti.UI.createButton({
 	right : '25dp',
 	width : 40,
 	height : 40,
+	font : {
+		fontSize : 25,
+		fontWeight : 'bold'
+	},
 	title : '>'
 });
 
@@ -702,9 +786,9 @@ monthName = function(e) {
 	};
 	return e;
 };
-
+var oldDay = 1;
 // Calendar Main Function
-var calView = function(a, b, c) {
+var calView = function(a, b, c, f) {
 	var nameOfMonth = monthName(b);
 
 	//create main calendar view
@@ -729,7 +813,7 @@ var calView = function(a, b, c) {
 	for ( i = 0; i < dayOfWeek; i++) {
 		mainView.add(new dayView({
 			day : dayNumber,
-			color : '#8e959f',
+			color : '#8e959f', //light gray color
 			current : 'no',
 			dayOfMonth : ''
 		}));
@@ -740,67 +824,120 @@ var calView = function(a, b, c) {
 	dayNumber = 1;
 
 	//get this month's days
-	for ( i = 0; i < daysInMonth; i++) {
-		var newDay = new dayView({
-			day : dayNumber,
-			color : '#3a4756',
-			current : 'yes',
-			dayOfMonth : dayOfMonth
-		});
-		mainView.add(newDay);
-		if (newDay.text == dayOfMonth) {
-			newDay.color = 'white';
-			newDay.backgroundColor = '#00cc66';
-			var oldDay = newDay;
-		}
+	if (!f) {
+		for ( i = 0; i < daysInMonth; i++) {
+			var newDay = new dayView({
+				day : dayNumber,
+				color : '#3a4756', //dark gray color
+				current : 'yes',
+				dayOfMonth : dayOfMonth
+			});
+			mainView.add(newDay);
 
-		if (i + 1 > dayOfMonth) {
-			newDay.color = '#8e959f';
-		}
+			if (newDay.text == dayOfMonth) {
+				newDay.color = 'white';
+				newDay.backgroundColor = '#00cc66';
+				// green today date colot
+				oldDay = newDay;
+			}
 
-		dayNumber++;
-	};
-	dayNumber = 1;
+			if (i + 1 > dayOfMonth) {
+				newDay.color = '#8e959f';
+				// light gray color
+			}
+			dayNumber++;
+		};
+		dayNumber = 1;
 
-	//get remaining month's days
-	for ( i = 0; i > daysInNextMonth; i--) {
-		mainView.add(new dayView({
-			day : dayNumber,
-			color : '#8e959f',
-			current : 'no',
-			dayOfMonth : ''
-		}));
-		dayNumber++;
-	};
+		//get remaining month's days
+		for ( i = 0; i > daysInNextMonth; i--) {
+			mainView.add(new dayView({
+				day : dayNumber,
+				color : '#8e959f', //light gray color
+				current : 'no',
+				dayOfMonth : ''
+			}));
+			dayNumber++;
+		};
+	} else {
+		for ( i = 0; i < daysInMonth; i++) {
+			var newDay = new dayView({
+				day : dayNumber,
+				color : '#8e959f', //light gray color
+				current : 'yes',
+				dayOfMonth : dayOfMonth
+			});
+			mainView.add(newDay);
 
+			if (i + 1 > daysInMonth - 14 + dayOfMonth) {
+				newDay.color = '#3a4756';
+				// dark gray color
+			}
+			dayNumber++;
+		};
+		dayNumber = 1;
+		oldDay = 0;
+		//get remaining month's days
+		for ( i = 0; i > daysInNextMonth; i--) {
+			mainView.add(new dayView({
+				day : dayNumber,
+				color : '#8e959f', //light gray color
+				current : 'no',
+				dayOfMonth : ''
+			}));
+			dayNumber++;
+		};
+	}
 	// this is the new "clicker" function, although it doesn't have a name anymore, it just is.
 	mainView.addEventListener('click', function(e) {
-
 		if (e.source.current == 'yes') {
+			if (!f) {
 
-			// RESET last day selected
-			if (oldDay.text == dayOfMonth) {
-				oldDay.color = 'white';
-				oldDay.backgroundColor = '#333333';
-			} else if (oldDay.text < dayOfMonth) {
-				oldDay.color = '#3a4756';
-				oldDay.backgroundColor = '#DCDCDF';
-			}
-			oldDay.backgroundPaddingLeft = '0dp';
-			oldDay.backgroundPaddingBottom = '0dp';
+				// RESET last day selected
+				if (oldDay.text == dayOfMonth) {
+					oldDay.color = 'white';
+					oldDay.backgroundColor = '#333333';
+					//dark gray
+				} else if (oldDay.text < dayOfMonth) {
+					oldDay.color = '#3a4756';
+					oldDay.backgroundColor = '#DCDCDF';
+					// light light gray (deselects the number)
+				}
+				oldDay.backgroundPaddingLeft = '0dp';
+				oldDay.backgroundPaddingBottom = '0dp';
 
-			// set characteristic of the day SELECTED
-			if (e.source.text == dayOfMonth) {
-				e.source.backgroundColor = '#00cc66';
-				day = c;
-				mon = b + 1;
-				year = a;
-			} else if (e.source.text < dayOfMonth) {
-				e.source.backgroundColor = '#00cc66';
-				day = e.source.text;
-				mon = b + 1;
-				year = a;
+				// set characteristic of the day SELECTED
+				if (e.source.text == dayOfMonth) {
+					e.source.backgroundColor = '#00cc66';
+					day = c;
+					mon = b + 1;
+					year = a;
+				} else if (e.source.text < dayOfMonth) {
+					e.source.backgroundColor = '#00cc66';
+					day = e.source.text;
+					mon = b + 1;
+					year = a;
+				}
+
+			} else {
+				if (oldDay != 0) {
+					if (oldDay.text > daysInMonth - 14 + dayOfMonth) {
+						oldDay.color = '#3a4756';
+						oldDay.backgroundColor = '#DCDCDF';
+						// light light gray (deselects the number)
+					}
+					oldDay.backgroundPaddingLeft = '0dp';
+					oldDay.backgroundPaddingBottom = '0dp';
+				}
+				// set characteristic of the day SELECTED
+				if (e.source.text > daysInMonth - 14 + dayOfMonth) {
+					e.source.backgroundColor = '#00cc66';
+					day = e.source.text;
+					mon = b + 1;
+					year = a;
+				}
 			}
+
 			e.source.backgroundPaddingLeft = '1dp';
 			e.source.backgroundPaddingBottom = '1dp';
 			if (e.source.text <= dayOfMonth)
@@ -823,21 +960,21 @@ c = mydate.getDate();
 
 var prevCalendarView = null;
 if (b == 0) {
-	prevCalendarView = calView(a - 1, 11, c);
+	prevCalendarView = calView(a - 1, 11, c, 1);
 } else {
-	prevCalendarView = calView(a, b - 1, c);
+	prevCalendarView = calView(a, b - 1, c, 1);
 }
 prevCalendarView.left = (screenWidth * -1) + 'dp';
 
 var nextCalendarView = null;
 if (b == 0) {
-	nextCalendarView = calView(a + 1, 0, c);
+	nextCalendarView = calView(a + 1, 0, c, 0);
 } else {
-	nextCalendarView = calView(a, b + 1, c);
+	nextCalendarView = calView(a, b + 1, c, 0);
 }
 nextCalendarView.left = screenWidth + 'dp';
 
-var thisCalendarView = calView(a, b, c);
+var thisCalendarView = calView(a, b, c, 0);
 
 thisCalendarView.left = '-1dp';
 
@@ -873,6 +1010,7 @@ slidePrev.left = screenWidth;
 var prevflag = 0;
 // Next Month Click Event
 nextMonth.addEventListener('click', function() {
+
 	if (prevflag == 1) {
 		if (b == 11) {
 			b = 0;
@@ -880,6 +1018,16 @@ nextMonth.addEventListener('click', function() {
 		} else {
 			b++;
 		}
+		if (oldDay != 0) {
+			oldDay.color = '#3a4756';
+			oldDay.backgroundColor = '#DCDCDF';
+			// light light gray (deselects the number)
+		}
+		oldDay.backgroundPaddingLeft = '0dp';
+		oldDay.backgroundPaddingBottom = '0dp';
+		day = 0;
+		mon = 0;
+		year = 0;
 		thisCalendarView.animate(slideNext);
 		nextCalendarView.animate(slideReset);
 		toolBarTitle.remove(nextMonth);
@@ -893,9 +1041,9 @@ nextMonth.addEventListener('click', function() {
 			prevCalendarView = thisCalendarView;
 			thisCalendarView = nextCalendarView;
 			if (b == 11) {
-				nextCalendarView = calView(a + 1, 0, c);
+				nextCalendarView = calView(a + 1, 0, c, 0);
 			} else {
-				nextCalendarView = calView(a, b + 1, c);
+				nextCalendarView = calView(a, b + 1, c, 0);
 			}
 			monthTitle.text = monthName(b) + ' ' + a;
 			nextCalendarView.left = screenWidth + 'dp';
@@ -909,7 +1057,7 @@ toolBarTitle.add(prevMonth);
 // Previous Month Click Event
 prevMonth.addEventListener('click', function() {
 	var prevDate = new Date();
-	prevDate.setDate(mydate.getDate() - 15);
+	prevDate.setDate(mydate.getDate() - 14);
 	if (prevDate.getMonth() != b && prevflag == 0) {
 
 		if (b == 0) {
@@ -918,6 +1066,16 @@ prevMonth.addEventListener('click', function() {
 		} else {
 			b--;
 		}
+		if (oldDay != 0) {
+			oldDay.color = '#3a4756';
+			oldDay.backgroundColor = '#DCDCDF';
+			// light light gray (deselects the number)
+		}
+		oldDay.backgroundPaddingLeft = '0dp';
+		oldDay.backgroundPaddingBottom = '0dp';
+		day = 0;
+		mon = 0;
+		year = 0;
 		thisCalendarView.animate(slidePrev);
 		prevCalendarView.animate(slideReset);
 		toolBarTitle.add(nextMonth);
@@ -929,9 +1087,9 @@ prevMonth.addEventListener('click', function() {
 			nextCalendarView = thisCalendarView;
 			thisCalendarView = prevCalendarView;
 			if (b == 0) {
-				prevCalendarView = calView(a - 1, 11, c);
+				prevCalendarView = calView(a - 1, 11, c, 1);
 			} else {
-				prevCalendarView = calView(a, b - 1, c);
+				prevCalendarView = calView(a, b - 1, c, 1);
 			}
 			monthTitle.text = monthName(b) + ' ' + a;
 			prevCalendarView.left = (screenWidth * -1) + 'dp';
@@ -940,9 +1098,6 @@ prevMonth.addEventListener('click', function() {
 		prevflag = 1;
 	}
 });
-//
-//
-//
 
 var ratingLabel = Ti.UI.createLabel({
 	text : 'How happy did you feel?',
@@ -1248,11 +1403,21 @@ function initialise() {
 	useractivity = '';
 
 	exrate = 3, haprate = 3;
-	rstar1.backgroundImage = './images/goldstar.png';
-	rstar2.backgroundImage = './images/goldstar.png';
-	rstar3.backgroundImage = './images/goldstar.png';
-	rstar4.backgroundImage = './images/dullstar.png';
-	rstar5.backgroundImage = './images/dullstar.png';
+	// rstar1.backgroundImage = './images/goldstar.png';
+	// rstar2.backgroundImage = './images/goldstar.png';
+	// rstar3.backgroundImage = './images/goldstar.png';
+	// rstar4.backgroundImage = './images/dullstar.png';
+	// rstar5.backgroundImage = './images/dullstar.png';
+	here.backgroundImage = 'images/greenrect.png';
+	Titanium.Geolocation.getCurrentPosition(function(e) {
+		if (e.success) {
+			// do stuff
+			workoutlat = e.coords.longitude;
+			workoutlong = e.coords.latitude;
+
+		} else
+			here.backgroundImage = 'images/grayrect.png';
+	});
 
 	hstar1.backgroundImage = './images/goldstar.png';
 	hstar2.backgroundImage = './images/goldstar.png';
@@ -1262,7 +1427,61 @@ function initialise() {
 }
 
 initialise();
+here.addEventListener('click', function(e) {
+	here.backgroundImage = 'images/greenrect.png';
+	Titanium.Geolocation.getCurrentPosition(function(e) {
+		if (e.success) {
+			// do stuff
+			workoutlat = e.coords.longitude;
+			workoutlong = e.coords.latitude;
 
+		} else {
+			alert('Could not find your current location, please try again');
+			here.backgroundImage = 'images/grayrect.png';
+		}
+	});
+	maploc.backgroundImage = 'images/grayrect.png';
+	otherloc.backgroundColor = 'white';
+	otherloc.value = '';
+});
+maploc.addEventListener('click', function(e) {
+	here.backgroundImage = 'images/grayrect.png';
+	maploc.backgroundImage = 'images/greenrect.png';
+	otherloc.backgroundColor = 'white';
+	otherloc.value = '';
+	scrollable.scrollToView(mapview);
+});
+otherloc.addEventListener('click', function(e) {
+	here.backgroundImage = 'images/grayrect.png';
+	maploc.backgroundImage = 'images/grayrect.png';
+					otherloc.value = '';
+	
+});
+otherloc.addEventListener('return', function(e) {
+	if (otherloc.value != '') {
+		var addreq = Titanium.Network.createHTTPClient();
+		if (Titanium.Network.networkType === Titanium.Network.NETWORK_NONE) {
+			alert('Error. Please check internet connection.');
+			otherloc.value = '';
+		} else {
+			url1 = 'http://maps.google.com/maps/api/geocode/json?address=' + address.value + '&sensor=true';
+			addreq.open("GET", url1);
+			addreq.send();
+			addreq.onload = function(g) {
+				if (this.responseText != '') {
+					var addJSON = JSON.parse(this.responseText);
+					workoutlat = addJSON.results[0].geometry.location.lat;
+					workoutlong = addJSON.results[0].geometry.location.lng;
+					otherloc.backgroundColor = 'green';
+				} else {
+					otherloc.value = 'Type here...';
+					alert('Could not find the location');
+				}
+			};
+
+		}
+	}
+});
 activitybtn1.addEventListener('click', function(e) {
 	useractivity = "Running";
 	othertxt.value = '';
@@ -1726,6 +1945,7 @@ if (stampfile.exists() && stampfile.writeable) {
 var currentlocation = new Array();
 currentlocation[0] = 0;
 currentlocation[1] = 0;
+
 var addlabel = Ti.UI.createLabel({
 	top : '15%',
 	width : Ti.UI.SIZE,
@@ -1759,36 +1979,42 @@ var addbutton = Ti.UI.createButton({
 });
 view3.add(addbutton);
 addbutton.addEventListener('click', function(e) {
-	if (currentlocation[0] != 0) {
-		alert('Setting geofence of 200m around current location');
-		coords.write(currentlocation[0] + ',' + currentlocation[1] + ',', true);
-		for ( i = 0; i < coords.read().text.split(',').length; i++) {
-			points[i] = parseFloat(coords.read().text.split(',')[i]);
-		}
-		enterfile.write('0,', true);
-		stayfile.write('0,', true);
-		stampfile.write('0,', true);
-		Ti.Geolocation.forwardGeocoder(address.value, function(e) {
-			var t1 = new Date();
-			var add = MapModule.createAnnotation({
-				latitude : currentlocation[0],
-				longitude : currentlocation[1],
-				title : 'Current location at' + t1.getHours() + ':' + t1.getMinutes(),
-				pincolor : MapModule.ANNOTATION_GREEN,
+	Titanium.Geolocation.getCurrentPosition(function(e) {
+		if (e.success) {
+			// do stuff
+			currentlocation[0] = e.coords.longitude;
+			currentlocation[1] = e.coords.latitude;
+			coords.write(currentlocation[0] + ',' + currentlocation[1] + ',', true);
+			for ( i = 0; i < coords.read().text.split(',').length; i++) {
+				points[i] = parseFloat(coords.read().text.split(',')[i]);
+			}
+			enterfile.write('0,', true);
+			stayfile.write('0,', true);
+			stampfile.write('0,', true);
+			Ti.Geolocation.forwardGeocoder(address.value, function(e) {
+				var t1 = new Date();
+				var add = MapModule.createAnnotation({
+					latitude : currentlocation[0],
+					longitude : currentlocation[1],
+					title : 'Current location at' + t1.getHours() + ':' + t1.getMinutes(),
+					pincolor : MapModule.ANNOTATION_GREEN,
+				});
+				mapview.addAnnotation(add);
 			});
-			mapview.addAnnotation(add);
-		});
-		alert('Map shows your current location as a green pin');
-		view3.hide();
-		scrollable.show();
-		scrollable.scrollToView(mapview);
-	}
+			// alert('Map shows your current location as a green pin');
+			alert('Setting geofence of 80m around current location');
+			view3.hide();
+			scrollable.show();
+			scrollable.scrollToView(mapview);
+		} else
+			alert('Current Location not updated, try again');
+	});
 });
 
 var points = new Array();
 address.addEventListener('return', function(e) {
+
 	if (address.value != '') {
-		alert('Setting geofence of 200m around ' + address.value);
 		var addreq = Titanium.Network.createHTTPClient();
 		if (Titanium.Network.networkType === Titanium.Network.NETWORK_NONE)
 			alert('Error. Please check internet connection.');
@@ -1797,31 +2023,35 @@ address.addEventListener('return', function(e) {
 			addreq.open("GET", url1);
 			addreq.send();
 			addreq.onload = function(e) {
-				var addJSON = JSON.parse(this.responseText);
-				alert('Scroll to the right to view your set location as a green pin');
-				coords.write(addJSON.results[0].geometry.location.lat + ',' + addJSON.results[0].geometry.location.lng + ',', true);
-				for ( i = 0; i < coords.read().text.split(',').length; i++) {
-					points[i] = parseFloat(coords.read().text.split(',')[i]);
-				}
-				enterfile.write('0,', true);
-				stayfile.write('0,', true);
-				stampfile.write('0,', true);
-				Ti.Geolocation.forwardGeocoder(address.value, function(e) {
-					var addannot = MapModule.createAnnotation({
-						latitude : addJSON.results[0].geometry.location.lat,
-						longitude : addJSON.results[0].geometry.location.lng,
-						title : address.value,
-						pincolor : MapModule.ANNOTATION_GREEN,
+				if (this.responseText != '') {
+					var addJSON = JSON.parse(this.responseText);
+					coords.write(addJSON.results[0].geometry.location.lat + ',' + addJSON.results[0].geometry.location.lng + ',', true);
+					for ( i = 0; i < coords.read().text.split(',').length; i++) {
+						points[i] = parseFloat(coords.read().text.split(',')[i]);
+					}
+					enterfile.write('0,', true);
+					stayfile.write('0,', true);
+					stampfile.write('0,', true);
+					Ti.Geolocation.forwardGeocoder(address.value, function(e) {
+						var addannot = MapModule.createAnnotation({
+							latitude : addJSON.results[0].geometry.location.lat,
+							longitude : addJSON.results[0].geometry.location.lng,
+							title : address.value,
+							pincolor : MapModule.ANNOTATION_GREEN,
+						});
+						mapview.addAnnotation(addannot);
 					});
-					mapview.addAnnotation(addannot);
-				});
+					// alert('Map shows your set location as a green pin');
+					alert('Setting geofence of 80m around ' + address.value);
+					view3.hide();
+					scrollable.show();
+					scrollable.scrollToView(mapview);
+				};
+
 			};
-			alert('Map shows your set location as a green pin');
-			view3.hide();
-			scrollable.show();
-			scrollable.scrollToView(mapview);
 		}
 	}
+
 });
 view3.add(address);
 view3.add(addlabel);
@@ -1845,7 +2075,6 @@ function distance(lat1, lon1, lat2, lon2) {
 	return dist;
 };
 
-Ti.Geolocation.purpose = 'Smart Reminders';
 var hour, min;
 var enterflag = new Array();
 var stayflag = new Array();
@@ -1950,13 +2179,17 @@ if (Ti.Geolocation.locationServicesEnabled) {
 				pincolor : MapModule.ANNOTATION_RED,
 			});
 			mapview.addAnnotation(annot);
+			annot.addEventListener('click', function(e) {
+				workoutlat = getLatitude(e);
+				workoutlong = getLongitude(e);
+				alert(workoutlat + ',' + workoutlong);
+				scrollable.scrollToView(vertiscroll);
+			});
 		}
 	});
 } else {
 	alert('Please enable location services');
 }
-
-var i;
 
 Ti.App.addEventListener('resume', function(e) {
 	var pointlat = new Array();
@@ -1977,7 +2210,14 @@ Ti.App.addEventListener('resume', function(e) {
 				pincolor : MapModule.ANNOTATION_RED,
 			});
 			mapview.addAnnotation(annot1);
+			annot1.addEventListener('click', function(e) {
+				workoutlat = getLatitude(e);
+				workoutlong = getLongitude(e);
+				alert(workoutlat + ',' + workoutlong);
+				scrollable.scrollToView(vertiscroll);
+			});
 		}
 
 	});
 });
+

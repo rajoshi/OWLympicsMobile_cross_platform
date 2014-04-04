@@ -43,4 +43,6 @@ dependencies: \
   /Users/cmc/Documents/Titanium_Rajoshi/Owlympics/build/iphone/Classes/TiGradient.h \
   /Users/cmc/Documents/Titanium_Rajoshi/Owlympics/build/iphone/Classes/TiRect.h \
   /Users/cmc/Documents/Titanium_Rajoshi/Owlympics/build/iphone/Classes/TiViewTemplate.h \
+  /Users/cmc/Documents/Titanium_Rajoshi/Owlympics/build/iphone/Classes/TiAppiOSProxy.h \
+  /Users/cmc/Documents/Titanium_Rajoshi/Owlympics/build/iphone/Classes/TiAppiOSBackgroundServiceProxy.h \
   /Users/cmc/Documents/Titanium_Rajoshi/Owlympics/build/iphone/Classes/TiLayoutQueue.h

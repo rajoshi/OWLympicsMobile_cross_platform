@@ -16,6 +16,10 @@ dependencies: \
   /Users/cmc/Documents/Titanium_Rajoshi/Owlympics/build/iphone/Classes/KrollCallback.h \
   /Users/cmc/Documents/Titanium_Rajoshi/Owlympics/build/iphone/Classes/KrollObject.h \
   /Users/cmc/Documents/Titanium_Rajoshi/Owlympics/build/iphone/Classes/TiBindingRunLoop.h \
+  /Users/cmc/Documents/Titanium_Rajoshi/Owlympics/build/iphone/Classes/TiAppiOSBackgroundServiceProxy.h \
+  /Users/cmc/Documents/Titanium_Rajoshi/Owlympics/build/iphone/Classes/KrollBridge.h \
+  /Users/cmc/Documents/Titanium_Rajoshi/Owlympics/build/iphone/Classes/Bridge.h \
+  /Users/cmc/Documents/Titanium_Rajoshi/Owlympics/build/iphone/Classes/TiModule.h \
   /Users/cmc/Documents/Titanium_Rajoshi/Owlympics/build/iphone/Classes/TiUtils.h \
   /Users/cmc/Documents/Titanium_Rajoshi/Owlympics/build/iphone/Classes/TiDimension.h \
   /Users/cmc/Documents/Titanium_Rajoshi/Owlympics/build/iphone/Classes/TiColor.h \
@@ -25,10 +29,7 @@ dependencies: \
   /Users/cmc/Documents/Titanium_Rajoshi/Owlympics/build/iphone/Classes/TiBlob.h \
   /Users/cmc/Documents/Titanium_Rajoshi/Owlympics/build/iphone/Classes/TiApp.h \
   /Users/cmc/Documents/Titanium_Rajoshi/Owlympics/build/iphone/Classes/TiHost.h \
-  /Users/cmc/Documents/Titanium_Rajoshi/Owlympics/build/iphone/Classes/Bridge.h \
   /Users/cmc/Documents/Titanium_Rajoshi/Owlympics/build/iphone/Classes/TiStylesheet.h \
-  /Users/cmc/Documents/Titanium_Rajoshi/Owlympics/build/iphone/Classes/KrollBridge.h \
-  /Users/cmc/Documents/Titanium_Rajoshi/Owlympics/build/iphone/Classes/TiModule.h \
   /Users/cmc/Documents/Titanium_Rajoshi/Owlympics/build/iphone/Classes/XHRBridge.h \
   /Users/cmc/Documents/Titanium_Rajoshi/Owlympics/build/iphone/Classes/TiRootViewController.h \
   /Users/cmc/Documents/Titanium_Rajoshi/Owlympics/build/iphone/Classes/TiControllerProtocols.h \
@@ -40,4 +41,5 @@ dependencies: \
   /Users/cmc/Documents/Titanium_Rajoshi/Owlympics/build/iphone/Classes/LayoutConstraint.h \
   /Users/cmc/Documents/Titanium_Rajoshi/Owlympics/build/iphone/Classes/TiGradient.h \
   /Users/cmc/Documents/Titanium_Rajoshi/Owlympics/build/iphone/Classes/TiRect.h \
-  /Users/cmc/Documents/Titanium_Rajoshi/Owlympics/build/iphone/Classes/TiViewTemplate.h
+  /Users/cmc/Documents/Titanium_Rajoshi/Owlympics/build/iphone/Classes/TiViewTemplate.h \
+  /Users/cmc/Documents/Titanium_Rajoshi/Owlympics/build/iphone/Classes/TiAppiOSLocalNotificationProxy.h
