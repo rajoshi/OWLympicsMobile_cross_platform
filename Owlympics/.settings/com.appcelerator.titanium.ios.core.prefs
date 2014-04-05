@@ -1,4 +1,7 @@
 eclipse.preferences.version=1
+provisioning_profiles/adhoc/B8156161-AAD9-4276-BBF7-AED655A5DB57/appid=com.owlympics.ecg.rice.edu
+provisioning_profiles/adhoc/B8156161-AAD9-4276-BBF7-AED655A5DB57/name=OWLympicsscalablehealth
+provisioning_profiles/adhoc/B8156161-AAD9-4276-BBF7-AED655A5DB57/uuid=B8156161-AAD9-4276-BBF7-AED655A5DB57
 provisioning_profiles/development/20F912FF-D2FA-4CC8-9AED-CD9BD36C4122/appid=*
 provisioning_profiles/development/20F912FF-D2FA-4CC8-9AED-CD9BD36C4122/name=iOS Team Provisioning Profile\: *
 provisioning_profiles/development/20F912FF-D2FA-4CC8-9AED-CD9BD36C4122/uuid=20F912FF-D2FA-4CC8-9AED-CD9BD36C4122
