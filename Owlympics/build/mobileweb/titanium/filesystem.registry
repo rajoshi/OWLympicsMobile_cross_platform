@@ -1,11 +1,11 @@
-ts	1396716208000
-.DS_Store	21508
+ts	1396735752000
+.DS_Store	12292
 Default-Landscape.jpg	32729
 Default-Portrait.jpg	24152
 Default.jpg	16382
 KS_nav_ui.png	748
 KS_nav_views.png	683
-app.js	55755
+app.js	55236
 appicon.png	16659
 appicon144.png	23341
 apple-touch-icon-114x114-precomposed.png	15820
@@ -65,19 +65,9 @@ images
 	grayrect.png	1248
 	graystar.png	6218
 	green.png	2458
-	green1.png	97034
-	green2.png	13684
-	green200.png	3431
-	green3.png	25020
-	green4.png	97034
-	green600.jpg	11078
-	green600.png	7585
-	green6001.png	96530
 	greencircle.png	27072
 	greenrect.png	1268
-	greenselect.png	4075
 	grey.png	5999
-	grey_pin.jpg	1047
 	icon.graffle	71856
 	icon.pdf	70138
 	icon1048.png	337269
@@ -87,47 +77,24 @@ images
 	icon512.png	126086
 	intervention.jpg	37276
 	intervention2.jpg	5829061
-	iosback.png	4340
-	iosback2.png	4339
-	lightorangerect.png	1965
-	map_blue.png	18259
-	map_green.png	16173
-	map_red.png	18447
-	map_reddot.png	8238
 	maroon.png	326
 	mascot.JPEG	48161
 	missing data.jpg	14548
 	missing_puzzle.jpg	39630
 	more.png	7260
 	morecopy.png	7238
-	myimage.png	13492
-	nextbuttonblue.png	120528
-	nextbuttongray.png	49217
 	notequal.gif	804
 	orange.png	3994
-	orange200.png	5169
-	orange600.png	4698
 	orangerect.png	1966
-	owl_rings.png	150056
-	pink200.png	4033
-	pink600.png	12337
-	purple.png	3976
 	purplerect.png	1971
 	rakesh.JPG	436570
 	rakesh2.JPG	451108
-	red.jpg	24052
 	red.png	3974
-	red1.png	43641
-	red2.png	6216
-	red200.png	3137
-	red600.png	12251
-	red_pin.jpg	2864
 	redcircle.png	41023
 	redrec.png	1968
 	scientists_490.jpg	124287
 	skyblue.png	3967
 	skybluerect.png	1965
-	slide-circle-green.png	8925
 	splash.graffle
 		QuickLook
 			Preview.pdf	23452
@@ -141,16 +108,12 @@ images
 	splash640960.png	303241
 	thebackground.png	4899459
 	thebluebackground.png	897118
-	thebutton.png	5326
-	thebuttonselect.png	5398
-	thegreenbackground.png	889085
-	thesquarebutton.png	2596
-	thesquarebuttonselect.png	2755
 	thisbackground.jpg	45379
 	titanium-logo.png	55697
 	white.png	7595
 	~$graphics.pptx	165
 mobileweb
+	.DS_Store	12292
 	appicon.png	16659
 	apple_startup_images
 		Default-Landscape.jpg	32729

@@ -59,7 +59,12 @@ var height1 = Ti.Platform.displayCaps.platformHeight, width1 = Ti.Platform.displ
 if (Ti.Platform.osname === 'android' && (width > 899 || height > 999)) {
 	height1 = height1 / 2;
 	width1 = width1 / 2;
-	Ti.info("Its a Tablet");
+	// Ti.info("Its a Tablet");
+}
+if (Ti.Platform.osname === 'ipad') {
+	height1 = height1 / 2;
+	width1 = width1 ;
+	// Ti.info("Its a Tablet");
 }
 
 var whatView = Ti.UI.createView({
@@ -80,30 +85,30 @@ var vertiscroll = Ti.UI.createScrollView({
 vertiscroll.add(whatView);
 // var MapModule = require('ti.map');
 // var mapview = MapModule.createView({
-	// mapType : MapModule.NORMAL_TYPE,
-	// region : {
-		// latitude : 29.719728,
-		// longitude : -95.399029,
-	// },
-	// animate : true,
-	// regionFit : true,
-	// userLocation : false,
-	// height : '70%',
-	// top : '20%',
-	// width : Ti.UI.FILL - 10,
-	// left : 5,
+// mapType : MapModule.NORMAL_TYPE,
+// region : {
+// latitude : 29.719728,
+// longitude : -95.399029,
+// },
+// animate : true,
+// regionFit : true,
+// userLocation : false,
+// height : '70%',
+// top : '20%',
+// width : Ti.UI.FILL - 10,
+// left : 5,
 // });
 // var view3 = Ti.UI.createView({
-	// backgroundImage : './images/thisbackground.jpg',
-	// height : '100%',
-	// width : '100%',
-	// top : 0,
-	// left : 0,
+// backgroundImage : './images/thisbackground.jpg',
+// height : '100%',
+// width : '100%',
+// top : 0,
+// left : 0,
 // });
 // homeWin.add(view3);
 // view3.hide();
 var scrollable = Titanium.UI.createScrollableView({
-	views : [profileView, vertiscroll],//, mapview],
+	views : [profileView, vertiscroll], //, mapview],
 	showPagingControl : true,
 });
 homeWin.add(scrollable);
@@ -116,38 +121,38 @@ var more = Ti.UI.createButton({
 	backgroundSelectedImage : './images/morecopy.png',
 });
 // var more1 = Ti.UI.createButton({
-	// top : '0%',
-	// left : '75%',
-	// text : '                   ',
-	// width : 40,
-	// height : 40,
-	// width : Ti.UI.SIZE,
-	// height : Ti.UI.SIZE,
+// top : '0%',
+// left : '75%',
+// text : '                   ',
+// width : 40,
+// height : 40,
+// width : Ti.UI.SIZE,
+// height : Ti.UI.SIZE,
 // });
 // var morelabel = Ti.UI.createLabel({
-	// text : 'Options',
-	// font : {
-		// fontSize : 15,
-	// },
-	// top : '1%',
-	// left : '75%',
-	// color : 'gray',
-	// width : Ti.UI.SIZE,
-	// height : Ti.UI.SIZE,
+// text : 'Options',
+// font : {
+// fontSize : 15,
+// },
+// top : '1%',
+// left : '75%',
+// color : 'gray',
+// width : Ti.UI.SIZE,
+// height : Ti.UI.SIZE,
 // });
 // whatView.add(more);
 // whatView.add(more1);
 // whatView.add(morelabel);
 // more.addEventListener('click', function(e) {
-	// view3.show();
-	// scrollable.hide();
+// view3.show();
+// scrollable.hide();
 // });
 // more1.addEventListener('click', function(e) {
-	// more.backgroundImage = './images/morecopy.png';
-	// view3.show();
-	// scrollable.hide();
-	// more.backgroundImage = './images/more.png';
-// 
+// more.backgroundImage = './images/morecopy.png';
+// view3.show();
+// scrollable.hide();
+// more.backgroundImage = './images/more.png';
+//
 // });
 homeWin.add(scrollable);
 var back = Ti.UI.createButton({
@@ -162,106 +167,105 @@ var back = Ti.UI.createButton({
 
 // view3.add(back);
 // back.addEventListener('click', function(e) {
-	// view3.hide();
-	// scrollable.show();
-	// scrollable.scrollToView(vertiscroll);
+// view3.hide();
+// scrollable.show();
+// scrollable.scrollToView(vertiscroll);
 // });
 
 /*buttons*/
 var exrate = 1, haprate = 1;
 var ratingLabel = Ti.UI.createLabel({
-text : 'How active did you feel?',
-color : 'white',
-font : {
-fontSize : 20,
-},
-top : '5%',
-textAlign : Ti.UI.TEXT_ALIGNMENT_CENTER,
+	text : 'How active did you feel?',
+	color : 'white',
+	font : {
+		fontSize : 20,
+	},
+	top : '5%',
+	textAlign : Ti.UI.TEXT_ALIGNMENT_CENTER,
 
 });
 whatView.add(ratingLabel);
 
-
 var rstar1 = Ti.UI.createButton({
-top : '7%',
-left : '3%',
-color : 'white',
-width : 55,
-height : 55,
-backgroundImage : './images/goldstar.png',
+	top : '7%',
+	left : '3%',
+	color : 'white',
+	width : 55,
+	height : 55,
+	backgroundImage : './images/goldstar.png',
 });
 
 rstar1.addEventListener('click', function(e) {
-rstar1.backgroundImage = './images/goldstar.png';
-rstar2.backgroundImage = './images/dullstar.png';
-rstar3.backgroundImage = './images/dullstar.png';
-rstar4.backgroundImage = './images/dullstar.png';
-rstar5.backgroundImage = './images/dullstar.png';
-exrate = 1;
+	rstar1.backgroundImage = './images/goldstar.png';
+	rstar2.backgroundImage = './images/dullstar.png';
+	rstar3.backgroundImage = './images/dullstar.png';
+	rstar4.backgroundImage = './images/dullstar.png';
+	rstar5.backgroundImage = './images/dullstar.png';
+	exrate = 1;
 });
 var rstar2 = Ti.UI.createButton({
-top : '7%',
-left : '22%',
-color : 'white',
-width : 55,
-height : 55,
-backgroundImage : './images/goldstar.png',
+	top : '7%',
+	left : '22%',
+	color : 'white',
+	width : 55,
+	height : 55,
+	backgroundImage : './images/goldstar.png',
 });
 rstar2.addEventListener('click', function(e) {
-rstar1.backgroundImage = './images/goldstar.png';
-rstar2.backgroundImage = './images/goldstar.png';
-rstar3.backgroundImage = './images/dullstar.png';
-rstar4.backgroundImage = './images/dullstar.png';
-rstar5.backgroundImage = './images/dullstar.png';
-exrate = 2;
+	rstar1.backgroundImage = './images/goldstar.png';
+	rstar2.backgroundImage = './images/goldstar.png';
+	rstar3.backgroundImage = './images/dullstar.png';
+	rstar4.backgroundImage = './images/dullstar.png';
+	rstar5.backgroundImage = './images/dullstar.png';
+	exrate = 2;
 });
 var rstar3 = Ti.UI.createButton({
-top : '7%',
-left : '41%',
-color : 'white',
-width : 55,
-height : 55,
-backgroundImage : './images/goldstar.png',
+	top : '7%',
+	left : '41%',
+	color : 'white',
+	width : 55,
+	height : 55,
+	backgroundImage : './images/goldstar.png',
 });
 rstar3.addEventListener('click', function(e) {
-rstar1.backgroundImage = './images/goldstar.png';
-rstar2.backgroundImage = './images/goldstar.png';
-rstar3.backgroundImage = './images/goldstar.png';
-rstar4.backgroundImage = './images/dullstar.png';
-rstar5.backgroundImage = './images/dullstar.png';
-exrate = 3;
+	rstar1.backgroundImage = './images/goldstar.png';
+	rstar2.backgroundImage = './images/goldstar.png';
+	rstar3.backgroundImage = './images/goldstar.png';
+	rstar4.backgroundImage = './images/dullstar.png';
+	rstar5.backgroundImage = './images/dullstar.png';
+	exrate = 3;
 });
 var rstar4 = Ti.UI.createButton({
-top : '7%',
-left : '60%',
-color : 'white',
-width : 55,
-height : 55,
-backgroundImage : './images/dullstar.png',
+	top : '7%',
+	left : '60%',
+	color : 'white',
+	width : 55,
+	height : 55,
+	backgroundImage : './images/dullstar.png',
 });
 rstar4.addEventListener('click', function(e) {
-rstar1.backgroundImage = './images/goldstar.png';
-rstar2.backgroundImage = './images/goldstar.png';
-rstar3.backgroundImage = './images/goldstar.png';
-rstar4.backgroundImage = './images/goldstar.png';
-rstar5.backgroundImage = './images/dullstar.png';
-exrate = 4;
+	rstar1.backgroundImage = './images/goldstar.png';
+	rstar2.backgroundImage = './images/goldstar.png';
+	rstar3.backgroundImage = './images/goldstar.png';
+	rstar4.backgroundImage = './images/goldstar.png';
+	rstar5.backgroundImage = './images/dullstar.png';
+	exrate = 4;
 });
 var rstar5 = Ti.UI.createButton({
-top : '7%',
-left : '79%',
-color : 'white',
-width : 55,
-height : 55,
-backgroundImage : './images/dullstar.png',
+	top : '7%',
+	left : '79%',
+	color : 'white',
+	width : 55,
+	height : 55,
+	backgroundImage : './images/dullstar.png',
 });
 rstar5.addEventListener('click', function(e) {
-rstar1.backgroundImage = './images/goldstar.png';
-rstar2.backgroundImage = './images/goldstar.png';
-rstar3.backgroundImage = './images/goldstar.png';
-rstar4.backgroundImage = './images/goldstar.png';
-rstar5.backgroundImage = './images/goldstar.png';
-exrate = 5;
+	rstar1.backgroundImage = './images/goldstar.png';
+	rstar2.backgroundImage = './images/goldstar.png';
+	rstar3.backgroundImage = './images/goldstar.png';
+	rstar4.backgroundImage = './images/goldstar.png';
+	rstar5.backgroundImage = './images/goldstar.png';
+	exrate = 5;
 });
 whatView.add(rstar1);
 whatView.add(rstar2);
@@ -270,57 +274,57 @@ whatView.add(rstar4);
 whatView.add(rstar5);
 
 // var whereLabel = Ti.UI.createLabel({
-	// text : 'Where did you exercise?',
-	// color : 'white',
-	// font : {
-		// fontSize : 20,
-	// },
-	// top : '3%',
-	// textAlign : Ti.UI.TEXT_ALIGNMENT_CENTER,
-// 
+// text : 'Where did you exercise?',
+// color : 'white',
+// font : {
+// fontSize : 20,
+// },
+// top : '3%',
+// textAlign : Ti.UI.TEXT_ALIGNMENT_CENTER,
+//
 // });
 // whatView.add(whereLabel);
-// 
+//
 // var here = Ti.UI.createButton({
-	// top : '5%',
-	// left : '15%',
-	// color : 'black',
-	// font : {
-		// fontSize : 20,
-	// },
-	// width : 100,
-	// title : 'Here',
-	// backgroundImage : './images/grayrect.png',
-	// backgroundImageSelected : './images/greenrect.png',
+// top : '5%',
+// left : '15%',
+// color : 'black',
+// font : {
+// fontSize : 20,
+// },
+// width : 100,
+// title : 'Here',
+// backgroundImage : './images/grayrect.png',
+// backgroundImageSelected : './images/greenrect.png',
 // });
 // whatView.add(here);
-// 
+//
 // var maploc = Ti.UI.createButton({
-	// top : '5%',
-	// left : '55%',
-	// color : 'black',
-	// font : {
-		// fontSize : 20,
-	// },
-	// width : 100,
-	// title : 'Map',
-	// backgroundImage : './images/grayrect.png',
-	// backgroundImageSelected : './images/greenrect.png',
+// top : '5%',
+// left : '55%',
+// color : 'black',
+// font : {
+// fontSize : 20,
+// },
+// width : 100,
+// title : 'Map',
+// backgroundImage : './images/grayrect.png',
+// backgroundImageSelected : './images/greenrect.png',
 // });
 // whatView.add(maploc);
-// 
+//
 // var otherloc = Ti.UI.createTextField({
-	// color : 'black',
-	// font : {
-		// fontSize : 20,
-	// },
-	// top : '8.7%',
-	// width : 250,
-	// height : 65,
-	// backgroundColor : 'white',
-	// backgroundImage : 'none',
-	// textAlign : 'center',
-	// value : 'Type here...'
+// color : 'black',
+// font : {
+// fontSize : 20,
+// },
+// top : '8.7%',
+// width : 250,
+// height : 65,
+// backgroundColor : 'white',
+// backgroundImage : 'none',
+// textAlign : 'center',
+// value : 'Type here...'
 // });
 // whatView.add(otherloc);
 // var workoutlat, workoutlong;
@@ -840,7 +844,10 @@ var calView = function(a, b, c, f) {
 				// green today date colot
 				oldDay = newDay;
 			}
-
+			if (i < dayOfMonth - 14) {
+				newDay.color = '#8e959f';
+				// light gray color
+			}
 			if (i + 1 > dayOfMonth) {
 				newDay.color = '#8e959f';
 				// light gray color
@@ -898,7 +905,7 @@ var calView = function(a, b, c, f) {
 					oldDay.color = 'white';
 					oldDay.backgroundColor = '#333333';
 					//dark gray
-				} else if (oldDay.text < dayOfMonth) {
+				} else if (oldDay.text < dayOfMonth && oldDay.text >dayOfMonth-14) {
 					oldDay.color = '#3a4756';
 					oldDay.backgroundColor = '#DCDCDF';
 					// light light gray (deselects the number)
@@ -912,7 +919,7 @@ var calView = function(a, b, c, f) {
 					day = c;
 					mon = b + 1;
 					year = a;
-				} else if (e.source.text < dayOfMonth) {
+				} else if (e.source.text < dayOfMonth && e.source.text > dayOfMonth-14) {
 					e.source.backgroundColor = '#00cc66';
 					day = e.source.text;
 					mon = b + 1;
@@ -940,8 +947,8 @@ var calView = function(a, b, c, f) {
 
 			e.source.backgroundPaddingLeft = '1dp';
 			e.source.backgroundPaddingBottom = '1dp';
-			if (e.source.text <= dayOfMonth)
-				e.source.color = 'white';
+			// if (e.source.text <= dayOfMonth)
+				// e.source.color = 'white';
 			//this day becomes old :(
 			oldDay = e.source;
 		}
@@ -1410,13 +1417,13 @@ function initialise() {
 	rstar5.backgroundImage = './images/dullstar.png';
 	// here.backgroundImage = 'images/greenrect.png';
 	// Titanium.Geolocation.getCurrentPosition(function(e) {
-		// if (e.success) {
-			// // do stuff
-			// workoutlat = e.coords.longitude;
-			// workoutlong = e.coords.latitude;
-// 
-		// } else
-			// here.backgroundImage = 'images/grayrect.png';
+	// if (e.success) {
+	// // do stuff
+	// workoutlat = e.coords.longitude;
+	// workoutlong = e.coords.latitude;
+	//
+	// } else
+	// here.backgroundImage = 'images/grayrect.png';
 	// });
 
 	hstar1.backgroundImage = './images/goldstar.png';
@@ -1427,6 +1434,7 @@ function initialise() {
 }
 
 initialise();
+
 // here.addEventListener('click', function(e) {
 	// here.backgroundImage = 'images/greenrect.png';
 	// Titanium.Geolocation.getCurrentPosition(function(e) {
@@ -1482,6 +1490,7 @@ initialise();
 		// }
 	// }
 // });
+
 activitybtn1.addEventListener('click', function(e) {
 	useractivity = "Running";
 	othertxt.value = '';
@@ -1916,308 +1925,308 @@ scrollable.addEventListener('singletap', function() {
 });
 // // register a background service. this JS will run when the app is backgrounded
 // var service = Ti.App.iOS.registerBackgroundService({
-	// url : 'bg.js'
+// url : 'bg.js'
 // });
-// 
+//
 // var coords = Ti.Filesystem.getFile(Ti.Filesystem.applicationDataDirectory, 'coords.txt');
 // if (coords.exists() && coords.writeable) {
-	// coords.deleteFile();
-	// coords.createFile();
+// coords.deleteFile();
+// coords.createFile();
 // }
-// 
+//
 // var enterfile = Ti.Filesystem.getFile(Ti.Filesystem.applicationDataDirectory, 'enterflag.txt');
 // if (enterfile.exists() && enterfile.writeable) {
-	// enterfile.deleteFile();
-	// enterfile.createFile();
+// enterfile.deleteFile();
+// enterfile.createFile();
 // }
 // var stayfile = Ti.Filesystem.getFile(Ti.Filesystem.applicationDataDirectory, 'stayflag.txt');
 // if (stayfile.exists() && stayfile.writeable) {
-	// stayfile.deleteFile();
-	// stayfile.createFile();
+// stayfile.deleteFile();
+// stayfile.createFile();
 // }
 // var stampfile = Ti.Filesystem.getFile(Ti.Filesystem.applicationDataDirectory, 'stamp.txt');
 // if (stampfile.exists() && stampfile.writeable) {
-	// stampfile.deleteFile();
-	// stampfile.createFile();
+// stampfile.deleteFile();
+// stampfile.createFile();
 // }
 // //Initialization
-// 
+//
 // var currentlocation = new Array();
 // currentlocation[0] = 0;
 // currentlocation[1] = 0;
-// 
+//
 // var addlabel = Ti.UI.createLabel({
-	// top : '15%',
-	// width : Ti.UI.SIZE,
-	// height : Ti.UI.SIZE,
-	// color : 'white',
-	// text : 'Setting Geofence \nType the address without pin-code and press RETURN',
-	// font : {
-		// fontSize : 20
-	// },
-	// textAlign : Ti.UI.TEXT_ALIGNMENT_CENTER,
+// top : '15%',
+// width : Ti.UI.SIZE,
+// height : Ti.UI.SIZE,
+// color : 'white',
+// text : 'Setting Geofence \nType the address without pin-code and press RETURN',
+// font : {
+// fontSize : 20
+// },
+// textAlign : Ti.UI.TEXT_ALIGNMENT_CENTER,
 // });
 // var address = Ti.UI.createTextField({
-	// height : '160dp',
-	// width : '300dp',
-	// top : '30%',
-	// left : '3%',
-	// color : 'black',
-	// borderStyle : Titanium.UI.INPUT_BORDERSTYLE_ROUNDED,
+// height : '160dp',
+// width : '300dp',
+// top : '30%',
+// left : '3%',
+// color : 'black',
+// borderStyle : Titanium.UI.INPUT_BORDERSTYLE_ROUNDED,
 // });
 // var addbutton = Ti.UI.createButton({
-	// top : '70%',
-	// left : '20back%',
-	// color : 'black',
-	// font : {
-		// fontSize : 20,
-	// },
-	// width : 200,
-	// title : 'Current Location',
-	// backgroundImage : './images/grayrect.png',
-	// backgroundImageSelected : './images/greenrect.png',
+// top : '70%',
+// left : '20back%',
+// color : 'black',
+// font : {
+// fontSize : 20,
+// },
+// width : 200,
+// title : 'Current Location',
+// backgroundImage : './images/grayrect.png',
+// backgroundImageSelected : './images/greenrect.png',
 // });
 // view3.add(addbutton);
 // addbutton.addEventListener('click', function(e) {
-	// Titanium.Geolocation.getCurrentPosition(function(e) {
-		// if (e.success) {
-			// // do stuff
-			// currentlocation[0] = e.coords.longitude;
-			// currentlocation[1] = e.coords.latitude;
-			// coords.write(currentlocation[0] + ',' + currentlocation[1] + ',', true);
-			// for ( i = 0; i < coords.read().text.split(',').length; i++) {
-				// points[i] = parseFloat(coords.read().text.split(',')[i]);
-			// }
-			// enterfile.write('0,', true);
-			// stayfile.write('0,', true);
-			// stampfile.write('0,', true);
-			// Ti.Geolocation.forwardGeocoder(address.value, function(e) {
-				// var t1 = new Date();
-				// var add = MapModule.createAnnotation({
-					// latitude : currentlocation[0],
-					// longitude : currentlocation[1],
-					// title : 'Current location at' + t1.getHours() + ':' + t1.getMinutes(),
-					// pincolor : MapModule.ANNOTATION_GREEN,
-				// });
-				// mapview.addAnnotation(add);
-			// });
-			// // alert('Map shows your current location as a green pin');
-			// alert('Setting geofence of 80m around current location');
-			// view3.hide();
-			// scrollable.show();
-			// scrollable.scrollToView(mapview);
-		// } else
-			// alert('Current Location not updated, try again');
-	// });
+// Titanium.Geolocation.getCurrentPosition(function(e) {
+// if (e.success) {
+// // do stuff
+// currentlocation[0] = e.coords.longitude;
+// currentlocation[1] = e.coords.latitude;
+// coords.write(currentlocation[0] + ',' + currentlocation[1] + ',', true);
+// for ( i = 0; i < coords.read().text.split(',').length; i++) {
+// points[i] = parseFloat(coords.read().text.split(',')[i]);
+// }
+// enterfile.write('0,', true);
+// stayfile.write('0,', true);
+// stampfile.write('0,', true);
+// Ti.Geolocation.forwardGeocoder(address.value, function(e) {
+// var t1 = new Date();
+// var add = MapModule.createAnnotation({
+// latitude : currentlocation[0],
+// longitude : currentlocation[1],
+// title : 'Current location at' + t1.getHours() + ':' + t1.getMinutes(),
+// pincolor : MapModule.ANNOTATION_GREEN,
 // });
-// 
+// mapview.addAnnotation(add);
+// });
+// // alert('Map shows your current location as a green pin');
+// alert('Setting geofence of 80m around current location');
+// view3.hide();
+// scrollable.show();
+// scrollable.scrollToView(mapview);
+// } else
+// alert('Current Location not updated, try again');
+// });
+// });
+//
 // var points = new Array();
 // address.addEventListener('return', function(e) {
-// 
-	// if (address.value != '') {
-		// var addreq = Titanium.Network.createHTTPClient();
-		// if (Titanium.Network.networkType === Titanium.Network.NETWORK_NONE)
-			// alert('Error. Please check internet connection.');
-		// else {
-			// url1 = 'http://maps.google.com/maps/api/geocode/json?address=' + address.value + '&sensor=true';
-			// addreq.open("GET", url1);
-			// addreq.send();
-			// addreq.onload = function(e) {
-				// if (this.responseText != '') {
-					// var addJSON = JSON.parse(this.responseText);
-					// coords.write(addJSON.results[0].geometry.location.lat + ',' + addJSON.results[0].geometry.location.lng + ',', true);
-					// for ( i = 0; i < coords.read().text.split(',').length; i++) {
-						// points[i] = parseFloat(coords.read().text.split(',')[i]);
-					// }
-					// enterfile.write('0,', true);
-					// stayfile.write('0,', true);
-					// stampfile.write('0,', true);
-					// Ti.Geolocation.forwardGeocoder(address.value, function(e) {
-						// var addannot = MapModule.createAnnotation({
-							// latitude : addJSON.results[0].geometry.location.lat,
-							// longitude : addJSON.results[0].geometry.location.lng,
-							// title : address.value,
-							// pincolor : MapModule.ANNOTATION_GREEN,
-						// });
-						// mapview.addAnnotation(addannot);
-					// });
-					// // alert('Map shows your set location as a green pin');
-					// alert('Setting geofence of 80m around ' + address.value);
-					// view3.hide();
-					// scrollable.show();
-					// scrollable.scrollToView(mapview);
-				// };
-// 
-			// };
-		// }
-	// }
-// 
+//
+// if (address.value != '') {
+// var addreq = Titanium.Network.createHTTPClient();
+// if (Titanium.Network.networkType === Titanium.Network.NETWORK_NONE)
+// alert('Error. Please check internet connection.');
+// else {
+// url1 = 'http://maps.google.com/maps/api/geocode/json?address=' + address.value + '&sensor=true';
+// addreq.open("GET", url1);
+// addreq.send();
+// addreq.onload = function(e) {
+// if (this.responseText != '') {
+// var addJSON = JSON.parse(this.responseText);
+// coords.write(addJSON.results[0].geometry.location.lat + ',' + addJSON.results[0].geometry.location.lng + ',', true);
+// for ( i = 0; i < coords.read().text.split(',').length; i++) {
+// points[i] = parseFloat(coords.read().text.split(',')[i]);
+// }
+// enterfile.write('0,', true);
+// stayfile.write('0,', true);
+// stampfile.write('0,', true);
+// Ti.Geolocation.forwardGeocoder(address.value, function(e) {
+// var addannot = MapModule.createAnnotation({
+// latitude : addJSON.results[0].geometry.location.lat,
+// longitude : addJSON.results[0].geometry.location.lng,
+// title : address.value,
+// pincolor : MapModule.ANNOTATION_GREEN,
+// });
+// mapview.addAnnotation(addannot);
+// });
+// // alert('Map shows your set location as a green pin');
+// alert('Setting geofence of 80m around ' + address.value);
+// view3.hide();
+// scrollable.show();
+// scrollable.scrollToView(mapview);
+// };
+//
+// };
+// }
+// }
+//
 // });
 // view3.add(address);
 // view3.add(addlabel);
 // //unit in meters
 // var centerRadius = 80;
-// 
+//
 // // calculate distance between two locations, distance unit in meters
 // function distance(lat1, lon1, lat2, lon2) {
-// 
-	// var radlat1 = Math.PI * lat1 / 180;
-	// var radlat2 = Math.PI * lat2 / 180;
-	// var radlon1 = Math.PI * lon1 / 180;
-	// var radlon2 = Math.PI * lon2 / 180;
-	// var theta = lon1 - lon2;
-	// var radtheta = Math.PI * theta / 180;
-	// var dist = Math.sin(radlat1) * Math.sin(radlat2) + Math.cos(radlat1) * Math.cos(radlat2) * Math.cos(radtheta);
-	// dist = Math.acos(dist);
-	// dist = dist * 180 / Math.PI;
-	// dist = dist * 60 * 1.1515;
-	// dist = dist * 1.609344 * 1000;
-	// return dist;
+//
+// var radlat1 = Math.PI * lat1 / 180;
+// var radlat2 = Math.PI * lat2 / 180;
+// var radlon1 = Math.PI * lon1 / 180;
+// var radlon2 = Math.PI * lon2 / 180;
+// var theta = lon1 - lon2;
+// var radtheta = Math.PI * theta / 180;
+// var dist = Math.sin(radlat1) * Math.sin(radlat2) + Math.cos(radlat1) * Math.cos(radlat2) * Math.cos(radtheta);
+// dist = Math.acos(dist);
+// dist = dist * 180 / Math.PI;
+// dist = dist * 60 * 1.1515;
+// dist = dist * 1.609344 * 1000;
+// return dist;
 // };
-// 
+//
 // var hour, min;
 // var enterflag = new Array();
 // var stayflag = new Array();
 // var stamp = new Array();
 // var dist = new Array();
-// 
+//
 // if (Ti.Geolocation.locationServicesEnabled) {
-	// Ti.Geolocation.accuracy = Ti.Geolocation.ACCURACY_HUNDRED_METERS;
-	// Ti.Geolocation.distanceFilter = 5;
-	// Ti.Geolocation.preferredProvider = Ti.Geolocation.PROVIDER_PROVIDER_NETWORK;
-	// // Ti.setPauseLocationUpdateAutomatically(true);
-	// Ti.Geolocation.addEventListener('location', function(e) {
-		// if (e.error) {
-			// // alert('Error: ' + e.error);
-		// } else {
-			// currentlocation[0] = e.coords.latitude;
-			// currentlocation[1] = e.coords.longitude;
-			// for ( i = 0; i < enterfile.read().length - 1; i++) {
-				// // enterflag[i] = parseFloat(enterfile.read().text.split(',')[i]);
-				// // stayflag[i] = parseFloat(stayfile.read().text.split(',')[i]);
-				// // stamp[i] = parseFloat(stampfile.read().text.split(',')[i]);
-				// dist[i] = distance(e.coords.latitude, e.coords.longitude, points[2 * i], points[2 * i + 1]);
-				// if (dist[i] < centerRadius) {
-					// // if (!enterflag[i]) {
-					// // enterflag[i] = 1;
-					// // stamp[i] = e.coords.timestamp;
-					// // } else {
-					// // if ((e.coords.timestamp - stamp[i]) > 1000) {
-					// // stayflag[i] = 1;
-					// // }
-					// // }
-					// // } else if (enterflag[i]) {
-					// // var t1 = new Date;
-					// // enterflag[i] = 0;
-					// // if (stayflag[i]) {
-					// // hour = Math.floor((e.coords.timestamp - stamp[i]) / 3600000);
-					// // min = Math.floor((e.coords.timestamp - stamp[i]) / 60000) - hour * 60000;
-					// // if (hour > 1)
-					// // alert(t1.getHours() + ':' + t1.getMinutes() + '|Report your activities for ' + hour + 'hours and ' + min + ' mins' + '?');
-					// // else
-					// // alert(t1.getHours() + ':' + t1.getMinutes() + '|Report your activities for ' + min + ' mins' + '?');
-					// // stayflag[i] = 0;
-					// // }
-					// alert('Report your activities?');
-				// }
-				// // alert('blah');
-				// // var temp = Ti.createBuffer({
-				// // length : enterflag.length,
-				// // });
-				// // alert('blah1');
-				// // for ( i = 0; i < enterflag.length; i++)
-				// // temp[i] = enterflag[i];
-				// // alert('blah2');
-				// // enterfile.write(temp.toBlob(), false);
-				// // alert('blah3');
-				// // var temp = Ti.createBuffer({
-				// // length : stayflag.length,
-				// // });
-				// // for ( i = 0; i < enterflag.length; i++)
-				// // temp[i] = stayflag[i];
-				// // stayfile.write(temp.toBlob(), false);
-				// // var temp = Ti.createBuffer({
-				// // length : stamp.length,
-				// // });
-				// // for ( i = 0; i < enterflag.length; i++)
-				// // temp[i] = stamp[i];
-				// // stampfile.write(temp.toBlob(), false);
-				// // alert(enterflag);
-			// }
-// 
-			// // alert(mydist5 + ', '+ enterflag5+ ', '+ stayflag5+ ' fg1');
-// 
-			// // if (mydist5 < 30) {
-			// // if (!enterflag5) {
-			// // enterflag5 = 1;
-			// // stamp5 = e.coords.timestamp;
-			// // } else {
-			// // if ((e.coords.timestamp - stamp5) > 6000) {
-			// // stayflag5 = 1;
-			// // }
-			// // }
-			// // } else if (enterflag5) {
-			// // var t1 = new Date;
-			// // enterflag5 = 0;
-			// // if (stayflag5) {
-			// // hour = Math.floor((e.coords.timestamp - stamp5) / 3600000);
-			// // min = Math.floor((e.coords.timestamp - stamp5) / 60000) - hour * 60000;
-			// // if (hour > 1)
-			// // alert(t1.getHours() + ':' + t1.getMinutes() + '|Were you at Duncan Hall ' + hour + 'hours and ' + min + ' mins' + '? Do you want to log points?');
-			// // else
-			// // alert(t1.getHours() + ':' + t1.getMinutes() + '|Were you at Duncan Hall for ' + min + ' mins' + '? Do you want to log points?');
-			// // stayflag5 = 0;
-			// // }
-			// // }
-// 
-			// // alert(mydist5 + ', '+ enterflag5+ ', '+ stayflag5+ ' fg2');
-// 
-			// var annot = MapModule.createAnnotation({
-				// latitude : e.coords.latitude,
-				// longitude : e.coords.longitude,
-				// // title : e.coords.accuracy,
-				// pincolor : MapModule.ANNOTATION_RED,
-			// });
-			// mapview.addAnnotation(annot);
-			// annot.addEventListener('click', function(e) {
-				// workoutlat = getLatitude(e);
-				// workoutlong = getLongitude(e);
-				// alert(workoutlat + ',' + workoutlong);
-				// scrollable.scrollToView(vertiscroll);
-			// });
-		// }
-	// });
+// Ti.Geolocation.accuracy = Ti.Geolocation.ACCURACY_HUNDRED_METERS;
+// Ti.Geolocation.distanceFilter = 5;
+// Ti.Geolocation.preferredProvider = Ti.Geolocation.PROVIDER_PROVIDER_NETWORK;
+// // Ti.setPauseLocationUpdateAutomatically(true);
+// Ti.Geolocation.addEventListener('location', function(e) {
+// if (e.error) {
+// // alert('Error: ' + e.error);
 // } else {
-	// alert('Please enable location services');
+// currentlocation[0] = e.coords.latitude;
+// currentlocation[1] = e.coords.longitude;
+// for ( i = 0; i < enterfile.read().length - 1; i++) {
+// // enterflag[i] = parseFloat(enterfile.read().text.split(',')[i]);
+// // stayflag[i] = parseFloat(stayfile.read().text.split(',')[i]);
+// // stamp[i] = parseFloat(stampfile.read().text.split(',')[i]);
+// dist[i] = distance(e.coords.latitude, e.coords.longitude, points[2 * i], points[2 * i + 1]);
+// if (dist[i] < centerRadius) {
+// // if (!enterflag[i]) {
+// // enterflag[i] = 1;
+// // stamp[i] = e.coords.timestamp;
+// // } else {
+// // if ((e.coords.timestamp - stamp[i]) > 1000) {
+// // stayflag[i] = 1;
+// // }
+// // }
+// // } else if (enterflag[i]) {
+// // var t1 = new Date;
+// // enterflag[i] = 0;
+// // if (stayflag[i]) {
+// // hour = Math.floor((e.coords.timestamp - stamp[i]) / 3600000);
+// // min = Math.floor((e.coords.timestamp - stamp[i]) / 60000) - hour * 60000;
+// // if (hour > 1)
+// // alert(t1.getHours() + ':' + t1.getMinutes() + '|Report your activities for ' + hour + 'hours and ' + min + ' mins' + '?');
+// // else
+// // alert(t1.getHours() + ':' + t1.getMinutes() + '|Report your activities for ' + min + ' mins' + '?');
+// // stayflag[i] = 0;
+// // }
+// alert('Report your activities?');
 // }
-// 
+// // alert('blah');
+// // var temp = Ti.createBuffer({
+// // length : enterflag.length,
+// // });
+// // alert('blah1');
+// // for ( i = 0; i < enterflag.length; i++)
+// // temp[i] = enterflag[i];
+// // alert('blah2');
+// // enterfile.write(temp.toBlob(), false);
+// // alert('blah3');
+// // var temp = Ti.createBuffer({
+// // length : stayflag.length,
+// // });
+// // for ( i = 0; i < enterflag.length; i++)
+// // temp[i] = stayflag[i];
+// // stayfile.write(temp.toBlob(), false);
+// // var temp = Ti.createBuffer({
+// // length : stamp.length,
+// // });
+// // for ( i = 0; i < enterflag.length; i++)
+// // temp[i] = stamp[i];
+// // stampfile.write(temp.toBlob(), false);
+// // alert(enterflag);
+// }
+//
+// // alert(mydist5 + ', '+ enterflag5+ ', '+ stayflag5+ ' fg1');
+//
+// // if (mydist5 < 30) {
+// // if (!enterflag5) {
+// // enterflag5 = 1;
+// // stamp5 = e.coords.timestamp;
+// // } else {
+// // if ((e.coords.timestamp - stamp5) > 6000) {
+// // stayflag5 = 1;
+// // }
+// // }
+// // } else if (enterflag5) {
+// // var t1 = new Date;
+// // enterflag5 = 0;
+// // if (stayflag5) {
+// // hour = Math.floor((e.coords.timestamp - stamp5) / 3600000);
+// // min = Math.floor((e.coords.timestamp - stamp5) / 60000) - hour * 60000;
+// // if (hour > 1)
+// // alert(t1.getHours() + ':' + t1.getMinutes() + '|Were you at Duncan Hall ' + hour + 'hours and ' + min + ' mins' + '? Do you want to log points?');
+// // else
+// // alert(t1.getHours() + ':' + t1.getMinutes() + '|Were you at Duncan Hall for ' + min + ' mins' + '? Do you want to log points?');
+// // stayflag5 = 0;
+// // }
+// // }
+//
+// // alert(mydist5 + ', '+ enterflag5+ ', '+ stayflag5+ ' fg2');
+//
+// var annot = MapModule.createAnnotation({
+// latitude : e.coords.latitude,
+// longitude : e.coords.longitude,
+// // title : e.coords.accuracy,
+// pincolor : MapModule.ANNOTATION_RED,
+// });
+// mapview.addAnnotation(annot);
+// annot.addEventListener('click', function(e) {
+// workoutlat = getLatitude(e);
+// workoutlong = getLongitude(e);
+// alert(workoutlat + ',' + workoutlong);
+// scrollable.scrollToView(vertiscroll);
+// });
+// }
+// });
+// } else {
+// alert('Please enable location services');
+// }
+//
 // Ti.App.addEventListener('resume', function(e) {
-	// var pointlat = new Array();
-	// var pointlong = new Array();
-	// var accur = new Array();
-	// var leng;
-	// Ti.App.addEventListener('Gvariables', function(event) {
-		// pointlat = event.blahlat;
-		// pointlong = event.blahlong;
-		// leng = event.length;
-		// accur = event.accuracy;
-		// for ( i = 0; i <= leng; i++) {
-			// var annot1 = MapModule.createAnnotation({
-				// latitude : pointlat[i],
-				// longitude : pointlong[i],
-				// // title : accur[i].toString(),
-				// animate : true,
-				// pincolor : MapModule.ANNOTATION_RED,
-			// });
-			// mapview.addAnnotation(annot1);
-			// annot1.addEventListener('click', function(e) {
-				// workoutlat = getLatitude(e);
-				// workoutlong = getLongitude(e);
-				// alert(workoutlat + ',' + workoutlong);
-				// scrollable.scrollToView(vertiscroll);
-			// });
-		// }
-// 
-	// });
+// var pointlat = new Array();
+// var pointlong = new Array();
+// var accur = new Array();
+// var leng;
+// Ti.App.addEventListener('Gvariables', function(event) {
+// pointlat = event.blahlat;
+// pointlong = event.blahlong;
+// leng = event.length;
+// accur = event.accuracy;
+// for ( i = 0; i <= leng; i++) {
+// var annot1 = MapModule.createAnnotation({
+// latitude : pointlat[i],
+// longitude : pointlong[i],
+// // title : accur[i].toString(),
+// animate : true,
+// pincolor : MapModule.ANNOTATION_RED,
+// });
+// mapview.addAnnotation(annot1);
+// annot1.addEventListener('click', function(e) {
+// workoutlat = getLatitude(e);
+// workoutlong = getLongitude(e);
+// alert(workoutlat + ',' + workoutlong);
+// scrollable.scrollToView(vertiscroll);
+// });
+// }
+//
+// });
 // });
 
