@@ -1,27 +1,18 @@
-var MapModule = require('ti.map');
 //Initialization
-
-//unit in meters
-var centerRadius = 80;
-
 var pointlat = new Array();
 var pointlong = new Array();
 var accur = new Array();
 var count = 0;
-var notification;
-
+//unit in meters
+var centerRadius = 20;
 var coords = Ti.Filesystem.getFile(Ti.Filesystem.applicationDataDirectory, 'coords.txt');
 var enterfile = Ti.Filesystem.getFile(Ti.Filesystem.applicationDataDirectory, 'enterflag.txt');
 var stayfile = Ti.Filesystem.getFile(Ti.Filesystem.applicationDataDirectory, 'stayflag.txt');
 var stampfile = Ti.Filesystem.getFile(Ti.Filesystem.applicationDataDirectory, 'stamp.txt');
-
 var points = new Array();
 for ( i = 0; i < coords.read().text.split(',').length; i++) {
 	points[i] = parseFloat(coords.read().text.split(',')[i]);
 }
-//unit in meters
-var centerRadius = 80;
-
 // calculate distance between two locations, distance unit in meters
 function distance(lat1, lon1, lat2, lon2) {
 
@@ -41,104 +32,71 @@ function distance(lat1, lon1, lat2, lon2) {
 
 Ti.Geolocation.purpose = 'Smart Reminders';
 var hour, min;
-var enterflag = new Array();
-var stayflag = new Array();
-var stamp = new Array();
-var dist = new Array();
 
 if (Ti.Geolocation.locationServicesEnabled) {
 	Ti.Geolocation.accuracy = Ti.Geolocation.ACCURACY_HUNDRED_METERS;
 	Ti.Geolocation.distanceFilter = 5;
 	Ti.Geolocation.preferredProvider = Ti.Geolocation.PROVIDER_PROVIDER_NETWORK;
-	// Ti.setPauseLocationUpdateAutomatically(true);
 	Ti.Geolocation.addEventListener('location', function(e) {
 		if (e.error) {
 			// alert('Error: ' + e.error);
 		} else {
+			var enterflag = new Array();
+			var stayflag = new Array();
+			var stamp = new Array();
+			var point_dist = 0;
 			for ( i = 0; i < enterfile.read().length - 1; i++) {
-				// enterflag[i] = parseFloat(enterfile.read().text.split(',')[i]);
-				// stayflag[i] = parseFloat(stayfile.read().text.split(',')[i]);
-				// stamp[i] = parseFloat(stampfile.read().text.split(',')[i]);
-				dist[i] = distance(e.coords.latitude, e.coords.longitude, points[2 * i], points[2 * i + 1]);
-				if (dist[i] < centerRadius) {// if (!enterflag[i]) {
-					// enterflag[i] = 1;
-					// stamp[i] = e.coords.timestamp;
-					// } else {
-					// if ((e.coords.timestamp - stamp[i]) > 1000) {
-					// stayflag[i] = 1;
-					// }
-					// }
-					// } else if (enterflag[i]) {
-					// var t1 = new Date;
-					// enterflag[i] = 0;
-					// if (stayflag[i]) {
-					// hour = Math.floor((e.coords.timestamp - stamp[i]) / 3600000);
-					// min = Math.floor((e.coords.timestamp - stamp[i]) / 60000) - hour * 60000;
-					// if (hour > 1)
-					// alert(t1.getHours() + ':' + t1.getMinutes() + '|Report your activities for ' + hour + 'hours and ' + min + ' mins' + '?');
-					// else
-					// alert(t1.getHours() + ':' + t1.getMinutes() + '|Report your activities for ' + min + ' mins' + '?');
-					// stayflag[i] = 0;
-					// }
-					var notification = Ti.App.iOS.scheduleLocalNotification({
-						//alertBody : t1.getHours() + ':' + t1.getMinutes() + '|Were you in Duncan for ' + min + ' mins' + '? Do you want to log points?',
-						alertBody : 'Report your activities?',
-						alertAction : "Re-Launch!",
-						userInfo : {
-							"hello" : "world"
-						},
-						sound : "pop.caf",
-						date : new Date(new Date().getTime()), // 3 seconds after backgrounding
-						hasAction : true,
-					});
+				enterflag[i] = parseFloat(enterfile.read().text.split(',')[i]);
+				stayflag[i] = parseFloat(stayfile.read().text.split(',')[i]);
+				stamp[i] = parseFloat(stampfile.read().text.split(',')[i]);
+				point_dist = distance(e.coords.latitude, e.coords.longitude, points[2 * i], points[2 * i + 1]);
+				if (point_dist < centerRadius) {
+					if (!enterflag[i]) {
+						enterflag[i] = 1;
+						stamp[i] = e.coords.timestamp;
+					} else {
+						if ((e.coords.timestamp - stamp[i]) > 1000) {
+							stayflag[i] = 1;
+						}
+					}
+				} else if (enterflag[i]) {
+					var t1 = new Date;
+					enterflag[i] = 0;
+					if (stayflag[i]) {
+						hour = Math.floor((e.coords.timestamp - stamp[i]) / 3600000);
+						min = Math.floor((e.coords.timestamp - stamp[i]) / 60000) - hour * 60000;
+						// if (min > 1)
+						// alert(t1.getHours() + ':' + t1.getMinutes() + '|Report your activities for ' + hour + 'hours and ' + min + ' mins' + '?');
+						// else
+						alert('blah'+ count);
+						var notification = Ti.App.iOS.scheduleLocalNotification({
+							alertBody : 'Report your activities?', //t1.getHours() + ':' + t1.getMinutes() + '|Report your activities for ' + min + ' mins' + '?' + ' Distance =' + point_dist,
+							alertAction : "Re-Launch!",
+							userInfo : {
+								"hello" : "world"
+							},
+							sound : "pop.caf",
+							date : new Date(new Date().getTime()), // 3 seconds after backgrounding
+							hasAction : true,
+						});
+						stayflag[i] = 0;
+					}
 				}
-				// alert('blah');
-				// var temp = Ti.createBuffer({
-				// length : enterflag.length,
-				// });
-				// alert('blah1');
-				// for ( i = 0; i < enterflag.length; i++)
-				// temp[i] = enterflag[i];
-				// alert('blah2');
-				// enterfile.write(temp.toBlob(), false);
-				// alert('blah3');
-				// var temp = Ti.createBuffer({
-				// length : stayflag.length,
-				// });
-				// for ( i = 0; i < enterflag.length; i++)
-				// temp[i] = stayflag[i];
-				// stayfile.write(temp.toBlob(), false);
-				// var temp = Ti.createBuffer({
-				// length : stamp.length,
-				// });
-				// for ( i = 0; i < enterflag.length; i++)
-				// temp[i] = stamp[i];
-				// stampfile.write(temp.toBlob(), false);
-				// alert(enterflag);
 			}
-			// var notification = Ti.App.iOS.scheduleLocalNotification({
-			// //alertBody : t1.getHours() + ':' + t1.getMinutes() + '|Were you in Duncan for ' + min + ' mins' + '? Do you want to log points?',
-			// alertBody : t1.getHours() + ':' + t1.getMinutes() + '|Did you just exit CMC?',
-			// alertAction : "Re-Launch!",
-			// userInfo : {
-			// "hello" : "world"
-			// },
-			// sound : "pop.caf",
-			// date : new Date(new Date().getTime()), // 3 seconds after backgrounding
-			// hasAction : true,
-			// });
-			// // alert(t1.getHours() + ':' + t1.getMinutes() + '|Were you in Duncan for ' + min + ' mins' + '? Do you want to log points?');
-			// }
-			// stayflag5 = 0;
-			// }
-			// }
-			// }
-
-			// alert(mydist5 + ', ' + enterflag5 + ', ' + stayflag5+ ' bg2');
-
+			enterfile.deleteFile();
+			enterfile.createFile();
+			stayfile.deleteFile();
+			stayfile.createFile();
+			stampfile.deleteFile();
+			stampfile.createFile();
+			for ( i = 0; i < enterflag.length; i++) {
+				enterfile.write(enterflag[i] + ',', true);
+				stampfile.write(stamp[i] + ',', true);
+				stayfile.write(stayflag[i] + ',', true);
+			}
 			pointlat[count] = e.coords.latitude;
 			pointlong[count] = e.coords.longitude;
-			accur[count] = e.coords.accuracy;
+			accur[count] = point_dist;
 
 			Ti.App.fireEvent('Gvariables', {
 				blahlat : pointlat,
@@ -146,19 +104,15 @@ if (Ti.Geolocation.locationServicesEnabled) {
 				length : count,
 				accuracy : accur,
 			});
+			count = count + 1;
 
 			var notification = Ti.App.iOS.scheduleLocalNotification({
-				// alertBody : 'Location update ' + e.coords.latitude + ',' + e.coords.longitude,
 				alertAction : "Re-Launch!",
 				userInfo : {
 					"hello" : "world"
 				},
-				// sound : "pop.caf",
 				date : new Date(new Date().getTime())
 			});
-
-			count = count + 1;
-
 		}
 	});
 } else {
@@ -166,16 +120,6 @@ if (Ti.Geolocation.locationServicesEnabled) {
 }
 
 function checkFeed() {
-
-	// var notification2 = Ti.App.iOS.scheduleLocalNotification({
-	// alertBody : 'hi, i m alive',
-	// alertAction : "Re-Launch!",
-	// userInfo : {
-	// "hello" : "world"
-	// },
-	// sound : "pop.caf",
-	// date : new Date(new Date().getTime() + 3000) // 3 seconds after backgrounding
-	// });
 	Ti.API.info('hi, I m alive');
 }
 

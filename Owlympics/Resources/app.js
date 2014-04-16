@@ -1682,7 +1682,8 @@ function submitinfo() {
 		});
 
 		if (useractivity != '' && day != 0 && (lowtxt.value + medtxt.value + hightxt.value) > 0) {
-
+			var lat = 29.4;
+			var lng = -95.3;
 			var params = {
 				day : day.toString(),
 				mon : mon.toString(),
@@ -1699,7 +1700,9 @@ function submitinfo() {
 				sec : mydate.getSeconds().toString(),
 				happy : haprate.toString(),
 				activeness : exrate.toString(),
-				uuid : Titanium.Platform.id
+				uuid : Titanium.Platform.id,
+				lat : lat.toString(),
+				lng : lng.toString(),
 			};
 			alert1.show();
 
@@ -2047,7 +2050,7 @@ address.addEventListener('return', function(e) {
 optionsView.add(address);
 optionsView.add(addlabel);
 //unit in meters
-var centerRadius = 80;
+var centerRadius = 20;
 
 // calculate distance between two locations, distance unit in meters
 function distance(lat1, lon1, lat2, lon2) {
@@ -2070,7 +2073,7 @@ var hour, min;
 
 if (Ti.Geolocation.locationServicesEnabled) {
 	Ti.Geolocation.accuracy = Ti.Geolocation.ACCURACY_HUNDRED_METERS;
-	Ti.Geolocation.distanceFilter = 3;
+	Ti.Geolocation.distanceFilter = 5;
 	Ti.Geolocation.preferredProvider = Ti.Geolocation.PROVIDER_PROVIDER_NETWORK;
 	// Ti.setPauseLocationUpdateAutomatically(true);
 	Ti.Geolocation.addEventListener('location', function(e) {
@@ -2080,119 +2083,55 @@ if (Ti.Geolocation.locationServicesEnabled) {
 			var enterflag = new Array();
 			var stayflag = new Array();
 			var stamp = new Array();
-			var dist = new Array();
+			var point_dist  = 0;
 			currentlocation[0] = e.coords.latitude;
 			currentlocation[1] = e.coords.longitude;
 			for ( i = 0; i < enterfile.read().length - 1; i++) {
 				enterflag[i] = parseFloat(enterfile.read().text.split(',')[i]);
 				stayflag[i] = parseFloat(stayfile.read().text.split(',')[i]);
 				stamp[i] = parseFloat(stampfile.read().text.split(',')[i]);
-				dist[i] = distance(e.coords.latitude, e.coords.longitude, points[2 * i], points[2 * i + 1]);
-				alert('first reading' + enterflag[i]);
-				if (dist[i] < centerRadius) {
+				point_dist = distance(e.coords.latitude, e.coords.longitude, points[2 * i], points[2 * i + 1]);
+				if (point_dist < centerRadius) {
 					if (!enterflag[i]) {
 						enterflag[i] = 1;
-						// stamp[i] = e.coords.timestamp;
-						// } else {
-						// if ((e.coords.timestamp - stamp[i]) > 1000) {
-						// stayflag[i] = 1;
-						// }
+						stamp[i] = e.coords.timestamp;
+					} else {
+						if ((e.coords.timestamp - stamp[i]) > 1000) {
+							stayflag[i] = 1;
+						}
 					}
 				} else if (enterflag[i]) {
 					var t1 = new Date;
 					enterflag[i] = 0;
-					// if (stayflag[i]) {
-					// hour = Math.floor((e.coords.timestamp - stamp[i]) / 3600000);
-					// min = Math.floor((e.coords.timestamp - stamp[i]) / 60000) - hour * 60000;
-					// if (hour > 1)
-					// alert(t1.getHours() + ':' + t1.getMinutes() + '|Report your activities for ' + hour + 'hours and ' + min + ' mins' + '?');
-					// else
-					// alert(t1.getHours() + ':' + t1.getMinutes() + '|Report your activities for ' + min + ' mins' + '?');
-					// stayflag[i] = 0;
+					if (stayflag[i]) {
+						hour = Math.floor((e.coords.timestamp - stamp[i]) / 3600000);
+						min = Math.floor((e.coords.timestamp - stamp[i]) / 60000) - hour * 60000;
+						// if (min > 1)
+						// alert(t1.getHours() + ':' + t1.getMinutes() + '|Report your activities for ' + hour + 'hours and ' + min + ' mins' + '?');
+						// else
+						alert(t1.getHours() + ':' + t1.getMinutes() + '|Report your activities for ' + min + ' mins' + '?' + ' Distance =' + point_dist);
+						stayflag[i] = 0;
+					}
 				}
-
-				alert('2.' + enterflag[i]);
-				// alert('blah');
-				// var temp = Ti.createBuffer({
-				// length : enterflag.length,
-				// });
-				// alert('blah1');
-				// for ( i = 0; i < enterflag.length; i++)
-				// temp[i] = enterflag[i];
-				// alert('blah2');
-				// enterfile.write(temp.toBlob(), false);
-				// alert('blah3');
-				// var temp = Ti.createBuffer({
-				// length : stayflag.length,
-				// });
-				// for ( i = 0; i < enterflag.length; i++)
-				// temp[i] = stayflag[i];
-				// stayfile.write(temp.toBlob(), false);
-				// var temp = Ti.createBuffer({
-				// length : stamp.length,
-				// });
-				// for ( i = 0; i < enterflag.length; i++)
-				// temp[i] = stamp[i];
-				// stampfile.write(temp.toBlob(), false);
-				// alert(enterflag);
 			}
-			// coords.deleteFile();
-			// coords.createFile();
 			enterfile.deleteFile();
 			enterfile.createFile();
-			// stayfile.deleteFile();
-			// stayfile.createFile();
-			// stampfile.deleteFile();
-			// stampfile.createFile();
+			stayfile.deleteFile();
+			stayfile.createFile();
+			stampfile.deleteFile();
+			stampfile.createFile();
 			for ( i = 0; i < enterflag.length; i++) {
 				enterfile.write(enterflag[i] + ',', true);
-				alert('writing' + enterflag[i]);
+				stampfile.write(stamp[i] + ',', true);
+				stayfile.write(stayflag[i] + ',', true);
 			}
-			for ( i = 0; i < enterfile.read().length - 1; i++) {
-				enterflag[i] = parseFloat(enterfile.read().text.split(',')[i]);
-				alert('2 reading' + enterflag[i]);
-			}
-			// alert(mydist5 + ', '+ enterflag5+ ', '+ stayflag5+ ' fg1');
-
-			// if (mydist5 < 30) {
-			// if (!enterflag5) {
-			// enterflag5 = 1;
-			// stamp5 = e.coords.timestamp;
-			// } else {
-			// if ((e.coords.timestamp - stamp5) > 6000) {
-			// stayflag5 = 1;
-			// }
-			// }
-			// } else if (enterflag5) {
-			// var t1 = new Date;
-			// enterflag5 = 0;
-			// if (stayflag5) {
-			// hour = Math.floor((e.coords.timestamp - stamp5) / 3600000);
-			// min = Math.floor((e.coords.timestamp - stamp5) / 60000) - hour * 60000;
-			// if (hour > 1)
-			// alert(t1.getHours() + ':' + t1.getMinutes() + '|Were you at Duncan Hall ' + hour + 'hours and ' + min + ' mins' + '? Do you want to log points?');
-			// else
-			// alert(t1.getHours() + ':' + t1.getMinutes() + '|Were you at Duncan Hall for ' + min + ' mins' + '? Do you want to log points?');
-			// stayflag5 = 0;
-			// }
-			// }
-
-			// alert(mydist5 + ', '+ enterflag5+ ', '+ stayflag5+ ' fg2');
-
 			var annot = MapModule.createAnnotation({
 				latitude : e.coords.latitude,
 				longitude : e.coords.longitude,
-				// title : e.coords.accuracy,
+				title : point_dist,
 				pincolor : MapModule.ANNOTATION_RED,
 			});
 			mapview.addAnnotation(annot);
-			annot.addEventListener('click', function(e) {
-				workoutlat = getLatitude(e);
-				workoutlong = getLongitude(e);
-				alert(workoutlat + ',' + workoutlong);
-				scrollable.scrollToView(vertiscroll);
-			});
-
 		}
 	});
 } else {
@@ -2202,28 +2141,22 @@ if (Ti.Geolocation.locationServicesEnabled) {
 Ti.App.addEventListener('resume', function(e) {
 	var pointlat = new Array();
 	var pointlong = new Array();
-	var accur = new Array();
+	var point_dist = new Array();
 	var leng;
 	Ti.App.addEventListener('Gvariables', function(event) {
 		pointlat = event.blahlat;
 		pointlong = event.blahlong;
 		leng = event.length;
-		accur = event.accuracy;
+		point_dist = event.accuracy;
 		for ( i = 0; i <= leng; i++) {
 			var annot1 = MapModule.createAnnotation({
 				latitude : pointlat[i],
 				longitude : pointlong[i],
-				// title : accur[i].toString(),
+				title : point_dist[i].toString(),
 				animate : true,
 				pincolor : MapModule.ANNOTATION_RED,
 			});
 			mapview.addAnnotation(annot1);
-			annot1.addEventListener('click', function(e) {
-				workoutlat = getLatitude(e);
-				workoutlong = getLongitude(e);
-				alert(workoutlat + ',' + workoutlong);
-				scrollable.scrollToView(vertiscroll);
-			});
 		}
 
 	});
