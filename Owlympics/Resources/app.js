@@ -2070,7 +2070,7 @@ var hour, min;
 
 if (Ti.Geolocation.locationServicesEnabled) {
 	Ti.Geolocation.accuracy = Ti.Geolocation.ACCURACY_HUNDRED_METERS;
-	Ti.Geolocation.distanceFilter = 1;
+	Ti.Geolocation.distanceFilter = 3;
 	Ti.Geolocation.preferredProvider = Ti.Geolocation.PROVIDER_PROVIDER_NETWORK;
 	// Ti.setPauseLocationUpdateAutomatically(true);
 	Ti.Geolocation.addEventListener('location', function(e) {
