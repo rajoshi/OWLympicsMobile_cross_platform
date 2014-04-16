@@ -110,7 +110,7 @@ var optionsView = Ti.UI.createView({
 homeWin.add(optionsView);
 optionsView.hide();
 var scrollable = Titanium.UI.createScrollableView({
-	views : [profileView, vertiscroll], //, mapview],
+	views : [profileView, vertiscroll, mapview],
 	showPagingControl : true,
 });
 homeWin.add(scrollable);
@@ -274,60 +274,60 @@ whatView.add(rstar3);
 whatView.add(rstar4);
 whatView.add(rstar5);
 
-var whereLabel = Ti.UI.createLabel({
-	text : 'Where did you exercise?',
-	color : 'white',
-	font : {
-		fontSize : 20,
-	},
-	top : '3%',
-	textAlign : Ti.UI.TEXT_ALIGNMENT_CENTER,
-
-});
-whatView.add(whereLabel);
-
-var here = Ti.UI.createButton({
-	top : '5%',
-	left : '15%',
-	color : 'black',
-	font : {
-		fontSize : 20,
-	},
-	width : 100,
-	title : 'Here',
-	backgroundImage : './images/grayrect.png',
-	backgroundImageSelected : './images/greenrect.png',
-});
-whatView.add(here);
-
-var maploc = Ti.UI.createButton({
-	top : '5%',
-	left : '55%',
-	color : 'black',
-	font : {
-		fontSize : 20,
-	},
-	width : 100,
-	title : 'Map',
-	backgroundImage : './images/grayrect.png',
-	backgroundImageSelected : './images/greenrect.png',
-});
-whatView.add(maploc);
-
-var otherloc = Ti.UI.createTextField({
-	color : 'black',
-	font : {
-		fontSize : 20,
-	},
-	top : '8.7%',
-	width : 250,
-	height : 65,
-	backgroundColor : 'white',
-	backgroundImage : 'none',
-	textAlign : 'center',
-	value : 'Type here...'
-});
-whatView.add(otherloc);
+// var whereLabel = Ti.UI.createLabel({
+// text : 'Where did you exercise?',
+// color : 'white',
+// font : {
+// fontSize : 20,
+// },
+// top : '3%',
+// textAlign : Ti.UI.TEXT_ALIGNMENT_CENTER,
+//
+// });
+// whatView.add(whereLabel);
+//
+// var here = Ti.UI.createButton({
+// top : '5%',
+// left : '15%',
+// color : 'black',
+// font : {
+// fontSize : 20,
+// },
+// width : 100,
+// title : 'Here',
+// backgroundImage : './images/grayrect.png',
+// backgroundImageSelected : './images/greenrect.png',
+// });
+// whatView.add(here);
+//
+// var maploc = Ti.UI.createButton({
+// top : '5%',
+// left : '55%',
+// color : 'black',
+// font : {
+// fontSize : 20,
+// },
+// width : 100,
+// title : 'Map',
+// backgroundImage : './images/grayrect.png',
+// backgroundImageSelected : './images/greenrect.png',
+// });
+// whatView.add(maploc);
+//
+// var otherloc = Ti.UI.createTextField({
+// color : 'black',
+// font : {
+// fontSize : 20,
+// },
+// top : '8.7%',
+// width : 250,
+// height : 65,
+// backgroundColor : 'white',
+// backgroundImage : 'none',
+// textAlign : 'center',
+// value : 'Type here...'
+// });
+// whatView.add(otherloc);
 var workoutlat, workoutlong;
 
 var selectlabel = Ti.UI.createLabel({
@@ -1435,62 +1435,62 @@ function initialise() {
 }
 
 initialise();
-
-here.addEventListener('click', function(e) {
-	here.backgroundImage = 'images/greenrect.png';
-	Titanium.Geolocation.getCurrentPosition(function(e) {
-		if (e.success) {
-			// do stuff
-			workoutlat = e.coords.longitude;
-			workoutlong = e.coords.latitude;
-
-		} else {
-			alert('Could not find your current location, please try again');
-			here.backgroundImage = 'images/grayrect.png';
-		}
-	});
-	maploc.backgroundImage = 'images/grayrect.png';
-	otherloc.backgroundColor = 'white';
-	otherloc.value = '';
-});
-maploc.addEventListener('click', function(e) {
-	here.backgroundImage = 'images/grayrect.png';
-	maploc.backgroundImage = 'images/greenrect.png';
-	otherloc.backgroundColor = 'white';
-	otherloc.value = '';
-	scrollable.scrollToView(mapview);
-});
-otherloc.addEventListener('click', function(e) {
-	here.backgroundImage = 'images/grayrect.png';
-	maploc.backgroundImage = 'images/grayrect.png';
-	otherloc.value = '';
-
-});
-otherloc.addEventListener('return', function(e) {
-	if (otherloc.value != '') {
-		var addreq = Titanium.Network.createHTTPClient();
-		if (Titanium.Network.networkType === Titanium.Network.NETWORK_NONE) {
-			alert('Error. Please check internet connection.');
-			otherloc.value = '';
-		} else {
-			url1 = 'http://maps.google.com/maps/api/geocode/json?address=' + address.value + '&sensor=true';
-			addreq.open("GET", url1);
-			addreq.send();
-			addreq.onload = function(g) {
-				if (this.responseText != '') {
-					var addJSON = JSON.parse(this.responseText);
-					workoutlat = addJSON.results[0].geometry.location.lat;
-					workoutlong = addJSON.results[0].geometry.location.lng;
-					otherloc.backgroundColor = 'green';
-				} else {
-					otherloc.value = 'Type here...';
-					alert('Could not find the location');
-				}
-			};
-
-		}
-	}
-});
+//
+// here.addEventListener('click', function(e) {
+// here.backgroundImage = 'images/greenrect.png';
+// Titanium.Geolocation.getCurrentPosition(function(e) {
+// if (e.success) {
+// // do stuff
+// workoutlat = e.coords.longitude;
+// workoutlong = e.coords.latitude;
+//
+// } else {
+// alert('Could not find your current location, please try again');
+// here.backgroundImage = 'images/grayrect.png';
+// }
+// });
+// maploc.backgroundImage = 'images/grayrect.png';
+// otherloc.backgroundColor = 'white';
+// otherloc.value = '';
+// });
+// maploc.addEventListener('click', function(e) {
+// here.backgroundImage = 'images/grayrect.png';
+// maploc.backgroundImage = 'images/greenrect.png';
+// otherloc.backgroundColor = 'white';
+// otherloc.value = '';
+// scrollable.scrollToView(mapview);
+// });
+// otherloc.addEventListener('click', function(e) {
+// here.backgroundImage = 'images/grayrect.png';
+// maploc.backgroundImage = 'images/grayrect.png';
+// otherloc.value = '';
+//
+// });
+// otherloc.addEventListener('return', function(e) {
+// if (otherloc.value != '') {
+// var addreq = Titanium.Network.createHTTPClient();
+// if (Titanium.Network.networkType === Titanium.Network.NETWORK_NONE) {
+// alert('Error. Please check internet connection.');
+// otherloc.value = '';
+// } else {
+// url1 = 'http://maps.google.com/maps/api/geocode/json?address=' + address.value + '&sensor=true';
+// addreq.open("GET", url1);
+// addreq.send();
+// addreq.onload = function(g) {
+// if (this.responseText != '') {
+// var addJSON = JSON.parse(this.responseText);
+// workoutlat = addJSON.results[0].geometry.location.lat;
+// workoutlong = addJSON.results[0].geometry.location.lng;
+// otherloc.backgroundColor = 'green';
+// } else {
+// otherloc.value = 'Type here...';
+// alert('Could not find the location');
+// }
+// };
+//
+// }
+// }
+// });
 
 activitybtn1.addEventListener('click', function(e) {
 	useractivity = "Running";
@@ -1915,23 +1915,23 @@ var service = Ti.App.iOS.registerBackgroundService({
 });
 
 var coords = Ti.Filesystem.getFile(Ti.Filesystem.applicationDataDirectory, 'coords.txt');
-if (coords.exists() && coords.writeable) {
+if (coords.exists() && coords.writable) {
 	coords.deleteFile();
 	coords.createFile();
 }
 
 var enterfile = Ti.Filesystem.getFile(Ti.Filesystem.applicationDataDirectory, 'enterflag.txt');
-if (enterfile.exists() && enterfile.writeable) {
+if (enterfile.exists() && enterfile.writable) {
 	enterfile.deleteFile();
 	enterfile.createFile();
 }
 var stayfile = Ti.Filesystem.getFile(Ti.Filesystem.applicationDataDirectory, 'stayflag.txt');
-if (stayfile.exists() && stayfile.writeable) {
+if (stayfile.exists() && stayfile.writable) {
 	stayfile.deleteFile();
 	stayfile.createFile();
 }
 var stampfile = Ti.Filesystem.getFile(Ti.Filesystem.applicationDataDirectory, 'stamp.txt');
-if (stampfile.exists() && stampfile.writeable) {
+if (stampfile.exists() && stampfile.writable) {
 	stampfile.deleteFile();
 	stampfile.createFile();
 }
@@ -1942,26 +1942,26 @@ currentlocation[0] = 0;
 currentlocation[1] = 0;
 
 var addlabel = Ti.UI.createLabel({
-	top : '15%',
+	top : '10%',
 	width : Ti.UI.SIZE,
 	height : Ti.UI.SIZE,
 	color : 'white',
-	text : 'Setting Geofence \nType the address without pin-code and press RETURN',
+	text : '\nSet 80m Geofence \n\n\n\nor\n\nType the address without pin-code and press RETURN',
 	font : {
 		fontSize : 20
 	},
 	textAlign : Ti.UI.TEXT_ALIGNMENT_CENTER,
 });
 var address = Ti.UI.createTextField({
-	height : '160dp',
+	height : '120dp',
 	width : '300dp',
-	top : '30%',
+	top : '50%',
 	left : '3%',
 	color : 'black',
 	borderStyle : Titanium.UI.INPUT_BORDERSTYLE_ROUNDED,
 });
 var addbutton = Ti.UI.createButton({
-	top : '70%',
+	top : '20%',
 	left : '20back%',
 	color : 'black',
 	font : {
@@ -1977,8 +1977,8 @@ addbutton.addEventListener('click', function(e) {
 	Titanium.Geolocation.getCurrentPosition(function(e) {
 		if (e.success) {
 			// do stuff
-			currentlocation[0] = e.coords.longitude;
-			currentlocation[1] = e.coords.latitude;
+			currentlocation[0] = e.coords.latitude;
+			currentlocation[1] = e.coords.longitude;
 			coords.write(currentlocation[0] + ',' + currentlocation[1] + ',', true);
 			for ( i = 0; i < coords.read().text.split(',').length; i++) {
 				points[i] = parseFloat(coords.read().text.split(',')[i]);
@@ -1986,17 +1986,14 @@ addbutton.addEventListener('click', function(e) {
 			enterfile.write('0,', true);
 			stayfile.write('0,', true);
 			stampfile.write('0,', true);
-			Ti.Geolocation.forwardGeocoder(address.value, function(e) {
-				var t1 = new Date();
-				var add = MapModule.createAnnotation({
-					latitude : currentlocation[0],
-					longitude : currentlocation[1],
-					title : 'Current location at' + t1.getHours() + ':' + t1.getMinutes(),
-					pincolor : MapModule.ANNOTATION_GREEN,
-				});
-				mapview.addAnnotation(add);
+			var t1 = new Date();
+			var addannot = MapModule.createAnnotation({
+				latitude : currentlocation[0],
+				longitude : currentlocation[1],
+				title : 'Current location at ' + t1.getHours() + ':' + t1.getMinutes(),
+				pincolor : MapModule.ANNOTATION_GREEN,
 			});
-			// alert('Map shows your current location as a green pin');
+			mapview.addAnnotation(addannot);
 			alert('Setting geofence of 80m around current location');
 			optionsView.hide();
 			scrollable.show();
@@ -2036,7 +2033,6 @@ address.addEventListener('return', function(e) {
 						});
 						mapview.addAnnotation(addannot);
 					});
-					// alert('Map shows your set location as a green pin');
 					alert('Setting geofence of 80m around ' + address.value);
 					optionsView.hide();
 					scrollable.show();
@@ -2071,20 +2067,20 @@ function distance(lat1, lon1, lat2, lon2) {
 };
 
 var hour, min;
-var enterflag = new Array();
-var stayflag = new Array();
-var stamp = new Array();
-var dist = new Array();
 
 if (Ti.Geolocation.locationServicesEnabled) {
 	Ti.Geolocation.accuracy = Ti.Geolocation.ACCURACY_HUNDRED_METERS;
-	Ti.Geolocation.distanceFilter = 5;
+	Ti.Geolocation.distanceFilter = 1;
 	Ti.Geolocation.preferredProvider = Ti.Geolocation.PROVIDER_PROVIDER_NETWORK;
 	// Ti.setPauseLocationUpdateAutomatically(true);
 	Ti.Geolocation.addEventListener('location', function(e) {
 		if (e.error) {
 			// alert('Error: ' + e.error);
 		} else {
+			var enterflag = new Array();
+			var stayflag = new Array();
+			var stamp = new Array();
+			var dist = new Array();
 			currentlocation[0] = e.coords.latitude;
 			currentlocation[1] = e.coords.longitude;
 			for ( i = 0; i < enterfile.read().length - 1; i++) {
@@ -2092,29 +2088,30 @@ if (Ti.Geolocation.locationServicesEnabled) {
 				stayflag[i] = parseFloat(stayfile.read().text.split(',')[i]);
 				stamp[i] = parseFloat(stampfile.read().text.split(',')[i]);
 				dist[i] = distance(e.coords.latitude, e.coords.longitude, points[2 * i], points[2 * i + 1]);
+				alert('first reading' + enterflag[i]);
 				if (dist[i] < centerRadius) {
 					if (!enterflag[i]) {
-					enterflag[i] = 1;
-					stamp[i] = e.coords.timestamp;
-					} else {
-					if ((e.coords.timestamp - stamp[i]) > 1000) {
-					stayflag[i] = 1;
+						enterflag[i] = 1;
+						// stamp[i] = e.coords.timestamp;
+						// } else {
+						// if ((e.coords.timestamp - stamp[i]) > 1000) {
+						// stayflag[i] = 1;
+						// }
 					}
-					}
-					} else if (enterflag[i]) {
+				} else if (enterflag[i]) {
 					var t1 = new Date;
 					enterflag[i] = 0;
-					if (stayflag[i]) {
-					hour = Math.floor((e.coords.timestamp - stamp[i]) / 3600000);
-					min = Math.floor((e.coords.timestamp - stamp[i]) / 60000) - hour * 60000;
-					if (hour > 1)
-					alert(t1.getHours() + ':' + t1.getMinutes() + '|Report your activities for ' + hour + 'hours and ' + min + ' mins' + '?');
-					else
-					alert(t1.getHours() + ':' + t1.getMinutes() + '|Report your activities for ' + min + ' mins' + '?');
-					stayflag[i] = 0;
-					}
-					alert('Report your activities?');
+					// if (stayflag[i]) {
+					// hour = Math.floor((e.coords.timestamp - stamp[i]) / 3600000);
+					// min = Math.floor((e.coords.timestamp - stamp[i]) / 60000) - hour * 60000;
+					// if (hour > 1)
+					// alert(t1.getHours() + ':' + t1.getMinutes() + '|Report your activities for ' + hour + 'hours and ' + min + ' mins' + '?');
+					// else
+					// alert(t1.getHours() + ':' + t1.getMinutes() + '|Report your activities for ' + min + ' mins' + '?');
+					// stayflag[i] = 0;
 				}
+
+				alert('2.' + enterflag[i]);
 				// alert('blah');
 				// var temp = Ti.createBuffer({
 				// length : enterflag.length,
@@ -2139,7 +2136,22 @@ if (Ti.Geolocation.locationServicesEnabled) {
 				// stampfile.write(temp.toBlob(), false);
 				// alert(enterflag);
 			}
-
+			// coords.deleteFile();
+			// coords.createFile();
+			enterfile.deleteFile();
+			enterfile.createFile();
+			// stayfile.deleteFile();
+			// stayfile.createFile();
+			// stampfile.deleteFile();
+			// stampfile.createFile();
+			for ( i = 0; i < enterflag.length; i++) {
+				enterfile.write(enterflag[i] + ',', true);
+				alert('writing' + enterflag[i]);
+			}
+			for ( i = 0; i < enterfile.read().length - 1; i++) {
+				enterflag[i] = parseFloat(enterfile.read().text.split(',')[i]);
+				alert('2 reading' + enterflag[i]);
+			}
 			// alert(mydist5 + ', '+ enterflag5+ ', '+ stayflag5+ ' fg1');
 
 			// if (mydist5 < 30) {
@@ -2180,6 +2192,7 @@ if (Ti.Geolocation.locationServicesEnabled) {
 				alert(workoutlat + ',' + workoutlong);
 				scrollable.scrollToView(vertiscroll);
 			});
+
 		}
 	});
 } else {
@@ -2215,4 +2228,3 @@ Ti.App.addEventListener('resume', function(e) {
 
 	});
 });
-
