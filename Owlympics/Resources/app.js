@@ -2050,7 +2050,7 @@ address.addEventListener('return', function(e) {
 optionsView.add(address);
 optionsView.add(addlabel);
 //unit in meters
-var centerRadius = 20;
+var centerRadius = 10;
 
 // calculate distance between two locations, distance unit in meters
 function distance(lat1, lon1, lat2, lon2) {
@@ -2072,9 +2072,9 @@ function distance(lat1, lon1, lat2, lon2) {
 var hour, min;
 
 if (Ti.Geolocation.locationServicesEnabled) {
-	Ti.Geolocation.accuracy = Ti.Geolocation.ACCURACY_HUNDRED_METERS;
-	Ti.Geolocation.distanceFilter = 5;
-	Ti.Geolocation.preferredProvider = Ti.Geolocation.PROVIDER_PROVIDER_NETWORK;
+	Ti.Geolocation.accuracy = Ti.Geolocation.ACCURACY_BEST; //ACCURACY_HUNDRED_METERS;
+	Ti.Geolocation.distanceFilter = 3;
+	Ti.Geolocation.preferredProvider = Ti.Geolocation.PROVIDER_PROVIDER_GPS;
 	// Ti.setPauseLocationUpdateAutomatically(true);
 	Ti.Geolocation.addEventListener('location', function(e) {
 		if (e.error) {
@@ -2083,47 +2083,53 @@ if (Ti.Geolocation.locationServicesEnabled) {
 			var enterflag = new Array();
 			var stayflag = new Array();
 			var stamp = new Array();
-			var point_dist  = 0;
+			var point_dist = 0;
 			currentlocation[0] = e.coords.latitude;
 			currentlocation[1] = e.coords.longitude;
-			for ( i = 0; i < enterfile.read().length - 1; i++) {
-				enterflag[i] = parseFloat(enterfile.read().text.split(',')[i]);
-				stayflag[i] = parseFloat(stayfile.read().text.split(',')[i]);
-				stamp[i] = parseFloat(stampfile.read().text.split(',')[i]);
-				point_dist = distance(e.coords.latitude, e.coords.longitude, points[2 * i], points[2 * i + 1]);
-				if (point_dist < centerRadius) {
-					if (!enterflag[i]) {
-						enterflag[i] = 1;
-						stamp[i] = e.coords.timestamp;
+			if (enterfile.exists()) {
+
+				for ( i = 0; i < enterfile.read().length - 1; i++) {
+					enterflag[i] = parseFloat(enterfile.read().text.split(',')[i]);
+					stayflag[i] = parseFloat(stayfile.read().text.split(',')[i]);
+					stamp[i] = parseFloat(stampfile.read().text.split(',')[i]);
+					point_dist = distance(e.coords.latitude, e.coords.longitude, points[2 * i], points[2 * i + 1]);
+					if (point_dist < centerRadius) {
+						if (!enterflag[i]) {
+							enterflag[i] = 1;
+							stamp[i] = e.coords.timestamp;
+						} else {
+							if ((e.coords.timestamp - stamp[i]) > 1000) {
+								stayflag[i] = 1;
+							}
+						}
 					} else {
-						if ((e.coords.timestamp - stamp[i]) > 1000) {
-							stayflag[i] = 1;
+						if (enterflag[i]) {
+							var t1 = new Date;
+							enterflag[i] = 0;
+							if (stayflag[i]) {
+								hour = Math.floor((e.coords.timestamp - stamp[i]) / 3600000);
+								min = Math.floor((e.coords.timestamp - stamp[i]) / 60000) - hour * 60000;
+								// if (hour > 1)
+								// alert(t1.getHours() + ':' + t1.getMinutes() + '|Report your activities for ' + hour + 'hours and ' + min + ' mins' + '?');
+								// else
+								alert(t1.getHours() + ':' + t1.getMinutes() + '|Report your activities for ' + min + ' mins' + '?' + ' Distance =' + point_dist);
+								stayflag[i] = 0;
+							}
 						}
 					}
-				} else if (enterflag[i]) {
-					var t1 = new Date;
-					enterflag[i] = 0;
-					if (stayflag[i]) {
-						hour = Math.floor((e.coords.timestamp - stamp[i]) / 3600000);
-						min = Math.floor((e.coords.timestamp - stamp[i]) / 60000) - hour * 60000;
-						// if (min > 1)
-						// alert(t1.getHours() + ':' + t1.getMinutes() + '|Report your activities for ' + hour + 'hours and ' + min + ' mins' + '?');
-						// else
-						alert(t1.getHours() + ':' + t1.getMinutes() + '|Report your activities for ' + min + ' mins' + '?' + ' Distance =' + point_dist);
-						stayflag[i] = 0;
-					}
+					// alert(enterflag[i] + ' ' + stayflag[i]);
 				}
-			}
-			enterfile.deleteFile();
-			enterfile.createFile();
-			stayfile.deleteFile();
-			stayfile.createFile();
-			stampfile.deleteFile();
-			stampfile.createFile();
-			for ( i = 0; i < enterflag.length; i++) {
-				enterfile.write(enterflag[i] + ',', true);
-				stampfile.write(stamp[i] + ',', true);
-				stayfile.write(stayflag[i] + ',', true);
+				enterfile.deleteFile();
+				enterfile.createFile();
+				stayfile.deleteFile();
+				stayfile.createFile();
+				stampfile.deleteFile();
+				stampfile.createFile();
+				for ( i = 0; i < enterflag.length; i++) {
+					enterfile.write(enterflag[i] + ',', true);
+					stampfile.write(stamp[i] + ',', true);
+					stayfile.write(stayflag[i] + ',', true);
+				}
 			}
 			var annot = MapModule.createAnnotation({
 				latitude : e.coords.latitude,
