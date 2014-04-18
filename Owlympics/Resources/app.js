@@ -355,7 +355,7 @@ var otherloc = Ti.UI.createTextField({
 	backgroundColor : 'white',
 	backgroundImage : 'none',
 	textAlign : 'center',
-	value : 'Type here'
+	hintText : 'Type other',
 });
 whatView.add(otherloc);
 var workout;
@@ -366,7 +366,7 @@ var selectlabel = Ti.UI.createLabel({
 	font : {
 		fontSize : 20,
 	},
-	top : '14%',
+	top : '15%',
 	textAlign : Ti.UI.TEXT_ALIGNMENT_CENTER,
 
 });
@@ -378,7 +378,7 @@ var activitybtn1 = Ti.UI.createButton({
 	font : {
 		fontSize : 18,
 	},
-	top : '17%',
+	top : '17.5%',
 	left : '10%',
 	width : 80,
 	height : 80,
@@ -393,7 +393,7 @@ var activitybtn2 = Ti.UI.createButton({
 	font : {
 		fontSize : 18,
 	},
-	top : '17%',
+	top : '17.5%',
 	left : '38.1%',
 	width : 80,
 	height : 80,
@@ -409,7 +409,7 @@ var activitybtn3 = Ti.UI.createButton({
 	font : {
 		fontSize : 18,
 	},
-	top : '17%',
+	top : '17.5%',
 	left : '66%',
 	width : 80,
 	height : 80,
@@ -462,7 +462,7 @@ var othertxt = Ti.UI.createTextField({
 	backgroundColor : 'white',
 	backgroundImage : 'none',
 	textAlign : 'center',
-	value : 'Type other',
+	hintText : 'Type other',
 });
 
 whatView.add(othertxt);
@@ -523,6 +523,7 @@ var lowtxt = Ti.UI.createTextField({
 	height : 60,
 	backgroundColor : 'white',
 	backgroundImage : 'none',
+	hintText : '0',
 	keyboardType : Titanium.UI.KEYBOARD_NUMBER_PAD,
 });
 whatView.add(lowtxt);
@@ -538,6 +539,7 @@ var medtxt = Ti.UI.createTextField({
 	height : 60,
 	backgroundColor : 'white',
 	backgroundImage : 'none',
+	hintText : '0',
 	keyboardType : Titanium.UI.KEYBOARD_NUMBER_PAD,
 });
 
@@ -554,18 +556,19 @@ var hightxt = Ti.UI.createTextField({
 	height : 60,
 	backgroundColor : 'white',
 	backgroundImage : 'none',
+	hintText : '0',
 	keyboardType : Titanium.UI.KEYBOARD_NUMBER_PAD,
 });
 whatView.add(hightxt);
 
 var socialLabel = Ti.UI.createLabel({
-	text : 'Number of participants',
+	text : 'Number of other\nparticipants',
 	color : 'white',
 	font : {
 		fontSize : 20,
 	},
-	top : '52%',
-	left : '5%',
+	top : '51%',
+	left : '10%',
 });
 whatView.add(socialLabel);
 var socialtxt = Ti.UI.createTextField({
@@ -580,7 +583,7 @@ var socialtxt = Ti.UI.createTextField({
 	backgroundColor : 'white',
 	backgroundImage : 'none',
 	keyboardType : Titanium.UI.KEYBOARD_NUMBER_PAD,
-	text : '0',
+	hintText : '0',
 });
 whatView.add(socialtxt);
 
@@ -1419,16 +1422,23 @@ win2.add(register);
 //
 var day, mon, year;
 
-// var lowtxt, medtxt, hightxt;
+var low, med, high, social;
 
 var useractivity;
 var workoutstate = '';
 function initialise() {
-	socialtxt.value = '0';
-	lowtxt.value = '0';
-	medtxt.value = '0';
-	hightxt.value = '0';
-	othertxt.value = 'Type other';
+	socialtxt.setHintText = '0';
+	lowtxt.setHintText = '0';
+	medtxt.setHintText = '0';
+	hightxt.setHintText = '0';
+	socialtxt.value = '';
+	lowtxt.value = '';
+	medtxt.value = '';
+	hightxt.value = '';
+	social = '0';
+	low = '0';
+	med = '0';
+	high = '0';
 	mydate = new Date();
 	day = mydate.getDate();
 	mon = mydate.getMonth() + 1;
@@ -1450,7 +1460,7 @@ function initialise() {
 	if (atgeotext != '') {
 		atgeo.backgroundImage = 'images/greenrect.png';
 		here.backgroundImage = 'images/grayrect.png';
-		otherloc.value = 'Type here';
+		otherloc.setHintText = 'Type other';
 		otherloc.backgroundColor = 'white';
 		workout = atgeotext;
 		workoutstate = 'Geo-fenced';
@@ -1462,7 +1472,7 @@ function initialise() {
 				workoutstate = 'Here';
 				here.backgroundImage = 'images/greenrect.png';
 				atgeo.backgroundImage = 'images/grayrect.png';
-				otherloc.value = 'Type here';
+				otherloc.setHintText = 'Type other';
 				otherloc.backgroundColor = 'white';
 			} else {
 				here.backgroundImage = 'images/grayrect.png';
@@ -1472,7 +1482,7 @@ function initialise() {
 		});
 	}
 
-	othertxt.value = 'Type other';
+	othertxt.setHintText = 'Type other';
 	othertxt.backgroundColor = 'white';
 	activitybtn1.backgroundImage = './images/gray.png';
 	activitybtn2.backgroundImage = './images/gray.png';
@@ -1505,7 +1515,7 @@ here.addEventListener('click', function(e) {
 	});
 	atgeo.backgroundImage = 'images/grayrect.png';
 	otherloc.backgroundColor = 'white';
-	otherloc.value = 'Type here';
+	otherloc.setHintText = 'Type other';
 });
 atgeo.addEventListener('click', function(e) {
 	if (atgeotext != '') {
@@ -1519,17 +1529,17 @@ atgeo.addEventListener('click', function(e) {
 		alert('Set geo-fence at a location from the options menu');
 	}
 	here.backgroundImage = 'images/grayrect.png';
-	otherloc.value = 'Type here';
+	otherloc.setHintText = 'Type other';
 	otherloc.backgroundColor = 'white';
 
 });
 otherloc.addEventListener('return', function(e) {
-	if (otherloc.value != '' && otherloc.value != 'Type here') {
+	if (otherloc.value != '') {
 		workout = otherloc.value;
 		workoutstate = workout;
 		otherloc.backgroundColor = '00cc66';
 	} else {
-		otherloc.value = 'Type here';
+		otherloc.setHintText = 'Type other';
 		otherloc.backgroundColor = 'white';
 		workoutstate = 'Location unavailable';
 		workout = '';
@@ -1540,7 +1550,7 @@ otherloc.addEventListener('return', function(e) {
 
 activitybtn1.addEventListener('click', function(e) {
 	useractivity = "Running";
-	othertxt.value = 'Type other';
+	othertxt.setHintText = 'Type other';
 	othertxt.backgroundColor = 'white';
 	activitybtn1.backgroundImage = './images/green.png';
 	activitybtn2.backgroundImage = './images/gray.png';
@@ -1552,7 +1562,7 @@ activitybtn1.addEventListener('click', function(e) {
 
 activitybtn2.addEventListener('click', function(e) {
 	useractivity = "Walking";
-	othertxt.value = 'Type other';
+	othertxt.setHintText = 'Type other';
 	othertxt.backgroundColor = 'white';
 	activitybtn1.backgroundImage = './images/gray.png';
 	activitybtn2.backgroundImage = './images/green.png';
@@ -1564,7 +1574,7 @@ activitybtn2.addEventListener('click', function(e) {
 
 activitybtn3.addEventListener('click', function(e) {
 	useractivity = "Swimming";
-	othertxt.value = 'Type other';
+	othertxt.setHintText = 'Type other';
 	othertxt.backgroundColor = 'white';
 	activitybtn1.backgroundImage = './images/gray.png';
 	activitybtn2.backgroundImage = './images/gray.png';
@@ -1576,7 +1586,7 @@ activitybtn3.addEventListener('click', function(e) {
 
 activitybtn4.addEventListener('click', function(e) {
 	useractivity = "Cycling";
-	othertxt.value = 'Type other';
+	othertxt.setHintText = 'Type other';
 	othertxt.backgroundColor = 'white';
 	activitybtn1.backgroundImage = './images/gray.png';
 	activitybtn2.backgroundImage = './images/gray.png';
@@ -1588,7 +1598,7 @@ activitybtn4.addEventListener('click', function(e) {
 
 activitybtn5.addEventListener('click', function(e) {
 	useractivity = "Weights";
-	othertxt.value = 'Type other';
+	othertxt.setHintText = 'Type other';
 	othertxt.backgroundColor = 'white';
 	activitybtn1.backgroundImage = './images/gray.png';
 	activitybtn2.backgroundImage = './images/gray.png';
@@ -1598,51 +1608,22 @@ activitybtn5.addEventListener('click', function(e) {
 
 });
 
-lowtxt.addEventListener('return', function(e) {
-	if (Titanium.Platform.name == 'android') {
-		// Android stuff
-		Ti.UI.Android.hideSoftKeyboard();
-	} else
-		lowtxt.blur();
-});
-
-medtxt.addEventListener('return', function(e) {
-	if (Titanium.Platform.name == 'android') {
-		// Android stuff
-		Ti.UI.Android.hideSoftKeyboard();
-	} else
-		medtxt.blur();
-});
-
-hightxt.addEventListener('return', function(e) {
-	if (Titanium.Platform.name == 'android') {
-		// Android stuff
-		Ti.UI.Android.hideSoftKeyboard();
-	} else
-		hightxt.blur();
-});
-
 othertxt.addEventListener('return', function(e) {
 	if (Titanium.Platform.name == 'android') {
 		// Android stuff
 		Ti.UI.Android.hideSoftKeyboard();
 	}
 	othertxt.blur();
-	if (othertxt.value != '' && othertxt.value != 'Type other') {
+	if (othertxt.value != '') {
+		useractivity = othertxt.value;
 		othertxt.backgroundColor = '00cc66';
 	} else {
-		othertxt.value = 'Type other';
+		othertxt.setHintText = 'Type other';
+		useractivity = '';
 		othertxt.backgroundColor = 'white';
 	}
 });
 
-socialtxt.addEventListener('return', function(e) {
-	if (Titanium.Platform.name == 'android') {
-		// Android stuff
-		Ti.UI.Android.hideSoftKeyboard();
-	} else
-		socialtxt.blur();
-});
 othertxt.addEventListener('change', function(e) {
 	activitybtn1.backgroundImage = './images/gray.png';
 	activitybtn2.backgroundImage = './images/gray.png';
@@ -1650,43 +1631,43 @@ othertxt.addEventListener('change', function(e) {
 	activitybtn4.backgroundImage = './images/gray.png';
 	activitybtn5.backgroundImage = './images/gray.png';
 });
-othertxt.addEventListener('doubletap', function(e) {
-	othertxt.value = '';
-});
-otherloc.addEventListener('doubletap', function(e) {
-	otherloc.value = '';
-});
-
-lowtxt.addEventListener('singletap', function(e) {
-	lowtxt.value = '';
-});
-medtxt.addEventListener('singletap', function(e) {
-	medtxt.value = '';
-});
-hightxt.addEventListener('singletap', function(e) {
-	hightxt.value = '';
-});
-socialtxt.addEventListener('singletap', function(e) {
-	socialtxt.value = '';
-});
-
-lowtxt.addEventListener('focus', function(e) {
-	if (lowtxt.value == '0' || lowtxt.value == '')
-		lowtxt.value = '';
-
-});
-medtxt.addEventListener('focus', function(e) {
-	if (medtxt.value == '0' || medtxt.value == '')
-		medtxt.value = '';
-});
-hightxt.addEventListener('focus', function(e) {
-	if (hightxt.value == '0' || hightxt.value == '')
-		hightxt.value = '';
-});
-socialtxt.addEventListener('focus', function(e) {
-	if (socialtxt.value == '0' || socialtxt.value == '')
-		socialtxt.value = '';
-});
+// othertxt.addEventListener('doubletap', function(e) {
+// othertxt.value = '';
+// });
+// otherloc.addEventListener('doubletap', function(e) {
+// otherloc.value = '';
+// });
+//
+// lowtxt.addEventListener('singletap', function(e) {
+// lowtxt.value = '';
+// });
+// medtxt.addEventListener('singletap', function(e) {
+// medtxt.value = '';
+// });
+// hightxt.addEventListener('singletap', function(e) {
+// hightxt.value = '';
+// });
+// socialtxt.addEventListener('singletap', function(e) {
+// socialtxt.value = '';
+// });
+//
+// lowtxt.addEventListener('focus', function(e) {
+// if (lowtxt.value == '0' || lowtxt.value == '')
+// lowtxt.value = '';
+//
+// });
+// medtxt.addEventListener('focus', function(e) {
+// if (medtxt.value == '0' || medtxt.value == '')
+// medtxt.value = '';
+// });
+// hightxt.addEventListener('focus', function(e) {
+// if (hightxt.value == '0' || hightxt.value == '')
+// hightxt.value = '';
+// });
+// socialtxt.addEventListener('focus', function(e) {
+// if (socialtxt.value == '0' || socialtxt.value == '')
+// socialtxt.value = '';
+// });
 
 /* Set up fields for submission */
 
@@ -1698,17 +1679,15 @@ submit.addEventListener('click', function(e) {
 	submitReq = Titanium.Network.createHTTPClient();
 	submitReq.open("POST", "http://owlympics.ecg.rice.edu:81/mobile/submit");
 	submitinfo();
-
+	initialise();
 	submitReq.onload = function() {
 		// alert(this.responseText);
 		if (this.responseText == 'Activity submission succeeded') {
-			alert("Congratulations! Your hardwork earned you " + Math.floor(100 * (lowtxt.value / 45 + medtxt.value / 30 + hightxt.value / 20) + 10 * (socialtxt.value > 0)) + " points!");
+			alert("Congratulations! Your hardwork earned you " + Math.floor(100 * (low / 45 + med / 30 + high / 20) + 10 * (social > 0)) + " points!");
 			profileUpdate();
 			scrollable.scrollToView(profileView);
-			initialise();
-
 		} else {
-			alert(this.responseText);
+			// alert('aaa' + this.responseText);
 		}
 
 	};
@@ -1720,31 +1699,27 @@ function submitinfo() {
 	if (Titanium.Network.networkType === Titanium.Network.NETWORK_NONE)
 		alert('Could not submit, Please check internet connection.');
 	else {
-		if (lowtxt.value == '')
-			lowtxt.value = '0';
-		if (medtxt.value == '')
-			medtxt.value = '0';
-		if (hightxt.value == '')
-			hightxt.value = '0';
-		// if (othertxt != '')
-		// useractivity = othertxt.value;
+		low = lowtxt.value;
+		high = hightxt.value;
+		med = medtxt.value;
+		social = socialtxt.value;
 		var alert1 = Titanium.UI.createAlertDialog({
 			title : 'Submit Data',
-			message : ("Submit the following information? " + "\n" + "Location : " + workoutstate + "\n" + "Activity : " + useractivity + " \nLow Intensity : " + lowtxt.value + " \nMed Intensity : " + medtxt.value + " \nHigh Intensity : " + hightxt.value + "\nNumber of Participants : " + socialtxt.value + "\n" + "Date : " + mon + "-" + day + "-" + year + "\nHapiness rating : " + haprate + ' stars'),
+			message : ("Submit the following information? " + "\n" + "Location : " + workoutstate + "\n" + "Activity : " + useractivity + " \nLow Intensity : " + low + " \nMed Intensity : " + med + " \nHigh Intensity : " + high + "\nNumber of Participants : " + social + "\n" + "Date : " + mon + "-" + day + "-" + year + "\nHapiness rating : " + haprate + ' stars'),
 			buttonNames : ['Yes', 'No'],
 			cancel : 1
 		});
-		if (workout != '' && useractivity != '' && day != 0 && (lowtxt.value + medtxt.value + hightxt.value) > 0) {
+		if (workout != '' && useractivity != '' && day != 0 && (low + med + high) > 0) {
 
 			var params = {
 				day : day.toString(),
 				mon : mon.toString(),
 				year : year.toString(),
 				activity : useractivity,
-				social : socialtxt.value,
-				lowintensity : lowtxt.value,
-				moderateintensity : medtxt.value,
-				highintensity : hightxt.value,
+				social : social,
+				lowintensity : low,
+				moderateintensity : med,
+				highintensity : high,
 				note : "",
 				rate : '1',
 				hour : mydate.getHours().toString(),
@@ -1891,6 +1866,7 @@ registerReq.onload = function() {
 		alert("Account successfully registered.");
 		homeWin.open();
 		scrollable.scrollToView(vertiscroll);
+		initialise();
 		win2.close();
 		//profileUpdate();
 		if (Titanium.Platform.name == 'android') {
@@ -1941,10 +1917,11 @@ scrollable.addEventListener('singletap', function() {
 		hightxt.blur();
 		socialtxt.blur();
 	}
-	if (othertxt.value != '' && othertxt.value != 'Type other') {
+	if (othertxt.value != '') {
+		useractivity = othertxt.value;
 		othertxt.backgroundColor = '00cc66';
 	} else {
-		othertxt.value = 'Type other';
+		othertxt.setHintText = 'Type other';
 		othertxt.backgroundColor = 'white';
 	}
 
@@ -1972,7 +1949,7 @@ var addlabel = Ti.UI.createLabel({
 	width : Ti.UI.SIZE,
 	height : Ti.UI.SIZE,
 	color : 'white',
-	text : '\nSet 80m Geofence \n\n\n\nor\n\nType the address without pin-code and press RETURN',
+	text : '\nSet 50m Geofence \n\n\n\nor\n\nType the address without pin-code and press RETURN',
 	font : {
 		fontSize : 20
 	},
@@ -1983,6 +1960,9 @@ var address = Ti.UI.createTextField({
 	width : '300dp',
 	top : '50%',
 	left : '3%',
+	font : {
+		fontSize : 20,
+	},
 	color : 'black',
 	borderStyle : Titanium.UI.INPUT_BORDERSTYLE_ROUNDED,
 });
@@ -2023,7 +2003,7 @@ addbutton.addEventListener('click', function(e) {
 			mapview.addAnnotation(addannot);
 			atgeotext = e.coords.latitude.toString() + ',' + e.coords.longitude.toString();
 			initialise();
-			alert('Setting geofence of 80m around current location');
+			alert('Setting geofence of 50m around current location');
 			optionsView.hide();
 			scrollable.show();
 			scrollable.scrollToView(mapview);
@@ -2064,7 +2044,7 @@ address.addEventListener('return', function(e) {
 					});
 					atgeotext = address.value;
 					initialise();
-					alert('Setting geofence of 80m around ' + address.value);
+					alert('Setting geofence of 50m around ' + address.value);
 					optionsView.hide();
 					scrollable.show();
 					scrollable.scrollToView(mapview);
@@ -2078,7 +2058,7 @@ address.addEventListener('return', function(e) {
 optionsView.add(address);
 optionsView.add(addlabel);
 //unit in meters
-var centerRadius = 10;
+var centerRadius = 50;
 
 // calculate distance between two locations, distance unit in meters
 function distance(lat1, lon1, lat2, lon2) {
@@ -2100,10 +2080,10 @@ function distance(lat1, lon1, lat2, lon2) {
 var hour, min;
 
 if (Ti.Geolocation.locationServicesEnabled) {
-	Ti.Geolocation.accuracy = Ti.Geolocation.ACCURACY_BEST;
+	Ti.Geolocation.accuracy = Ti.Geolocation.ACCURACY_HUNDRED_METERS;
 	//ACCURACY_HUNDRED_METERS;
-	Ti.Geolocation.distanceFilter = 3;
-	Ti.Geolocation.preferredProvider = Ti.Geolocation.PROVIDER_PROVIDER_GPS;
+	Ti.Geolocation.distanceFilter = 10;
+	Ti.Geolocation.preferredProvider = Ti.Geolocation.PROVIDER_PROVIDER_NETWORK;
 	// Ti.setPauseLocationUpdateAutomatically(true);
 	Ti.Geolocation.addEventListener('location', function(e) {
 		if (e.error) {
@@ -2116,7 +2096,6 @@ if (Ti.Geolocation.locationServicesEnabled) {
 			currentlocation[0] = e.coords.latitude;
 			currentlocation[1] = e.coords.longitude;
 			if (enterfile.exists()) {
-
 				for ( i = 0; i < enterfile.read().length - 1; i++) {
 					enterflag[i] = parseFloat(enterfile.read().text.split(',')[i]);
 					stayflag[i] = parseFloat(stayfile.read().text.split(',')[i]);

@@ -4,7 +4,7 @@ var pointlong = new Array();
 var accur = new Array();
 var count = 0;
 //unit in meters
-var centerRadius = 10;
+var centerRadius = 50;
 var coords = Ti.Filesystem.getFile(Ti.Filesystem.applicationDataDirectory, 'coords.txt');
 var enterfile = Ti.Filesystem.getFile(Ti.Filesystem.applicationDataDirectory, 'enterflag.txt');
 var stayfile = Ti.Filesystem.getFile(Ti.Filesystem.applicationDataDirectory, 'stayflag.txt');
@@ -34,9 +34,10 @@ Ti.Geolocation.purpose = 'Smart Reminders';
 var hour, min;
 
 if (Ti.Geolocation.locationServicesEnabled) {
-	Ti.Geolocation.accuracy = Ti.Geolocation.ACCURACY_BEST; //ACCURACY_HUNDRED_METERS;
-	Ti.Geolocation.distanceFilter = 3;
-	Ti.Geolocation.preferredProvider = Ti.Geolocation.PROVIDER_PROVIDER_GPS;
+	Ti.Geolocation.accuracy = Ti.Geolocation.ACCURACY_HUNDRED_METERS;
+	//ACCURACY_HUNDRED_METERS;
+	Ti.Geolocation.distanceFilter = 10;
+	Ti.Geolocation.preferredProvider = Ti.Geolocation.PROVIDER_PROVIDER_NETWORK;
 	Ti.Geolocation.addEventListener('location', function(e) {
 		if (e.error) {
 			// alert('Error: ' + e.error);
