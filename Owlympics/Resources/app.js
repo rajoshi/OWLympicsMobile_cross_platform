@@ -318,7 +318,7 @@ whatView.add(whereLabel);
 
 var here = Ti.UI.createButton({
 	top : '5%',
-	left : '5%',
+	left : '10%',
 	color : 'black',
 	font : {
 		fontSize : 20,
@@ -331,7 +331,7 @@ var here = Ti.UI.createButton({
 whatView.add(here);
 var atgeo = Ti.UI.createButton({
 	top : '5%',
-	left : '40%',
+	left : '45%',
 	color : 'black',
 	font : {
 		fontSize : 20,
@@ -1422,7 +1422,7 @@ var day, mon, year;
 // var lowtxt, medtxt, hightxt;
 
 var useractivity;
-
+var workoutstate = '';
 function initialise() {
 	socialtxt.value = '0';
 	lowtxt.value = '0';
@@ -1440,6 +1440,7 @@ function initialise() {
 
 	useractivity = '';
 	workout = '';
+	workoutstate = '';
 	exrate = 3, haprate = 3;
 	// rstar1.backgroundImage = './images/goldstar.png';
 	// rstar2.backgroundImage = './images/goldstar.png';
@@ -1452,6 +1453,7 @@ function initialise() {
 		otherloc.value = 'Type here';
 		otherloc.backgroundColor = 'white';
 		workout = atgeotext;
+		workoutstate = 'Geo-fenced';
 	} else {
 		here.backgroundImage = 'images/greenrect.png';
 		atgeo.backgroundImage = 'images/grayrect.png';
@@ -1461,11 +1463,22 @@ function initialise() {
 			if (e.success) {
 				// do stuff
 				workout = e.coords.latitude.toString() + ',' + e.coords.longitude.toString();
+				workoutstate = 'Here';
 			} else
 				here.backgroundImage = 'images/grayrect.png';
+			workoutstate = 'Location unavailable';
+			workout = '';
 		});
 	}
-
+	
+	othertxt.value = 'Type other';
+	othertxt.backgroundColor = 'white';
+	activitybtn1.backgroundImage = './images/gray.png';
+	activitybtn2.backgroundImage = './images/gray.png';
+	activitybtn3.backgroundImage = './images/gray.png';
+	activitybtn4.backgroundImage = './images/gray.png';
+	activitybtn5.backgroundImage = './images/gray.png';
+	
 	hstar1.backgroundImage = './images/goldstar.png';
 	hstar2.backgroundImage = './images/goldstar.png';
 	hstar3.backgroundImage = './images/goldstar.png';
@@ -1481,9 +1494,12 @@ here.addEventListener('click', function(e) {
 		if (e.success) {
 			// do stuff
 			workout = e.coords.latitude.toString() + ',' + e.coords.longitude.toString();
+			workoutstate = 'Here';
 		} else {
 			alert('Could not find your current location, please try again');
 			here.backgroundImage = 'images/grayrect.png';
+			workoutstate = 'Location unavailable';
+			workout = '';
 		}
 	});
 	atgeo.backgroundImage = 'images/grayrect.png';
@@ -1493,10 +1509,13 @@ here.addEventListener('click', function(e) {
 atgeo.addEventListener('click', function(e) {
 	if (atgeotext != '') {
 		atgeo.backgroundImage = 'images/greenrect.png';
-
 		workout = atgeotext;
+		workoutstate = 'Geo-fenced';
 	} else {
 		atgeo.backgroundImage = 'images/grayrect.png';
+		workoutstate = 'Location unavailable';
+		workout = '';
+		alert('Set geo-fence at a location from the options menu');
 	}
 	here.backgroundImage = 'images/grayrect.png';
 	otherloc.value = 'Type here';
@@ -1504,13 +1523,15 @@ atgeo.addEventListener('click', function(e) {
 
 });
 otherloc.addEventListener('return', function(e) {
-	if (otherloc.value != '') {
-		workout = e.coords.latitude.toString() + ',' + e.coords.longitude.toString();
-		otherloc.backgroundColor = 'green';
+	if (otherloc.value != ''&&otherloc.value != 'Type here') {
+		workout = otherloc.value;
+		workoutstate = workout;
+		otherloc.backgroundColor = '00cc66';
 	} else {
 		otherloc.value = 'Type here';
 		otherloc.backgroundColor = 'white';
-		alert('Could not find the location');
+		workoutstate = 'Location unavailable';
+		workout = '';
 	}
 	atgeo.backgroundImage = 'images/grayrect.png';
 	here.backgroundImage = 'images/grayrect.png';
@@ -1631,6 +1652,9 @@ othertxt.addEventListener('change', function(e) {
 othertxt.addEventListener('doubletap', function(e) {
 	othertxt.value = '';
 });
+otherloc.addEventListener('doubletap', function(e) {
+	otherloc.value = '';
+});
 
 lowtxt.addEventListener('singletap', function(e) {
 	lowtxt.value = '';
@@ -1705,7 +1729,7 @@ function submitinfo() {
 		// useractivity = othertxt.value;
 		var alert1 = Titanium.UI.createAlertDialog({
 			title : 'Submit Data',
-			message : ("Submit the following information? " + "\n" + "Location : " + workout + "\n" + "Activity : " + useractivity + " \nLow Intensity : " + lowtxt.value + " \nMed Intensity : " + medtxt.value + " \nHigh Intensity : " + hightxt.value + "\nNumber of Participants : " + socialtxt.value + "Date : " + mon + "-" + day + "-" + year + "\n" + "\nHapiness rating : " + haprate + ' stars'),
+			message : ("Submit the following information? " + "\n" + "Location : " + workoutstate + "\n" + "Activity : " + useractivity + " \nLow Intensity : " + lowtxt.value + " \nMed Intensity : " + medtxt.value + " \nHigh Intensity : " + hightxt.value + "\nNumber of Participants : " + socialtxt.value + "\n" + "Date : " + mon + "-" + day + "-" + year + "\nHapiness rating : " + haprate + ' stars'),
 			buttonNames : ['Yes', 'No'],
 			cancel : 1
 		});
@@ -1733,7 +1757,7 @@ function submitinfo() {
 			alert1.show();
 
 		} else {
-			alert("Please fill all fields; exercise, time, date ");
+			alert("Please fill all fields; location, exercise, time ");
 		}
 		alert1.addEventListener('click', function(e) {
 			Titanium.API.info('e = ' + JSON.stringify(e));
