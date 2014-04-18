@@ -336,7 +336,7 @@ var atgeo = Ti.UI.createButton({
 	font : {
 		fontSize : 20,
 	},
-	width : 150,
+	width : 140,
 	title : 'Geo-fenced',
 	backgroundImage : './images/grayrect.png',
 	backgroundImageSelected : './images/greenrect.png',
@@ -1455,22 +1455,23 @@ function initialise() {
 		workout = atgeotext;
 		workoutstate = 'Geo-fenced';
 	} else {
-		here.backgroundImage = 'images/greenrect.png';
-		atgeo.backgroundImage = 'images/grayrect.png';
-		otherloc.value = 'Type here';
-		otherloc.backgroundColor = 'white';
 		Titanium.Geolocation.getCurrentPosition(function(e) {
 			if (e.success) {
 				// do stuff
 				workout = e.coords.latitude.toString() + ',' + e.coords.longitude.toString();
 				workoutstate = 'Here';
-			} else
+				here.backgroundImage = 'images/greenrect.png';
+				atgeo.backgroundImage = 'images/grayrect.png';
+				otherloc.value = 'Type here';
+				otherloc.backgroundColor = 'white';
+			} else {
 				here.backgroundImage = 'images/grayrect.png';
-			workoutstate = 'Location unavailable';
-			workout = '';
+				workoutstate = 'Location unavailable';
+				workout = '';
+			}
 		});
 	}
-	
+
 	othertxt.value = 'Type other';
 	othertxt.backgroundColor = 'white';
 	activitybtn1.backgroundImage = './images/gray.png';
@@ -1478,7 +1479,7 @@ function initialise() {
 	activitybtn3.backgroundImage = './images/gray.png';
 	activitybtn4.backgroundImage = './images/gray.png';
 	activitybtn5.backgroundImage = './images/gray.png';
-	
+
 	hstar1.backgroundImage = './images/goldstar.png';
 	hstar2.backgroundImage = './images/goldstar.png';
 	hstar3.backgroundImage = './images/goldstar.png';
@@ -1523,7 +1524,7 @@ atgeo.addEventListener('click', function(e) {
 
 });
 otherloc.addEventListener('return', function(e) {
-	if (otherloc.value != ''&&otherloc.value != 'Type here') {
+	if (otherloc.value != '' && otherloc.value != 'Type here') {
 		workout = otherloc.value;
 		workoutstate = workout;
 		otherloc.backgroundColor = '00cc66';
