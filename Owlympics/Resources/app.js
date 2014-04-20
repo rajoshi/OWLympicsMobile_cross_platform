@@ -1551,6 +1551,7 @@ otherloc.addEventListener('return', function(e) {
 activitybtn1.addEventListener('click', function(e) {
 	useractivity = "Running";
 	othertxt.setHintText = 'Type other';
+	othertxt.value = '';
 	othertxt.backgroundColor = 'white';
 	activitybtn1.backgroundImage = './images/green.png';
 	activitybtn2.backgroundImage = './images/gray.png';
@@ -1564,6 +1565,7 @@ activitybtn2.addEventListener('click', function(e) {
 	useractivity = "Walking";
 	othertxt.setHintText = 'Type other';
 	othertxt.backgroundColor = 'white';
+	othertxt.value = '';
 	activitybtn1.backgroundImage = './images/gray.png';
 	activitybtn2.backgroundImage = './images/green.png';
 	activitybtn3.backgroundImage = './images/gray.png';
@@ -1576,6 +1578,7 @@ activitybtn3.addEventListener('click', function(e) {
 	useractivity = "Swimming";
 	othertxt.setHintText = 'Type other';
 	othertxt.backgroundColor = 'white';
+	othertxt.value = '';
 	activitybtn1.backgroundImage = './images/gray.png';
 	activitybtn2.backgroundImage = './images/gray.png';
 	activitybtn3.backgroundImage = './images/green.png';
@@ -1588,6 +1591,7 @@ activitybtn4.addEventListener('click', function(e) {
 	useractivity = "Cycling";
 	othertxt.setHintText = 'Type other';
 	othertxt.backgroundColor = 'white';
+	othertxt.value = '';
 	activitybtn1.backgroundImage = './images/gray.png';
 	activitybtn2.backgroundImage = './images/gray.png';
 	activitybtn3.backgroundImage = './images/gray.png';
@@ -1600,6 +1604,7 @@ activitybtn5.addEventListener('click', function(e) {
 	useractivity = "Weights";
 	othertxt.setHintText = 'Type other';
 	othertxt.backgroundColor = 'white';
+	othertxt.value = '';
 	activitybtn1.backgroundImage = './images/gray.png';
 	activitybtn2.backgroundImage = './images/gray.png';
 	activitybtn3.backgroundImage = './images/gray.png';
@@ -1679,7 +1684,6 @@ submit.addEventListener('click', function(e) {
 	submitReq = Titanium.Network.createHTTPClient();
 	submitReq.open("POST", "http://owlympics.ecg.rice.edu:81/mobile/submit");
 	submitinfo();
-	initialise();
 	submitReq.onload = function() {
 		// alert(this.responseText);
 		if (this.responseText == 'Activity submission succeeded') {
@@ -1689,7 +1693,7 @@ submit.addEventListener('click', function(e) {
 		} else {
 			// alert('aaa' + this.responseText);
 		}
-
+		initialise();
 	};
 	submit.backgroundImage = './images/gray.png';
 });
@@ -1986,12 +1990,8 @@ addbutton.addEventListener('click', function(e) {
 			currentlocation[0] = e.coords.latitude;
 			currentlocation[1] = e.coords.longitude;
 			coords.write(currentlocation[0] + ',' + currentlocation[1]);
-			//+ ',', true);
-			// for ( i = 0; i < coords.read().text.split(',').length; i++) {
-			// points[i] = parseFloat(coords.read().text.split(',')[i]);
-			// }
 			enterfile.write('0,', true);
-			stayfile.write('0,', true);
+			// stayfile.write('0,', true);
 			stampfile.write('0,', true);
 			var t1 = new Date();
 			var addannot = MapModule.createAnnotation({
@@ -2027,11 +2027,8 @@ address.addEventListener('return', function(e) {
 				if (this.responseText != '') {
 					var addJSON = JSON.parse(this.responseText);
 					coords.write(addJSON.results[0].geometry.location.lat + ',' + addJSON.results[0].geometry.location.lng + ',', true);
-					// for ( i = 0; i < coords.read().text.split(',').length; i++) {
-					// points[i] = parseFloat(coords.read().text.split(',')[i]);
-					// }
 					enterfile.write('0,', true);
-					stayfile.write('0,', true);
+					// stayfile.write('0,', true);
 					stampfile.write('0,', true);
 					Ti.Geolocation.forwardGeocoder(address.value, function(e) {
 						var addannot = MapModule.createAnnotation({
@@ -2058,7 +2055,7 @@ address.addEventListener('return', function(e) {
 optionsView.add(address);
 optionsView.add(addlabel);
 //unit in meters
-var centerRadius = 50;
+var centerRadius = 20;
 
 // calculate distance between two locations, distance unit in meters
 function distance(lat1, lon1, lat2, lon2) {
@@ -2082,7 +2079,7 @@ var hour, min;
 if (Ti.Geolocation.locationServicesEnabled) {
 	Ti.Geolocation.accuracy = Ti.Geolocation.ACCURACY_HUNDRED_METERS;
 	//ACCURACY_HUNDRED_METERS;
-	Ti.Geolocation.distanceFilter = 10;
+	Ti.Geolocation.distanceFilter = 5;
 	Ti.Geolocation.preferredProvider = Ti.Geolocation.PROVIDER_PROVIDER_NETWORK;
 	// Ti.setPauseLocationUpdateAutomatically(true);
 	Ti.Geolocation.addEventListener('location', function(e) {
@@ -2090,55 +2087,57 @@ if (Ti.Geolocation.locationServicesEnabled) {
 			// alert('Error: ' + e.error);
 		} else {
 			var enterflag = new Array();
-			var stayflag = new Array();
+			// var stayflag = new Array();
 			var stamp = new Array();
 			var point_dist = 0;
 			currentlocation[0] = e.coords.latitude;
 			currentlocation[1] = e.coords.longitude;
-			if (enterfile.exists()) {
-				for ( i = 0; i < enterfile.read().length - 1; i++) {
-					enterflag[i] = parseFloat(enterfile.read().text.split(',')[i]);
-					stayflag[i] = parseFloat(stayfile.read().text.split(',')[i]);
-					stamp[i] = parseFloat(stampfile.read().text.split(',')[i]);
-					point_dist = distance(e.coords.latitude, e.coords.longitude, parseFloat(coords.read().text.split(',')[2 * i]), parseFloat(coords.read().text.split(',')[2 * i + 1]));
-					if (point_dist < centerRadius) {
-						if (!enterflag[i]) {
-							enterflag[i] = 1;
-							stamp[i] = e.coords.timestamp;
-						} else {
-							if ((e.coords.timestamp - stamp[i]) > 1000) {
-								stayflag[i] = 1;
-							}
-						}
-					} else {
-						if (enterflag[i]) {
-							var t1 = new Date;
-							enterflag[i] = 0;
-							if (stayflag[i]) {
-								hour = Math.floor((e.coords.timestamp - stamp[i]) / 3600000);
-								min = Math.floor((e.coords.timestamp - stamp[i]) / 60000) - hour * 60000;
-								// if (hour > 1)
-								// alert(t1.getHours() + ':' + t1.getMinutes() + '|Report your activities for ' + hour + 'hours and ' + min + ' mins' + '?');
-								// else
-								alert(t1.getHours() + ':' + t1.getMinutes() + '|Report your activities for ' + min + ' mins' + '?' + ' Distance =' + point_dist);
-								stayflag[i] = 0;
-							}
-						}
-					}
-					// alert(enterflag[i] + ' ' + stayflag[i]);
+			// if (enterfile.exists()) {
+			// for ( i = 0; i < enterfile.read().length - 1; i++) {
+			enterflag[i] = parseFloat(enterfile.read().text.split(',')[i]);
+			// stayflag[i] = parseFloat(stayfile.read().text.split(',')[i]);
+			i = 0;
+			stamp[i] = parseFloat(stampfile.read().text.split(',')[i]);
+			point_dist = distance(e.coords.latitude, e.coords.longitude, parseFloat(coords.read().text.split(',')[2 * i]), parseFloat(coords.read().text.split(',')[2 * i + 1]));
+			if (point_dist < centerRadius) {
+				if (!enterflag[i]) {
+					enterflag[i] = 1;
+					stamp[i] = e.coords.timestamp;
 				}
-				enterfile.deleteFile();
-				enterfile.createFile();
-				stayfile.deleteFile();
-				stayfile.createFile();
-				stampfile.deleteFile();
-				stampfile.createFile();
-				for ( i = 0; i < enterflag.length; i++) {
-					enterfile.write(enterflag[i] + ',', true);
-					stampfile.write(stamp[i] + ',', true);
-					stayfile.write(stayflag[i] + ',', true);
+				// else {
+				// if ((e.coords.timestamp - stamp[i]) > 1000) {
+				// stayflag[i] = 1;
+				// }
+				// }
+			} else {
+				if (enterflag[i]) {
+					var t1 = new Date;
+					enterflag[i] = 0;
+					// if (stayflag[i]) {
+					hour = Math.floor((e.coords.timestamp - stamp[i]) / 3600000);
+					min = Math.floor((e.coords.timestamp - stamp[i]) / 60000) - hour * 60000;
+					if (hour > 1)
+						alert(t1.getHours() + ':' + t1.getMinutes() + '|Report your activities for ' + hour + 'hours and ' + min + ' mins' + '?' + ' Distance =' + point_dist);
+					else
+						alert(t1.getHours() + ':' + t1.getMinutes() + '|Report your activities for ' + min + ' mins' + '?' + ' Distance =' + point_dist);
+					// stayflag[i] = 0;
+					// }
 				}
 			}
+			// alert(enterflag[i] + ' ' + stayflag[i]);
+			// }
+			enterfile.deleteFile();
+			enterfile.createFile();
+			// stayfile.deleteFile();
+			// stayfile.createFile();
+			stampfile.deleteFile();
+			stampfile.createFile();
+			for ( i = 0; i < enterflag.length; i++) {
+				enterfile.write(enterflag[i] + ',', true);
+				stampfile.write(stamp[i] + ',', true);
+				// stayfile.write(stayflag[i] + ',', true);
+			}
+			// }
 			var annot = MapModule.createAnnotation({
 				latitude : e.coords.latitude,
 				longitude : e.coords.longitude,
@@ -2153,25 +2152,37 @@ if (Ti.Geolocation.locationServicesEnabled) {
 }
 
 Ti.App.addEventListener('resume', function(e) {
-	var pointlat = new Array();
-	var pointlong = new Array();
-	var point_dist = new Array();
-	var leng;
+	// var pointlat = new Array();
+	// var pointlong = new Array();
+	// var point_dist = new Array();
+	// var leng;
 	Ti.App.addEventListener('Gvariables', function(event) {
-		pointlat = event.blahlat;
-		pointlong = event.blahlong;
-		leng = event.length;
-		point_dist = event.accuracy;
-		for ( i = 0; i <= leng; i++) {
-			var annot1 = MapModule.createAnnotation({
-				latitude : pointlat[i],
-				longitude : pointlong[i],
-				title : point_dist[i].toString(),
-				animate : true,
-				pincolor : MapModule.ANNOTATION_RED,
-			});
-			mapview.addAnnotation(annot1);
+		// pointlat = event.blahlat;
+		// pointlong = event.blahlong;
+		// leng = event.length;
+		// point_dist = event.accuracy;
+		// for ( i = 0; i <= leng; i++) {
+		// var annot1 = MapModule.createAnnotation({
+		// latitude : pointlat[i],
+		// longitude : pointlong[i],
+		// title : point_dist[i].toString(),
+		// animate : true,
+		// pincolor : MapModule.ANNOTATION_RED,
+		// });
+		// mapview.addAnnotation(annot1);
+		// }
+		enterflag = event.enterflag;
+		stamp = event.stamp;
+		enterfile.deleteFile();
+		enterfile.createFile();
+		// stayfile.deleteFile();
+		// stayfile.createFile();
+		stampfile.deleteFile();
+		stampfile.createFile();
+		for ( i = 0; i < enterflag.length; i++) {
+			enterfile.write(enterflag[i] + ',', true);
+			stampfile.write(stamp[i] + ',', true);
+			// stayfile.write(stayflag[i] + ',', true);
 		}
-
 	});
 });
