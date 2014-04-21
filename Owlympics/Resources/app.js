@@ -1968,18 +1968,19 @@ var addbutton = Ti.UI.createButton({
 	backgroundImageSelected : './images/greenrect.png',
 });
 optionsView.add(addbutton);
-var enterflag = 0;
-var stamp = 0;
+var enterflag = new Array;
+var stamp = new Array;
+var numofgeolocs = 0;
 addbutton.addEventListener('click', function(e) {
 	Titanium.Geolocation.getCurrentPosition(function(e) {
 		if (e.success) {
 			// do stuff
 			currentlocation[0] = e.coords.latitude;
 			currentlocation[1] = e.coords.longitude;
-			coords.write(currentlocation[0] + ',' + currentlocation[1]);
-			enterflag = 0;
-			stamp = 0;
-				alert(enterflag + ',' + stamp);
+			coords.write(currentlocation[0] + ',' + currentlocation[1] + ',' + true);
+			enterflag[numofgeolocs] = 0;
+			stamp[numofgeolocs] = 0;
+			numofgeolocs = numofgeolocs + 1;
 			var t1 = new Date();
 			var addannot1 = MapModule.createAnnotation({
 				latitude : currentlocation[0],
@@ -2014,8 +2015,9 @@ address.addEventListener('return', function(e) {
 				if (this.responseText != '') {
 					var addJSON = JSON.parse(this.responseText);
 					coords.write(addJSON.results[0].geometry.location.lat + ',' + addJSON.results[0].geometry.location.lng + ',', true);
-					enterflag = 0;
-			stamp = 0;
+					enterflag[numofgeolocs] = 0;
+					stamp[numofgeolocs] = 0;
+					numofgeolocs = numofgeolocs + 1;
 					Ti.Geolocation.forwardGeocoder(address.value, function(e) {
 						var addannot = MapModule.createAnnotation({
 							latitude : addJSON.results[0].geometry.location.lat,
@@ -2074,45 +2076,46 @@ if (Ti.Geolocation.locationServicesEnabled) {
 			var point_dist = 0;
 			currentlocation[0] = e.coords.latitude;
 			currentlocation[1] = e.coords.longitude;
-			point_dist = distance(e.coords.latitude, e.coords.longitude, parseFloat(coords.read().text.split(',')[0]), parseFloat(coords.read().text.split(',')[1]));
-			if (point_dist < centerRadius) {
-				if (!enterflag) {
-					enterflag = 1;
-					stamp = e.coords.timestamp;
-				}
-			} else {
-				if (enterflag) {
-					var t1 = new Date;
-					enterflag = 0;
-					if (e.coords.timestamp - stamp > 1000) {
-						hour = Math.floor((e.coords.timestamp - stamp) / 3600000);
-						min = Math.floor((e.coords.timestamp - stamp) / 60000) - hour * 60000;
-						if (hour > 1)
-						alert(t1.getHours() + ':' + t1.getMinutes() + '|Report your activities?');// for ' + hour + 'hours and ' + min + ' mins' + '?' + ' Distance =' + point_dist);
-						else
-						alert(t1.getHours() + ':' + t1.getMinutes() + '|Report your activities?');// for ' + min + ' mins' + '?' + ' Distance =' + point_dist);
-						if (hour > 1) {
-							var notification = Ti.App.iOS.scheduleLocalNotification({
-								alertBody : t1.getHours() + ':' + t1.getMinutes() + '|Report your activities for ' + hour + 'hours and ' + min + ' mins' + '?' + ' Distance =' + point_dist,
-								alertAction : "Re-Launch!",
-								userInfo : {
-									"hello" : "world"
-								},
-								sound : "pop.caf",
-								date : new Date(new Date().getTime()), // 3 seconds after backgrounding
-								hasAction : true,
-							});
-						} else {
-							var notification = Ti.App.iOS.scheduleLocalNotification({
-								alertBody : t1.getHours() + ':' + t1.getMinutes() + '|Report your activities for ' + min + ' mins' + '?' + ' Distance =' + point_dist,
-								alertAction : "Re-Launch!",
-								userInfo : {
-									"hello" : "world"
-								},
-								sound : "pop.caf",
-								date : new Date(new Date().getTime()), // send immediately
-								hasAction : true,
-							});
+			for ( i = 0; i < numofgeolocs; i++) {
+				point_dist = distance(e.coords.latitude, e.coords.longitude, parseFloat(coords.read().text.split(',')[2 * i]), parseFloat(coords.read().text.split(',')[2 * i + 1]));
+				if (point_dist < centerRadius) {
+					if (!enterflag[i]) {
+						enterflag[i] = 1;
+						stamp[i] = e.coords.timestamp;
+					}
+				} else {
+					if (enterflag[i]) {
+						var t1 = new Date;
+						enterflag[i] = 0;
+						if (e.coords.timestamp - stamp[i] > 1000) {
+							hour = Math.floor((e.coords.timestamp - stamp[i]) / 3600000);
+							min = Math.floor((e.coords.timestamp - stamp[i]) / 60000) - hour * 60000;
+							if (hour > 1) {
+								var notification = Ti.App.iOS.scheduleLocalNotification({
+									alertBody : t1.getHours() + ':' + t1.getMinutes() + '|Report your activities for ' + hour + 'hours and ' + min + ' mins' + '?' + ' Distance =' + point_dist,
+									alertAction : "Re-Launch!",
+									userInfo : {
+										"hello" : "world"
+									},
+									sound : "pop.caf",
+									date : new Date(new Date().getTime()), // 3 seconds after backgrounding
+									hasAction : true,
+								});
+								alert(t1.getHours() + ':' + t1.getMinutes() + '|Report your activities?');
+							} else {
+								var notification = Ti.App.iOS.scheduleLocalNotification({
+									alertBody : t1.getHours() + ':' + t1.getMinutes() + '|Report your activities for ' + min + ' mins' + '?' + ' Distance =' + point_dist,
+									alertAction : "Re-Launch!",
+									userInfo : {
+										"hello" : "world"
+									},
+									sound : "pop.caf",
+									date : new Date(new Date().getTime()), // send immediately
+									hasAction : true,
+								});
+								alert(t1.getHours() + ':' + t1.getMinutes() + '|Report your activities?');
+							}
+
 						}
 					}
 				}
@@ -2122,7 +2125,3 @@ if (Ti.Geolocation.locationServicesEnabled) {
 } else {
 	alert('Please enable location services');
 }
-
-Ti.App.addEventListener('resumed', function(e) {
-	alert(enterflag + ',' + stamp);
-});
