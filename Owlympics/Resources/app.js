@@ -1994,13 +1994,13 @@ addbutton.addEventListener('click', function(e) {
 			// stayfile.write('0,', true);
 			stampfile.write('0,', true);
 			var t1 = new Date();
-			var addannot = MapModule.createAnnotation({
+			var addannot1 = MapModule.createAnnotation({
 				latitude : currentlocation[0],
 				longitude : currentlocation[1],
 				title : 'Current location at ' + t1.getHours() + ':' + t1.getMinutes(),
 				pincolor : MapModule.ANNOTATION_GREEN,
 			});
-			mapview.addAnnotation(addannot);
+			mapview.addAnnotation(addannot1);
 			atgeotext = e.coords.latitude.toString() + ',' + e.coords.longitude.toString();
 			initialise();
 			alert('Setting geofence of 50m around current location');
@@ -2055,7 +2055,7 @@ address.addEventListener('return', function(e) {
 optionsView.add(address);
 optionsView.add(addlabel);
 //unit in meters
-var centerRadius = 20;
+var centerRadius = 40;
 
 // calculate distance between two locations, distance unit in meters
 function distance(lat1, lon1, lat2, lon2) {
@@ -2075,7 +2075,8 @@ function distance(lat1, lon1, lat2, lon2) {
 };
 
 var hour, min;
-
+var enterflag = 0;
+var stamp = 0;
 if (Ti.Geolocation.locationServicesEnabled) {
 	Ti.Geolocation.accuracy = Ti.Geolocation.ACCURACY_HUNDRED_METERS;
 	//ACCURACY_HUNDRED_METERS;
@@ -2086,103 +2087,49 @@ if (Ti.Geolocation.locationServicesEnabled) {
 		if (e.error) {
 			// alert('Error: ' + e.error);
 		} else {
-			var enterflag = new Array();
-			// var stayflag = new Array();
-			var stamp = new Array();
 			var point_dist = 0;
 			currentlocation[0] = e.coords.latitude;
 			currentlocation[1] = e.coords.longitude;
-			// if (enterfile.exists()) {
-			// for ( i = 0; i < enterfile.read().length - 1; i++) {
-			enterflag[i] = parseFloat(enterfile.read().text.split(',')[i]);
-			// stayflag[i] = parseFloat(stayfile.read().text.split(',')[i]);
-			i = 0;
-			stamp[i] = parseFloat(stampfile.read().text.split(',')[i]);
-			point_dist = distance(e.coords.latitude, e.coords.longitude, parseFloat(coords.read().text.split(',')[2 * i]), parseFloat(coords.read().text.split(',')[2 * i + 1]));
+			enterflag = parseFloat(enterfile.read().text.split(',')[0]);
+			stamp = parseFloat(stampfile.read().text.split(',')[0]);
+			point_dist = distance(e.coords.latitude, e.coords.longitude, parseFloat(coords.read().text.split(',')[0]), parseFloat(coords.read().text.split(',')[1]));
 			if (point_dist < centerRadius) {
-				if (!enterflag[i]) {
-					enterflag[i] = 1;
-					stamp[i] = e.coords.timestamp;
+				if (!enterflag) {
+					enterflag = 1;
+					stamp = e.coords.timestamp;
 				}
-				// else {
-				// if ((e.coords.timestamp - stamp[i]) > 1000) {
-				// stayflag[i] = 1;
-				// }
-				// }
 			} else {
-				if (enterflag[i]) {
+				if (enterflag) {
 					var t1 = new Date;
-					enterflag[i] = 0;
-					// if (stayflag[i]) {
-					hour = Math.floor((e.coords.timestamp - stamp[i]) / 3600000);
-					min = Math.floor((e.coords.timestamp - stamp[i]) / 60000) - hour * 60000;
-					if (hour > 1)
-						alert(t1.getHours() + ':' + t1.getMinutes() + '|Report your activities for ' + hour + 'hours and ' + min + ' mins' + '?' + ' Distance =' + point_dist);
-					else
-						alert(t1.getHours() + ':' + t1.getMinutes() + '|Report your activities for ' + min + ' mins' + '?' + ' Distance =' + point_dist);
-					// stayflag[i] = 0;
-					// }
+					enterflag = 0;
+					if (e.coords.timestamp - stamp > 1000) {
+						hour = Math.floor((e.coords.timestamp - stamp) / 3600000);
+						min = Math.floor((e.coords.timestamp - stamp) / 60000) - hour * 60000;
+						if (hour > 1)
+							alert(t1.getHours() + ':' + t1.getMinutes() + '|Report your activities?');// for ' + hour + 'hours and ' + min + ' mins' + '?' + ' Distance =' + point_dist);
+						else
+							alert(t1.getHours() + ':' + t1.getMinutes() + '|Report your activities?');// for ' + min + ' mins' + '?' + ' Distance =' + point_dist);
+					}
 				}
 			}
-			// alert(enterflag[i] + ' ' + stayflag[i]);
-			// }
+
 			enterfile.deleteFile();
 			enterfile.createFile();
-			// stayfile.deleteFile();
-			// stayfile.createFile();
 			stampfile.deleteFile();
 			stampfile.createFile();
-			for ( i = 0; i < enterflag.length; i++) {
-				enterfile.write(enterflag[i] + ',', true);
-				stampfile.write(stamp[i] + ',', true);
-				// stayfile.write(stayflag[i] + ',', true);
-			}
+			enterfile.write(enterflag + ',', true);
+			stampfile.write(stamp + ',', true);
 			// }
-			var annot = MapModule.createAnnotation({
-				latitude : e.coords.latitude,
-				longitude : e.coords.longitude,
-				title : point_dist,
-				pincolor : MapModule.ANNOTATION_RED,
-			});
-			mapview.addAnnotation(annot);
+			// var annot = MapModule.createAnnotation({
+			// latitude : e.coords.latitude,
+			// longitude : e.coords.longitude,
+			// title : point_dist,
+			// pincolor : MapModule.ANNOTATION_RED,
+			// });
+			// mapview.addAnnotation(annot);
 		}
 	});
 } else {
 	alert('Please enable location services');
 }
 
-Ti.App.addEventListener('resume', function(e) {
-	// var pointlat = new Array();
-	// var pointlong = new Array();
-	// var point_dist = new Array();
-	// var leng;
-	Ti.App.addEventListener('Gvariables', function(event) {
-		// pointlat = event.blahlat;
-		// pointlong = event.blahlong;
-		// leng = event.length;
-		// point_dist = event.accuracy;
-		// for ( i = 0; i <= leng; i++) {
-		// var annot1 = MapModule.createAnnotation({
-		// latitude : pointlat[i],
-		// longitude : pointlong[i],
-		// title : point_dist[i].toString(),
-		// animate : true,
-		// pincolor : MapModule.ANNOTATION_RED,
-		// });
-		// mapview.addAnnotation(annot1);
-		// }
-		enterflag = event.enterflag;
-		stamp = event.stamp;
-		enterfile.deleteFile();
-		enterfile.createFile();
-		// stayfile.deleteFile();
-		// stayfile.createFile();
-		stampfile.deleteFile();
-		stampfile.createFile();
-		for ( i = 0; i < enterflag.length; i++) {
-			enterfile.write(enterflag[i] + ',', true);
-			stampfile.write(stamp[i] + ',', true);
-			// stayfile.write(stayflag[i] + ',', true);
-		}
-	});
-});
