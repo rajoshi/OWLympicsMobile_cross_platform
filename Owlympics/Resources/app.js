@@ -1437,6 +1437,10 @@ function initialise() {
 	workout = '';
 	workoutstate = '';
 	exrate = 3, haprate = 3;
+	lowtxt.backgroundColor = 'white';
+	medtxt.backgroundColor = 'white';
+	hightxt.backgroundColor = 'white';
+	social.backgroundColor = 'white';
 	// rstar1.backgroundImage = './images/goldstar.png';
 	// rstar2.backgroundImage = './images/goldstar.png';
 	// rstar3.backgroundImage = './images/goldstar.png';
@@ -1674,11 +1678,11 @@ submit.addEventListener('click', function(e) {
 		if (this.responseText == 'Activity submission succeeded') {
 			alert("Congratulations! Your hardwork earned you " + Math.floor(100 * (low / 45 + med / 30 + high / 20) + 10 * (social > 0)) + " points!");
 			profileUpdate();
+			initialise();
 			scrollable.scrollToView(profileView);
 		} else {
-			// alert('aaa' + this.responseText);
+			alert('aaa' + this.responseText);
 		}
-		initialise();
 	};
 	submit.backgroundImage = './images/gray.png';
 });
@@ -1698,6 +1702,14 @@ function submitinfo() {
 			buttonNames : ['Yes', 'No'],
 			cancel : 1
 		});
+		if (low == '')
+			low = '0';
+		if (high == '')
+			high = '0';
+		if (med == '')
+			med = '0';
+		if (social == '')
+			social = '0';
 		if (workout != '' && useractivity != '' && day != 0 && (low + med + high) > 0) {
 
 			var params = {
@@ -2125,3 +2137,6 @@ if (Ti.Geolocation.locationServicesEnabled) {
 } else {
 	alert('Please enable location services');
 }
+Ti.App.addEventListener('resumed', function(e) {
+		alert(enterflag + '; ' + stamp);
+}); 
