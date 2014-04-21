@@ -47,21 +47,6 @@ if (coords.exists() && coords.writable) {
 	coords.createFile();
 }
 
-var enterfile = Ti.Filesystem.getFile(Ti.Filesystem.applicationDataDirectory, 'enterflag.txt');
-if (enterfile.exists() && enterfile.writable) {
-	enterfile.deleteFile();
-	enterfile.createFile();
-}
-var stayfile = Ti.Filesystem.getFile(Ti.Filesystem.applicationDataDirectory, 'stayflag.txt');
-if (stayfile.exists() && stayfile.writable) {
-	stayfile.deleteFile();
-	stayfile.createFile();
-}
-var stampfile = Ti.Filesystem.getFile(Ti.Filesystem.applicationDataDirectory, 'stamp.txt');
-if (stampfile.exists() && stampfile.writable) {
-	stampfile.deleteFile();
-	stampfile.createFile();
-}
 //Initialization
 
 var currentlocation = new Array();
@@ -1983,6 +1968,8 @@ var addbutton = Ti.UI.createButton({
 	backgroundImageSelected : './images/greenrect.png',
 });
 optionsView.add(addbutton);
+var enterflag = 0;
+var stamp = 0;
 addbutton.addEventListener('click', function(e) {
 	Titanium.Geolocation.getCurrentPosition(function(e) {
 		if (e.success) {
@@ -1990,9 +1977,9 @@ addbutton.addEventListener('click', function(e) {
 			currentlocation[0] = e.coords.latitude;
 			currentlocation[1] = e.coords.longitude;
 			coords.write(currentlocation[0] + ',' + currentlocation[1]);
-			enterfile.write('0,', true);
-			// stayfile.write('0,', true);
-			stampfile.write('0,', true);
+			enterflag = 0;
+			stamp = 0;
+				alert(enterflag + ',' + stamp);
 			var t1 = new Date();
 			var addannot1 = MapModule.createAnnotation({
 				latitude : currentlocation[0],
@@ -2027,9 +2014,8 @@ address.addEventListener('return', function(e) {
 				if (this.responseText != '') {
 					var addJSON = JSON.parse(this.responseText);
 					coords.write(addJSON.results[0].geometry.location.lat + ',' + addJSON.results[0].geometry.location.lng + ',', true);
-					enterfile.write('0,', true);
-					// stayfile.write('0,', true);
-					stampfile.write('0,', true);
+					enterflag = 0;
+			stamp = 0;
 					Ti.Geolocation.forwardGeocoder(address.value, function(e) {
 						var addannot = MapModule.createAnnotation({
 							latitude : addJSON.results[0].geometry.location.lat,
@@ -2055,7 +2041,7 @@ address.addEventListener('return', function(e) {
 optionsView.add(address);
 optionsView.add(addlabel);
 //unit in meters
-var centerRadius = 40;
+var centerRadius = 20;
 
 // calculate distance between two locations, distance unit in meters
 function distance(lat1, lon1, lat2, lon2) {
@@ -2075,8 +2061,7 @@ function distance(lat1, lon1, lat2, lon2) {
 };
 
 var hour, min;
-var enterflag = 0;
-var stamp = 0;
+
 if (Ti.Geolocation.locationServicesEnabled) {
 	Ti.Geolocation.accuracy = Ti.Geolocation.ACCURACY_HUNDRED_METERS;
 	//ACCURACY_HUNDRED_METERS;
@@ -2085,13 +2070,10 @@ if (Ti.Geolocation.locationServicesEnabled) {
 	// Ti.setPauseLocationUpdateAutomatically(true);
 	Ti.Geolocation.addEventListener('location', function(e) {
 		if (e.error) {
-			// alert('Error: ' + e.error);
 		} else {
 			var point_dist = 0;
 			currentlocation[0] = e.coords.latitude;
 			currentlocation[1] = e.coords.longitude;
-			enterflag = parseFloat(enterfile.read().text.split(',')[0]);
-			stamp = parseFloat(stampfile.read().text.split(',')[0]);
 			point_dist = distance(e.coords.latitude, e.coords.longitude, parseFloat(coords.read().text.split(',')[0]), parseFloat(coords.read().text.split(',')[1]));
 			if (point_dist < centerRadius) {
 				if (!enterflag) {
@@ -2106,30 +2088,41 @@ if (Ti.Geolocation.locationServicesEnabled) {
 						hour = Math.floor((e.coords.timestamp - stamp) / 3600000);
 						min = Math.floor((e.coords.timestamp - stamp) / 60000) - hour * 60000;
 						if (hour > 1)
-							alert(t1.getHours() + ':' + t1.getMinutes() + '|Report your activities?');// for ' + hour + 'hours and ' + min + ' mins' + '?' + ' Distance =' + point_dist);
+						alert(t1.getHours() + ':' + t1.getMinutes() + '|Report your activities?');// for ' + hour + 'hours and ' + min + ' mins' + '?' + ' Distance =' + point_dist);
 						else
-							alert(t1.getHours() + ':' + t1.getMinutes() + '|Report your activities?');// for ' + min + ' mins' + '?' + ' Distance =' + point_dist);
+						alert(t1.getHours() + ':' + t1.getMinutes() + '|Report your activities?');// for ' + min + ' mins' + '?' + ' Distance =' + point_dist);
+						if (hour > 1) {
+							var notification = Ti.App.iOS.scheduleLocalNotification({
+								alertBody : t1.getHours() + ':' + t1.getMinutes() + '|Report your activities for ' + hour + 'hours and ' + min + ' mins' + '?' + ' Distance =' + point_dist,
+								alertAction : "Re-Launch!",
+								userInfo : {
+									"hello" : "world"
+								},
+								sound : "pop.caf",
+								date : new Date(new Date().getTime()), // 3 seconds after backgrounding
+								hasAction : true,
+							});
+						} else {
+							var notification = Ti.App.iOS.scheduleLocalNotification({
+								alertBody : t1.getHours() + ':' + t1.getMinutes() + '|Report your activities for ' + min + ' mins' + '?' + ' Distance =' + point_dist,
+								alertAction : "Re-Launch!",
+								userInfo : {
+									"hello" : "world"
+								},
+								sound : "pop.caf",
+								date : new Date(new Date().getTime()), // send immediately
+								hasAction : true,
+							});
+						}
 					}
 				}
 			}
-
-			enterfile.deleteFile();
-			enterfile.createFile();
-			stampfile.deleteFile();
-			stampfile.createFile();
-			enterfile.write(enterflag + ',', true);
-			stampfile.write(stamp + ',', true);
-			// }
-			// var annot = MapModule.createAnnotation({
-			// latitude : e.coords.latitude,
-			// longitude : e.coords.longitude,
-			// title : point_dist,
-			// pincolor : MapModule.ANNOTATION_RED,
-			// });
-			// mapview.addAnnotation(annot);
 		}
 	});
 } else {
 	alert('Please enable location services');
 }
 
+Ti.App.addEventListener('resumed', function(e) {
+	alert(enterflag + ',' + stamp);
+});
