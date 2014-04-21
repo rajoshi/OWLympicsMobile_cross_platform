@@ -810,6 +810,8 @@ monthName = function(e) {
 	return e;
 };
 var oldDay = 1;
+var dayOfMonth = 1;
+var today = 1;
 // Calendar Main Function
 var calView = function(a, b, c, f) {
 	var nameOfMonth = monthName(b);
@@ -824,7 +826,7 @@ var calView = function(a, b, c, f) {
 
 	//set the time
 	var daysInMonth = 32 - new Date(a, b, 32).getDate();
-	var dayOfMonth = new Date(a, b, c).getDate();
+	dayOfMonth = new Date(a, b, c).getDate();
 	var dayOfWeek = new Date(a, b, 1).getDay();
 	var daysInLastMonth = 32 - new Date(a, b - 1, 32).getDate();
 	var daysInNextMonth = (new Date(a, b, daysInMonth).getDay()) - 6;
@@ -862,6 +864,7 @@ var calView = function(a, b, c, f) {
 				newDay.backgroundColor = '#00cc66';
 				// green today date colot
 				oldDay = newDay;
+				today = newDay;
 			}
 			if (i < dayOfMonth - 14) {
 				newDay.color = '#8e959f';
@@ -1424,6 +1427,7 @@ function initialise() {
 	low = '0';
 	med = '0';
 	high = '0';
+	/*---- resetting date and calendar ----*/
 	mydate = new Date();
 	day = mydate.getDate();
 	mon = mydate.getMonth() + 1;
@@ -1432,7 +1436,18 @@ function initialise() {
 	a = mydate.getFullYear();
 	b = mydate.getMonth();
 	c = mydate.getDate();
+	if (oldDay.text < dayOfMonth && oldDay.text > dayOfMonth - 14) {
+		oldDay.color = '#3a4756';
+		oldDay.backgroundColor = '#DCDCDF';
+		// light light gray (deselects the number)
+	}
+	oldDay.backgroundPaddingLeft = '0dp';
+	oldDay.backgroundPaddingBottom = '0dp';
+	oldDay = today;
+	oldDay.color = 'white';
+	oldDay.backgroundColor = '#00cc66';
 
+	/*---- resetting activity ----*/
 	useractivity = '';
 	workout = '';
 	workoutstate = '';
@@ -1503,6 +1518,7 @@ here.addEventListener('click', function(e) {
 		}
 	});
 	atgeo.backgroundImage = 'images/grayrect.png';
+	otherloc.value = '';
 	otherloc.backgroundColor = 'white';
 	otherloc.setHintText = 'Type other';
 });
@@ -1518,6 +1534,7 @@ atgeo.addEventListener('click', function(e) {
 		alert('Set geo-fence at a location from the options menu');
 	}
 	here.backgroundImage = 'images/grayrect.png';
+	otherloc.value = '';
 	otherloc.setHintText = 'Type other';
 	otherloc.backgroundColor = 'white';
 
@@ -1645,11 +1662,12 @@ othertxt.addEventListener('change', function(e) {
 // socialtxt.value = '';
 // });
 //
-// lowtxt.addEventListener('focus', function(e) {
-// if (lowtxt.value == '0' || lowtxt.value == '')
-// lowtxt.value = '';
-//
-// });
+othertxt.addEventListener('focus', function(e) {
+	othertxt.value = '';
+});
+otherloc.addEventListener('focus', function(e) {
+	otherloc.value = '';
+});
 // medtxt.addEventListener('focus', function(e) {
 // if (medtxt.value == '0' || medtxt.value == '')
 // medtxt.value = '';
@@ -1681,7 +1699,7 @@ submit.addEventListener('click', function(e) {
 			initialise();
 			scrollable.scrollToView(profileView);
 		} else {
-			alert('aaa' + this.responseText);
+			alert('error message: \n' + this.responseText);
 		}
 	};
 	submit.backgroundImage = './images/gray.png';
@@ -1699,8 +1717,8 @@ function submitinfo() {
 		var alert1 = Titanium.UI.createAlertDialog({
 			title : 'Submit Data',
 			message : ("Submit the following information? " + "\n" + "Location : " + workoutstate + "\n" + "Activity : " + useractivity + " \nLow Intensity : " + low + " \nMed Intensity : " + med + " \nHigh Intensity : " + high + "\nNumber of Participants : " + social + "\n" + "Date : " + mon + "-" + day + "-" + year + "\nHapiness rating : " + haprate + ' stars'),
-			buttonNames : ['Yes', 'No'],
-			cancel : 1
+			buttonNames : ['No', 'Yes'],
+			cancel : 0,
 		});
 		if (low == '')
 			low = '0';
@@ -1746,13 +1764,13 @@ function submitinfo() {
 			//now you can use parameter e to switch/case
 
 			switch (e.index) {
-				case 0:
+				case 1:
 					Titanium.API.info('Clicked button 0 (YES)');
 					submitReq.send(params);
 					break;
 
 				//This will never be reached, if you specified cancel for index 1
-				case 1:
+				case 0:
 					Titanium.API.info('Clicked button 1 (NO)');
 					break;
 
@@ -2055,7 +2073,7 @@ address.addEventListener('return', function(e) {
 optionsView.add(address);
 optionsView.add(addlabel);
 //unit in meters
-var centerRadius = 20;
+var centerRadius = 80;
 
 // calculate distance between two locations, distance unit in meters
 function distance(lat1, lon1, lat2, lon2) {
@@ -2113,7 +2131,7 @@ if (Ti.Geolocation.locationServicesEnabled) {
 									date : new Date(new Date().getTime()), // 3 seconds after backgrounding
 									hasAction : true,
 								});
-								alert(t1.getHours() + ':' + t1.getMinutes() + '|Report your activities?');
+								// alert(t1.getHours() + ':' + t1.getMinutes() + '|Report your activities?');
 							} else {
 								var notification = Ti.App.iOS.scheduleLocalNotification({
 									alertBody : t1.getHours() + ':' + t1.getMinutes() + '|Report your activities for ' + min + ' mins' + '?' + ' Distance =' + point_dist,
@@ -2125,7 +2143,7 @@ if (Ti.Geolocation.locationServicesEnabled) {
 									date : new Date(new Date().getTime()), // send immediately
 									hasAction : true,
 								});
-								alert(t1.getHours() + ':' + t1.getMinutes() + '|Report your activities?');
+								// alert(t1.getHours() + ':' + t1.getMinutes() + '|Report your activities?');
 							}
 
 						}
@@ -2138,5 +2156,5 @@ if (Ti.Geolocation.locationServicesEnabled) {
 	alert('Please enable location services');
 }
 Ti.App.addEventListener('resumed', function(e) {
-		alert(enterflag + '; ' + stamp);
-}); 
+	alert(enterflag + '; ' + stamp);
+});
